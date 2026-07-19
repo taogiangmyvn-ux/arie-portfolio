@@ -57,7 +57,7 @@ h1{font-family:var(--disp);font-size:clamp(64px,12.5vw,176px);line-height:.92;te
 .hero-tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
 .tag{font-size:12px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);padding:6px 14px;border-radius:99px}
 .hero-media{position:relative;overflow:hidden;border-radius:6px}
-.hero-media img{width:100%;height:clamp(300px,52vw,560px);object-fit:cover;transform:scale(1.04)}
+.hero-media img{width:100%;height:clamp(260px,40vw,440px);object-fit:cover;transform:scale(1.04)}
 .hero-sign{position:absolute;right:clamp(16px,4vw,48px);bottom:clamp(10px,3vw,28px);font-family:var(--script);font-size:clamp(30px,4.5vw,58px);color:#fff;text-shadow:0 1px 14px rgba(0,0,0,.35)}
 
 /* ---------- marquee ---------- */
@@ -101,11 +101,13 @@ h1{font-family:var(--disp);font-size:clamp(64px,12.5vw,176px);line-height:.92;te
 .blabel b{display:block;font-family:var(--disp);font-weight:400;color:var(--maroon);font-size:clamp(28px,4vw,48px);line-height:1;letter-spacing:.02em;margin-bottom:8px}
 .media{position:relative;overflow:hidden;border-radius:6px;background:var(--cream-2)}
 .media img,.media video{width:100%;height:100%;object-fit:cover}
-.media.r169{aspect-ratio:16/9}
+.media.r169{aspect-ratio:16/9;max-width:900px}
 .media.r45{aspect-ratio:4/5}
-.media.r916{aspect-ratio:9/16}
+.media.r916{aspect-ratio:9/16;max-width:340px}
 .media.r32{aspect-ratio:3/2}
 .media.r11{aspect-ratio:1/1}
+.duo{grid-template-columns:repeat(2,minmax(0,360px))}
+.split .media{max-width:500px}
 .cap{font-size:14.5px;color:var(--ink-soft);margin-top:10px}
 .playbtn{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;cursor:pointer;background:rgba(20,10,12,.18);transition:background .25s}
 .playbtn:hover{background:rgba(20,10,12,.32)}
@@ -124,7 +126,7 @@ h1{font-family:var(--disp);font-size:clamp(64px,12.5vw,176px);line-height:.92;te
 .band h3{font-family:var(--disp);font-size:clamp(38px,6vw,76px);text-transform:uppercase;line-height:.98;margin-bottom:18px}
 .band p{color:rgba(241,239,232,.82);max-width:42ch}
 .band .script{color:#E7B15C;display:block;margin-top:18px;transform:none}
-.band img{border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.band img{border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.45);max-width:440px;justify-self:center}
 
 /* award / venture */
 .award{border:1px solid var(--line);border-radius:10px;padding:clamp(24px,3.5vw,44px);display:grid;grid-template-columns:auto 1fr auto;gap:clamp(18px,3vw,40px);align-items:center;margin-bottom:clamp(20px,3vw,32px)}
@@ -273,7 +275,21 @@ html.js .reveal.in{opacity:1;transform:none}
         </div>
       </div>
     </div>
+  </div>
 
+  <!-- PARTNERSHIP SIGNAL — the headline moment first -->
+  <div class="band reveal">
+    <div class="wrap">
+      <div>
+        <h3>Paris Hilton approved.</h3>
+        <p>Yes, that Paris Hilton. She liked the campaign photo two minutes after it went live. Small notification, big signal: the content reads premium enough for celebrity feeds.</p>
+        <span class="script">that's hot.</span>
+      </div>
+      <img src="assets/paris-hilton-like.png" alt="Instagram notification: parishilton liked your photo">
+    </div>
+  </div>
+
+  <div class="wrap">
     <!-- BRANDING -->
     <div class="block reveal">
       <div class="blabel"><b>Branding</b> put Halio on icons</div>
@@ -322,7 +338,7 @@ html.js .reveal.in{opacity:1;transform:none}
     <!-- GO-TO-MARKET -->
     <div class="block reveal">
       <div class="blabel"><b>Go-to-Market</b> new product launching</div>
-      <div class="grid-2">
+      <div class="grid-2 duo">
         <div>
           <div class="media r916">
             <video class="lazy auto" muted loop playsinline preload="none" poster="assets/poster-gtm-launch-1.jpg" data-src="assets/gtm-launch-1.mp4"></video>
@@ -347,24 +363,10 @@ html.js .reveal.in{opacity:1;transform:none}
       </div>
       <p class="cap" style="margin-top:16px">A brand night designed for content: demo stations, Glow Wish rituals and a room full of creators filming.</p>
     </div>
-  </div>
 
-  <!-- PARTNERSHIPS -->
-  <div class="band reveal">
-    <div class="wrap">
-      <div>
-        <h3>Paris Hilton approved.</h3>
-        <p>Yes, that Paris Hilton. She liked the campaign photo two minutes after it went live. Small notification, big signal: the content reads premium enough for celebrity feeds.</p>
-        <span class="script">that's hot.</span>
-      </div>
-      <img src="assets/paris-hilton-like.png" alt="Instagram notification: parishilton liked your photo">
-    </div>
-  </div>
-
-  <div class="wrap">
     <div class="block reveal">
       <div class="blabel"><b>B2B Partnerships</b> New York Fashion Week × Miss Universe</div>
-      <div class="grid-2">
+      <div class="grid-2 duo">
         <div>
           <div class="media r916">
             <video class="lazy click" playsinline preload="none" poster="assets/poster-nyfw-store.jpg" data-src="assets/nyfw-store.mp4"></video>
