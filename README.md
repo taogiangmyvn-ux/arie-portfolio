@@ -2,7 +2,7 @@
 
 Personal portfolio of **Tao Giang My (Arie)**.
 
-Live site: https://arietao-stack.github.io/arie-portfolio/
+Live site: https://taogiangmyvn-ux.github.io/arie-portfolio/
 
 ## Structure
 
