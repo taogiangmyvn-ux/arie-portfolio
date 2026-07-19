@@ -37,7 +37,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;background:color-mix(in srgb,
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
 .logo{font-family:var(--disp);font-size:20px;letter-spacing:.04em;text-transform:uppercase}
 .logo sup{font-size:10px}
-.nav-links{display:flex;gap:22px;align-items:center;font-size:12.5px;letter-spacing:.07em;text-transform:uppercase}
+.nav-links{display:flex;gap:24px;align-items:center;font-size:12.5px;letter-spacing:.07em;text-transform:uppercase}
 .nav-links a{opacity:.75;transition:opacity .2s}
 .nav-links a:hover{opacity:1}
 .nav-cta{border:1px solid var(--ink);padding:7px 16px;border-radius:99px;opacity:1 !important;transition:background .2s,color .2s}
@@ -88,8 +88,10 @@ h1{font-family:var(--disp);font-size:clamp(64px,12.5vw,176px);line-height:.92;te
 .case{padding:clamp(70px,10vw,140px) 0 0}
 .case-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:clamp(30px,4vw,56px)}
 .case-head h2{font-family:var(--disp);font-size:clamp(44px,7.5vw,96px);text-transform:uppercase;line-height:.95}
+.case-head .brand-kicker{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--maroon);font-weight:600;margin-bottom:12px}
 .case-head .meta{align-self:end}
 .case-head .meta p{color:var(--ink-soft);max-width:46ch;margin-bottom:16px}
+.case-head .meta p b{color:var(--ink);font-weight:600}
 .meta-row{display:flex;gap:10px;flex-wrap:wrap}
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,24px)}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px)}
@@ -108,12 +110,10 @@ h1{font-family:var(--disp);font-size:clamp(64px,12.5vw,176px);line-height:.92;te
 .playbtn:hover{background:rgba(20,10,12,.32)}
 .playbtn i{width:74px;height:74px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center;font-style:normal;font-size:22px;color:var(--ink);padding-left:5px}
 
-/* brand cards in Branding section */
-.brand-card{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(20px,3.5vw,48px);align-items:start;padding:clamp(26px,4vw,48px) 0;border-top:1px solid var(--line)}
-.brand-card h3{font-family:var(--disp);font-size:clamp(30px,4.6vw,56px);text-transform:uppercase;line-height:1;margin-bottom:10px}
-.brand-card .sub{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--maroon);font-weight:600;margin-bottom:14px}
-.brand-card p{color:var(--ink-soft);max-width:48ch;margin-bottom:12px}
-.brand-card p b{color:var(--ink);font-weight:600}
+/* split block: copy + media side by side */
+.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(20px,3.5vw,48px);align-items:start}
+.split p{color:var(--ink-soft);max-width:48ch;margin-bottom:12px}
+.split p b{color:var(--ink);font-weight:600}
 .insight{border-left:3px solid var(--maroon);padding:12px 0 12px 18px;margin:16px 0;font-size:15px;color:var(--ink-soft)}
 .insight b{display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--maroon);margin-bottom:6px}
 
@@ -170,7 +170,7 @@ html.js .reveal.in{opacity:1;transform:none}
 @media(max-width:820px){
   .nav-links{gap:16px}
   .nav-links a:not(.nav-cta){display:none}
-  .hero-sub,.case-head,.band .wrap,.about-grid,.brand-card{grid-template-columns:1fr}
+  .hero-sub,.case-head,.band .wrap,.about-grid,.split{grid-template-columns:1fr}
   .hero-tags{justify-content:flex-start}
   .stats{grid-template-columns:1fr 1fr}
   .stat:nth-child(3){border-left:none}
@@ -190,13 +190,11 @@ html.js .reveal.in{opacity:1;transform:none}
   <div class="wrap nav-in">
     <a href="#top" class="logo">Arie<sup>®</sup></a>
     <div class="nav-links">
-      <a href="#branding">Branding</a>
-      <a href="#ugc">UGC Engine</a>
-      <a href="#gtm">Go-to-Market</a>
-      <a href="#partnerships">Partnerships</a>
-      <a href="#artdirection">Art Direction</a>
+      <a href="#halio">Halio</a>
+      <a href="#coba">CoBa's Daughter</a>
       <a href="#ventures">Freelance</a>
       <a href="#experience">Experience</a>
+      <a href="#about">About</a>
       <a href="#contact" class="nav-cta"><span class="dot"></span>Let's talk</a>
     </div>
   </div>
@@ -249,80 +247,54 @@ html.js .reveal.in{opacity:1;transform:none}
 </section>
 
 <section class="windex wrap" id="work">
-  <div class="section-label">What I Do</div>
-  <a href="#branding"><span class="num">01</span><span class="name">Branding</span><span class="role">Two brands, two playbooks</span></a>
-  <a href="#ugc"><span class="num">02</span><span class="name">UGC Engine</span><span class="role">Million-view creator systems</span></a>
-  <a href="#gtm"><span class="num">03</span><span class="name">Go-to-Market</span><span class="role">Launches &amp; event activations</span></a>
-  <a href="#partnerships"><span class="num">04</span><span class="name">B2B Partnerships</span><span class="role">Celebrity · Media · Platforms</span></a>
-  <a href="#artdirection"><span class="num">05</span><span class="name">Art Direction</span><span class="role">Photoshoots &amp; brand worlds</span></a>
-  <a href="#ventures"><span class="num">06</span><span class="name">Freelance</span><span class="role">Ventures &amp; side quests</span></a>
+  <div class="section-label">Selected Work</div>
+  <a href="#halio"><span class="num">01</span><span class="name">Halio</span><span class="role">Beauty Tech · US · EU · SGP</span></a>
+  <a href="#coba"><span class="num">02</span><span class="name">CoBa's Daughter</span><span class="role">Luxury Body Care · Top #5 Amazon US</span></a>
+  <a href="#ventures"><span class="num">03</span><span class="name">Freelance</span><span class="role">Ventures &amp; side quests</span></a>
 </section>
 
-<!-- ============ 01 BRANDING ============ -->
-<section class="case" id="branding">
+<!-- ================================================= -->
+<!-- ============ 01 HALIO =========================== -->
+<!-- ================================================= -->
+<section class="case" id="halio">
   <div class="wrap">
     <div class="case-head">
-      <h2 class="reveal">Branding<span style="color:var(--maroon)">.</span></h2>
-      <div class="meta reveal">
-        <p>Two brands, run in parallel, with opposite playbooks: a loud beauty tech challenger built for feeds, and a quiet luxury brand built on heritage. Positioning, voice and the visual world for both.</p>
-        <div class="meta-row">
-          <span class="tag">Positioning</span>
-          <span class="tag">Brand World</span>
-          <span class="tag">Consumer Insight</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="brand-card reveal">
       <div>
-        <h3>Halio</h3>
-        <div class="sub">Beauty Tech Device · US, EU &amp; SGP · DTC + Shopee</div>
-        <p>Red-light therapy devices sold direct-to-consumer across three markets. My role: <b>PR, creator management and creative direction for growth</b> — every asset built to stop a thumb in the first second.</p>
-        <p>The brand play: put Halio on icons. If Barbie glows with it, so can you.</p>
+        <div class="brand-kicker">01 · Lixibox · Beauty Tech Device</div>
+        <h2 class="reveal">Halio<span style="color:var(--maroon)">.</span></h2>
       </div>
-      <div class="media reveal" style="aspect-ratio:4/5"><img loading="lazy" src="assets/branding-visual.png" alt="Barbie before and after with Halio LED mask" style="object-fit:contain;background:#fff"></div>
-    </div>
-
-    <div class="brand-card reveal">
-      <div>
-        <h3>CoBa's Daughter</h3>
-        <div class="sub">Vietnamese-Inspired Luxury Body Care · Top #5 Amazon US</div>
-        <p>Robusta coffee, camellia and shea — Vietnamese ingredients, luxury execution. Ranked <b>Top #5 on Amazon US</b>, with an affiliate creator system behind it and a three-channel plan: Amazon, TikTok Shop, DTC.</p>
-        <div class="insight">
-          <b>The insight that shaped the brand</b>
-          Who pays premium for high-quality-ingredient body care? We chose equestrian girls: the horse-riding lifestyle demands serious body care, and the aesthetic gave the brand a world of its own.
-        </div>
-      </div>
-      <div class="media reveal" style="aspect-ratio:4/5"><img loading="lazy" src="assets/coba-camp-2.jpg" alt="CoBa's Daughter key visual: woman in nón lá with horse, holding Body Exfoliator"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 02 UGC ENGINE ============ -->
-<section class="case" id="ugc">
-  <div class="wrap">
-    <div class="case-head">
-      <h2 class="reveal">UGC Engine<span style="color:var(--maroon)">.</span></h2>
       <div class="meta reveal">
-        <p>Not one viral video — a system that produces them. Creator sourcing, briefs, hooks and payout models, built to scale content volume without losing the brand look.</p>
+        <p>Red-light therapy devices sold direct-to-consumer in the <b>US, EU and Singapore</b>, on DTC and Shopee. My role: <b>PR, creator management and creative direction for growth</b> — every asset built to stop a thumb in the first second.</p>
         <div class="meta-row">
-          <span class="tag">Creator Management</span>
-          <span class="tag">Affiliate Systems</span>
-          <span class="tag">Organic Growth</span>
+          <span class="tag">US · EU · SGP</span>
+          <span class="tag">DTC + Shopee</span>
+          <span class="tag">TikTok · Instagram</span>
         </div>
       </div>
     </div>
 
+    <!-- BRANDING -->
     <div class="block reveal">
-      <div class="blabel"><b>02a</b> Halio — the content wall</div>
+      <div class="blabel"><b>Branding</b> put Halio on icons</div>
+      <div class="split">
+        <div>
+          <p>The brand play: if the most famous face in plastic glows with Halio, so can you. Icon-hacking made the device instantly readable as premium — and instantly shareable.</p>
+        </div>
+        <div class="media" style="aspect-ratio:4/3"><img loading="lazy" src="assets/branding-visual.png" alt="Barbie before and after with Halio LED mask" style="object-fit:contain;background:#fff"></div>
+      </div>
+    </div>
+
+    <!-- UGC ENGINE -->
+    <div class="block reveal">
+      <div class="blabel"><b>UGC Engine</b> the content wall — one device, every kind of creator</div>
       <div class="media r169">
         <video class="lazy auto" muted loop playsinline preload="none" poster="assets/poster-halio-sonic-ugc.jpg" data-src="assets/halio-sonic-ugc.mp4"></video>
       </div>
-      <p class="cap">One device, every kind of creator: tiers, formats and routines across US, EU and Singapore.</p>
+      <p class="cap">Creator sourcing, briefs, hooks and payout models — built to scale volume across three markets without losing the brand look.</p>
     </div>
 
     <div class="block reveal">
-      <div class="blabel"><b>02b</b> Halio — multiple million-view videos, zero paid push</div>
+      <div class="blabel"><b>UGC Engine</b> the proof — multiple million-view videos, zero paid push</div>
       <div class="grid-3">
         <div>
           <div class="media r916">
@@ -346,33 +318,9 @@ html.js .reveal.in{opacity:1;transform:none}
       <p class="cap" style="margin-top:16px">Macro-tier creators, organic distribution. Each concept is built around a hook that survives the first second.</p>
     </div>
 
+    <!-- GO-TO-MARKET -->
     <div class="block reveal">
-      <div class="blabel"><b>02c</b> CoBa's Daughter — the affiliate creator engine</div>
-      <div class="media r169">
-        <video class="lazy auto" muted loop playsinline preload="none" poster="assets/poster-coba-brand-film.jpg" data-src="assets/coba-brand-film.mp4"></video>
-      </div>
-      <p class="cap">Built the affiliate creator system that helped push CoBa's Daughter to Top #5 on Amazon US — and planned distribution across three channels: Amazon, TikTok Shop and DTC.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 03 GO-TO-MARKET ============ -->
-<section class="case" id="gtm">
-  <div class="wrap">
-    <div class="case-head">
-      <h2 class="reveal">Go-to-Market<span style="color:var(--maroon)">.</span></h2>
-      <div class="meta reveal">
-        <p>From product story to launch day: teaser films, launch content and on-the-ground event activations that turn a product drop into a moment.</p>
-        <div class="meta-row">
-          <span class="tag">Product Launch</span>
-          <span class="tag">Event Activation</span>
-          <span class="tag">Launch Content</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="block reveal">
-      <div class="blabel"><b>03a</b> Halio — new product launching</div>
+      <div class="blabel"><b>Go-to-Market</b> new product launching</div>
       <div class="grid-2">
         <div>
           <div class="media r916">
@@ -390,7 +338,7 @@ html.js .reveal.in{opacity:1;transform:none}
     </div>
 
     <div class="block reveal">
-      <div class="blabel"><b>03b</b> Halio — The Halioverse, New York City · US Summer Tour 2026</div>
+      <div class="blabel"><b>Go-to-Market</b> event activation — The Halioverse, NYC · US Summer Tour 2026</div>
       <div class="grid-3">
         <div><div class="media r45"><img loading="lazy" src="assets/event-1.jpg" alt="The Halioverse NYC event — group photo and demos"></div></div>
         <div><div class="media r45"><img loading="lazy" src="assets/event-2.jpg" alt="The Halioverse NYC event — Glow Wish cards and red-light demos"></div></div>
@@ -398,51 +346,9 @@ html.js .reveal.in{opacity:1;transform:none}
       </div>
       <p class="cap" style="margin-top:16px">A brand night designed for content: demo stations, Glow Wish rituals and a room full of creators filming.</p>
     </div>
-
-    <div class="block reveal">
-      <div class="blabel"><b>03c</b> CoBa's Daughter — refill system launch: "Twice the Ritual"</div>
-      <div class="grid-3">
-        <div>
-          <div class="media r916">
-            <video class="lazy auto" muted loop playsinline preload="none" poster="assets/poster-coba-launch.jpg" data-src="assets/coba-launch.mp4"></video>
-          </div>
-          <p class="cap">Launch film — "everyone has their own way"</p>
-        </div>
-        <div>
-          <div class="media r45" style="aspect-ratio:1/1"><img loading="lazy" src="assets/coba-sq-1.png" alt="Twice the Ritual, Endlessly Scrub — 1 refill = 2 jars"></div>
-          <p class="cap">1 refill = 2 jars — Body Exfoliator</p>
-        </div>
-        <div>
-          <div class="media r45" style="aspect-ratio:1/1"><img loading="lazy" src="assets/coba-sq-2.png" alt="Twice the Ritual, Endlessly Soothe — Aloe Soothing Gel refill"></div>
-          <p class="cap">Same system, full line — Aloe Soothing Gel</p>
-        </div>
-      </div>
-      <div class="grid-3" style="margin-top:clamp(14px,2vw,24px)">
-        <div><div class="media r45"><img loading="lazy" src="assets/coba-gtm-still.jpg" alt="CoBa's Daughter product line in the shower"></div></div>
-        <div><div class="media r45"><img loading="lazy" src="assets/coba-gtm-a.jpg" alt="Refill pouch and jar mounted on green tile shower wall"></div></div>
-        <div><div class="media r45"><img loading="lazy" src="assets/coba-gtm-b.jpg" alt="Body Exfoliator refill in use on shower wall mount"></div></div>
-      </div>
-      <p class="cap" style="margin-top:16px">A launch built on one clear promise — twice the ritual, half the waste — carried through film, key visuals and lifestyle stills.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 04 B2B PARTNERSHIPS ============ -->
-<section class="case" id="partnerships">
-  <div class="wrap">
-    <div class="case-head">
-      <h2 class="reveal">B2B Partnerships<span style="color:var(--maroon)">.</span></h2>
-      <div class="meta reveal">
-        <p>The deals and moments money can't easily buy: celebrity signals, fashion week features, pageant talent and platform launches — sourced, negotiated and executed.</p>
-        <div class="meta-row">
-          <span class="tag">Celebrity &amp; Talent</span>
-          <span class="tag">Media Moments</span>
-          <span class="tag">Platform Launches</span>
-        </div>
-      </div>
-    </div>
   </div>
 
+  <!-- PARTNERSHIPS -->
   <div class="band reveal">
     <div class="wrap">
       <div>
@@ -456,7 +362,7 @@ html.js .reveal.in{opacity:1;transform:none}
 
   <div class="wrap">
     <div class="block reveal">
-      <div class="blabel"><b>04a</b> New York Fashion Week × Miss Universe</div>
+      <div class="blabel"><b>B2B Partnerships</b> New York Fashion Week × Miss Universe</div>
       <div class="grid-2">
         <div>
           <div class="media r916">
@@ -476,46 +382,101 @@ html.js .reveal.in{opacity:1;transform:none}
     </div>
 
     <div class="block reveal">
-      <div class="blabel"><b>04b</b> Community commerce — live on TYB</div>
-      <div class="grid-2" style="align-items:center">
+      <div class="blabel"><b>B2B Partnerships</b> community commerce — live on TYB</div>
+      <div class="split" style="align-items:center">
         <div>
-          <div class="media r45">
-            <video class="lazy auto" muted loop playsinline preload="none" poster="assets/poster-tyb-live.jpg" data-src="assets/tyb-live.mp4"></video>
-          </div>
+          <p>Took Halio onto TYB, the brand-community platform — a partnership launch that turned superfans into a distribution channel.</p>
         </div>
-        <div>
-          <p style="color:var(--ink-soft);max-width:40ch">Took Halio onto TYB, the brand-community platform — a partnership launch that turned superfans into a distribution channel.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 05 ART DIRECTION ============ -->
-<section class="case" id="artdirection">
-  <div class="wrap">
-    <div class="case-head">
-      <h2 class="reveal">Art Direction<span style="color:var(--maroon)">.</span></h2>
-      <div class="meta reveal">
-        <p>The craft layer: campaign stills, product photography and brand films. Different brands, different worlds — the discipline is making every frame unmistakably theirs.</p>
-        <div class="meta-row">
-          <span class="tag">Photoshoots</span>
-          <span class="tag">Key Visuals</span>
-          <span class="tag">Brand Films</span>
+        <div class="media r45" style="max-width:420px">
+          <video class="lazy auto" muted loop playsinline preload="none" poster="assets/poster-tyb-live.jpg" data-src="assets/tyb-live.mp4"></video>
         </div>
       </div>
     </div>
 
+    <!-- ART DIRECTION -->
     <div class="block reveal">
-      <div class="blabel"><b>05a</b> Halio — campaign stills</div>
+      <div class="blabel"><b>Art Direction</b> campaign stills</div>
       <div class="grid-2">
         <div><div class="media r45"><img loading="lazy" src="assets/photoshoot-wand.png" alt="Studio shot: model with Halio red-light wand over her eye"></div></div>
         <div><div class="media r45"><img loading="lazy" src="assets/photoshoot-halio.jpg" alt="Halio key visual: wrinkles fading is not an illusion — it's Halio"></div></div>
       </div>
     </div>
+  </div>
+</section>
 
+<!-- ================================================= -->
+<!-- ============ 02 COBA'S DAUGHTER ================= -->
+<!-- ================================================= -->
+<section class="case" id="coba">
+  <div class="wrap">
+    <div class="case-head">
+      <div>
+        <div class="brand-kicker">02 · Lixibox · Luxury Body Care</div>
+        <h2 class="reveal">CoBa's Daughter<span style="color:var(--maroon)">.</span></h2>
+      </div>
+      <div class="meta reveal">
+        <p>Vietnamese-inspired luxury body care — Robusta coffee, camellia and shea. Ranked <b>Top #5 on Amazon US</b>, with an affiliate creator system behind it and a three-channel plan: <b>Amazon, TikTok Shop, DTC</b>.</p>
+        <div class="meta-row">
+          <span class="tag">Top #5 Amazon US</span>
+          <span class="tag">Amazon · TikTok Shop · DTC</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- BRANDING -->
     <div class="block reveal">
-      <div class="blabel"><b>05b</b> CoBa's Daughter — a world of heritage and horses</div>
+      <div class="blabel"><b>Branding</b> the insight that shaped the brand</div>
+      <div class="split">
+        <div>
+          <div class="insight">
+            <b>Consumer insight</b>
+            Who pays premium for high-quality-ingredient body care? We chose equestrian girls: the horse-riding lifestyle demands serious body care, and the aesthetic gave the brand a world of its own.
+          </div>
+          <p>Heritage on the label, luxury in the frame: nón lá and áo dài meet stables and saddles. A brand world no competitor can copy-paste.</p>
+        </div>
+        <div class="media r45"><img loading="lazy" src="assets/coba-camp-2.jpg" alt="CoBa's Daughter key visual: woman in nón lá with horse, holding Body Exfoliator"></div>
+      </div>
+    </div>
+
+    <!-- UGC ENGINE -->
+    <div class="block reveal">
+      <div class="blabel"><b>UGC Engine</b> the affiliate creator system behind Top #5</div>
+      <div class="media r169">
+        <video class="lazy auto" muted loop playsinline preload="none" poster="assets/poster-coba-brand-film.jpg" data-src="assets/coba-brand-film.mp4"></video>
+      </div>
+      <p class="cap">Built the affiliate creator engine that helped push CoBa's Daughter to Top #5 on Amazon US — then planned distribution across Amazon, TikTok Shop and DTC.</p>
+    </div>
+
+    <!-- GO-TO-MARKET -->
+    <div class="block reveal">
+      <div class="blabel"><b>Go-to-Market</b> refill system launch — "Twice the Ritual"</div>
+      <div class="grid-3">
+        <div>
+          <div class="media r916">
+            <video class="lazy auto" muted loop playsinline preload="none" poster="assets/poster-coba-launch.jpg" data-src="assets/coba-launch.mp4"></video>
+          </div>
+          <p class="cap">Launch film — "everyone has their own way"</p>
+        </div>
+        <div>
+          <div class="media r11"><img loading="lazy" src="assets/coba-sq-1.png" alt="Twice the Ritual, Endlessly Scrub — 1 refill = 2 jars"></div>
+          <p class="cap">1 refill = 2 jars — Body Exfoliator</p>
+        </div>
+        <div>
+          <div class="media r11"><img loading="lazy" src="assets/coba-sq-2.png" alt="Twice the Ritual, Endlessly Soothe — Aloe Soothing Gel refill"></div>
+          <p class="cap">Same system, full line — Aloe Soothing Gel</p>
+        </div>
+      </div>
+      <div class="grid-3" style="margin-top:clamp(14px,2vw,24px)">
+        <div><div class="media r45"><img loading="lazy" src="assets/coba-gtm-still.jpg" alt="CoBa's Daughter product line in the shower"></div></div>
+        <div><div class="media r45"><img loading="lazy" src="assets/coba-gtm-a.jpg" alt="Refill pouch and jar mounted on green tile shower wall"></div></div>
+        <div><div class="media r45"><img loading="lazy" src="assets/coba-gtm-b.jpg" alt="Body Exfoliator refill in use on shower wall mount"></div></div>
+      </div>
+      <p class="cap" style="margin-top:16px">One clear promise — twice the ritual, half the waste — carried through film, key visuals and lifestyle stills.</p>
+    </div>
+
+    <!-- ART DIRECTION -->
+    <div class="block reveal">
+      <div class="blabel"><b>Art Direction</b> a world of heritage and horses</div>
       <div class="grid-3">
         <div><div class="media r45"><img loading="lazy" src="assets/coba-camp-1.png" alt="Three women in white áo dài and nón lá — triple exposure editorial"></div></div>
         <div><div class="media r45"><img loading="lazy" src="assets/coba-camp-3.jpg" alt="Body Exfoliator jar resting on a leather saddle"></div></div>
@@ -524,7 +485,7 @@ html.js .reveal.in{opacity:1;transform:none}
     </div>
 
     <div class="block reveal">
-      <div class="blabel"><b>05c</b> CoBa's Daughter — origin film</div>
+      <div class="blabel"><b>Art Direction</b> origin film</div>
       <div class="media r169">
         <video class="lazy auto" muted loop playsinline preload="none" poster="assets/poster-coba-wide.jpg" data-src="assets/coba-wide.mp4"></video>
       </div>
@@ -533,12 +494,17 @@ html.js .reveal.in{opacity:1;transform:none}
   </div>
 </section>
 
-<!-- ============ 06 FREELANCE & VENTURES ============ -->
+<!-- ================================================= -->
+<!-- ============ 03 FREELANCE ======================= -->
+<!-- ================================================= -->
 <section class="case wrap" id="ventures">
   <div class="case-head">
-    <h2 class="reveal">Freelance<span style="color:var(--maroon)">.</span></h2>
+    <div>
+      <div class="brand-kicker">03 · Ventures &amp; Side Quests</div>
+      <h2 class="reveal">Freelance<span style="color:var(--maroon)">.</span></h2>
+    </div>
     <div class="meta reveal">
-      <p>Ventures and side quests — the work that keeps the instincts sharp.</p>
+      <p>The work that keeps the instincts sharp — ventures, awards and projects outside the day job.</p>
       <div class="meta-row">
         <span class="tag">Ventures</span>
         <span class="tag">Social Business</span>
