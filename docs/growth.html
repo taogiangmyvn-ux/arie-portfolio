@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tao Giang My (Arie) — Growth & Platform Portfolio</title>
+<meta name="description" content="Growth portfolio of Tao Giang My (Arie): customer journeys, lifecycle marketing, friction analysis and experiment design — for platform and e-commerce teams.">
+<meta property="og:title" content="Tao Giang My (Arie) — Growth & Platform Portfolio">
+<meta property="og:description" content="Customer Journey · Lifecycle · Commerce · Platform Growth. Three deep cases: lifecycle e-commerce, a merchant-growth hypothesis, and an AI/AR product concept.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F7FA;
+  --card:#FFFFFF;
+  --ink:#0C1222;
+  --ink-2:#525B6B;
+  --line:#E4E7EF;
+  --accent:#3D5AFE;
+  --accent-soft:#EEF1FF;
+  --accent-ink:#2338C9;
+  --dark:#0C1222;
+  --dark-2:#151D33;
+  --good:#0E9F6E;
+  --disp:'Space Grotesk',sans-serif;
+  --body:'Inter',sans-serif;
+  --mono:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(min-width:900px){body{zoom:.85}}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1160px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+
+/* ---------- nav + progress ---------- */
+#progress{position:fixed;top:0;left:0;height:3px;background:var(--accent);width:0;z-index:60;transition:width .1s linear}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(246,247,250,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:58px}
+.logo{font-family:var(--disp);font-weight:700;font-size:17px;letter-spacing:.02em}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:22px;align-items:center;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase}
+.nav-links a{color:var(--ink-2);transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{border:1.5px solid var(--ink);border-radius:99px;padding:7px 16px;color:var(--ink) !important;font-weight:600;transition:all .2s}
+.nav-cta:hover{background:var(--ink);color:#fff !important}
+
+/* ---------- slide scaffolding ---------- */
+.slide{padding:clamp(64px,9vw,120px) 0 0}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--line)}
+h2.slide-t{font-family:var(--disp);font-weight:700;font-size:clamp(26px,3.6vw,44px);line-height:1.12;letter-spacing:-.01em;max-width:26ch;margin-bottom:14px}
+.lede{color:var(--ink-2);max-width:68ch;margin-bottom:10px}
+.lede b{color:var(--ink)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:clamp(20px,2.6vw,30px)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,22px)}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,22px)}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.6vw,18px)}
+.grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(12px,1.6vw,18px)}
+.chip{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;background:var(--accent-soft);color:var(--accent-ink);border-radius:6px;padding:5px 10px}
+.chip.ghost{background:transparent;border:1px solid var(--line);color:var(--ink-2)}
+.klabel{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin-bottom:10px}
+.hl{background:var(--accent-soft);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:16px 20px;max-width:760px}
+.hl b{color:var(--accent-ink)}
+ul.clean{list-style:none}
+ul.clean li{padding:6px 0 6px 20px;position:relative;color:var(--ink-2);font-size:14.5px}
+ul.clean li::before{content:"";position:absolute;left:0;top:14px;width:8px;height:2px;background:var(--accent)}
+ul.clean li b{color:var(--ink)}
+
+/* ---------- cover ---------- */
+.cover{min-height:92vh;display:flex;flex-direction:column;justify-content:center;padding-top:90px}
+.cover-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:clamp(24px,4vw,56px);align-items:center}
+h1{font-family:var(--disp);font-weight:700;font-size:clamp(44px,7.2vw,88px);line-height:1.02;letter-spacing:-.02em}
+h1 .acc{color:var(--accent)}
+.cover-sub{font-family:var(--mono);font-size:clamp(12px,1.4vw,14px);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);margin:18px 0 22px;display:flex;gap:10px;flex-wrap:wrap}
+.cover-sub span{border:1px solid var(--line);background:var(--card);border-radius:99px;padding:6px 14px}
+.hero-state{font-size:clamp(17px,2vw,21px);color:var(--ink-2);max-width:44ch}
+.hero-state b{color:var(--ink)}
+.cover-photo{width:100%;max-width:300px;aspect-ratio:4/5;object-fit:cover;border-radius:16px;justify-self:end;box-shadow:0 24px 60px rgba(12,18,34,.14)}
+.cover-foot{font-family:var(--mono);font-size:12px;color:var(--ink-2);margin-top:26px;letter-spacing:.04em}
+
+/* journey strip */
+.jstrip{display:flex;align-items:center;gap:0;margin-top:clamp(30px,5vw,54px);flex-wrap:wrap;row-gap:14px}
+.jnode{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
+.jdot{width:10px;height:10px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.jlink{height:2px;background:linear-gradient(90deg,var(--accent),rgba(61,90,254,.25));flex:1;min-width:40px;margin:0 12px;position:relative}
+.jlink::after{content:"→";position:absolute;right:-4px;top:-11px;color:var(--accent);font-size:13px}
+
+/* ---------- flow steps (framework, journeys) ---------- */
+.steps{counter-reset:st;display:grid;gap:12px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:grid;grid-template-columns:52px 220px 1fr;gap:16px;align-items:baseline}
+.step .num{font-family:var(--mono);font-weight:600;font-size:14px;color:var(--accent)}
+.step .name{font-family:var(--disp);font-weight:600;font-size:16px}
+.step .desc{color:var(--ink-2);font-size:14px}
+@media(max-width:860px){.step{grid-template-columns:44px 1fr}.step .desc{grid-column:2}}
+
+/* stage cards (journey map) */
+.stage{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.stage .snum{font-family:var(--mono);font-size:11px;color:var(--accent-ink);letter-spacing:.1em;text-transform:uppercase}
+.stage h4{font-family:var(--disp);font-weight:600;font-size:17px}
+.stage .q{background:var(--bg);border-radius:8px;padding:10px 12px;font-size:13px;color:var(--ink)}
+.stage .q i{display:block;font-style:normal;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin-bottom:3px}
+.stage ul.clean li{padding:3px 0 3px 16px;font-size:13px}
+.stage ul.clean li::before{top:11px;width:6px}
+
+/* pull quote */
+.pull{background:var(--dark);color:#fff;border-radius:16px;padding:clamp(26px,4vw,44px);font-family:var(--disp);font-weight:600;font-size:clamp(18px,2.4vw,26px);line-height:1.4;max-width:900px}
+.pull .acc{color:#8C9BFF}
+
+/* ---------- case covers ---------- */
+.case-cover{background:var(--dark);color:#fff;border-radius:20px;padding:clamp(32px,5vw,64px);position:relative;overflow:hidden}
+.case-cover::after{content:"";position:absolute;right:-120px;top:-120px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(61,90,254,.35),transparent 70%)}
+.cc-label{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#8C9BFF;margin-bottom:16px}
+.case-cover h3{font-family:var(--disp);font-weight:700;font-size:clamp(28px,4.4vw,52px);line-height:1.06;letter-spacing:-.01em;max-width:22ch}
+.cc-sub{color:rgba(255,255,255,.72);margin-top:12px;max-width:56ch}
+.cc-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.cc-tags span{font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;border:1px solid rgba(255,255,255,.25);border-radius:6px;padding:5px 10px;color:rgba(255,255,255,.85)}
+.cc-meta{margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.15);display:grid;grid-template-columns:1fr 1fr;gap:18px;font-size:13.5px;color:rgba(255,255,255,.72)}
+.cc-meta b{color:#fff;display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px;color:#8C9BFF}
+.cc-q{margin-top:22px;font-size:clamp(16px,2vw,20px);color:#fff;max-width:52ch;font-family:var(--disp);font-weight:500}
+.disclaim{margin-top:18px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:12px 16px;font-size:12.5px;color:rgba(255,255,255,.65)}
+
+/* email / message sequence */
+.seq{display:grid;gap:12px}
+.seq-item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;display:grid;grid-template-columns:120px 1fr;gap:18px}
+.seq-item .tag{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink)}
+.seq-item h5{font-family:var(--disp);font-weight:600;font-size:15.5px;margin-bottom:6px}
+.seq-item p{font-size:13.5px;color:var(--ink-2)}
+.seq-item .cta{font-family:var(--mono);font-size:11px;color:var(--ink);background:var(--accent-soft);display:inline-block;border-radius:6px;padding:4px 9px;margin-top:8px}
+@media(max-width:700px){.seq-item{grid-template-columns:1fr}}
+
+/* friction columns */
+.fric{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:12px;padding:18px}
+.fric h4{font-family:var(--disp);font-weight:600;font-size:16px;margin-bottom:10px}
+
+/* hypothesis cards */
+.hypo{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:10px}
+.hypo .hnum{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-ink)}
+.hypo h4{font-family:var(--disp);font-weight:600;font-size:16.5px}
+.hypo p{font-size:13.5px;color:var(--ink-2)}
+.hypo .hmeta{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:8px}
+.hypo .hmeta span{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;border-radius:6px;padding:4px 8px}
+.hm-sol{background:var(--accent-soft);color:var(--accent-ink)}
+.hm-met{background:#E6F7F0;color:#0B7A55}
+.hm-grd{background:#FFF1EC;color:#B4441F}
+
+/* tables */
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:13.5px}
+th{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;text-align:left;color:var(--ink-2);background:var(--bg);padding:12px 14px;border-bottom:1px solid var(--line)}
+td{padding:12px 14px;border-bottom:1px solid var(--line);color:var(--ink-2);vertical-align:top}
+td b{color:var(--ink)}
+tr:last-child td{border-bottom:none}
+.pri{font-family:var(--mono);font-weight:600;color:var(--accent-ink)}
+.tbl-wrap{overflow-x:auto;border-radius:12px}
+
+/* metrics chips row */
+.mrow{display:flex;flex-wrap:wrap;gap:8px}
+.mrow span{font-family:var(--mono);font-size:11.5px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:6px 11px;color:var(--ink)}
+
+/* outcome box */
+.outcome{background:linear-gradient(135deg,var(--accent) 0%,#2338C9 100%);color:#fff;border-radius:16px;padding:clamp(24px,3.4vw,38px)}
+.outcome .klabel{color:rgba(255,255,255,.7)}
+.outcome p{font-family:var(--disp);font-weight:600;font-size:clamp(16px,2.2vw,21px);line-height:1.45;max-width:60ch}
+.outcome .note{font-family:var(--body);font-weight:400;font-size:13px;color:rgba(255,255,255,.75);margin-top:12px;max-width:70ch}
+
+/* mini flow inline */
+.miniflow{font-family:var(--mono);font-size:12.5px;line-height:2.1;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px}
+.miniflow em{font-style:normal;color:var(--accent)}
+
+/* case index */
+.cidx{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,22px)}
+.cidx a{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:10px;transition:transform .25s,box-shadow .25s}
+.cidx a:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(12,18,34,.08)}
+.cidx .cnum{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--accent-ink);text-transform:uppercase}
+.cidx h4{font-family:var(--disp);font-weight:600;font-size:17px;line-height:1.3}
+.cidx p{font-size:13px;color:var(--ink-2)}
+.cidx .status{margin-top:auto;padding-top:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--good)}
+.cidx .status.hyp{color:#B4441F}
+
+/* closing */
+.close-sec{background:var(--dark);color:#fff;margin-top:clamp(70px,10vw,120px);padding:clamp(60px,8vw,100px) 0}
+.close-sec .eyebrow{color:#8C9BFF}
+.close-sec .eyebrow::after{background:rgba(255,255,255,.15)}
+.exp-line{display:grid;grid-template-columns:220px 1fr 220px;gap:18px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:14px;color:rgba(255,255,255,.75)}
+.exp-line b{color:#fff;font-family:var(--disp)}
+.exp-line .r{text-align:right;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:#8C9BFF}
+.contact-cta{text-align:center;padding:clamp(60px,8vw,100px) 0 40px}
+.contact-cta h2{font-family:var(--disp);font-weight:700;font-size:clamp(32px,5.5vw,64px);letter-spacing:-.01em;line-height:1.05}
+.contact-cta .acc{color:var(--accent)}
+.mailbtn{display:inline-block;margin-top:28px;font-family:var(--mono);font-size:13px;letter-spacing:.05em;border:1.5px solid var(--ink);border-radius:99px;padding:14px 32px;transition:all .2s}
+.mailbtn:hover{background:var(--ink);color:#fff}
+footer{border-top:1px solid var(--line);padding:20px 0;font-family:var(--mono);font-size:11.5px;color:var(--ink-2)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+/* reveal */
+html.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.6,.2,1)}
+html.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){html.js .reveal{opacity:1 !important;transform:none !important;transition:none !important}}
+
+@media(max-width:860px){
+  .nav-links a:not(.nav-cta){display:none}
+  .cover-grid{grid-template-columns:1fr}
+  .cover-photo{justify-self:start;max-width:220px}
+  .grid-2,.grid-3,.grid-4,.grid-5,.cidx{grid-template-columns:1fr}
+  .cc-meta{grid-template-columns:1fr}
+  .exp-line{grid-template-columns:1fr}
+  .exp-line .r{text-align:left}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<nav>
+  <div class="wrap nav-in">
+    <a href="#top" class="logo">ARIE<span>.</span>GROWTH</a>
+    <div class="nav-links">
+      <a href="#framework">Framework</a>
+      <a href="#case1">Case 01</a>
+      <a href="#case2">Case 02</a>
+      <a href="#case3">Case 03</a>
+      <a href="#mini">Mini Cases</a>
+      <a href="#contact" class="nav-cta">Let's talk</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ S1 COVER ============ -->
+<header class="cover wrap" id="top">
+  <div class="eyebrow reveal">Tao Giang My — Selected Work 2023–2026</div>
+  <div class="cover-grid">
+    <div>
+      <h1 class="reveal">Brand &amp;<br><span class="acc">Growth</span> Marketing</h1>
+      <div class="cover-sub reveal">
+        <span>Customer Journey</span><span>Lifecycle</span><span>Commerce</span><span>Platform Growth</span>
+      </div>
+      <p class="hero-state reveal">Building brands people notice — <b>and journeys that move them forward.</b></p>
+      <p class="cover-foot reveal">Ho Chi Minh City, Vietnam · Working across U.S. and Southeast Asian markets</p>
+    </div>
+    <img class="cover-photo reveal" src="assets/profile.jpg" alt="Tao Giang My (Arie)" onerror="this.style.display='none'">
+  </div>
+  <div class="jstrip reveal">
+    <span class="jnode"><span class="jdot"></span>Discovery</span><span class="jlink"></span>
+    <span class="jnode"><span class="jdot"></span>Activation</span><span class="jlink"></span>
+    <span class="jnode"><span class="jdot"></span>Conversion</span><span class="jlink"></span>
+    <span class="jnode"><span class="jdot"></span>Retention</span>
+  </div>
+</header>
+
+<!-- ============ S2 WHO I AM ============ -->
+<section class="slide wrap">
+  <div class="eyebrow reveal">02 · Who I Am</div>
+  <h2 class="slide-t reveal">I grow brands by understanding how people move.</h2>
+  <div class="grid-2" style="align-items:start">
+    <div class="reveal">
+      <p class="lede">I am a brand and growth marketer with experience across beauty, e-commerce, logistics technology and consumer-product innovation.</p>
+      <p class="lede">My work starts with the brand promise, but it does not stop at awareness. I study how users discover a product, what they need to understand, where they hesitate, what moves them to purchase and what gives them a reason to return.</p>
+      <p class="lede">I translate these behaviors into campaigns, lifecycle communication, platform workflows, partnerships and scalable growth systems.</p>
+    </div>
+    <div class="reveal">
+      <div class="hl" style="margin-bottom:16px">
+        <div class="klabel">My working belief</div>
+        Growth does not come from one campaign. It comes from connecting <b>brand meaning, user behavior, channel mechanics and lifecycle communication.</b>
+      </div>
+      <div class="klabel">What I bring</div>
+      <div class="mrow">
+        <span>Brand judgment</span><span>Customer-journey thinking</span><span>Commercial discipline</span><span>Cross-functional execution</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ S3 CAPABILITIES ============ -->
+<section class="slide wrap">
+  <div class="eyebrow reveal">03 · Core Capabilities</div>
+  <h2 class="slide-t reveal">Where I create value</h2>
+  <div class="grid-5">
+    <div class="card reveal">
+      <div class="klabel">01 · Brand &amp; Market Thinking</div>
+      <ul class="clean"><li>Consumer insight</li><li>Positioning &amp; messaging</li><li>Campaign concept</li><li>Product education</li><li>Go-to-market planning</li></ul>
+    </div>
+    <div class="card reveal">
+      <div class="klabel">02 · Customer Journey</div>
+      <ul class="clean"><li>Discovery</li><li>Onboarding</li><li>Consideration</li><li>Conversion</li><li>Retention &amp; advocacy</li></ul>
+    </div>
+    <div class="card reveal">
+      <div class="klabel">03 · Lifecycle &amp; CRM</div>
+      <ul class="clean"><li>Welcome journeys</li><li>Browse &amp; cart recovery</li><li>Post-purchase education</li><li>Replenishment</li><li>Win-back &amp; reactivation</li></ul>
+    </div>
+    <div class="card reveal">
+      <div class="klabel">04 · Growth Systems</div>
+      <ul class="clean"><li>Funnel diagnosis</li><li>Segmentation</li><li>Hypothesis building</li><li>Experiment planning</li><li>Performance analysis</li></ul>
+    </div>
+    <div class="card reveal">
+      <div class="klabel">05 · Platform &amp; Partnerships</div>
+      <ul class="clean"><li>Creator &amp; affiliate ecosystems</li><li>Community commerce</li><li>Merchant &amp; partner onboarding</li><li>Campaign operations</li><li>Cross-functional coordination</li></ul>
+    </div>
+  </div>
+  <p class="lede reveal" style="margin-top:20px"><b>I am strongest where brand, growth, commerce and operations meet.</b></p>
+</section>
+
+<!-- ============ S4 FRAMEWORK ============ -->
+<section class="slide wrap" id="framework">
+  <div class="eyebrow reveal">04 · How I Grow</div>
+  <h2 class="slide-t reveal">My growth framework</h2>
+  <div class="steps reveal">
+    <div class="step"><span class="num">01</span><span class="name">Understand the promise</span><span class="desc">What value is the brand or product expected to create?</span></div>
+    <div class="step"><span class="num">02</span><span class="name">Define the user</span><span class="desc">Who are we helping, and what are they trying to accomplish?</span></div>
+    <div class="step"><span class="num">03</span><span class="name">Map the journey</span><span class="desc">What does the user experience from first discovery to repeat behavior?</span></div>
+    <div class="step"><span class="num">04</span><span class="name">Identify friction</span><span class="desc">Where do effort, confusion, uncertainty or lack of trust stop progress?</span></div>
+    <div class="step"><span class="num">05</span><span class="name">Form a hypothesis</span><span class="desc">What change in message, product, channel or timing could improve behavior?</span></div>
+    <div class="step"><span class="num">06</span><span class="name">Test &amp; measure</span><span class="desc">Did users actually move forward, or did we only generate engagement?</span></div>
+    <div class="step"><span class="num">07</span><span class="name">Build the system</span><span class="desc">Can the improvement be automated, personalized or scaled?</span></div>
+  </div>
+  <div class="pull reveal" style="margin-top:22px">Product reduces effort. Brand reduces uncertainty. <span class="acc">Lifecycle creates the next action.</span></div>
+</section>
+
+<!-- ============ S5 SELECTED CASES ============ -->
+<section class="slide wrap">
+  <div class="eyebrow reveal">05 · Selected Cases</div>
+  <h2 class="slide-t reveal">Selected growth cases</h2>
+  <div class="cidx reveal">
+    <a href="#case1">
+      <span class="cnum">Case 01 · Lifecycle &amp; E-commerce</span>
+      <h4>From Brand Discovery to Repeat Purchase</h4>
+      <p>Lifecycle growth across Halio Sonic and CoBa's Daughter.</p>
+      <span class="status">Real work · Current role</span>
+    </a>
+    <a href="#case2">
+      <span class="cnum">Case 02 · Growth Analysis</span>
+      <h4>From First Booking to Repeat Habit</h4>
+      <p>AhaMove merchant-growth hypothesis.</p>
+      <span class="status hyp">Independent analysis · Hypothesis-based</span>
+    </a>
+    <a href="#case3">
+      <span class="cnum">Case 03 · Product Innovation</span>
+      <h4>From Nutrition Anxiety to Guided Action</h4>
+      <p>Melius AI/AR healthcare product concept.</p>
+      <span class="status">Product innovation · Real project</span>
+    </a>
+  </div>
+  <div class="grid-2 reveal" style="margin-top:16px">
+    <a class="card" href="#mini" style="display:flex;gap:14px;align-items:baseline"><span class="cnum" style="font-family:var(--mono);font-size:11px;color:var(--accent-ink);text-transform:uppercase">Mini 01</span><b style="font-family:var(--disp)">Creator activation as a partner journey</b></a>
+    <a class="card" href="#mini2" style="display:flex;gap:14px;align-items:baseline"><span class="cnum" style="font-family:var(--mono);font-size:11px;color:var(--accent-ink);text-transform:uppercase">Mini 02</span><b style="font-family:var(--disp)">TYB community-to-commerce loop</b></a>
+  </div>
+</section>
+
+<!-- ============ CASE 1 ============ -->
+<section class="slide wrap" id="case1">
+  <div class="case-cover reveal">
+    <div class="cc-label">Case Study 01 · Lifecycle &amp; E-commerce</div>
+    <h3>From Brand Discovery to Repeat Purchase</h3>
+    <p class="cc-sub">Building connected lifecycle journeys for Halio Sonic and CoBa's Daughter.</p>
+    <div class="cc-tags"><span>Brand Strategy</span><span>Lifecycle Marketing</span><span>Shopify &amp; Klaviyo</span><span>E-commerce</span><span>Conversion</span><span>Retention</span></div>
+    <div class="cc-meta">
+      <div><b>Role</b>Brand Executive — Lixibox · U.S. and Southeast Asia markets</div>
+      <div><b>Core question</b>How can a brand keep one consistent promise while responding differently to users at different stages of intent?</div>
+    </div>
+  </div>
+</section>
+
+<!-- S7 business context -->
+<section class="slide wrap">
+  <div class="eyebrow reveal">Case 01 · Business Context</div>
+  <h2 class="slide-t reveal">The challenge was not only acquiring attention</h2>
+  <div class="grid-2" style="align-items:start">
+    <div class="reveal">
+      <p class="lede">Halio Sonic and CoBa's Daughter attract customers through creator content, affiliate links, paid media, organic social, events, product launches and marketplace discovery.</p>
+      <p class="lede">These users do not arrive with the same level of knowledge or intent. Some are discovering the brand for the first time. Some are comparing products. Some have added to cart but still have an unresolved concern. Others have purchased but have not yet formed a repeat habit.</p>
+      <p class="lede"><b>A generic promotional approach cannot serve all of these users effectively.</b></p>
+      <div class="hl" style="margin-top:14px">
+        <div class="klabel">Business challenge</div>
+        Build communication journeys that preserve the brand promise while helping each user make the <b>next relevant decision</b>.
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="card" style="margin-bottom:14px">
+        <div class="klabel">My role</div>
+        <p style="font-size:14px;color:var(--ink-2)">Lifecycle strategy and execution across welcome, product education, cart recovery, purchase, post-purchase, replenishment and retention. I identify the customer state, shape the message and CTA, coordinate campaign timing, and connect email with product, creator, social and e-commerce activity.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card"><div class="klabel">Halio Sonic — promise</div><p style="font-size:13.5px;color:var(--ink-2)">Consistent, credible at-home beauty technology between professional treatments.</p></div>
+        <div class="card"><div class="klabel">CoBa's Daughter — promise</div><p style="font-size:13.5px;color:var(--ink-2)">Sensorial, low-maintenance body-care rituals rooted in Vietnamese ingredients and heritage.</p></div>
+      </div>
+      <div class="hl" style="margin-top:14px">The content changes by stage. <b>The brand promise should not.</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- S8 journey map -->
+<section class="slide wrap">
+  <div class="eyebrow reveal">Case 01 · Customer Lifecycle Map</div>
+  <h2 class="slide-t reveal">One brand promise, multiple user states</h2>
+  <div class="grid-5">
+    <div class="stage reveal">
+      <span class="snum">1 · Discovery</span>
+      <ul class="clean"><li>Creator content</li><li>Paid media</li><li>Affiliate recommendations</li><li>PR &amp; events</li><li>Marketplace search</li></ul>
+      <div class="q"><i>User question</i>Is this relevant to me?</div>
+      <div class="q" style="background:var(--accent-soft)"><i>Objective</i>Create relevance and curiosity.</div>
+    </div>
+    <div class="stage reveal">
+      <span class="snum">2 · Consideration</span>
+      <ul class="clean"><li>Welcome email</li><li>Product education</li><li>Reviews</li><li>Comparison guides</li><li>Routine demos</li></ul>
+      <div class="q"><i>User question</i>Does this solve my need — can I trust it?</div>
+      <div class="q" style="background:var(--accent-soft)"><i>Objective</i>Reduce uncertainty, build qualified intent.</div>
+    </div>
+    <div class="stage reveal">
+      <span class="snum">3 · Conversion</span>
+      <ul class="clean"><li>Product pages &amp; bundles</li><li>Browse abandonment</li><li>Cart recovery</li><li>Checkout recovery</li><li>Offer communication</li></ul>
+      <div class="q"><i>User question</i>Is this worth purchasing now?</div>
+      <div class="q" style="background:var(--accent-soft)"><i>Objective</i>Resolve objections, protect brand value.</div>
+    </div>
+    <div class="stage reveal">
+      <span class="snum">4 · Experience</span>
+      <ul class="clean"><li>Order confirmation</li><li>Usage education</li><li>Product routine</li><li>Troubleshooting</li><li>Expectation setting</li></ul>
+      <div class="q"><i>User question</i>Did I choose right — how do I get value?</div>
+      <div class="q" style="background:var(--accent-soft)"><i>Objective</i>Improve adoption and confidence.</div>
+    </div>
+    <div class="stage reveal">
+      <span class="snum">5 · Retention</span>
+      <ul class="clean"><li>Replenishment</li><li>Refill education</li><li>Cross-sell</li><li>Win-back</li><li>Community invitation</li></ul>
+      <div class="q"><i>User question</i>Why should I return?</div>
+      <div class="q" style="background:var(--accent-soft)"><i>Objective</i>Turn usage into repeat behavior.</div>
+    </div>
+  </div>
+  <div class="hl reveal" style="margin-top:18px">A lifecycle message should not simply repeat the campaign. <b>It should solve the user's next decision.</b></div>
+</section>
+
+<!-- S9 welcome -->
+<section class="slide wrap">
+  <div class="eyebrow reveal">Case 01 · Welcome &amp; Consideration</div>
+  <h2 class="slide-t reveal">Welcome is not a discount. It is the first decision journey.</h2>
+  <div class="mrow reveal" style="margin-bottom:16px">
+    <span><b>User state:</b>&nbsp;interested, limited knowledge, no purchase history</span>
+    <span><b>Brand objective:</b>&nbsp;positioning, trust, relevance</span>
+    <span><b>Growth objective:</b>&nbsp;first meaningful product interaction</span>
+  </div>
+  <div class="seq">
+    <div class="seq-item reveal">
+      <span class="tag">Email 1</span>
+      <div>
+        <h5>Establish the promise</h5>
+        <p>Explain what the brand stands for and why it matters. Halio: at-home light therapy designed for consistency, not quick-fix promises. CoBa: Vietnamese-inspired body care that turns a daily shower into a low-maintenance ritual.</p>
+        <span class="cta">CTA → Discover the brand</span>
+      </div>
+    </div>
+    <div class="seq-item reveal">
+      <span class="tag">Email 2</span>
+      <div>
+        <h5>Help the user navigate</h5>
+        <p>Reduce product confusion: shop by concern, shop by ritual, best sellers, product comparison, "which product is for me?"</p>
+        <span class="cta">CTA → Find your product</span>
+      </div>
+    </div>
+    <div class="seq-item reveal">
+      <span class="tag">Email 3</span>
+      <div>
+        <h5>Build trust</h5>
+        <p>Add evidence and social proof: reviews, creator proof, ingredient or technology credibility, use-case demonstration.</p>
+        <span class="cta">CTA → See how it works</span>
+      </div>
+    </div>
+    <div class="seq-item reveal">
+      <span class="tag">Email 4</span>
+      <div>
+        <h5>Create purchase motivation</h5>
+        <p>Convert interest into action: first-order incentive, launch benefit, bundle value, shipping threshold, seasonal urgency.</p>
+        <span class="cta">CTA → Start your ritual / Shop now</span>
+      </div>
+    </div>
+  </div>
+  <div class="grid-2" style="margin-top:16px;align-items:start">
+    <div class="hl reveal"><div class="klabel">Main hypothesis</div>An education-led welcome journey can generate <b>more qualified intent</b> than leading immediately with a discount.</div>
+    <div class="card reveal">
+      <div class="klabel">Experiment ideas</div>
+      <ul class="clean"><li>Brand-first vs discount-first Email 1</li><li>Product quiz vs best-seller navigation</li><li>Creator proof vs expert explanation</li><li>Four-email vs three-email flow</li><li>Benefit-led vs problem-led subject line</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- S10 cart -->
+<section class="slide wrap">
+  <div class="eyebrow reveal">Case 01 · Abandonment &amp; Conversion</div>
+  <h2 class="slide-t reveal">High intent does not mean zero friction</h2>
+  <div class="grid-2 reveal" style="margin-bottom:16px;align-items:start">
+    <div class="card">
+      <div class="klabel">Potential objections</div>
+      <div class="mrow"><span>Price</span><span>Product fit</span><span>Credibility</span><span>Shipping</span><span>Usage complexity</span><span>No urgency</span><span>Needs social proof</span></div>
+    </div>
+    <div class="hl"><div class="klabel">Conversion principle</div><b>Do not use a discount to answer every objection.</b></div>
+  </div>
+  <div class="seq">
+    <div class="seq-item reveal"><span class="tag">Message 1</span><div><h5>Return to the decision</h5><p>Remind the user what they considered and restate the main value. Objective: bring the product back into attention.</p></div></div>
+    <div class="seq-item reveal"><span class="tag">Message 2</span><div><h5>Resolve uncertainty</h5><p>Answer the most common objection. Halio: how often should I use it, which device is right, does it fit an at-home routine? CoBa: what makes the refill better value, how does the scrub fit a weekly routine, what does it feel like?</p></div></div>
+    <div class="seq-item reveal"><span class="tag">Message 3</span><div><h5>Add proof</h5><p>Reviews, creator content, demonstrations, customer stories. Objective: reduce perceived risk.</p></div></div>
+    <div class="seq-item reveal"><span class="tag">Message 4</span><div><h5>Introduce urgency or incentive</h5><p>Limited offer, bundle saving, free shipping, early access, seasonal deadline. Objective: a reason to act now.</p></div></div>
+  </div>
+  <div class="grid-3" style="margin-top:16px;align-items:start">
+    <div class="hl reveal" style="grid-column:span 1"><div class="klabel">Main hypothesis</div>For premium products, <b>benefit reinforcement and social proof should appear before aggressive discounting.</b></div>
+    <div class="card reveal"><div class="klabel">Tests</div><ul class="clean"><li>Proof before incentive vs incentive first</li><li>Review-led vs creator-led recovery</li><li>Single reminder vs complementary bundle</li><li>Static image vs routine demonstration</li><li>24-hour vs 48-hour timing</li></ul></div>
+    <div class="card reveal"><div class="klabel">Metrics</div><ul class="clean"><li>Recovery conversion rate</li><li>Revenue per recipient</li><li>Average order value</li><li>Unsubscribe rate</li><li>Time from cart to purchase</li></ul></div>
+  </div>
+</section>
+
+<!-- S11 post purchase -->
+<section class="slide wrap">
+  <div class="eyebrow reveal">Case 01 · Post-purchase &amp; Retention</div>
+  <h2 class="slide-t reveal">The purchase is a transition, not the end of the journey</h2>
+  <div class="grid-4">
+    <div class="stage reveal"><span class="snum">Stage 1 · Confirm</span><ul class="clean"><li>Order confirmation</li><li>Delivery expectations</li><li>What happens next</li></ul></div>
+    <div class="stage reveal"><span class="snum">Stage 2 · Educate</span><ul class="clean"><li>How to use the product</li><li>Frequency &amp; routine</li><li>Product care</li><li>Common mistakes to avoid</li></ul></div>
+    <div class="stage reveal"><span class="snum">Stage 3 · Reinforce value</span><ul class="clean"><li>Benefit timeline</li><li>Routine guidance</li><li>Complementary content</li><li>Community proof</li></ul></div>
+    <div class="stage reveal"><span class="snum">Stage 4 · Expand</span><ul class="clean"><li>Cross-sell</li><li>Complementary product</li><li>Community invitation</li><li>Referral / affiliate opportunity</li></ul></div>
+  </div>
+  <div class="grid-2" style="margin-top:16px;align-items:start">
+    <div class="reveal">
+      <div class="card" style="margin-bottom:14px">
+        <div class="klabel">Retention journey</div>
+        <ul class="clean">
+          <li><b>Replenishment</b> — communicate on expected usage, not random promo timing</li>
+          <li><b>Refill adoption</b> — less waste, more product, easier continuity, better long-term value</li>
+          <li><b>Win-back</b> — reintroduce relevance based on previous interest or purchase</li>
+          <li><b>Cross-sell</b> — recommend the logical next step in the routine</li>
+        </ul>
+      </div>
+      <div class="hl"><div class="klabel">Main hypothesis</div>Usage education and well-timed replenishment create <b>stronger repeat behavior</b> than generic promotional reminders.</div>
+    </div>
+    <div class="reveal">
+      <div class="miniflow" style="margin-bottom:14px">
+        <div class="klabel">Example refill flow</div>
+        Expected usage reminder <em>→</em> "Don't run out" education <em>→</em> Refill value explanation <em>→</em> Reorder CTA <em>→</em> Social proof / refill demo
+      </div>
+      <div class="klabel">Metrics</div>
+      <div class="mrow"><span>Repeat-purchase rate</span><span>Time between purchases</span><span>Refill adoption</span><span>Cross-sell CVR</span><span>Win-back CVR</span><span>Customer lifetime value</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- S12 measurement -->
+<section class="slide wrap">
+  <div class="eyebrow reveal">Case 01 · Measurement &amp; Learning</div>
+  <h2 class="slide-t reveal">Measuring movement, not only email engagement</h2>
+  <div class="grid-3" style="align-items:start;margin-bottom:16px">
+    <div class="card reveal"><div class="klabel">Diagnostic metrics</div><div class="mrow"><span>Open rate</span><span>CTR</span><span>Drop-off by message</span><span>Unsubscribe rate</span><span>Engagement by segment</span></div></div>
+    <div class="card reveal"><div class="klabel">Commercial metrics</div><div class="mrow"><span>Flow-attributed revenue</span><span>CVR</span><span>Revenue / recipient</span><span>AOV</span><span>Repeat-purchase rate</span><span>Time to 2nd purchase</span></div></div>
+    <div class="card reveal"><div class="klabel">Segments considered</div><div class="mrow"><span>New subscriber</span><span>Viewer, no cart</span><span>Carted, no purchase</span><span>First-time buyer</span><span>Repeat buyer</span><span>Refill-eligible</span><span>High-AOV</span><span>Inactive</span><span>Creator-acquired</span></div></div>
+  </div>
+  <div class="tbl-wrap reveal" style="margin-bottom:16px">
+    <table>
+      <tr><th>Experiment</th><th>Hypothesis</th><th>Primary metric</th></tr>
+      <tr><td><b>Education-first welcome</b></td><td>Trust before discount improves qualified conversion</td><td>Welcome-flow CVR</td></tr>
+      <tr><td><b>Creator proof in cart flow</b></td><td>Relatable social proof reduces hesitation</td><td>Recovery rate</td></tr>
+      <tr><td><b>Routine-led post-purchase</b></td><td>Better usage support increases repeat behavior</td><td>Repeat-purchase rate</td></tr>
+      <tr><td><b>Usage-based replenishment</b></td><td>Better timing improves refill conversion</td><td>Refill CVR</td></tr>
+      <tr><td><b>Bundle vs single product</b></td><td>Complementary value increases basket size</td><td>AOV</td></tr>
+    </table>
+  </div>
+  <div class="outcome reveal">
+    <div class="klabel">Verified outcome</div>
+    <p>Contributed to 2× year-on-year revenue growth during Halio's November–December campaign through bundling, channel communication and performance amplification.</p>
+    <div class="note">Email-specific performance data is confidential. This case therefore focuses on journey design, decision logic and measurement methodology.</div>
+  </div>
+  <div class="hl reveal" style="margin-top:16px"><div class="klabel">Closing learning</div>Lifecycle marketing is not a set of scheduled emails. <b>It is a decision system based on the user's current knowledge, intent and relationship with the brand.</b></div>
+</section>
+
+<!-- ============ CASE 2 ============ -->
+<section class="slide wrap" id="case2">
+  <div class="case-cover reveal">
+    <div class="cc-label">Case Study 02 · Independent Growth Analysis</div>
+    <h3>From First Booking to Repeat Habit</h3>
+    <p class="cc-sub">A hypothesis-led merchant journey study for AhaMove.</p>
+    <div class="cc-tags"><span>User Journey</span><span>Merchant Growth</span><span>Activation</span><span>Retention</span><span>Lifecycle</span><span>Experiment Design</span></div>
+    <div class="cc-meta">
+      <div><b>Core question</b>How might AhaMove help a first-time merchant complete a delivery with confidence — and make the second booking meaningfully easier than the first?</div>
+      <div><b>Method</b>Journey mapping → friction analysis → hypotheses → prioritized experiments → measurement framework</div>
+    </div>
+    <div class="disclaim">Independent portfolio analysis based on publicly observable product experiences and stated assumptions. Not an internal AhaMove project; recommendations have not been confirmed as implemented.</div>
+  </div>
+</section>
+
+<!-- S14 persona -->
+<section class="slide wrap">
+  <div class="eyebrow reveal">Case 02 · Persona &amp; Job To Be Done</div>
+  <h2 class="slide-t reveal">The user is not only booking a driver. They are protecting a customer promise.</h2>
+  <div class="grid-2" style="align-items:start">
+    <div class="card reveal">
+      <div class="klabel">Primary persona — small online seller, HCMC</div>
+      <ul class="clean">
+        <li>Handles ~5–20 local orders per day</li>
+        <li>Sells through social media or marketplaces</li>
+        <li>Manages customer communication personally</li>
+        <li>Compares providers on speed, price, reliability</li>
+        <li>Limited time to troubleshoot delivery issues</li>
+      </ul>
+      <div class="q" style="background:var(--accent-soft);margin-top:12px;border-radius:8px;padding:12px"><i style="font-style:normal;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);display:block;margin-bottom:4px">Merchant success definition</i>The order is accepted quickly, delivered safely and completed with minimal manual follow-up.</div>
+    </div>
+    <div class="reveal">
+      <div class="card" style="margin-bottom:12px"><div class="klabel">Functional job</div><p style="font-size:14px;color:var(--ink-2)">"When I receive an order, I need to book a suitable delivery service quickly, so I can fulfil it without interrupting the rest of my business."</p></div>
+      <div class="card" style="margin-bottom:12px"><div class="klabel">Emotional job</div><p style="font-size:14px;color:var(--ink-2)">"I need to feel confident the delivery will not damage my relationship with my customer."</p></div>
+      <div class="card" style="margin-bottom:12px"><div class="klabel">Social job</div><p style="font-size:14px;color:var(--ink-2)">"I want my store to appear reliable and professional, even with a small team."</p></div>
+      <div class="hl"><div class="klabel">Platform opportunity</div>AhaMove can become more than a delivery option. <b>It can become part of the merchant's daily operating habit.</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- S15 journey -->
+<section class="slide wrap">
+  <div class="eyebrow reveal">Case 02 · Current Journey</div>
+  <h2 class="slide-t reveal">Hypothesized first-booking journey</h2>
+  <div class="steps reveal">
+    <div class="step"><span class="num">01</span><span class="name">Trigger</span><span class="desc">Merchant receives a customer order. Emotion: urgency. "Which delivery option should I use?"</span></div>
+    <div class="step"><span class="num">02</span><span class="name">App entry</span><span class="desc">Opens or downloads AhaMove. Curiosity mixed with time pressure. "Can I complete this quickly?"</span></div>
+    <div class="step"><span class="num">03</span><span class="name">Registration &amp; setup</span><span class="desc">Friction: setup before experiencing product value.</span></div>
+    <div class="step"><span class="num">04</span><span class="name">Booking details</span><span class="desc">Pickup, drop-off, item, instructions. Friction: repetitive manual input.</span></div>
+    <div class="step"><span class="num">05</span><span class="name">Service selection</span><span class="desc">Vehicle / delivery type. Friction: uncertainty about the correct service.</span></div>
+    <div class="step"><span class="num">06</span><span class="name">Price &amp; confirmation</span><span class="desc">Reviews price, ETA, details. Friction: trust and fee uncertainty.</span></div>
+    <div class="step"><span class="num">07</span><span class="name">Matching &amp; tracking</span><span class="desc">Waits for acceptance, monitors trip. Friction: anxiety around matching time and reliability.</span></div>
+    <div class="step"><span class="num">08</span><span class="name">Completion</span><span class="desc">Delivery completed. Friction: no strong bridge to the next booking.</span></div>
+    <div class="step"><span class="num">09</span><span class="name">Repeat decision</span><span class="desc">Return, or compare another provider? Key question: was this easier, safer, more reliable than my alternatives?</span></div>
+  </div>
+</section>
+
+<!-- S16 friction -->
+<section class="slide wrap">
+  <div class="eyebrow reveal">Case 02 · Friction Analysis</div>
+  <h2 class="slide-t reveal">Three types of friction shape retention</h2>
+  <div class="grid-3">
+    <div class="fric reveal">
+      <h4>1 · Product friction</h4>
+      <ul class="clean"><li>Too many service choices</li><li>Uncertainty about vehicle / service type</li><li>Repeated address &amp; instruction input</li><li>No guidance for first-time users</li><li>Multiple decisions before first value</li></ul>
+    </div>
+    <div class="fric reveal">
+      <h4>2 · Brand &amp; trust friction</h4>
+      <ul class="clean"><li>Will a driver accept quickly?</li><li>Is the displayed price final?</li><li>What happens if delivery fails?</li><li>Will the item be handled safely?</li><li>Who supports me when things go wrong?</li></ul>
+    </div>
+    <div class="fric reveal">
+      <h4>3 · Growth friction</h4>
+      <ul class="clean"><li>No clear reason to return immediately</li><li>Second booking may not feel easier</li><li>Business features stay undiscovered</li><li>Follow-up ignores actual booking status</li><li>Rewards create temporary use, not habit</li></ul>
+    </div>
+  </div>
+  <div class="grid-2" style="margin-top:16px;align-items:start">
+    <div class="pull reveal" style="font-size:clamp(15px,1.9vw,19px)">Product friction slows the booking. Trust friction delays commitment. <span class="acc">Growth friction prevents habit formation.</span></div>
+    <div class="hl reveal"><div class="klabel">Opportunity</div>Retention begins before the first delivery is complete. The first experience must create <b>confidence, predictability and saved effort.</b></div>
+  </div>
+</section>
+
+<!-- S17 hypotheses -->
+<section class="slide wrap">
+  <div class="eyebrow reveal">Case 02 · Growth Hypotheses</div>
+  <h2 class="slide-t reveal">Five hypotheses to move users forward</h2>
+  <div class="grid-2">
+    <div class="hypo reveal">
+      <span class="hnum">Hypothesis 1</span>
+      <h4>Guided service recommendation</h4>
+      <p>If first-time users answer 2–3 simple questions about item size, urgency and distance, a recommended service can reduce choice friction and improve booking completion.</p>
+      <div class="hmeta"><span class="hm-sol">Solution: "Help me choose" guided flow</span><span class="hm-met">Metric: first-booking completion</span><span class="hm-grd">Guardrail: cancellation / service-change rate</span></div>
+    </div>
+    <div class="hypo reveal">
+      <span class="hnum">Hypothesis 2</span>
+      <h4>Reliability reassurance</h4>
+      <p>If the confirmation screen clearly explains price, estimated matching time and support expectations, users feel more confident completing the booking.</p>
+      <div class="hmeta"><span class="hm-sol">Solution: fee breakdown + matching estimate</span><span class="hm-met">Metric: confirmation rate</span><span class="hm-grd">Guardrail: support-contact rate</span></div>
+    </div>
+    <div class="hypo reveal">
+      <span class="hnum">Hypothesis 3</span>
+      <h4>Save merchant preferences</h4>
+      <p>If merchants can save pickup locations, common notes and preferred settings after the first delivery, the second booking requires less effort.</p>
+      <div class="hmeta"><span class="hm-sol">Solution: "Save for next booking" prompt</span><span class="hm-met">Metric: time to 2nd booking</span><span class="hm-met">Secondary: 7-day repeat rate</span></div>
+    </div>
+    <div class="hypo reveal">
+      <span class="hnum">Hypothesis 4</span>
+      <h4>Book-again momentum</h4>
+      <p>If the completion screen offers a relevant next action — book again, save customer details, create another delivery, explore merchant tools — users are more likely to form a repeat habit.</p>
+      <div class="hmeta"><span class="hm-met">Metric: repeat booking within 7 days</span></div>
+    </div>
+    <div class="hypo reveal" style="grid-column:1/-1">
+      <span class="hnum">Hypothesis 5</span>
+      <h4>State-based lifecycle communication</h4>
+      <p>If communication reflects whether the user registered, abandoned, completed or experienced a failed delivery, it will be more useful than generic promotional messaging.</p>
+      <div class="hmeta"><span class="hm-met">Metric: journey reactivation / repeat booking</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- S18 prioritization -->
+<section class="slide wrap">
+  <div class="eyebrow reveal">Case 02 · Experiments &amp; Prioritization</div>
+  <h2 class="slide-t reveal">Prioritizing high-impact, testable improvements</h2>
+  <div class="tbl-wrap reveal" style="margin-bottom:16px">
+    <table>
+      <tr><th>Initiative</th><th>User impact</th><th>Business impact</th><th>Effort</th><th>Priority</th></tr>
+      <tr><td><b>Post-delivery "Book again"</b></td><td>High</td><td>High</td><td>Low</td><td class="pri">P1</td></tr>
+      <tr><td><b>Reliability reassurance</b></td><td>Medium–High</td><td>High</td><td>Low</td><td class="pri">P1</td></tr>
+      <tr><td><b>Guided service choice</b></td><td>High</td><td>High</td><td>Medium</td><td class="pri">P1</td></tr>
+      <tr><td><b>Saved merchant preferences</b></td><td>High</td><td>High</td><td>Medium</td><td class="pri">P1</td></tr>
+      <tr><td><b>State-based lifecycle flows</b></td><td>High</td><td>High</td><td>Medium</td><td class="pri">P1</td></tr>
+      <tr><td><b>Advanced merchant education</b></td><td>Medium</td><td>High</td><td>Medium</td><td class="pri">P2</td></tr>
+      <tr><td><b>Loyalty layer</b></td><td>Medium</td><td>Medium</td><td>High</td><td class="pri">P3</td></tr>
+    </table>
+  </div>
+  <div class="grid-3">
+    <div class="card reveal"><div class="klabel">Experiment 1</div><p style="font-size:13.5px;color:var(--ink-2)"><b>Control:</b> existing service selection.<br><b>Variant:</b> guided recommendation.<br><b>Measure:</b> booking completion, time to select, cancellation rate.</p></div>
+    <div class="card reveal"><div class="klabel">Experiment 2</div><p style="font-size:13.5px;color:var(--ink-2)"><b>Control:</b> standard completion screen.<br><b>Variant:</b> book-again + saved-preference prompt.<br><b>Measure:</b> 7-day repeat rate, time to second booking.</p></div>
+    <div class="card reveal"><div class="klabel">Experiment 3</div><p style="font-size:13.5px;color:var(--ink-2)"><b>Control:</b> generic post-registration communication.<br><b>Variant:</b> state-based onboarding + abandonment flows.<br><b>Measure:</b> first-booking activation.</p></div>
+  </div>
+  <div class="hl reveal" style="margin-top:16px"><div class="klabel">Prioritization principle</div>Start with improvements that remove visible friction and can be measured <b>within one or two booking cycles.</b></div>
+</section>
+
+<!-- S19 lifecycle + measurement -->
+<section class="slide wrap">
+  <div class="eyebrow reveal">Case 02 · Lifecycle &amp; Measurement</div>
+  <h2 class="slide-t reveal">The journey continues outside the app</h2>
+  <div class="grid-4">
+    <div class="stage reveal"><span class="snum">Journey A · Registered, no booking</span><ul class="clean"><li>Explain the first-booking process</li><li>Reduce trust concerns</li><li>Show estimated effort</li><li>Clear return CTA</li></ul></div>
+    <div class="stage reveal"><span class="snum">Journey B · Started, not completed</span><ul class="clean"><li>Restore saved booking info</li><li>Clarify service / price concerns</li><li>Offer help</li><li>No generic discounting before understanding the objection</li></ul></div>
+    <div class="stage reveal"><span class="snum">Journey C · First delivery completed</span><ul class="clean"><li>Confirm success</li><li>Simple satisfaction feedback</li><li>Save common information</li><li>Encourage the second booking</li><li>Introduce merchant tools gradually</li></ul></div>
+    <div class="stage reveal"><span class="snum">Journey D · Failed or cancelled</span><ul class="clean"><li>Explain what happened</li><li>Provide a recovery path</li><li>Offer human support</li><li>Rebuild confidence before asking again</li></ul></div>
+  </div>
+  <div class="grid-3" style="margin-top:16px;align-items:start">
+    <div class="outcome reveal" style="grid-column:span 1;background:var(--dark)">
+      <div class="klabel">North-star candidate</div>
+      <p style="font-size:clamp(15px,1.8vw,18px)">Repeat completed deliveries per active merchant</p>
+    </div>
+    <div class="card reveal"><div class="klabel">Activation metrics</div><div class="mrow"><span>Registration completion</span><span>First-booking initiation</span><span>First-booking completion</span><span>Time to first booking</span></div></div>
+    <div class="card reveal"><div class="klabel">Retention + guardrails</div><div class="mrow"><span>7-day repeat rate</span><span>30-day repeat rate</span><span>Deliveries / active merchant</span><span>Cancellation rate</span><span>Failed-delivery rate</span><span>Support-contact rate</span><span>Merchant satisfaction</span></div></div>
+  </div>
+  <div class="hl reveal" style="margin-top:16px"><div class="klabel">Closing insight</div>A merchant returns not only because delivery was completed, but because the platform <b>reduced uncertainty and made the next task easier.</b></div>
+</section>
+
+<!-- ============ CASE 3 ============ -->
+<section class="slide wrap" id="case3">
+  <div class="case-cover reveal">
+    <div class="cc-label">Case Study 03 · Product &amp; Market Innovation</div>
+    <h3>From Nutrition Anxiety to Guided Action</h3>
+    <p class="cc-sub">Translating a complex healthcare problem into an understandable AI/AR product journey.</p>
+    <div class="cc-tags"><span>User Research</span><span>Problem Validation</span><span>Product Proposition</span><span>Feature Prioritization</span><span>UX Content</span><span>Go-to-Market</span></div>
+    <div class="cc-meta">
+      <div><b>Role</b>Product Innovation Lead / Founding Team — Melius Vietnam · Social Business Creation, HEC Montréal</div>
+      <div><b>Outcome</b>Top 10 Global among 3,000+ participating teams</div>
+    </div>
+  </div>
+</section>
+
+<!-- S21 problem -->
+<section class="slide wrap">
+  <div class="eyebrow reveal">Case 03 · User Problem</div>
+  <h2 class="slide-t reveal">The problem was not a lack of information</h2>
+  <div class="grid-2" style="align-items:start">
+    <div class="reveal">
+      <p class="lede">Vietnamese families have access to abundant health and nutrition content. But much of it is fragmented, technical, contradictory or hard to apply to everyday meals.</p>
+      <p class="lede">Parents may understand that nutrition matters — without knowing what action to take at the moment they choose, prepare or serve food.</p>
+      <div class="miniflow" style="margin-top:14px">
+        <div class="klabel">Existing journey</div>
+        Notices a health concern <em>→</em> searches Google / social <em>→</em> conflicting advice <em>→</em> tries a temporary fix <em>→</em> hard to maintain <em>→</em> returns to old behavior
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="card" style="margin-bottom:14px">
+        <div class="klabel">Primary persona — working mother, 26–35</div>
+        <ul class="clean">
+          <li><b>Needs:</b> improve family nutrition · practical meal decisions · understand food without medical expertise · guidance that fits a busy routine</li>
+          <li><b>Frustrations:</b> conflicting information · technical language · generic advice · time-consuming tracking · hard-to-sustain habits</li>
+        </ul>
+      </div>
+      <div class="hl"><div class="klabel">Key insight</div>Information alone does not change behavior. <b>Guidance must appear at the moment a user is making a food decision.</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- S22 proposition -->
+<section class="slide wrap">
+  <div class="eyebrow reveal">Case 03 · Product Proposition</div>
+  <h2 class="slide-t reveal">Make healthy eating understandable and actionable</h2>
+  <div class="grid-2 reveal" style="margin-bottom:16px;align-items:start">
+    <div class="card"><div class="klabel">Proposition</div><p style="font-size:14px;color:var(--ink-2)">Melius helps families understand food choices and take practical action — without requiring them to become nutrition experts.</p></div>
+    <div class="hl"><div class="klabel">Product hypothesis</div>If nutritional information becomes <b>visual, contextual and personalized</b>, parents are more likely to understand it and apply it in everyday meals.</div>
+  </div>
+  <div class="grid-4">
+    <div class="stage reveal"><span class="snum">Understand</span><p style="font-size:13.5px;color:var(--ink-2)">Translate complex nutrition into clear visual information.</p></div>
+    <div class="stage reveal"><span class="snum">Decide</span><p style="font-size:13.5px;color:var(--ink-2)">Recommend practical next steps based on household needs.</p></div>
+    <div class="stage reveal"><span class="snum">Plan</span><p style="font-size:13.5px;color:var(--ink-2)">Turn individual food decisions into a manageable meal routine.</p></div>
+    <div class="stage reveal"><span class="snum">Improve</span><p style="font-size:13.5px;color:var(--ink-2)">Help users observe progress and form healthier habits.</p></div>
+  </div>
+  <div class="grid-2" style="margin-top:16px;align-items:start">
+    <div class="card reveal"><div class="klabel">Brand principle</div><div class="mrow"><span>Supportive, not judgmental</span><span>Clear, not medicalized</span><span>Practical, not overwhelming</span><span>Family-focused</span></div></div>
+    <div class="card reveal"><div class="klabel">Proposed activation moment *</div><p style="font-size:13.5px;color:var(--ink-2)">User completes their household profile, scans or selects a food item and saves one recommended action.<br><i style="font-size:11.5px;color:var(--ink-2)">* Proposed activation definition for portfolio analysis.</i></p></div>
+  </div>
+</section>
+
+<!-- S23 prioritization -->
+<section class="slide wrap">
+  <div class="eyebrow reveal">Case 03 · Feature Prioritization</div>
+  <h2 class="slide-t reveal">The MVP should prove behavioral value, not feature volume</h2>
+  <div class="grid-3" style="align-items:start">
+    <div class="card reveal" style="border-top:3px solid var(--accent)">
+      <div class="klabel">Must-have</div>
+      <ul class="clean">
+        <li><b>Household profile</b> — needs, preferences, context</li>
+        <li><b>AI/AR food scan</b> — reduce identification effort</li>
+        <li><b>Simplified result</b> — technical → understandable</li>
+        <li><b>Actionable recommendation</b> — what to do next</li>
+      </ul>
+    </div>
+    <div class="card reveal">
+      <div class="klabel">Should-have</div>
+      <ul class="clean"><li>Personalized meal suggestions</li><li>Saved meals</li><li>Progress history</li><li>Household customization</li><li>Reminder support</li></ul>
+    </div>
+    <div class="card reveal">
+      <div class="klabel">Could-have-later</div>
+      <ul class="clean"><li>Community layer</li><li>Gamification</li><li>Social sharing</li><li>Marketplace integration</li><li>Expert consultation</li></ul>
+    </div>
+  </div>
+  <div class="grid-2" style="margin-top:16px;align-items:start">
+    <div class="card reveal"><div class="klabel">Prioritization criteria</div><div class="mrow"><span>Severity of need</span><span>Frequency of use</span><span>Demonstrates core value</span><span>Technical feasibility</span><span>Impact on activation &amp; retention</span></div></div>
+    <div class="hl reveal"><div class="klabel">Key decision</div>The first version should prove that users can <b>understand the output and make a better food decision</b> — not attempt to solve every nutrition problem.</div>
+  </div>
+</section>
+
+<!-- S24 journey -->
+<section class="slide wrap">
+  <div class="eyebrow reveal">Case 03 · Proposed User Journey</div>
+  <h2 class="slide-t reveal">From setup to recurring meal decisions</h2>
+  <div class="steps reveal">
+    <div class="step"><span class="num">01</span><span class="name">Onboarding</span><span class="desc">Define household goals, dietary context, preferences. Value: relevant rather than generic guidance.</span></div>
+    <div class="step"><span class="num">02</span><span class="name">Scan or select</span><span class="desc">Scan a food item or search manually. Value: reduce information-search effort.</span></div>
+    <div class="step"><span class="num">03</span><span class="name">Interpret</span><span class="desc">Clear, simplified nutritional result. Value: understand what it means.</span></div>
+    <div class="step"><span class="num">04</span><span class="name">Act</span><span class="desc">One or two practical recommendations. Value: know what to change now.</span></div>
+    <div class="step"><span class="num">05</span><span class="name">Save</span><span class="desc">Add the recommendation to a meal plan or routine. Value: turn information into future behavior.</span></div>
+    <div class="step"><span class="num">06</span><span class="name">Return</span><span class="desc">Review progress, receive reminders, make another decision. Value: build continuity.</span></div>
+  </div>
+  <div class="card reveal" style="margin-top:16px">
+    <div class="klabel">Critical journey questions</div>
+    <div class="mrow"><span>At what moment does the user feel value?</span><span>Which action predicts future return?</span><span>Does the recommendation feel achievable?</span><span>Can it work without an offline workshop?</span></div>
+  </div>
+</section>
+
+<!-- S25 GTM -->
+<section class="slide wrap">
+  <div class="eyebrow reveal">Case 03 · Validation, GTM &amp; Learning</div>
+  <h2 class="slide-t reveal">A product needs both user value and a path to adoption</h2>
+  <div class="grid-4">
+    <div class="stage reveal"><span class="snum">Awareness</span><ul class="clean"><li>Health &amp; nutrition education</li><li>Workshops</li><li>Parent communities</li><li>Partnerships</li></ul></div>
+    <div class="stage reveal"><span class="snum">Activation</span><ul class="clean"><li>Guided onboarding</li><li>First successful scan</li><li>First saved recommendation</li></ul></div>
+    <div class="stage reveal"><span class="snum">Retention</span><ul class="clean"><li>Recurring meal decisions</li><li>Personalized reminders</li><li>Progress feedback</li><li>New food exploration</li></ul></div>
+    <div class="stage reveal"><span class="snum">Trust</span><ul class="clean"><li>Expert-backed information</li><li>Clear language</li><li>Community validation</li><li>Transparent recommendations</li></ul></div>
+  </div>
+  <div class="grid-2" style="margin-top:16px;align-items:start">
+    <div class="outcome reveal">
+      <div class="klabel">Outcome</div>
+      <p>Directed a 30-member cross-functional team across Product, Technology, Marketing, Finance and Partnerships — from user research and problem validation to feature prioritization, UX content architecture, business model and go-to-market. Top 10 Global at HEC Montréal's Social Business Creation.</p>
+    </div>
+    <div class="reveal">
+      <div class="card" style="margin-bottom:14px">
+        <div class="klabel">Validation methods</div>
+        <div class="mrow"><span>User interviews</span><span>Problem validation</span><span>Workshops</span><span>Concept testing</span><span>Satisfaction feedback</span><span>Paid participation</span><span>Feature-comprehension testing</span></div>
+      </div>
+      <div class="card">
+        <div class="klabel">What I would test next</div>
+        <div class="mrow"><span>AR scan vs manual search</span><span>Short vs detailed recommendation</span><span>Individual vs household profile</span><span>Workshop-led vs app-led acquisition</span><span>Reminder timing</span><span>Definition of retained behavior</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="hl reveal" style="margin-top:16px"><div class="klabel">Closing insight</div>A health product creates value only when expert knowledge becomes <b>understandable, timely and actionable</b> for ordinary users.</div>
+</section>
+
+<!-- ============ MINI CASES ============ -->
+<section class="slide wrap" id="mini">
+  <div class="eyebrow reveal">Mini Case 01 · Creator Activation</div>
+  <h2 class="slide-t reveal">Creator activation as a partner journey</h2>
+  <p class="lede reveal">Scaling a creator program is not only a sourcing challenge. Each creator must move through a series of activation steps before they create value for the brand or platform.</p>
+  <div class="miniflow reveal" style="margin:14px 0 16px">
+    Discovery <em>→</em> Qualification <em>→</em> Invitation <em>→</em> Acceptance <em>→</em> Sample request <em>→</em> Affiliate setup <em>→</em> Content creation <em>→</em> Posting <em>→</em> First conversion <em>→</em> Retention &amp; rebooking
+  </div>
+  <div class="grid-3" style="align-items:start">
+    <div class="card reveal"><div class="klabel">Main friction points</div><ul class="clean"><li>Invitation not opened</li><li>Sample request incomplete</li><li>Product received, no content</li><li>Affiliate invitation not accepted</li><li>Link or code not activated</li><li>Content posted without a strong CTA</li><li>Creator inactive after one campaign</li></ul></div>
+    <div class="card reveal"><div class="klabel">Interventions</div><ul class="clean"><li>Clear onboarding communication</li><li>Stage-based reminders</li><li>Setup checklists &amp; deadline nudges</li><li>Content and CTA guidance</li><li>Performance feedback</li><li>Rebooking &amp; retention flows</li><li>SOPs and scalable tracking</li></ul></div>
+    <div class="card reveal"><div class="klabel">Metrics</div><div class="mrow"><span>Invitation acceptance</span><span>Sample-to-post CVR</span><span>Time to first post</span><span>Active affiliate rate</span><span>First-sale rate</span><span>Retained creator rate</span></div></div>
+  </div>
+  <div class="hl reveal" style="margin-top:16px"><div class="klabel">Learning</div>Partner growth and customer growth share the same logic: <b>reduce friction at each stage and make the next action clear.</b></div>
+</section>
+
+<section class="slide wrap" id="mini2">
+  <div class="eyebrow reveal">Mini Case 02 · TYB</div>
+  <h2 class="slide-t reveal">From community participation to first purchase</h2>
+  <p class="lede reveal">Community engagement can create activity without necessarily building product understanding or purchase intent.</p>
+  <div class="miniflow reveal" style="margin:14px 0 16px">
+    Discover community <em>→</em> Join <em>→</em> First challenge <em>→</em> Earn coins <em>→</em> Learn about product <em>→</em> Visit shop <em>→</em> Add to cart <em>→</em> Purchase <em>→</em> Return &amp; advocate
+  </div>
+  <div class="grid-3" style="align-items:start">
+    <div class="card reveal"><div class="klabel">Initial challenge</div><p style="font-size:13.5px;color:var(--ink-2)">General lifestyle prompts generated participation, but the path from engagement to purchase was not always explicit.</p></div>
+    <div class="card reveal"><div class="klabel">Strategy shift</div><div class="mrow"><span>Product education</span><span>Ingredient discovery</span><span>Refill-value communication</span><span>Social proof</span><span>Purchase-oriented challenges</span><span>Shoppable CTAs</span><span>Incentives tied to commercial action</span></div></div>
+    <div class="card reveal"><div class="klabel">Measurement</div><div class="mrow"><span>Join-to-first-challenge rate</span><span>Challenge completion</span><span>Product-page CTR</span><span>Add-to-cart rate</span><span>First-purchase rate</span><span>Revenue / active member</span><span>Repeat participation</span></div></div>
+  </div>
+  <div class="grid-2" style="margin-top:16px;align-items:start">
+    <div class="card reveal">
+      <div class="klabel">Hypotheses</div>
+      <ul class="clean">
+        <li>Product-discovery challenges create stronger intent than general engagement prompts</li>
+        <li>Social proof from community members reduces uncertainty for first-time buyers</li>
+        <li>Rewards tied to meaningful shop actions create a clearer conversion path</li>
+      </ul>
+    </div>
+    <div class="hl reveal"><div class="klabel">Learning</div>Community should not sit beside commerce. Its activities should <b>progressively increase knowledge, trust and purchase readiness.</b></div>
+  </div>
+  <div class="pull reveal" style="margin-top:22px">Across every case, the same principle holds: <span class="acc">find where the user hesitates, remove the friction, and make the next action obvious.</span></div>
+</section>
+
+<!-- ============ CLOSING ============ -->
+<section class="close-sec" id="skills">
+  <div class="wrap">
+    <div class="eyebrow reveal">Skills · Platforms · Experience</div>
+    <div class="grid-3" style="align-items:start;margin-bottom:40px">
+      <div class="reveal">
+        <div class="klabel" style="color:#8C9BFF">Growth skills</div>
+        <div class="mrow"><span style="background:var(--dark-2);border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.85)">Journey mapping</span><span style="background:var(--dark-2);border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.85)">Friction analysis</span><span style="background:var(--dark-2);border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.85)">Hypothesis design</span><span style="background:var(--dark-2);border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.85)">Experiment planning</span><span style="background:var(--dark-2);border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.85)">Segmentation</span><span style="background:var(--dark-2);border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.85)">Lifecycle / CRM</span></div>
+      </div>
+      <div class="reveal">
+        <div class="klabel" style="color:#8C9BFF">Platforms</div>
+        <div class="mrow"><span style="background:var(--dark-2);border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.85)">Klaviyo</span><span style="background:var(--dark-2);border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.85)">Shopify</span><span style="background:var(--dark-2);border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.85)">TikTok Shop</span><span style="background:var(--dark-2);border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.85)">Amazon</span><span style="background:var(--dark-2);border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.85)">Meta Business Suite</span><span style="background:var(--dark-2);border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.85)">Affiliate platforms</span></div>
+      </div>
+      <div class="reveal">
+        <div class="klabel" style="color:#8C9BFF">Metrics I live in</div>
+        <div class="mrow"><span style="background:var(--dark-2);border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.85)">Activation</span><span style="background:var(--dark-2);border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.85)">CVR</span><span style="background:var(--dark-2);border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.85)">Repeat rate</span><span style="background:var(--dark-2);border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.85)">AOV</span><span style="background:var(--dark-2);border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.85)">LTV</span><span style="background:var(--dark-2);border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.85)">Revenue / recipient</span></div>
+      </div>
+    </div>
+    <div class="klabel reveal" style="color:#8C9BFF">Experience snapshot</div>
+    <div class="reveal">
+      <div class="exp-line"><b>Lixibox — Halio &amp; CoBa's Daughter</b><span>Lifecycle, creator commerce and growth across two beauty brands · US, EU, SGP</span><span class="r">Jul 2025 — Present</span></div>
+      <div class="exp-line"><b>Guardian Vietnam</b><span>10+ retail campaigns · 8+ brand partners · LOTTE Mart Gò Vấp opening</span><span class="r">Dec 2024 — Jun 2025</span></div>
+      <div class="exp-line"><b>Amamy</b><span>Cross-border delivery: 60K fanpage, double-sided referral, embassy community partnerships</span><span class="r">Freelance · 2024</span></div>
+      <div class="exp-line"><b>Melius</b><span>AI/AR nutrition product concept · Top 10 Global, HEC Montréal</span><span class="r">2023</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-cta wrap" id="contact">
+  <h2 class="reveal">Let's map the journey.<br><span class="acc">Then move the metric.</span></h2>
+  <a class="mailbtn reveal" href="mailto:taogiangmy.vn@gmail.com">taogiangmy.vn@gmail.com</a>
+  <p class="reveal" style="margin-top:22px;font-size:13px;color:var(--ink-2)">Prefer the brand &amp; creator side? <a href="index.html" style="color:var(--accent);font-weight:600">View the Brand &amp; Creator portfolio →</a></p>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Tao Giang My (Arie)</span>
+    <span>Ho Chi Minh City · U.S. &amp; Southeast Asian markets</span>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+const io = new IntersectionObserver(es => es.forEach((e, i) => {
+  if (e.isIntersecting) { e.target.style.transitionDelay = `${(i % 4) * 70}ms`; e.target.classList.add('in'); io.unobserve(e.target); }
+}), {rootMargin: '0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+const bar = document.getElementById('progress');
+addEventListener('scroll', () => {
+  const h = document.documentElement.scrollHeight - innerHeight;
+  bar.style.width = (scrollY / h * 100) + '%';
+}, {passive: true});
+</script>
+</body>
+</html>
