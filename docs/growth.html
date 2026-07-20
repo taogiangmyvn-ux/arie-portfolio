@@ -194,6 +194,67 @@ tr:last-child td{border-bottom:none}
 footer{border-top:1px solid var(--line);padding:20px 0;font-family:var(--mono);font-size:11.5px;color:var(--ink-2)}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 
+/* ---------- visual components ---------- */
+/* blueprint grid on cover */
+.cover{background-image:linear-gradient(rgba(61,90,254,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(61,90,254,.05) 1px,transparent 1px);background-size:44px 44px}
+.jdot{animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(61,90,254,.35)}50%{box-shadow:0 0 0 6px rgba(61,90,254,0)}}
+
+/* CRM flow canvas */
+.flowcanvas{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:clamp(18px,2.6vw,28px);background-image:radial-gradient(rgba(12,18,34,.06) 1px,transparent 1px);background-size:18px 18px;overflow-x:auto}
+.fc-row{display:flex;align-items:center;gap:0;min-width:760px}
+.fc-node{background:#fff;border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;min-width:118px;box-shadow:0 4px 14px rgba(12,18,34,.05);flex-shrink:0}
+.fc-node .t{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-ink);display:block;margin-bottom:3px}
+.fc-node .n{font-family:var(--disp);font-weight:600;font-size:12.5px;line-height:1.25}
+.fc-node.trig{border-color:var(--accent);background:var(--accent-soft)}
+.fc-wait{font-family:var(--mono);font-size:9.5px;color:var(--ink-2);background:var(--bg);border:1px dashed var(--line);border-radius:99px;padding:4px 9px;white-space:nowrap;flex-shrink:0;margin:0 8px;position:relative}
+.fc-wait::before,.fc-wait::after{content:"";position:absolute;top:50%;width:8px;height:1.5px;background:var(--line)}
+.fc-wait::before{left:-8px}.fc-wait::after{right:-8px}
+.fc-branch{display:flex;gap:10px;margin-top:12px;padding-left:clamp(120px,20%,240px);align-items:center;min-width:760px}
+.fc-cond{font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;background:#FFF7E8;border:1px solid #F0D9A8;color:#96690E;border-radius:6px;padding:4px 9px;flex-shrink:0}
+
+/* journey confidence curve */
+.jcurve{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:clamp(16px,2.4vw,26px)}
+.jcurve svg{width:100%;height:auto;display:block}
+.jcurve .path{stroke-dasharray:1500;stroke-dashoffset:1500;transition:stroke-dashoffset 2s cubic-bezier(.2,.6,.2,1) .2s}
+.jcurve.in .path{stroke-dashoffset:0}
+
+/* phone mockups */
+.phones{display:flex;gap:clamp(16px,2.6vw,32px);flex-wrap:wrap;justify-content:center}
+.phone{width:225px;background:var(--dark);border-radius:30px;padding:9px;box-shadow:0 22px 50px rgba(12,18,34,.18);flex-shrink:0}
+.phone .scr{background:#fff;border-radius:22px;overflow:hidden;display:flex;flex-direction:column;aspect-ratio:9/18.6}
+.scr .abar{background:var(--bg);padding:9px 12px;font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);border-bottom:1px solid var(--line);display:flex;justify-content:space-between}
+.scr .body{padding:12px;display:flex;flex-direction:column;gap:8px;flex:1}
+.uiq{font-family:var(--disp);font-weight:600;font-size:12px}
+.uichips{display:flex;gap:5px;flex-wrap:wrap}
+.uichips span{font-size:9.5px;border:1px solid var(--line);border-radius:99px;padding:3px 8px;color:var(--ink-2)}
+.uichips span.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.uicard{background:var(--accent-soft);border:1px solid #D9DFFE;border-radius:9px;padding:9px}
+.uicard .t{font-family:var(--mono);font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink);display:block;margin-bottom:3px}
+.uicard .n{font-family:var(--disp);font-weight:600;font-size:11.5px}
+.uicard .d{font-size:9.5px;color:var(--ink-2)}
+.uibtn{background:var(--accent);color:#fff;border-radius:8px;text-align:center;font-family:var(--disp);font-weight:600;font-size:11px;padding:9px;margin-top:auto}
+.uibtn.sec{background:#fff;border:1.5px solid var(--line);color:var(--ink);margin-top:0}
+.uiok{width:34px;height:34px;border-radius:50%;background:#E6F7F0;color:#0B7A55;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;margin:6px auto 0}
+.uibar{height:7px;border-radius:99px;background:var(--line)}
+.uibar i{display:block;height:100%;border-radius:99px}
+.uimetric{display:grid;grid-template-columns:52px 1fr 30px;gap:7px;align-items:center;font-size:9.5px;color:var(--ink-2)}
+.phone-cap{text-align:center;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);margin-top:9px}
+
+/* impact-effort quadrant */
+.quad{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:clamp(18px,2.4vw,26px)}
+.quad-plot{position:relative;aspect-ratio:16/10;border-radius:10px;margin-top:8px;background:
+  linear-gradient(to bottom,transparent calc(50% - 1px),var(--line) calc(50% - 1px),var(--line) calc(50% + .5px),transparent calc(50% + .5px)),
+  linear-gradient(to right,transparent calc(50% - 1px),var(--line) calc(50% - 1px),var(--line) calc(50% + .5px),transparent calc(50% + .5px)),
+  var(--bg)}
+.qd{position:absolute;transform:translate(-50%,-50%);display:flex;align-items:center;gap:6px}
+.qd i{width:11px;height:11px;border-radius:50%;background:var(--accent);flex-shrink:0;border:2px solid #fff;box-shadow:0 1px 5px rgba(12,18,34,.25)}
+.qd.p2 i{background:#8C9BFF}
+.qd.p3 i{background:#C3CBFB}
+.qd span{font-family:var(--mono);font-size:9.5px;color:var(--ink);background:rgba(255,255,255,.92);border-radius:5px;padding:2px 6px;white-space:nowrap;box-shadow:0 1px 4px rgba(12,18,34,.08)}
+.qax{position:absolute;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.qcorner{position:absolute;font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink);opacity:.65}
+
 /* reveal */
 html.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.6,.2,1)}
 html.js .reveal.in{opacity:1;transform:none}
@@ -470,6 +531,26 @@ html.js .reveal.in{opacity:1;transform:none}
       </div>
     </div>
   </div>
+  <div class="flowcanvas reveal" style="margin-top:16px">
+    <div class="klabel">Flow logic — how it runs in Klaviyo</div>
+    <div class="fc-row">
+      <div class="fc-node trig"><span class="t">Trigger</span><span class="n">Newsletter signup</span></div>
+      <span class="fc-wait">wait 1h</span>
+      <div class="fc-node"><span class="t">Email 1</span><span class="n">The promise</span></div>
+      <span class="fc-wait">wait 2d</span>
+      <div class="fc-node"><span class="t">Email 2</span><span class="n">Navigate the range</span></div>
+      <span class="fc-wait">wait 2d</span>
+      <div class="fc-node"><span class="t">Email 3</span><span class="n">Proof &amp; reviews</span></div>
+      <span class="fc-wait">wait 3d</span>
+      <div class="fc-node"><span class="t">Email 4</span><span class="n">Motivation to act</span></div>
+    </div>
+    <div class="fc-branch">
+      <span class="fc-cond">◇ purchased? → exit flow</span>
+      <span class="fc-cond">◇ clicked, no purchase → cart recovery</span>
+      <span class="fc-cond">◇ no engagement → re-permission</span>
+    </div>
+  </div>
+
   <div class="grid-2" style="margin-top:16px;align-items:start">
     <div class="hl reveal"><div class="klabel">Main hypothesis</div>An education-led welcome journey can generate <b>more qualified intent</b> than leading immediately with a discount.</div>
     <div class="card reveal">
@@ -608,6 +689,35 @@ html.js .reveal.in{opacity:1;transform:none}
 <section class="slide wrap">
   <div class="eyebrow reveal">Case 02 · Current Journey</div>
   <h2 class="slide-t reveal">Hypothesized first-booking journey</h2>
+  <div class="jcurve reveal" style="margin-bottom:16px">
+    <div class="klabel">Merchant confidence across the journey — hypothesized</div>
+    <svg viewBox="0 0 1080 235" role="img" aria-label="Hypothesized merchant confidence curve: dips during registration, service selection and matching; peaks at completion.">
+      <line x1="40" y1="70" x2="1040" y2="70" stroke="rgba(12,18,34,.08)"/>
+      <line x1="40" y1="190" x2="1040" y2="190" stroke="rgba(12,18,34,.2)"/>
+      <text x="34" y="74" text-anchor="end" font-size="10" fill="#8a90a0" font-family="monospace">high</text>
+      <text x="34" y="193" text-anchor="end" font-size="10" fill="#8a90a0" font-family="monospace">low</text>
+      <path class="path" d="M 60 108 L 180 115 L 300 133 L 420 138 L 540 148 L 660 141 L 780 145 L 900 78 L 1020 108" fill="none" stroke="#3D5AFE" stroke-width="2.5" stroke-linejoin="round"/>
+      <circle cx="300" cy="133" r="5" fill="#D97706" stroke="#fff" stroke-width="2"/>
+      <circle cx="540" cy="148" r="5" fill="#D97706" stroke="#fff" stroke-width="2"/>
+      <circle cx="780" cy="145" r="5" fill="#D97706" stroke="#fff" stroke-width="2"/>
+      <circle cx="900" cy="78" r="5" fill="#0E9F6E" stroke="#fff" stroke-width="2"/>
+      <g font-family="monospace" font-size="10" fill="#525B6B">
+        <text x="60" y="212" text-anchor="middle">1 Trigger</text>
+        <text x="180" y="212" text-anchor="middle">2 App entry</text>
+        <text x="300" y="212" text-anchor="middle">3 Register</text>
+        <text x="420" y="212" text-anchor="middle">4 Details</text>
+        <text x="540" y="212" text-anchor="middle">5 Service</text>
+        <text x="660" y="212" text-anchor="middle">6 Price</text>
+        <text x="780" y="212" text-anchor="middle">7 Matching</text>
+        <text x="900" y="212" text-anchor="middle">8 Complete</text>
+        <text x="1020" y="212" text-anchor="middle">9 Repeat?</text>
+      </g>
+      <g font-family="monospace" font-size="9.5">
+        <text x="540" y="170" text-anchor="middle" fill="#B4441F">friction dips</text>
+        <text x="900" y="60" text-anchor="middle" fill="#0B7A55">confidence peak</text>
+      </g>
+    </svg>
+  </div>
   <div class="steps reveal">
     <div class="step"><span class="num">01</span><span class="name">Trigger</span><span class="desc">Merchant receives a customer order. Emotion: urgency. "Which delivery option should I use?"</span></div>
     <div class="step"><span class="num">02</span><span class="name">App entry</span><span class="desc">Opens or downloads AhaMove. Curiosity mixed with time pressure. "Can I complete this quickly?"</span></div>
@@ -681,6 +791,51 @@ html.js .reveal.in{opacity:1;transform:none}
       <div class="hmeta"><span class="hm-met">Metric: journey reactivation / repeat booking</span></div>
     </div>
   </div>
+
+  <div class="reveal" style="margin-top:26px">
+    <div class="klabel">What H1 and H4 could look like — concept mocks, illustrative only</div>
+    <div class="phones" style="margin-top:10px">
+      <div>
+        <div class="phone"><div class="scr">
+          <div class="abar"><span>New delivery</span><span>9:41</span></div>
+          <div class="body">
+            <span class="uiq">What are you sending?</span>
+            <div class="uichips"><span class="on">Food</span><span>Parcel</span><span>Documents</span><span>Bulky</span></div>
+            <span class="uiq">How urgent is it?</span>
+            <div class="uichips"><span class="on">Right now</span><span>Within today</span></div>
+            <div class="uicard">
+              <span class="t">Suggested for you</span>
+              <span class="n">Bike delivery — 25.000đ</span>
+              <span class="d">~15 min match · insulated box available</span>
+            </div>
+            <div class="uibtn">Book with this service</div>
+            <div class="uibtn sec">See all services</div>
+          </div>
+        </div></div>
+        <div class="phone-cap">H1 · "Help me choose" guided flow</div>
+      </div>
+      <div>
+        <div class="phone"><div class="scr">
+          <div class="abar"><span>Delivery complete</span><span>9:58</span></div>
+          <div class="body">
+            <div class="uiok">✓</div>
+            <div style="text-align:center">
+              <span class="uiq">Delivered to Quận 3</span>
+              <div style="font-size:9.5px;color:var(--ink-2)">17 min · handled with care</div>
+            </div>
+            <div class="uicard">
+              <span class="t">Save for next time?</span>
+              <span class="d">Pickup address · package notes · preferred service</span>
+            </div>
+            <div class="uibtn">Book again</div>
+            <div class="uibtn sec">Save preferences</div>
+            <div class="uibtn sec">Explore merchant tools</div>
+          </div>
+        </div></div>
+        <div class="phone-cap">H4 · Book-again momentum</div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- S18 prioritization -->
@@ -698,6 +853,24 @@ html.js .reveal.in{opacity:1;transform:none}
       <tr><td><b>Advanced merchant education</b></td><td>Medium</td><td>High</td><td>Medium</td><td class="pri">P2</td></tr>
       <tr><td><b>Loyalty layer</b></td><td>Medium</td><td>Medium</td><td>High</td><td class="pri">P3</td></tr>
     </table>
+  </div>
+  <div class="quad reveal" style="margin-bottom:16px">
+    <div class="klabel">Impact × effort — where each initiative lands</div>
+    <div class="quad-plot">
+      <span class="qcorner" style="top:8px;left:10px">Do first</span>
+      <span class="qcorner" style="top:8px;right:10px">Plan carefully</span>
+      <span class="qcorner" style="bottom:8px;left:10px">Nice to have</span>
+      <span class="qcorner" style="bottom:8px;right:10px">Avoid for now</span>
+      <span class="qax" style="left:50%;bottom:-20px;transform:translateX(-50%)">Effort →</span>
+      <span class="qax" style="left:-14px;top:50%;transform:rotate(-90deg) translateX(50%);transform-origin:left">↑ Impact</span>
+      <div class="qd" style="left:14%;top:16%"><i></i><span>Book again</span></div>
+      <div class="qd" style="left:20%;top:30%"><i></i><span>Reliability reassurance</span></div>
+      <div class="qd" style="left:42%;top:13%"><i></i><span>Guided choice</span></div>
+      <div class="qd" style="left:46%;top:26%"><i></i><span>Saved preferences</span></div>
+      <div class="qd" style="left:50%;top:38%"><i></i><span>State-based flows</span></div>
+      <div class="qd p2" style="left:56%;top:58%"><i></i><span>Merchant education</span></div>
+      <div class="qd p3" style="left:84%;top:64%"><i></i><span>Loyalty layer</span></div>
+    </div>
   </div>
   <div class="grid-3">
     <div class="card reveal"><div class="klabel">Experiment 1</div><p style="font-size:13.5px;color:var(--ink-2)"><b>Control:</b> existing service selection.<br><b>Variant:</b> guided recommendation.<br><b>Measure:</b> booking completion, time to select, cancellation rate.</p></div>
@@ -821,6 +994,7 @@ html.js .reveal.in{opacity:1;transform:none}
 <section class="slide wrap">
   <div class="eyebrow reveal">Case 03 · Proposed User Journey</div>
   <h2 class="slide-t reveal">From setup to recurring meal decisions</h2>
+  <div class="grid-2" style="align-items:start">
   <div class="steps reveal">
     <div class="step"><span class="num">01</span><span class="name">Onboarding</span><span class="desc">Define household goals, dietary context, preferences. Value: relevant rather than generic guidance.</span></div>
     <div class="step"><span class="num">02</span><span class="name">Scan or select</span><span class="desc">Scan a food item or search manually. Value: reduce information-search effort.</span></div>
@@ -828,6 +1002,26 @@ html.js .reveal.in{opacity:1;transform:none}
     <div class="step"><span class="num">04</span><span class="name">Act</span><span class="desc">One or two practical recommendations. Value: know what to change now.</span></div>
     <div class="step"><span class="num">05</span><span class="name">Save</span><span class="desc">Add the recommendation to a meal plan or routine. Value: turn information into future behavior.</span></div>
     <div class="step"><span class="num">06</span><span class="name">Return</span><span class="desc">Review progress, receive reminders, make another decision. Value: build continuity.</span></div>
+  </div>
+  <div class="reveal" style="justify-self:center">
+    <div class="phone"><div class="scr">
+      <div class="abar"><span>Scan result</span><span>18:02</span></div>
+      <div class="body">
+        <span class="uiq">Instant noodles — 1 pack</span>
+        <div class="uimetric"><span>Sodium</span><div class="uibar"><i style="width:88%;background:#D97706"></i></div><span>High</span></div>
+        <div class="uimetric"><span>Protein</span><div class="uibar"><i style="width:22%;background:#3D5AFE"></i></div><span>Low</span></div>
+        <div class="uimetric"><span>Fiber</span><div class="uibar"><i style="width:15%;background:#3D5AFE"></i></div><span>Low</span></div>
+        <div class="uicard">
+          <span class="t">For your family tonight</span>
+          <span class="n">Add an egg + leafy greens</span>
+          <span class="d">Balances protein and fiber for a growing child</span>
+        </div>
+        <div class="uibtn">Save to meal plan</div>
+        <div class="uibtn sec">Scan another item</div>
+      </div>
+    </div></div>
+    <div class="phone-cap">Concept mock — steps 3 &amp; 4: interpret → act</div>
+  </div>
   </div>
   <div class="card reveal" style="margin-top:16px">
     <div class="klabel">Critical journey questions</div>
