@@ -147,6 +147,23 @@ h1{font-family:var(--disp);font-size:clamp(64px,12.5vw,176px);line-height:.92;te
 
 /* growth decisions */
 .decisions{padding:clamp(70px,10vw,130px) 0 0}
+.think-h{font-family:var(--disp);font-size:clamp(26px,3.6vw,44px);text-transform:uppercase;line-height:1.05;margin-bottom:10px}
+.think-sub{color:var(--ink-soft);max-width:60ch;margin-bottom:clamp(22px,3vw,34px)}
+.sublabel{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--maroon);font-weight:600;margin:clamp(30px,4.5vw,52px) 0 14px}
+.funnel{display:flex;flex-direction:column;gap:10px}
+.fbar{display:grid;grid-template-columns:150px 1fr auto;gap:clamp(10px,2vw,26px);align-items:center;border:1px solid var(--line);border-radius:8px;padding:14px clamp(14px,2vw,24px);margin:0 auto;background:var(--cream)}
+.fname{font-family:var(--disp);font-size:clamp(15px,1.8vw,20px);text-transform:uppercase;color:var(--maroon)}
+.fdesc{font-size:13.5px;color:var(--ink-soft)}
+.fmetric{font-size:12px;letter-spacing:.04em;text-transform:uppercase;font-weight:600;white-space:nowrap}
+.plist .prow{display:grid;grid-template-columns:56px 1fr;gap:16px;padding:15px 0;border-top:1px solid var(--line);align-items:baseline}
+.plist .prow:last-child{border-bottom:1px solid var(--line)}
+.pnum{font-family:var(--disp);font-size:clamp(18px,2.2vw,24px);color:var(--maroon)}
+.ptext{font-size:15px;color:var(--ink-soft)}
+.ptext b{color:var(--ink)}
+@media(max-width:820px){
+  .fbar{grid-template-columns:1fr;gap:6px;width:100% !important}
+  .fmetric{white-space:normal}
+}
 .decision{border:1px solid var(--line);border-radius:10px;padding:clamp(22px,3vw,34px);display:flex;flex-direction:column;gap:12px;background:var(--cream)}
 .decision .dk{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--maroon);font-weight:600}
 .decision h4{font-family:var(--disp);font-weight:400;font-size:clamp(19px,2.2vw,26px);text-transform:uppercase;line-height:1.1}
@@ -831,7 +848,40 @@ html.js .reveal.in{opacity:1;transform:none}
 
 <!-- ============ GROWTH DECISIONS ============ -->
 <section class="decisions wrap" id="thinking">
-  <div class="section-label">How I Think — Growth Decisions</div>
+  <div class="section-label">How I Think</div>
+  <h3 class="think-h reveal">One operator, the whole funnel<span style="color:var(--maroon)">.</span></h3>
+  <p class="think-sub reveal">Most marketers own a slice. Running two brands end to end means I work every stage — and know how each one feeds the next.</p>
+
+  <div class="sublabel reveal">The map — where my work sits</div>
+  <div class="funnel">
+    <div class="reveal"><div class="fbar" style="width:100%">
+      <span class="fname">Awareness</span>
+      <span class="fdesc">Organic UGC engines and earned media: million-view creators, Paris Hilton, NYFW × Miss Universe</span>
+      <span class="fmetric">1M+ views · $0 media</span>
+    </div></div>
+    <div class="reveal"><div class="fbar" style="width:91%">
+      <span class="fname">Consideration</span>
+      <span class="fdesc">Social proof at scale: creator reviews, the content wall, country-fit posts that answer local objections</span>
+      <span class="fmetric">200+ localized copies</span>
+    </div></div>
+    <div class="reveal"><div class="fbar" style="width:82%">
+      <span class="fname">Conversion</span>
+      <span class="fdesc">Where attention becomes revenue: affiliate engine, marketplace ranking, retail promo mechanics</span>
+      <span class="fmetric">300–400 affiliates/mo · Top #5</span>
+    </div></div>
+    <div class="reveal"><div class="fbar" style="width:73%">
+      <span class="fname">Retention</span>
+      <span class="fdesc">Built into the product, not bolted on: refill economics, community rituals that bring customers back</span>
+      <span class="fmetric">1 refill = 2 jars</span>
+    </div></div>
+    <div class="reveal"><div class="fbar" style="width:64%">
+      <span class="fname">Advocacy</span>
+      <span class="fdesc">Customers as the channel: double-sided referral, superfan platforms, co-brand communities</span>
+      <span class="fmetric">5€/5€ loop · ×1.5 revenue</span>
+    </div></div>
+  </div>
+
+  <div class="sublabel reveal">The calls — decisions I'd make again</div>
   <div class="grid-3">
     <div class="decision reveal">
       <span class="dk">Kill what doesn't compound</span>
@@ -851,6 +901,15 @@ html.js .reveal.in{opacity:1;transform:none}
       <p>Amamy's "Send in Pairs" gives 5€ to the referrer <i>and</i> the referee. Single-sided referrals stall; symmetric rewards made sharing feel like gifting — one engine behind a 60K-like fanpage and a ×1.5 revenue year.</p>
       <span class="lesson">Make the user the channel.</span>
     </div>
+  </div>
+
+  <div class="sublabel reveal">The rules — operating principles</div>
+  <div class="plist reveal">
+    <div class="prow"><span class="pnum">01</span><span class="ptext"><b>Attention is earned in the first second.</b> The hook is the strategy — everything after it is production.</span></div>
+    <div class="prow"><span class="pnum">02</span><span class="ptext"><b>Organic proves it, paid scales it.</b> If a concept can't spread without budget, budget won't save it.</span></div>
+    <div class="prow"><span class="pnum">03</span><span class="ptext"><b>The product is the first ad.</b> A refill system retains better than any retargeting campaign.</span></div>
+    <div class="prow"><span class="pnum">04</span><span class="ptext"><b>Creators are channels with economics.</b> I negotiate payouts and commissions like a CFO, not a fan.</span></div>
+    <div class="prow"><span class="pnum">05</span><span class="ptext"><b>Every campaign ends in a number.</b> If nothing moved, it was art — not marketing.</span></div>
   </div>
 </section>
 
