@@ -55,6 +55,8 @@ h1{font-family:var(--disp);font-size:clamp(64px,12.5vw,176px);line-height:.92;te
 .hero-sub p{font-size:clamp(17px,1.8vw,21px);max-width:38ch;color:var(--ink-soft)}
 .hero-sub p b{color:var(--ink);font-weight:600}
 .hero-tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+.bio-wrap{display:flex;gap:clamp(16px,2vw,26px);align-items:flex-start}
+.bio-photo{width:clamp(96px,10vw,136px);aspect-ratio:1/1;border-radius:14px;object-fit:cover;object-position:center 20%;flex-shrink:0}
 .cap-list{border-top:1px solid var(--line)}
 .cap-row{display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--line)}
 .cap-row b{font-family:var(--disp);font-weight:400;font-size:clamp(15px,1.7vw,19px);text-transform:uppercase;letter-spacing:.03em;white-space:nowrap}
@@ -323,7 +325,10 @@ html.js .reveal.in{opacity:1;transform:none}
       <span class="script">call me Arie</span>
     </div>
     <div class="hero-sub">
-      <p><b>2+ years turning brands into growth stories</b> — branding, growth marketing and creator partnerships for beauty brands from Vietnam to the US. Strong on consumer insight, ruthless with data, endlessly curious about why people buy.</p>
+      <div class="bio-wrap">
+        <img class="bio-photo" src="assets/profile.jpg" alt="Tao Giang My (Arie)" onerror="this.style.display='none'">
+        <p><b>2+ years turning brands into growth stories</b> — branding, growth marketing and creator partnerships for brands from Vietnam to Global. Strong on consumer insight, driven by data, endlessly curious about why people buy.</p>
+      </div>
       <div class="cap-list">
         <div class="cap-row"><b>Growth Marketing</b><span>Organic Engines · Referral Loops · Channel Mix</span></div>
         <div class="cap-row"><b>Creator &amp; Affiliate</b><span>UGC Engines · Payout Models · Platforms</span></div>
