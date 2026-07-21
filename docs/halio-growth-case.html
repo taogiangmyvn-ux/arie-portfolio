@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Halio Sonic — U.S. Market Growth Case · Tao Giang My (Arie)</title>
+<meta name="description" content="Case study: how Halio Sonic expanded beyond a saturated Vietnamese-diaspora creator pool into a scalable U.S. growth engine — through U.S.-native creative, integrated media, offer architecture and lifecycle marketing.">
+<meta property="og:title" content="From a Niche Audience to a Scalable U.S. Growth Engine — Halio Sonic">
+<meta property="og:description" content="A brand & growth case study by Tao Giang My (Arie): audience, creative, offer and lifecycle, connected into one revenue system.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F5F2EC; --ink:#17223B; --coral:#E77868; --peach:#F3C7B9;
+  --grey:#7C8494; --charcoal:#20242D; --mist:#E9EDF2;
+  --line:rgba(23,34,59,.14); --line-soft:rgba(23,34,59,.08);
+  --serif:'DM Serif Display',Georgia,serif; --sans:'Manrope',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(22px,5vw,64px)}
+.narrow{max-width:760px}
+
+/* ---------- progress + nav ---------- */
+#progress{position:fixed;top:0;left:0;height:3px;background:var(--coral);width:0;z-index:80}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:var(--paper);padding:10px 16px;z-index:100;border-radius:0 0 8px 0}
+.skip:focus{left:0}
+nav{position:fixed;top:0;left:0;right:0;z-index:70;background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line-soft)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-family:var(--serif);font-size:20px;letter-spacing:.01em}
+.brand em{font-style:normal;color:var(--coral)}
+.nav-right{display:flex;gap:22px;align-items:center;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+.nav-right a{color:var(--grey);text-decoration:none;transition:color .2s}
+.nav-right a:hover,.nav-right a.active{color:var(--ink)}
+.nav-cta{border:1.5px solid var(--ink);border-radius:99px;padding:8px 16px;color:var(--ink) !important}
+.nav-cta:hover{background:var(--ink);color:var(--paper) !important}
+@media(max-width:900px){.nav-right a:not(.nav-cta){display:none}}
+
+/* ---------- section scaffold ---------- */
+section{padding:clamp(64px,9vw,120px) 0;position:relative}
+.slabel{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--coral);display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.slabel::before{content:"";width:30px;height:1.5px;background:var(--coral)}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(38px,6.4vw,82px);line-height:1.02;letter-spacing:-.01em}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,4.4vw,52px);line-height:1.08;letter-spacing:-.005em;max-width:20ch}
+h3{font-family:var(--sans);font-weight:800;font-size:clamp(17px,1.9vw,21px);letter-spacing:.01em}
+.lede{font-size:clamp(17px,1.7vw,20px);color:var(--charcoal);max-width:60ch}
+.muted{color:var(--grey)}
+.thin{height:1px;background:var(--line);border:none;margin:0}
+.kmono{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--grey)}
+
+/* ---------- hero ---------- */
+.hero{padding-top:130px}
+.hero .slabel{color:var(--grey)}
+.hero .slabel::before{background:var(--grey)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,5vw,64px);align-items:center;margin-top:8px}
+.hero h1{margin-bottom:22px}
+.hero .sub{font-size:clamp(16px,1.7vw,19px);color:var(--charcoal);max-width:52ch;margin-bottom:22px}
+.hero .statement{font-size:clamp(15px,1.5vw,17px);color:var(--grey);max-width:56ch;border-left:2px solid var(--coral);padding-left:18px}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px);margin:clamp(34px,4vw,52px) 0 16px;border-top:1px solid var(--line);padding-top:clamp(24px,3vw,34px)}
+.metric .num{font-family:var(--serif);font-size:clamp(34px,4.4vw,58px);line-height:1;color:var(--coral)}
+.metric .cap{font-size:13.5px;color:var(--charcoal);margin-top:8px;max-width:24ch}
+.disc{font-size:12.5px;color:var(--grey);max-width:70ch;margin-top:6px;font-style:italic}
+
+/* expansion rings */
+.rings{position:relative;aspect-ratio:1/1;max-width:440px;justify-self:center;width:100%}
+.rings svg{width:100%;height:100%;overflow:visible}
+.ring{fill:none;stroke:var(--coral);stroke-width:1.2;opacity:.5;transform-origin:center;transform-box:fill-box}
+.dotpk{fill:var(--peach)}
+.dotco{fill:var(--coral)}
+.dotink{fill:var(--ink)}
+.rlabel{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;fill:var(--grey)}
+@media (prefers-reduced-motion: no-preference){
+  .ring{animation:breathe 6s ease-in-out infinite}
+  .ring.r2{animation-delay:.6s}.ring.r3{animation-delay:1.2s}.ring.r4{animation-delay:1.8s}
+  @keyframes breathe{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.05);opacity:.8}}
+}
+
+/* ---------- generic blocks ---------- */
+.cols-3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.2vw,26px)}
+.cols-2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px)}
+.pblock{border-top:2px solid var(--ink);padding-top:16px}
+.pblock .n{font-family:var(--serif);font-size:34px;color:var(--peach);line-height:1}
+.pblock h3{margin:8px 0 8px}
+.pblock p{font-size:15px;color:var(--charcoal)}
+.bigq{font-family:var(--serif);font-size:clamp(24px,3.4vw,40px);line-height:1.12;max-width:24ch;color:var(--ink);margin-top:clamp(30px,4vw,48px)}
+.bigq .coral{color:var(--coral)}
+
+/* plateau curve */
+.figure{background:#fff;border:1px solid var(--line);border-radius:16px;padding:clamp(18px,2.4vw,30px);margin-top:clamp(24px,3vw,40px)}
+.figure svg{width:100%;height:auto;display:block}
+.draw{stroke-dasharray:1200;stroke-dashoffset:1200;transition:stroke-dashoffset 1.8s ease .1s}
+.in .draw{stroke-dashoffset:0}
+
+/* diagnosis stack */
+.layers{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+.layer{background:#fff;border:1px solid var(--line);border-radius:14px;padding:clamp(16px,2.2vw,26px);display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:center;position:relative}
+.layer .tag{font-family:var(--serif);font-size:clamp(20px,2.4vw,28px);color:var(--ink)}
+.layer .tag small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--coral);margin-bottom:6px}
+.layer p{font-size:15px;color:var(--charcoal);max-width:60ch}
+.layer::after{content:"";position:absolute;left:50%;bottom:-12px;width:1.5px;height:12px;background:var(--line)}
+.layer:last-child::after{display:none}
+.layer-final{background:var(--ink);color:var(--paper);border:none;text-align:center;display:block;padding:clamp(18px,2.4vw,28px)}
+.layer-final .tag{color:var(--peach);font-size:clamp(22px,3vw,34px)}
+@media(max-width:760px){.layer{grid-template-columns:1fr;gap:8px}}
+.keystmt{font-family:var(--serif);font-size:clamp(22px,3vw,34px);line-height:1.16;max-width:26ch;margin-top:clamp(28px,4vw,44px);color:var(--ink)}
+
+/* strategy levers */
+.levers{display:flex;flex-direction:column;gap:0;margin-top:8px;position:relative}
+.lever{display:grid;grid-template-columns:88px 1fr;gap:clamp(18px,3vw,40px);padding:clamp(28px,4vw,48px) 0;border-top:1px solid var(--line)}
+.lever:last-child{border-bottom:1px solid var(--line)}
+.lever .lv-n{font-family:var(--serif);font-size:clamp(40px,6vw,72px);color:var(--peach);line-height:.9}
+.lever h3{font-family:var(--serif);font-weight:400;font-size:clamp(22px,3vw,34px);margin-bottom:18px;letter-spacing:-.005em}
+.lv-meta{display:grid;grid-template-columns:1fr 1fr;gap:18px 34px;margin-bottom:16px}
+.lv-meta .k{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--coral);margin-bottom:5px}
+.lv-meta p{font-size:14.5px;color:var(--charcoal)}
+.lv-meta ul{list-style:none;margin:0}
+.lv-meta li{font-size:14px;color:var(--charcoal);padding:3px 0 3px 15px;position:relative}
+.lv-meta li::before{content:"";position:absolute;left:0;top:11px;width:7px;height:1.5px;background:var(--coral)}
+.shift{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:var(--mist);border-radius:12px;padding:14px 18px;margin-bottom:14px}
+.shift .from,.shift .to{font-size:14px}
+.shift .from{color:var(--grey)}
+.shift .to{color:var(--ink);font-weight:700}
+.shift .arr{color:var(--coral);font-weight:800}
+.jrole{font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--grey)}
+.jrole b{color:var(--coral)}
+.bundle-note{background:var(--ink);color:var(--paper);border-radius:12px;padding:16px 20px;margin:14px 0;display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+.bundle-note .price{font-family:var(--serif);font-size:26px;color:var(--peach)}
+@media(max-width:760px){.lever{grid-template-columns:1fr;gap:10px}.lv-meta{grid-template-columns:1fr}.lever .lv-n{font-size:44px}}
+
+/* media ecosystem */
+.eco{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:center;margin-top:8px}
+.eco-viz{position:relative;aspect-ratio:1/1;max-width:460px;width:100%;justify-self:center}
+.eco-viz svg{width:100%;height:100%}
+.ecirc{fill-opacity:.16;stroke-width:1.5}
+.ecirc.earned{fill:var(--coral);stroke:var(--coral)}
+.ecirc.paid{fill:var(--ink);stroke:var(--ink)}
+.ecirc.owned{fill:var(--grey);stroke:var(--grey)}
+.ecen{font-family:var(--sans);font-weight:800;font-size:12px;fill:var(--ink);text-anchor:middle}
+.elab{font-weight:800;font-size:13px;text-anchor:middle}
+.eco-list .e-item{border-top:1px solid var(--line);padding:16px 0}
+.eco-list .e-item h3{margin-bottom:6px}
+.eco-list .e-item .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:8px;vertical-align:middle}
+.eco-list p{font-size:14px;color:var(--charcoal)}
+.eco-list .role{font-size:12px;color:var(--grey);margin-top:4px;font-style:italic}
+
+/* journey */
+.journey{display:flex;gap:14px;overflow-x:auto;padding:8px 2px 20px;scroll-snap-type:x mandatory;position:relative}
+.jstage{flex:0 0 clamp(230px,25vw,270px);scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;position:relative}
+.jstage[aria-expanded]{cursor:pointer}
+.jstage .jhead{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:12px}
+.jstage .jn{font-family:var(--serif);font-size:26px;color:var(--peach);line-height:1}
+.jstage .jt{font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.jstage .jq{font-family:var(--serif);font-size:18px;line-height:1.25;color:var(--ink);margin-bottom:12px}
+.jbody dt{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--coral);margin-top:12px}
+.jbody dd{font-size:13px;color:var(--charcoal);margin-top:3px}
+.jbody dd.fric{color:#B4441F}
+.jobj{font-size:13px;color:var(--ink);font-weight:600;margin-top:10px;padding-top:10px;border-top:1px solid var(--line-soft)}
+.jstage .toggle{position:absolute;top:16px;right:16px;width:22px;height:22px;border-radius:50%;border:1px solid var(--line);background:var(--paper);display:none;align-items:center;justify-content:center;font-size:13px;color:var(--grey)}
+.jhint{font-size:12.5px;color:var(--grey);margin-top:6px}
+.jkey{font-family:var(--serif);font-size:clamp(20px,2.6vw,30px);line-height:1.2;max-width:34ch;margin-top:clamp(26px,3.5vw,40px)}
+.jflow-note{display:flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--grey);margin-bottom:14px}
+.jflow-note .ln{flex:1;height:1px;background:var(--line)}
+
+/* lifecycle sequence */
+.seq{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.seq .node{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 16px;flex:1 1 auto;min-width:150px;position:relative}
+.seq .node .s{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--coral)}
+.seq .node .d{font-size:13px;color:var(--charcoal);margin-top:5px}
+.seq .node.buy{background:var(--ink);color:var(--paper);border:none}
+.seq .node.buy .d{color:rgba(245,242,236,.8)}
+.hypos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:clamp(26px,3.4vw,40px)}
+.hypo{background:var(--mist);border-radius:14px;padding:20px}
+.hypo .hh{font-family:var(--serif);font-size:20px;color:var(--coral);margin-bottom:8px}
+.hypo p{font-size:14px;color:var(--charcoal)}
+.hypo .badge{display:inline-block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--grey);border:1px solid var(--line);border-radius:99px;padding:3px 9px;margin-top:12px}
+
+/* before/after */
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.6vw,30px);margin-top:8px}
+.ba-col{border-radius:16px;padding:clamp(20px,2.8vw,30px)}
+.ba-col.before{background:#fff;border:1px solid var(--line)}
+.ba-col.after{background:var(--ink);color:var(--paper)}
+.ba-col .bh{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:16px}
+.ba-col.before .bh{color:var(--grey)}
+.ba-col.after .bh{color:var(--peach)}
+.ba-col ul{list-style:none}
+.ba-col li{font-size:14.5px;padding:9px 0 9px 20px;position:relative;border-top:1px solid var(--line-soft)}
+.ba-col li:first-child{border-top:none}
+.ba-col.before li::before{content:"—";position:absolute;left:0;color:var(--grey)}
+.ba-col.after li{border-top-color:rgba(245,242,236,.12)}
+.ba-col.after li::before{content:"→";position:absolute;left:0;color:var(--coral)}
+.ba-stmt{font-family:var(--serif);font-size:clamp(24px,3.6vw,44px);line-height:1.1;max-width:22ch;margin:clamp(30px,4vw,50px) auto 0;text-align:center}
+.ba-stmt .coral{color:var(--coral)}
+
+/* outcomes */
+.oc-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px);margin-top:8px}
+.oc-metrics .metric{background:#fff;border:1px solid var(--line);border-radius:16px;padding:clamp(22px,2.8vw,32px)}
+.indic{list-style:none;margin-top:clamp(24px,3vw,36px);max-width:70ch}
+.indic li{font-size:15px;color:var(--charcoal);padding:10px 0 10px 26px;position:relative;border-top:1px solid var(--line-soft)}
+.indic li::before{content:"";position:absolute;left:0;top:18px;width:12px;height:12px;border-radius:50%;border:2px solid var(--coral)}
+
+/* learnings */
+.learn{border-top:1px solid var(--line);padding:clamp(28px,4vw,44px) 0}
+.learn:last-of-type{border-bottom:1px solid var(--line)}
+.learn .ln{font-family:var(--serif);color:var(--peach);font-size:28px;line-height:1}
+.learn h2{font-size:clamp(22px,2.8vw,34px);margin:10px 0 12px;max-width:26ch}
+.learn p{font-size:15.5px;color:var(--charcoal);max-width:64ch}
+.finalstmt{font-family:var(--serif);font-size:clamp(24px,3.4vw,42px);line-height:1.14;max-width:26ch;margin-top:clamp(34px,4vw,52px)}
+
+/* framework loop */
+.loop{display:grid;grid-template-columns:repeat(7,1fr);gap:12px;margin-top:8px;counter-reset:lp}
+.loop .lstep{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 14px}
+.loop .lstep .ln{font-family:var(--serif);font-size:22px;color:var(--coral);line-height:1}
+.loop .lstep h3{font-size:13px;letter-spacing:.03em;text-transform:uppercase;margin:8px 0 6px}
+.loop .lstep p{font-size:12.5px;color:var(--charcoal)}
+.loop-sum{background:var(--ink);color:var(--paper);border-radius:16px;padding:clamp(22px,3vw,36px);margin-top:clamp(24px,3vw,36px);text-align:center;font-family:var(--serif);font-size:clamp(18px,2.2vw,26px);line-height:1.5}
+.loop-sum .coral{color:var(--peach)}
+@media(max-width:1000px){.loop{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.loop{grid-template-columns:1fr}}
+
+/* footer */
+footer{background:var(--charcoal);color:var(--paper);padding:clamp(60px,8vw,110px) 0 40px}
+footer h2{color:var(--paper);max-width:24ch;margin-bottom:20px}
+footer .ft-lede{color:rgba(245,242,236,.75);max-width:60ch;font-size:16px}
+.targets{display:flex;flex-wrap:wrap;gap:8px;margin:clamp(24px,3vw,36px) 0}
+.targets span{font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;border:1px solid rgba(245,242,236,.25);border-radius:99px;padding:7px 14px;color:rgba(245,242,236,.85)}
+.contact{display:flex;flex-wrap:wrap;gap:26px;align-items:baseline;margin-top:10px}
+.contact a{color:var(--peach);text-decoration:none;font-weight:600}
+.contact .who{font-family:var(--serif);font-size:24px;color:var(--paper)}
+.ft-final{font-family:var(--serif);font-size:clamp(18px,2.2vw,26px);color:rgba(245,242,236,.9);margin-top:clamp(34px,4vw,52px);border-top:1px solid rgba(245,242,236,.15);padding-top:26px}
+.ft-cross{margin-top:20px;font-size:13px;color:rgba(245,242,236,.6)}
+.ft-cross a{color:var(--peach)}
+
+/* image placeholder figures */
+.shot{position:relative;border-radius:14px;overflow:hidden;background:var(--mist);border:1px solid var(--line);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.shot .ph{padding:18px;text-align:center;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--grey);line-height:1.5}
+.shot .ph::before{content:"◇";display:block;font-size:20px;color:var(--peach);margin-bottom:8px}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.6,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  .reveal{opacity:1 !important;transform:none !important;transition:none !important}
+  .draw{stroke-dashoffset:0 !important}
+  .ring{animation:none !important}
+  html{scroll-behavior:auto}
+}
+:focus-visible{outline:2.5px solid var(--coral);outline-offset:3px;border-radius:3px}
+
+@media(max-width:860px){
+  .hero-grid,.cols-3,.cols-2,.eco,.ba,.hypos,.oc-metrics{grid-template-columns:1fr}
+  .metrics{grid-template-columns:1fr 1fr}
+  .rings{max-width:320px;margin-top:20px}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<a href="#context" class="skip">Skip to content</a>
+<nav aria-label="Case navigation">
+  <div class="wrap nav-in">
+    <a href="#top" class="brand" style="text-decoration:none">Halio<em>.</em> Growth Case</a>
+    <div class="nav-right">
+      <a href="#context">Context</a>
+      <a href="#strategy">Strategy</a>
+      <a href="#journey">Journey</a>
+      <a href="#outcomes">Outcomes</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="slabel reveal">Halio Sonic · U.S. Market Growth Case</div>
+    <div class="hero-grid">
+      <div>
+        <h1 class="reveal">From a Niche Audience to a Scalable U.S. Growth Engine</h1>
+        <p class="sub reveal">How Halio expanded beyond a saturated Vietnamese-diaspora creator pool through U.S.-native creative, integrated media, offer architecture, and lifecycle marketing.</p>
+        <p class="statement reveal">Halio's next stage of growth was not about reaching more people from the same community. It was about making the brand relevant to a broader U.S. market — and building a system that could turn first-time attention into repeat customer value.</p>
+      </div>
+      <div class="rings reveal" aria-hidden="true">
+        <svg viewBox="0 0 400 400" role="img" aria-label="Abstract expansion from a small niche audience to a broader U.S. market connected through media and lifecycle">
+          <circle class="ring r4" cx="200" cy="200" r="185"/>
+          <circle class="ring r3" cx="200" cy="200" r="140"/>
+          <circle class="ring r2" cx="200" cy="200" r="92"/>
+          <circle class="ring r1" cx="200" cy="200" r="46" style="opacity:.85"/>
+          <circle class="dotco" cx="200" cy="200" r="7"/>
+          <g>
+            <circle class="dotpk" cx="200" cy="108" r="4"/><circle class="dotpk" cx="292" cy="200" r="4"/>
+            <circle class="dotpk" cx="200" cy="292" r="4"/><circle class="dotpk" cx="108" cy="200" r="4"/>
+            <circle class="dotink" cx="200" cy="60" r="3.5"/><circle class="dotink" cx="340" cy="200" r="3.5"/>
+            <circle class="dotink" cx="200" cy="340" r="3.5"/><circle class="dotink" cx="60" cy="200" r="3.5"/>
+            <circle class="dotink" cx="299" cy="101" r="3"/><circle class="dotink" cx="299" cy="299" r="3"/>
+            <circle class="dotink" cx="101" cy="299" r="3"/><circle class="dotink" cx="101" cy="101" r="3"/>
+          </g>
+          <line x1="200" y1="200" x2="200" y2="60" stroke="var(--coral)" stroke-width="1" opacity=".3"/>
+          <line x1="200" y1="200" x2="340" y2="200" stroke="var(--coral)" stroke-width="1" opacity=".3"/>
+          <line x1="200" y1="200" x2="299" y2="299" stroke="var(--coral)" stroke-width="1" opacity=".3"/>
+          <text class="rlabel" x="200" y="200" dy="-56" text-anchor="middle">Niche</text>
+          <text class="rlabel" x="200" y="200" dy="118" text-anchor="middle">Broader U.S.</text>
+        </svg>
+      </div>
+    </div>
+    <div class="metrics">
+      <div class="metric reveal"><div class="num" data-count="2" data-suffix="×">2×</div><div class="cap">YoY revenue growth during the November–December campaign period</div></div>
+      <div class="metric reveal"><div class="num" data-count="4" data-prefix="3–" data-suffix="×">3–4×</div><div class="cap">Paid-media ROAS</div></div>
+      <div class="metric reveal"><div class="num" data-count="1" data-suffix="M+">1M+</div><div class="cap">Views on top organic creator assets</div></div>
+    </div>
+    <p class="disc reveal">Results reflect collaborative team performance. My contribution focused on creator growth, content direction, offer communication, campaign execution, lifecycle marketing, and cross-functional operations.</p>
+  </div>
+</header>
+
+<!-- ===== 01 CONTEXT ===== -->
+<section id="context">
+  <div class="wrap">
+    <div class="slabel reveal">01 · Context</div>
+    <h2 class="reveal">The original growth model was running out of room</h2>
+    <div class="cols-2" style="margin-top:26px;align-items:start">
+      <div class="reveal">
+        <p class="lede" style="margin-bottom:16px">Halio's early U.S. traction relied heavily on Vietnamese-American creators, diaspora communities, familiar cultural networks, and creator-led social commerce.</p>
+        <p class="muted" style="margin-bottom:16px">This was an effective starting point. But the same audience and creator pool could not support the next stage of growth indefinitely. As more suitable creators were contacted or activated, the available pool became smaller — and repeated content patterns made it harder to generate fresh reach.</p>
+        <p class="muted">Relying heavily on first-time acquisition would not create sustainable growth unless customers also adopted the products, built routines, returned for complementary products, and stayed engaged with the brand.</p>
+      </div>
+      <div class="figure reveal">
+        <div class="kmono" style="margin-bottom:10px">The growth plateau</div>
+        <svg viewBox="0 0 520 240" role="img" aria-label="An illustrated curve rising from early traction then flattening into a growth ceiling as the creator pool saturates">
+          <line x1="30" y1="210" x2="500" y2="210" stroke="var(--line)"/>
+          <line x1="30" y1="210" x2="30" y2="20" stroke="var(--line)"/>
+          <path class="draw" d="M30 200 C 110 150, 150 70, 250 55 C 330 44, 380 60, 500 58" fill="none" stroke="var(--coral)" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="250" y1="55" x2="500" y2="58" stroke="var(--ink)" stroke-width="1" stroke-dasharray="4 4" opacity=".4"/>
+          <circle cx="250" cy="55" r="5" fill="var(--ink)"/>
+          <text x="45" y="185" font-size="11" font-weight="700" fill="var(--grey)">Early traction</text>
+          <text x="360" y="46" font-size="11" font-weight="700" fill="var(--ink)">Growth ceiling</text>
+          <text x="150" y="120" font-size="10.5" fill="var(--grey)">creator-pool saturation</text>
+        </svg>
+      </div>
+    </div>
+    <div class="cols-3" style="margin-top:clamp(30px,4vw,48px)">
+      <div class="pblock reveal"><div class="n">01</div><h3>Audience ceiling</h3><p>The Vietnamese-diaspora creator pool was finite and increasingly saturated.</p></div>
+      <div class="pblock reveal"><div class="n">02</div><h3>Creative ceiling</h3><p>The existing content system needed more native U.S. language, settings, routines, and consumer use cases.</p></div>
+      <div class="pblock reveal"><div class="n">03</div><h3>Commercial ceiling</h3><p>Acquisition could generate first purchases, but sustainable revenue also required stronger basket size, product adoption, and long-term engagement.</p></div>
+    </div>
+    <p class="bigq reveal">How could Halio expand beyond its initial niche <span class="coral">without losing credibility</span> or becoming dependent on deeper discounts?</p>
+  </div>
+</section>
+
+<!-- ===== 02 DIAGNOSIS ===== -->
+<section id="diagnosis" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="slabel reveal">02 · Diagnosis</div>
+    <h2 class="reveal">The problem was not one channel. It was the whole growth system.</h2>
+    <p class="lede reveal muted" style="margin:20px 0 clamp(30px,4vw,44px)">The next stage of growth required more than adding creators. The audience, creative system, commercial offer, media ecosystem, and customer lifecycle all needed to evolve together.</p>
+    <div class="layers">
+      <div class="layer reveal"><div class="tag"><small>Layer 1</small>Audience</div><p>Move beyond a primarily diaspora-led audience toward broader U.S. beauty, wellness, lifestyle, and at-home skincare consumers.</p></div>
+      <div class="layer reveal"><div class="tag"><small>Layer 2</small>Creative</div><p>Create U.S.-native content that felt natural in American feeds and translated product technology into relatable routines and use cases.</p></div>
+      <div class="layer reveal"><div class="tag"><small>Layer 3</small>Commercial Offer</div><p>Move from isolated product selling toward clearer, higher-value routines and bundles that could improve basket size.</p></div>
+      <div class="layer reveal"><div class="tag"><small>Layer 4</small>Lifecycle</div><p>Support first-time buyers after purchase through education, usage guidance, complementary-product introduction, and retention communication.</p></div>
+      <div class="layer layer-final reveal"><div class="tag">Scalable Revenue Growth</div></div>
+    </div>
+    <p class="keystmt reveal">"We did not simply need more creators. We needed a broader audience, a stronger offer, and a connected customer journey."</p>
+  </div>
+</section>
+
+<!-- ===== 03 STRATEGY ===== -->
+<section id="strategy">
+  <div class="wrap">
+    <div class="slabel reveal">03 · Strategy</div>
+    <h2 class="reveal">Four growth levers, one connected system</h2>
+    <div class="levers" style="margin-top:clamp(24px,3vw,40px)">
+
+      <div class="lever reveal">
+        <div class="lv-n">01</div>
+        <div>
+          <h3>Expand the addressable audience</h3>
+          <div class="shift"><span class="from">"Find more creators similar to previous winners"</span><span class="arr">→</span><span class="to">"Find new audiences who share the same underlying consumer need"</span></div>
+          <div class="lv-meta">
+            <div><div class="k">Challenge</div><p>The original creator pool was becoming saturated.</p></div>
+            <div><div class="k">Actions</div><ul>
+              <li>Broaden scouting to mainstream U.S. beauty, wellness, fitness, lifestyle and pro-skincare audiences</li>
+              <li>Recruit native-English creators who speak naturally to U.S. consumers</li>
+              <li>Explore archetypes beyond the diaspora network</li>
+              <li>Select creators by consumer need and use case, not demographic similarity</li>
+              <li>Build a scalable creator acquisition &amp; activation workflow</li>
+            </ul></div>
+          </div>
+          <div class="jrole">Journey role · <b>Awareness &amp; Consideration</b></div>
+        </div>
+      </div>
+
+      <div class="lever reveal">
+        <div class="lv-n">02</div>
+        <div>
+          <h3>Build U.S.-native creative assets</h3>
+          <div class="shift"><span class="from">Translated product communication</span><span class="arr">→</span><span class="to">Culturally native consumer communication</span></div>
+          <div class="lv-meta">
+            <div><div class="k">Challenge</div><p>Translated or generic product-review content would not earn relevance with broader American consumers.</p>
+              <div class="k" style="margin-top:14px">Message territories</div><ul>
+                <li>At-home consistency between professional treatments</li>
+                <li>Maintaining results without repeated clinic visits</li>
+                <li>Beauty tech inside a weekly self-care routine</li>
+                <li>Recovery &amp; wellness use cases</li>
+                <li>Premium device value vs. repeated pro services</li>
+              </ul>
+            </div>
+            <div><div class="k">Actions</div><ul>
+              <li>Adapt hooks, scripts and briefs to natural U.S. language</li>
+              <li>Use familiar locations, routines, pain points and behaviors</li>
+              <li>Develop specific use cases, not generic reviews</li>
+              <li>Build assets that work organically <em>and</em> through paid amplification</li>
+              <li>Explain the technology through everyday benefits</li>
+            </ul></div>
+          </div>
+          <div class="jrole">Journey role · <b>Awareness, Interest &amp; Consideration</b></div>
+        </div>
+      </div>
+
+      <div class="lever reveal">
+        <div class="lv-n">03</div>
+        <div>
+          <h3>Increase basket size through offer architecture</h3>
+          <div class="shift"><span class="from">Selling individual devices</span><span class="arr">→</span><span class="to">Selling a complete beauty-technology routine</span></div>
+          <div class="lv-meta">
+            <div><div class="k">Challenge</div><p>A single-product approach limited order value and did not always make the complete routine clear.</p></div>
+            <div><div class="k">Actions</div><ul>
+              <li>Pair complementary products into understandable routines</li>
+              <li>Position bundles as more complete solutions, not simple discounts</li>
+              <li>Communicate why products work better together</li>
+              <li>Use seasonal, gifting and campaign contexts</li>
+              <li>Align creator, product-page, paid and email messaging on one offer</li>
+            </ul></div>
+          </div>
+          <div class="bundle-note"><span class="price">Lift &amp; Light Duo — $499</span><span style="font-size:13.5px;color:rgba(245,242,236,.8)">One bundle, three commercial jobs: make the routine easy to understand · raise average order value · create more product touchpoints for future engagement.</span></div>
+          <div class="jrole">Journey role · <b>Consideration &amp; Purchase</b></div>
+        </div>
+      </div>
+
+      <div class="lever reveal">
+        <div class="lv-n">04</div>
+        <div>
+          <h3>Turn first purchase into long-term value</h3>
+          <div class="shift"><span class="from">First-order revenue</span><span class="arr">→</span><span class="to">Customer lifetime value</span></div>
+          <div class="lv-meta">
+            <div><div class="k">Challenge</div><p>A high volume of first-time buyers would not automatically create long-term growth.</p></div>
+            <div><div class="k">Actions</div><ul>
+              <li>Build welcome and product-education journeys</li>
+              <li>Develop browse, cart and checkout recovery</li>
+              <li>Use post-purchase email for usage, frequency and expectations</li>
+              <li>Reinforce routine formation</li>
+              <li>Introduce complementary products and future launches</li>
+              <li>Use retention, replenishment, cross-sell and win-back</li>
+            </ul></div>
+          </div>
+          <div class="figure" style="margin-top:8px;padding:14px 18px">
+            <div style="font-size:13px;color:var(--charcoal);font-weight:600;line-height:2">Device purchase <span style="color:var(--coral)">→</span> product education <span style="color:var(--coral)">→</span> consistent usage <span style="color:var(--coral)">→</span> routine formation <span style="color:var(--coral)">→</span> gel-mask introduction <span style="color:var(--coral)">→</span> complementary-product adoption <span style="color:var(--coral)">→</span> repeat engagement</div>
+          </div>
+          <div class="jrole">Journey role · <b>Adoption, Retention &amp; Advocacy</b></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== 04 MEDIA SYSTEM ===== -->
+<section id="media" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="slabel reveal">04 · Media System</div>
+    <h2 class="reveal">Earned media built credibility. Paid media scaled demand. Owned media built the relationship.</h2>
+    <div class="eco" style="margin-top:clamp(26px,3.4vw,44px)">
+      <div class="eco-viz reveal" aria-hidden="true">
+        <svg viewBox="0 0 400 400" role="img" aria-label="Three overlapping circles — earned, paid and owned media — meeting at connected customer growth">
+          <circle class="ecirc earned" cx="200" cy="150" r="115"/>
+          <circle class="ecirc paid" cx="145" cy="250" r="115"/>
+          <circle class="ecirc owned" cx="255" cy="250" r="115"/>
+          <text class="elab" x="200" y="95" fill="var(--coral)">EARNED</text>
+          <text class="elab" x="105" y="285" fill="var(--ink)">PAID</text>
+          <text class="elab" x="295" y="285" fill="var(--grey)">OWNED</text>
+          <text class="ecen" x="200" y="210">CONNECTED</text>
+          <text class="ecen" x="200" y="226">CUSTOMER GROWTH</text>
+        </svg>
+      </div>
+      <div class="eco-list reveal">
+        <div class="e-item"><h3><span class="dot" style="background:var(--coral)"></span>Earned</h3><p>Organic creator content, PR moments, events, a New York Fashion Week-related activation, Miss Universe talent, and cultural relevance.</p><p class="role">Purpose — generate credibility, attention and social proof.</p></div>
+        <div class="e-item"><h3><span class="dot" style="background:var(--ink)"></span>Paid</h3><p>Creator-content amplification, Meta Collab Ads, whitelisting, retargeting, and conversion-focused scaling of winning creative.</p><p class="role">Purpose — expand reach and scale proven messages.</p></div>
+        <div class="e-item"><h3><span class="dot" style="background:var(--grey)"></span>Owned</h3><p>Brand social channels, website, product pages, email marketing, educational content, community, and launch &amp; retention communication.</p><p class="role">Purpose — control the narrative and hold the long-term relationship.</p></div>
+      </div>
+    </div>
+    <p class="keystmt reveal" style="max-width:38ch">No single media layer could solve the business challenge alone. Growth came from letting each layer play a different role across the customer journey.</p>
+  </div>
+</section>
+
+<!-- ===== 05 CUSTOMER JOURNEY ===== -->
+<section id="journey">
+  <div class="wrap">
+    <div class="slabel reveal">05 · Customer Journey</div>
+    <h2 class="reveal">From first attention to long-term customer value</h2>
+    <p class="jhint reveal">Tap a stage to expand its touchpoints and friction · scroll the path sideways →</p>
+  </div>
+  <div class="wrap">
+    <div class="journey reveal" id="journeyTrack" role="list">
+      <!-- stages injected/enhanced by JS; written fully for no-JS access -->
+      <article class="jstage" role="listitem"><button class="toggle" aria-hidden="true" tabindex="-1">–</button>
+        <div class="jhead"><span class="jt">Awareness</span><span class="jn">01</span></div>
+        <p class="jq">Why should I care?</p>
+        <div class="jbody"><dl>
+          <dt>Touchpoints</dt><dd>Native-English creators · PR · events · organic social · paid discovery</dd>
+          <dt>Friction</dt><dd class="fric">The brand may feel unfamiliar or irrelevant.</dd>
+        </dl></div>
+        <div class="jobj">Objective — build relevance with a broader U.S. audience.</div>
+      </article>
+      <article class="jstage" role="listitem"><button class="toggle" aria-hidden="true" tabindex="-1">–</button>
+        <div class="jhead"><span class="jt">Interest</span><span class="jn">02</span></div>
+        <p class="jq">Is this relevant to my lifestyle or skincare needs?</p>
+        <div class="jbody"><dl>
+          <dt>Touchpoints</dt><dd>U.S.-native hooks · problem-solution content · routine integrations · wellness &amp; beauty use cases</dd>
+          <dt>Friction</dt><dd class="fric">The product may appear technical or unnecessary.</dd>
+        </dl></div>
+        <div class="jobj">Objective — turn passive exposure into active curiosity.</div>
+      </article>
+      <article class="jstage" role="listitem"><button class="toggle" aria-hidden="true" tabindex="-1">–</button>
+        <div class="jhead"><span class="jt">Consideration</span><span class="jn">03</span></div>
+        <p class="jq">Can I trust this, and is it right for me?</p>
+        <div class="jbody"><dl>
+          <dt>Touchpoints</dt><dd>Creator reviews · product education · technology explainers · comparisons · social proof · email education</dd>
+          <dt>Friction</dt><dd class="fric">Price, credibility, product confusion or unclear differentiation.</dd>
+        </dl></div>
+        <div class="jobj">Objective — reduce uncertainty and clarify product fit.</div>
+      </article>
+      <article class="jstage" role="listitem"><button class="toggle" aria-hidden="true" tabindex="-1">–</button>
+        <div class="jhead"><span class="jt">Purchase</span><span class="jn">04</span></div>
+        <p class="jq">Is this worth purchasing now?</p>
+        <div class="jbody"><dl>
+          <dt>Touchpoints</dt><dd>Product pages · bundles · paid retargeting · cart recovery · seasonal offers · creator CTAs</dd>
+          <dt>Friction</dt><dd class="fric">Price, urgency, shipping or unclear complete-routine value.</dd>
+        </dl></div>
+        <div class="jobj">Objective — resolve objections and increase basket value.</div>
+      </article>
+      <article class="jstage" role="listitem"><button class="toggle" aria-hidden="true" tabindex="-1">–</button>
+        <div class="jhead"><span class="jt">Adoption</span><span class="jn">05</span></div>
+        <p class="jq">How do I use this correctly and experience value?</p>
+        <div class="jbody"><dl>
+          <dt>Touchpoints</dt><dd>Post-purchase email · usage education · frequency guidance · expectation setting · routine content</dd>
+          <dt>Friction</dt><dd class="fric">Inconsistent use, unrealistic expectations or confusion.</dd>
+        </dl></div>
+        <div class="jobj">Objective — help customers reach the intended product experience.</div>
+      </article>
+      <article class="jstage" role="listitem"><button class="toggle" aria-hidden="true" tabindex="-1">–</button>
+        <div class="jhead"><span class="jt">Repeat</span><span class="jn">06</span></div>
+        <p class="jq">What is my next reason to return?</p>
+        <div class="jbody"><dl>
+          <dt>Touchpoints</dt><dd>Complementary products · gel-mask introduction · new launches · cross-sell · replenishment · routine expansion · win-back</dd>
+          <dt>Friction</dt><dd class="fric">No ongoing routine, no relevant next product, or wrong-time communication.</dd>
+        </dl></div>
+        <div class="jobj">Objective — increase repeat purchase and customer lifetime value.</div>
+      </article>
+      <article class="jstage" role="listitem"><button class="toggle" aria-hidden="true" tabindex="-1">–</button>
+        <div class="jhead"><span class="jt">Advocacy</span><span class="jn">07</span></div>
+        <p class="jq">Is this worth recommending?</p>
+        <div class="jbody"><dl>
+          <dt>Touchpoints</dt><dd>Reviews · referrals · UGC · affiliate opportunities · community · loyal-customer content</dd>
+          <dt>Friction</dt><dd class="fric">No simple advocacy pathway.</dd>
+        </dl></div>
+        <div class="jobj">Objective — turn product success into organic growth and trust.</div>
+      </article>
+    </div>
+  </div>
+  <div class="wrap">
+    <p class="jkey reveal">The first purchase created revenue. <span style="color:var(--coral)">Product adoption, routine expansion and lifecycle communication</span> created the opportunity for long-term value.</p>
+  </div>
+</section>
+
+<!-- ===== 06 LIFECYCLE ===== -->
+<section id="lifecycle" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="slabel reveal">06 · Lifecycle</div>
+    <h2 class="reveal">Acquisition created the customer. Lifecycle marketing developed the relationship.</h2>
+    <div class="jflow-note reveal" style="margin-top:26px">Owned lifecycle sequence <span class="ln"></span></div>
+    <div class="seq reveal">
+      <div class="node"><div class="s">Welcome</div><div class="d">Establish Halio's value and guide product discovery.</div></div>
+      <div class="node"><div class="s">Product education</div><div class="d">Translate beauty technology into relevant customer benefits.</div></div>
+      <div class="node"><div class="s">Social proof</div><div class="d">Creator content, reviews and demos reduce risk.</div></div>
+      <div class="node buy"><div class="s" style="color:var(--peach)">Purchase</div><div class="d">Bundles, product pages and conversion messaging resolve objections.</div></div>
+      <div class="node"><div class="s">Usage guidance</div><div class="d">Frequency, expectations and correct use.</div></div>
+      <div class="node"><div class="s">Routine formation</div><div class="d">Encourage consistency to experience intended value.</div></div>
+      <div class="node"><div class="s">Complementary product</div><div class="d">Introduce gel masks as a natural routine extension.</div></div>
+      <div class="node"><div class="s">Repeat engagement</div><div class="d">Cross-sell, retention, launches, win-back and advocacy.</div></div>
+    </div>
+    <div class="hypos">
+      <div class="hypo reveal"><div class="hh">Hypothesis 1</div><p>Education before aggressive discounting can protect premium value while improving qualified conversion.</p><span class="badge">Strategic hypothesis</span></div>
+      <div class="hypo reveal"><div class="hh">Hypothesis 2</div><p>Post-purchase education can support product adoption and improve the likelihood of repeat behavior.</p><span class="badge">Strategic hypothesis</span></div>
+      <div class="hypo reveal"><div class="hh">Hypothesis 3</div><p>A complementary-product launch is more relevant positioned as an extension of an existing routine than as a separate announcement.</p><span class="badge">Strategic hypothesis</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 07 BEFORE / AFTER ===== -->
+<section id="transformation">
+  <div class="wrap">
+    <div class="slabel reveal">07 · Transformation</div>
+    <h2 class="reveal">What changed in the growth model</h2>
+    <div class="ba" style="margin-top:clamp(26px,3.4vw,44px)">
+      <div class="ba-col before reveal">
+        <div class="bh">Before</div>
+        <ul>
+          <li>Reliance on a finite Vietnamese-diaspora creator pool</li>
+          <li>Increasing creator saturation</li>
+          <li>Repeated audience exposure</li>
+          <li>Limited mainstream U.S. relevance</li>
+          <li>Single-product communication</li>
+          <li>Heavy focus on first-time acquisition</li>
+          <li>Media not always connected across the journey</li>
+        </ul>
+      </div>
+      <div class="ba-col after reveal">
+        <div class="bh">After</div>
+        <ul>
+          <li>Broader mainstream U.S. creator &amp; audience strategy</li>
+          <li>Native-English creative tailored to U.S. behaviors</li>
+          <li>Multiple consumer use cases and creator archetypes</li>
+          <li>Earned, owned &amp; paid media in distinct but connected roles</li>
+          <li>Bundle-led commercial communication</li>
+          <li>Lifecycle journeys extending beyond purchase</li>
+          <li>Launches used to expand routines and support retention</li>
+        </ul>
+      </div>
+    </div>
+    <p class="ba-stmt reveal">From a creator-acquisition model to a connected <span class="coral">brand, commerce, and lifecycle</span> growth system.</p>
+  </div>
+</section>
+
+<!-- ===== 08 OUTCOMES ===== -->
+<section id="outcomes" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="slabel reveal">08 · Outcomes</div>
+    <h2 class="reveal">The result was not only more reach. It was a stronger revenue system.</h2>
+    <div class="oc-metrics" style="margin-top:clamp(24px,3vw,40px)">
+      <div class="metric reveal"><div class="num" data-count="2" data-suffix="×">2×</div><div class="cap">Approx. year-over-year revenue growth during the Nov–Dec campaign period</div></div>
+      <div class="metric reveal"><div class="num" data-count="4" data-prefix="3–" data-suffix="×">3–4×</div><div class="cap">Approximate paid-media ROAS</div></div>
+      <div class="metric reveal"><div class="num" data-count="1" data-suffix="M+">1M+</div><div class="cap">Views on top organic creator assets</div></div>
+    </div>
+    <p class="lede reveal muted" style="margin-top:clamp(26px,3vw,40px)">Working with the wider Halio team, I contributed through creator acquisition, U.S.-market content direction, campaign and offer communication, creator-asset coordination, lifecycle marketing, and cross-functional execution.</p>
+    <div class="kmono reveal" style="margin:clamp(26px,3vw,38px) 0 4px">What these results indicate</div>
+    <ul class="indic">
+      <li class="reveal">Broader creative relevance helped unlock new audience opportunities.</li>
+      <li class="reveal">Winning organic assets could be amplified through paid media.</li>
+      <li class="reveal">Bundle communication supported stronger commercial value.</li>
+      <li class="reveal">Owned lifecycle channels created a foundation for post-purchase education and future retention.</li>
+      <li class="reveal">Growth became less dependent on repeatedly activating the same niche audience.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 09 LEARNINGS ===== -->
+<section id="learnings">
+  <div class="wrap">
+    <div class="slabel reveal">09 · Learnings</div>
+    <h2 class="reveal" style="margin-bottom:clamp(20px,3vw,36px)">What I learned about scaling a brand</h2>
+    <div class="learn reveal"><div class="ln">01</div><h2>Scale does not always come from finding more of the same audience.</h2><p>When an acquisition pool reaches saturation, the next growth opportunity may require redefining the addressable audience and rebuilding creative relevance.</p></div>
+    <div class="learn reveal"><div class="ln">02</div><h2>Brand, media, offer and lifecycle cannot be optimized in isolation.</h2><p>A stronger campaign cannot compensate for a weak offer, unclear product value, or an incomplete post-purchase journey.</p></div>
+    <div class="learn reveal"><div class="ln">03</div><h2>First purchase is a revenue event. Product adoption is a retention event.</h2><p>Long-term growth depends on whether the customer understands the product, experiences its value, builds a routine, and has a relevant reason to return.</p></div>
+    <p class="finalstmt reveal">My role was not simply to activate more creators. It was to help evolve the system around how Halio <span style="color:var(--coral)">reached, converted, educated, and retained</span> customers in the U.S. market.</p>
+  </div>
+</section>
+
+<!-- ===== 10 FRAMEWORK ===== -->
+<section id="framework" style="background:var(--mist)">
+  <div class="wrap">
+    <div class="slabel reveal">10 · How I Work</div>
+    <h2 class="reveal">How I approach growth problems</h2>
+    <div class="loop" style="margin-top:clamp(24px,3vw,40px)">
+      <div class="lstep reveal"><div class="ln">01</div><h3>Business ceiling</h3><p>What is preventing the current model from producing the next stage of growth?</p></div>
+      <div class="lstep reveal"><div class="ln">02</div><h3>Map the journey</h3><p>How does the customer move from first exposure to product value and repeat behavior?</p></div>
+      <div class="lstep reveal"><div class="ln">03</div><h3>Identify friction</h3><p>Where are relevance, trust, effort or poor timing stopping movement?</p></div>
+      <div class="lstep reveal"><div class="ln">04</div><h3>Form a hypothesis</h3><p>What change in audience, message, offer, product experience or lifecycle could improve behavior?</p></div>
+      <div class="lstep reveal"><div class="ln">05</div><h3>Select the lever</h3><p>Should the solution come from brand, media, commerce, product, lifecycle or operations?</p></div>
+      <div class="lstep reveal"><div class="ln">06</div><h3>Measure movement</h3><p>Did the intervention create meaningful progress, not only engagement?</p></div>
+      <div class="lstep reveal"><div class="ln">07</div><h3>Build the system</h3><p>Can the learning be automated, segmented, repeated or expanded?</p></div>
+    </div>
+    <div class="loop-sum reveal">Brand creates relevance. Commerce creates the transaction.<br>Product adoption creates value. <span class="coral">Lifecycle compounds the relationship.</span></div>
+  </div>
+</section>
+
+<!-- ===== FOOTER / CTA ===== -->
+<footer id="contact">
+  <div class="wrap">
+    <div class="slabel reveal" style="color:var(--peach)"><span style="color:var(--peach)">Let's talk</span></div>
+    <h2 class="reveal">I am interested in the space where brand, growth, commerce, and customer journey meet.</h2>
+    <p class="ft-lede reveal">I build growth by understanding what stops users from moving forward — and connecting brand strategy, creative systems, commercial offers, media, and lifecycle communication to create the next meaningful action.</p>
+    <div class="targets reveal">
+      <span>Growth Marketing</span><span>Brand Growth</span><span>Product Marketing</span><span>Lifecycle &amp; CRM</span><span>E-commerce Growth</span><span>Customer Journey</span><span>Platform &amp; Partnerships</span>
+    </div>
+    <div class="contact reveal">
+      <span class="who">Tào Giáng My — Arie</span>
+      <span style="color:rgba(245,242,236,.7)">Ho Chi Minh City, Vietnam</span>
+      <a href="mailto:taogiangmy.vn@gmail.com">taogiangmy.vn@gmail.com</a>
+      <a href="https://linkedin.com/in/giangmytao" target="_blank" rel="noopener">linkedin.com/in/giangmytao</a>
+    </div>
+    <p class="ft-final reveal">Building brands people notice — and journeys that move them forward.</p>
+    <p class="ft-cross reveal">Explore more · <a href="index.html">Brand &amp; Creator portfolio</a> &nbsp;·&nbsp; <a href="growth.html">Growth &amp; Platform deck</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // reveal on scroll
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal, .figure').forEach(function(el){ io.observe(el); });
+
+  // progress bar
+  var bar = document.getElementById('progress');
+  addEventListener('scroll', function(){
+    var h = document.documentElement.scrollHeight - innerHeight;
+    bar.style.width = (scrollY / h * 100) + '%';
+  }, {passive:true});
+
+  // active nav
+  var links = [].slice.call(document.querySelectorAll('.nav-right a[href^="#"]'));
+  var map = links.map(function(a){ return {a:a, el:document.querySelector(a.getAttribute('href'))}; }).filter(function(m){return m.el;});
+  var nio = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){
+        map.forEach(function(m){ m.a.classList.toggle('active', m.el === e.target); });
+      }
+    });
+  }, {rootMargin:'-45% 0px -50% 0px'});
+  map.forEach(function(m){ nio.observe(m.el); });
+
+  // count-up metrics
+  function countUp(el){
+    var target = parseFloat(el.getAttribute('data-count'));
+    var pre = el.getAttribute('data-prefix') || '';
+    var suf = el.getAttribute('data-suffix') || '';
+    if(reduce){ el.textContent = pre + target + suf; return; }
+    var start = null, dur = 900;
+    function tick(t){
+      if(!start) start = t;
+      var p = Math.min((t - start)/dur, 1);
+      var val = Math.round(target * (0.2 + 0.8*p) * 10)/10;
+      var shown = (p < 1) ? (Math.round(target * p * 10)/10) : target;
+      el.textContent = pre + (Number.isInteger(target) ? Math.round(shown) : shown) + suf;
+      if(p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  var mio = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ countUp(e.target); mio.unobserve(e.target); } });
+  }, {threshold:.6});
+  document.querySelectorAll('.num[data-count]').forEach(function(el){ mio.observe(el); });
+
+  // journey: collapse into tappable cards (JS-only; no-JS shows everything)
+  var stages = [].slice.call(document.querySelectorAll('.jstage'));
+  stages.forEach(function(st, i){
+    var body = st.querySelector('.jbody');
+    var btn = st.querySelector('.toggle');
+    btn.style.display = 'flex';
+    btn.removeAttribute('aria-hidden');
+    btn.tabIndex = 0;
+    var open = i === 0; // first open by default
+    function render(){
+      body.style.display = open ? 'block' : 'none';
+      btn.textContent = open ? '–' : '+';
+      st.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    render();
+    function toggle(){ open = !open; render(); }
+    st.addEventListener('click', function(ev){ if(ev.target.tagName !== 'A'){ toggle(); } });
+    st.setAttribute('tabindex','0');
+    st.setAttribute('role','button');
+    st.addEventListener('keydown', function(ev){
+      if(ev.key === 'Enter' || ev.key === ' '){ ev.preventDefault(); toggle(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
