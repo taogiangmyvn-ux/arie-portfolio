@@ -20,8 +20,18 @@
 .wthumb{aspect-ratio:3/2;background:var(--mist);position:relative;overflow:hidden}
 .wthumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
 .wcard:hover .wthumb img{transform:scale(1.05)}
-.wthumb.diagram{display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,#F2801E,#E8641C)}
-.wthumb.diagram svg{width:76%;height:auto}
+/* AhaMove brand-tone thumbnail */
+.wthumb.aha{background:linear-gradient(150deg,#FF7A1A,#E8560E);display:flex;align-items:center;justify-content:center;padding:16px}
+.aha-mock{width:78%;max-width:230px;background:#fff;border-radius:14px;padding:11px 12px;box-shadow:0 14px 30px rgba(120,50,0,.28);font-family:'Manrope',sans-serif}
+.aha-mock .ah-brand{display:flex;align-items:center;gap:6px;font-weight:800;color:#E8560E;font-size:13px;margin-bottom:9px}
+.aha-mock .ah-brand .m{width:17px;height:17px;border-radius:5px;background:#FF7A1A;display:inline-block}
+.aha-mock .ah-row{display:flex;align-items:center;gap:8px;font-size:10.5px;color:#3a3f4a;padding:6px 0;border-top:1px solid #eee}
+.aha-mock .ah-row .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.aha-mock .ah-cta{margin-top:9px;background:#FF7A1A;color:#fff;text-align:center;font-weight:800;font-size:11px;border-radius:8px;padding:8px}
+/* Base navy thumbnail */
+.wthumb.baseblue{background:radial-gradient(120% 120% at 78% 0,#1e40af,#070C1A);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px}
+.wthumb.baseblue .hex{width:46px;height:52px;background:linear-gradient(150deg,#3B82F6,#1e40af);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);box-shadow:0 0 30px rgba(59,130,246,.6)}
+.wthumb.baseblue .bt{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:#7CB0FF}
 .wthumb.deck{background:var(--ink);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px}
 .wthumb.deck .dn{font-family:var(--serif);font-size:34px;color:#8C9BFF;line-height:1}
 .wthumb.deck .dl{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,242,236,.65)}
@@ -74,7 +84,7 @@
 <section id="work">
   <div class="wrap">
     <div class="slabel reveal">Case Studies</div>
-    <h2 class="reveal">Five ways to move a metric.</h2>
+    <h2 class="reveal">Six ways to move a metric.</h2>
     <div class="wgrid">
 
       <a class="wcard reveal" href="halio-growth-case.html">
@@ -88,7 +98,7 @@
       </a>
 
       <a class="wcard reveal" href="coba.html">
-        <div class="wthumb"><span class="wtag"><i style="--c:#4B6043"></i>Luxury Body Care</span><img src="assets/coba-swing.jpg" alt="CoBa's Daughter brand world"></div>
+        <div class="wthumb"><span class="wtag"><i style="--c:#4B6043"></i>Luxury Body Care</span><img src="assets/coba-thumb.jpg" alt="CoBa's Daughter rattan gift set with equestrian props"></div>
         <div class="wbody">
           <h3>A heritage brand, built for a global shelf</h3>
           <p>Took CoBa's Daughter to Top #5 on Amazon US through a brand world, an affiliate engine, refill economics and community.</p>
@@ -118,15 +128,34 @@
       </a>
 
       <a class="wcard reveal" href="ahamove.html">
-        <div class="wthumb diagram">
-          <span class="wtag"><i style="--c:#E8641C"></i>Independent Study</span>
-          <svg viewBox="0 0 300 90" aria-hidden="true"><polyline points="10,55 55,58 100,66 145,70 190,60 235,20 285,44" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" opacity=".95"/><circle cx="100" cy="66" r="4.5" fill="#fff" opacity=".7"/><circle cx="145" cy="70" r="4.5" fill="#fff" opacity=".7"/><circle cx="235" cy="20" r="5" fill="#fff"/></svg>
+        <div class="wthumb aha">
+          <span class="wtag"><i style="--c:#E8560E"></i>Independent Study</span>
+          <div class="aha-mock" aria-hidden="true">
+            <div class="ah-brand"><span class="m"></span>Ahamove</div>
+            <div class="ah-row"><span class="dot" style="background:#22c55e"></span>Pickup — 210 Hồng Hà</div>
+            <div class="ah-row"><span class="dot" style="background:#FF7A1A"></span>Where to deliver?</div>
+            <div class="ah-cta">Book again</div>
+          </div>
         </div>
         <div class="wbody">
           <h3>From first booking to repeat habit</h3>
           <p>An independent, hypothesis-led merchant-growth study for AhaMove: friction diagnosis → hypotheses → prioritized experiments.</p>
           <div class="wmetrics"><span>Journey mapping</span><span>Experiment design</span></div>
           <span class="wgo">Read study →</span>
+        </div>
+      </a>
+
+      <a class="wcard reveal" href="base.html">
+        <div class="wthumb baseblue">
+          <span class="wtag"><i style="--c:#3B82F6"></i>Brand Strategy</span>
+          <div class="hex"></div>
+          <div class="bt">Base.vn · Work+</div>
+        </div>
+        <div class="wbody">
+          <h3>Scaling brand penetration with one hero product</h3>
+          <p>A go-to-market strategy for Base.vn: market sizing, BCG portfolio, competitive 4P and a three-pillar campaign framework.</p>
+          <div class="wmetrics"><span>1.2 → 2.5%</span><span>Strategy &amp; GTM</span></div>
+          <span class="wgo">Read case →</span>
         </div>
       </a>
 
@@ -178,6 +207,7 @@
         <a href="amamy.html">Amamy</a>
         <a href="melius.html">Melius</a>
         <a href="ahamove.html">AhaMove</a>
+        <a href="base.html">Base.vn</a>
         <a class="home" href="index.html">Brand &amp; Creator portfolio →</a>
       </div>
     </div>
