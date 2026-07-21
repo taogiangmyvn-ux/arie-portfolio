@@ -130,6 +130,11 @@ h1 .g{background:linear-gradient(120deg,#fff,var(--blue-2));-webkit-background-c
 
 /* learnings */
 .learn{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,22px);margin-top:clamp(20px,3vw,30px)}
+.certgrid{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(20px,3vw,44px);align-items:center;margin-top:clamp(20px,3vw,30px)}
+.certframe{margin:0;background:#fff;border-radius:16px;padding:13px;box-shadow:0 22px 55px rgba(0,0,0,.4)}
+.certframe img{width:100%;display:block;border-radius:8px}
+.certframe figcaption{text-align:center;font-size:12px;color:#0C1730;font-weight:700;padding:11px 4px 3px}
+.certgrid .learn{grid-template-columns:1fr;gap:12px;margin-top:0}
 .learn .l{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--blue);border-radius:12px;padding:clamp(16px,2vw,22px)}
 .learn .l .n{font-family:var(--serif);font-size:26px;color:var(--blue-2)}
 .learn .l h4{font-size:15px;font-weight:800;margin:6px 0 8px}
@@ -156,7 +161,7 @@ footer h2{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.4vw,40
 @media (prefers-reduced-motion: reduce){.reveal{opacity:1 !important;transform:none !important;transition:none !important}html{scroll-behavior:auto}}
 :focus-visible{outline:2.5px solid var(--blue-2);outline-offset:3px;border-radius:3px}
 @media(max-width:860px){
-  .grid-2,.grid-3,.ctx-3,.bcg,.p4,.pillars,.learn{grid-template-columns:1fr}
+  .grid-2,.grid-3,.ctx-3,.bcg,.p4,.pillars,.learn,.certgrid{grid-template-columns:1fr}
   .metrics{grid-template-columns:repeat(3,1fr);gap:16px}
   .pillar{padding-top:26px}
 }
@@ -348,10 +353,16 @@ footer h2{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.4vw,40
 <section id="learn">
   <div class="wrap">
     <div class="baselabel reveal"><span class="b">Base.vn</span><span class="sep">|</span>What This Case Shows</div>
-    <div class="learn">
-      <div class="l reveal"><div class="n">01</div><h4>Penetration is a focus problem</h4><p>Growth didn't need more products — it needed one hero to win a single, ownable job first.</p></div>
-      <div class="l reveal"><div class="n">02</div><h4>Position against the price fight</h4><p>Unbundling Work+ and owning the CEO/COO conversation sidesteps the discount war with specialized rivals.</p></div>
-      <div class="l reveal"><div class="n">03</div><h4>Strategy → executable system</h4><p>Every pillar carries an objective, audience, message and touchpoints — a plan a team can actually run.</p></div>
+    <div class="certgrid">
+      <figure class="certframe reveal">
+        <img src="assets/base-certificate.jpg" alt="Tomorrow Marketers Certificate of Completion — Brand Development, Rank: Excellent, awarded to Tao Giang My">
+        <figcaption>Brand Development · Rank: Excellent · Tomorrow Marketers</figcaption>
+      </figure>
+      <div class="learn">
+        <div class="l reveal"><div class="n">01</div><h4>Penetration is a focus problem</h4><p>Growth didn't need more products — it needed one hero to win a single, ownable job first.</p></div>
+        <div class="l reveal"><div class="n">02</div><h4>Position against the price fight</h4><p>Unbundling Work+ and owning the CEO/COO conversation sidesteps the discount war with specialized rivals.</p></div>
+        <div class="l reveal"><div class="n">03</div><h4>Strategy → executable system</h4><p>Every pillar carries an objective, audience, message and touchpoints — a plan a team can actually run.</p></div>
+      </div>
     </div>
   </div>
 </section>
