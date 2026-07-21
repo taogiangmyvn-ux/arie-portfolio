@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AhaMove — From First Booking to Repeat Habit · Arie</title>
+<meta name="description" content="An independent growth analysis: how a delivery platform could help a first-time merchant book with confidence and make the second booking easier. Journey, friction, hypotheses, experiments.">
+<meta property="og:title" content="AhaMove — From First Booking to Repeat Habit">
+<meta property="og:description" content="Independent, hypothesis-led merchant-growth analysis: friction diagnosis → hypotheses → prioritized experiments. By Tao Giang My (Arie).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="case.css">
+<style>
+:root{--accent:#E8641C;--accent-2:#F6C79A}
+.ahmnote{border:1px solid var(--line);border-left:3px solid var(--accent);background:#fff;border-radius:0 10px 10px 0;padding:12px 16px;font-size:12.5px;color:var(--charcoal);max-width:52ch;margin-top:6px}
+.method{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 10px}
+.method span{font-size:11.5px;font-weight:700;letter-spacing:.04em;background:#fff;border:1px solid var(--line);border-radius:99px;padding:7px 14px}
+.method span b{color:var(--accent)}
+.hero-diagram{display:flex;justify-content:center;align-items:center}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<a href="#persona" class="skip">Skip to content</a>
+<nav aria-label="Case navigation">
+  <div class="wrap nav-in">
+    <a href="index.html" class="brand">AhaMove<em>.</em> Study</a>
+    <div class="nav-right">
+      <a href="#persona">Persona</a>
+      <a href="#friction">Friction</a>
+      <a href="#hypotheses">Hypotheses</a>
+      <a href="#priority">Priority</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="slabel reveal">Independent Growth Analysis · Logistics Tech</div>
+      <h1 class="reveal">From first booking to repeat habit.</h1>
+      <p class="sub reveal">How might a delivery platform help a first-time merchant book <b>with confidence</b> — and make the second booking meaningfully easier than the first?</p>
+      <div class="method">
+        <span><b>01</b>&nbsp; Journey mapping</span>
+        <span><b>02</b>&nbsp; Friction diagnosis</span>
+        <span><b>03</b>&nbsp; Prioritized experiments</span>
+      </div>
+      <p class="ahmnote reveal">Independent portfolio analysis based on publicly observable product experiences and stated assumptions. Not an internal AhaMove project; recommendations have not been confirmed as implemented. No confidential data is used.</p>
+    </div>
+    <div class="hero-img hero-diagram reveal" style="background:linear-gradient(160deg,#FBEADD,#F5F2EC)">
+      <div class="phone" style="width:196px">
+        <div class="scr">
+          <div class="abar"><span>New delivery</span><span>9:41</span></div>
+          <div class="body">
+            <span class="uiq">What are you sending?</span>
+            <div class="uichips"><span class="on">Food</span><span>Parcel</span><span>Bulky</span></div>
+            <span class="uiq">How urgent?</span>
+            <div class="uichips"><span class="on">Right now</span><span>Today</span></div>
+            <div class="uicard"><span class="t">Suggested for you</span><span class="n">Bike — 25.000đ</span><span class="d">~15 min match · insulated box</span></div>
+            <div class="uibtn">Book with this service</div>
+            <div class="uibtn sec">See all services</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 01 PERSONA -->
+<section id="persona" class="paperflip">
+  <div class="wrap">
+    <div class="slabel reveal">01 · Persona &amp; Job To Be Done</div>
+    <h2 class="reveal">The merchant is not booking a driver. They are protecting a customer promise.</h2>
+    <div class="cols-3" style="margin-top:clamp(20px,3vw,32px)">
+      <div class="pill reveal"><div class="k">Functional job</div><p>"Book a suitable delivery fast, so I can fulfil the order without stopping my business."</p></div>
+      <div class="pill reveal"><div class="k">Emotional job</div><p>"Feel confident the delivery won't damage my relationship with my customer."</p></div>
+      <div class="pill reveal"><div class="k">Social job</div><p>"Look reliable and professional — even with a team of one."</p></div>
+    </div>
+    <p class="lede muted reveal" style="margin-top:clamp(20px,3vw,30px)">Persona: a small online seller in Ho Chi Minh City, ~5–20 orders a day, comparing providers on speed, price and reliability, with little time to troubleshoot.</p>
+    <p class="bigq reveal">The opportunity: become part of the merchant's <span class="c">daily operating habit</span> — not just one delivery option among many.</p>
+  </div>
+</section>
+
+<!-- 02 JOURNEY + FRICTION -->
+<section id="friction">
+  <div class="wrap">
+    <div class="slabel reveal">02 · Journey &amp; Friction</div>
+    <h2 class="reveal">Confidence dips are where merchants churn.</h2>
+    <div class="jcurve reveal" style="margin:clamp(16px,2.4vw,24px) 0">
+      <div class="slabel" style="margin-bottom:10px">Merchant confidence across the first booking — hypothesized</div>
+      <svg viewBox="0 0 1080 235" role="img" aria-label="Hypothesized merchant confidence curve: dips during registration, service selection and matching; peaks at completion.">
+        <line x1="40" y1="70" x2="1040" y2="70" stroke="rgba(23,34,59,.08)"/>
+        <line x1="40" y1="190" x2="1040" y2="190" stroke="rgba(23,34,59,.2)"/>
+        <text x="34" y="74" text-anchor="end" font-size="10" fill="#7C8494" font-family="Manrope,sans-serif">high</text>
+        <text x="34" y="193" text-anchor="end" font-size="10" fill="#7C8494" font-family="Manrope,sans-serif">low</text>
+        <path class="path" d="M 60 108 L 180 115 L 300 133 L 420 138 L 540 148 L 660 141 L 780 145 L 900 78 L 1020 108" fill="none" stroke="#E8641C" stroke-width="2.5" stroke-linejoin="round"/>
+        <circle cx="300" cy="133" r="5" fill="#B4441F" stroke="#fff" stroke-width="2"/>
+        <circle cx="540" cy="148" r="5" fill="#B4441F" stroke="#fff" stroke-width="2"/>
+        <circle cx="780" cy="145" r="5" fill="#B4441F" stroke="#fff" stroke-width="2"/>
+        <circle cx="900" cy="78" r="5" fill="#0E9F6E" stroke="#fff" stroke-width="2"/>
+        <g font-family="Manrope,sans-serif" font-size="10" fill="#7C8494">
+          <text x="60" y="212" text-anchor="middle">1 Trigger</text>
+          <text x="180" y="212" text-anchor="middle">2 App entry</text>
+          <text x="300" y="212" text-anchor="middle">3 Register</text>
+          <text x="420" y="212" text-anchor="middle">4 Details</text>
+          <text x="540" y="212" text-anchor="middle">5 Service</text>
+          <text x="660" y="212" text-anchor="middle">6 Price</text>
+          <text x="780" y="212" text-anchor="middle">7 Matching</text>
+          <text x="900" y="212" text-anchor="middle">8 Complete</text>
+          <text x="1020" y="212" text-anchor="middle">9 Repeat?</text>
+        </g>
+        <g font-family="Manrope,sans-serif" font-size="9.5" font-weight="700">
+          <text x="540" y="170" text-anchor="middle" fill="#B4441F">friction dips</text>
+          <text x="900" y="60" text-anchor="middle" fill="#0B7A55">confidence peak</text>
+        </g>
+      </svg>
+    </div>
+    <div class="fric3">
+      <div class="fcard reveal"><h4>Product friction</h4><p>Too many service choices · repeated address input · no first-time guidance — <b>slows the booking.</b></p></div>
+      <div class="fcard reveal"><h4>Trust friction</h4><p>Final price? Fast match? Safe handling? Who helps if it fails? — <b>delays commitment.</b></p></div>
+      <div class="fcard reveal"><h4>Growth friction</h4><p>No reason to return · second booking isn't easier · features stay hidden — <b>prevents habit.</b></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 HYPOTHESES -->
+<section id="hypotheses" class="paperflip">
+  <div class="wrap">
+    <div class="slabel reveal">03 · Hypotheses</div>
+    <h2 class="reveal">Five bets to move merchants forward.</h2>
+    <div class="cols-2" style="align-items:start;margin-top:clamp(18px,2.4vw,28px)">
+      <div class="reveal">
+        <div class="hmini"><span class="hn">H1</span><span class="ht"><b>Guided service choice</b> — 2–3 questions → a recommended service</span><span class="hm">First-booking CVR</span></div>
+        <div class="hmini"><span class="hn">H2</span><span class="ht"><b>Reliability reassurance</b> — clear fee, match time, support on confirm</span><span class="hm">Confirmation rate</span></div>
+        <div class="hmini"><span class="hn">H3</span><span class="ht"><b>Saved preferences</b> — second booking takes half the effort</span><span class="hm">Time to 2nd booking</span></div>
+        <div class="hmini"><span class="hn">H4</span><span class="ht"><b>Book-again momentum</b> — completion screen sells the next action</span><span class="hm">7-day repeat</span></div>
+        <div class="hmini"><span class="hn">H5</span><span class="ht"><b>State-based lifecycle</b> — message the user's actual booking state</span><span class="hm">Reactivation</span></div>
+      </div>
+      <div class="reveal">
+        <div class="phones">
+          <div>
+            <div class="phone"><div class="scr">
+              <div class="abar"><span>New delivery</span><span>9:41</span></div>
+              <div class="body">
+                <span class="uiq">What are you sending?</span>
+                <div class="uichips"><span class="on">Food</span><span>Parcel</span><span>Bulky</span></div>
+                <span class="uiq">How urgent?</span>
+                <div class="uichips"><span class="on">Right now</span><span>Today</span></div>
+                <div class="uicard"><span class="t">Suggested</span><span class="n">Bike — 25.000đ</span><span class="d">~15 min match</span></div>
+                <div class="uibtn">Book with this service</div>
+              </div>
+            </div></div>
+            <div class="phone-cap">H1 · concept mock</div>
+          </div>
+          <div>
+            <div class="phone"><div class="scr">
+              <div class="abar"><span>Complete</span><span>9:58</span></div>
+              <div class="body">
+                <div class="uiok">✓</div>
+                <div style="text-align:center"><span class="uiq">Delivered to Quận 3</span><div style="font-size:9px;color:var(--grey)">17 min · handled with care</div></div>
+                <div class="uicard"><span class="t">Save for next time?</span><span class="d">Pickup · notes · service</span></div>
+                <div class="uibtn">Book again</div>
+                <div class="uibtn sec">Save preferences</div>
+              </div>
+            </div></div>
+            <div class="phone-cap">H4 · concept mock</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 PRIORITY -->
+<section id="priority">
+  <div class="wrap">
+    <div class="slabel reveal">04 · Prioritization</div>
+    <h2 class="reveal">Start where friction is visible and measurable.</h2>
+    <div class="cols-2" style="align-items:start;margin-top:clamp(18px,2.4vw,28px)">
+      <div class="quad reveal">
+        <div class="slabel" style="margin-bottom:6px">Impact × effort</div>
+        <div class="quad-plot">
+          <span class="qcorner" style="top:7px;left:9px">Do first</span>
+          <span class="qcorner" style="top:7px;right:9px">Plan carefully</span>
+          <span class="qcorner" style="bottom:7px;left:9px">Nice to have</span>
+          <span class="qcorner" style="bottom:7px;right:9px">Avoid for now</span>
+          <div class="qd" style="left:14%;top:16%"><i></i><span>Book again</span></div>
+          <div class="qd" style="left:20%;top:30%"><i></i><span>Reliability</span></div>
+          <div class="qd" style="left:42%;top:13%"><i></i><span>Guided choice</span></div>
+          <div class="qd" style="left:46%;top:26%"><i></i><span>Saved prefs</span></div>
+          <div class="qd" style="left:50%;top:38%"><i></i><span>State-based flows</span></div>
+          <div class="qd p2" style="left:56%;top:60%"><i></i><span>Merchant education</span></div>
+          <div class="qd p3" style="left:82%;top:66%"><i></i><span>Loyalty layer</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="pill reveal" style="border-top-color:var(--accent);margin-bottom:16px">
+          <div class="k">North-star candidate</div>
+          <p style="font-size:15px;color:var(--ink);font-weight:600">Repeat completed deliveries per active merchant</p>
+        </div>
+        <div class="reveal">
+          <div class="slabel" style="margin-bottom:10px">Guardrails</div>
+          <div class="chips"><span>Cancellation rate</span><span>Failed deliveries</span><span>Support contacts</span><span>Merchant satisfaction</span></div>
+        </div>
+        <p class="bigq reveal" style="font-size:clamp(18px,2.2vw,26px);margin-top:clamp(22px,3vw,32px)">A merchant returns because the platform <span class="c">reduced uncertainty and made the next task easier.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="wrap">
+    <div class="slabel reveal" style="color:var(--accent-2)"><span style="color:var(--accent-2)">Let's talk</span></div>
+    <h2 class="reveal">Where brand, growth, product and customer journey meet.</h2>
+    <p class="ft-lede reveal">This is how I think about a platform I don't work on — diagnose the friction, form testable hypotheses, prioritize by impact and effort, and measure whether users actually move forward.</p>
+    <div class="contact reveal">
+      <span class="who">Tào Giáng My — Arie</span>
+      <span style="color:rgba(245,242,236,.7)">Ho Chi Minh City, Vietnam</span>
+      <a href="mailto:taogiangmy.vn@gmail.com">taogiangmy.vn@gmail.com</a>
+      <a href="https://linkedin.com/in/giangmytao" target="_blank" rel="noopener">linkedin.com/in/giangmytao</a>
+    </div>
+    <div class="switcher reveal">
+      <div class="sl">Case studies</div>
+      <div class="cases">
+        <a class="home" href="index.html">← Home</a>
+        <a href="halio-growth-case.html">Halio Sonic</a>
+        <a href="coba.html">CoBa's Daughter</a>
+        <a href="amamy.html">Amamy</a>
+        <a href="melius.html">Melius</a>
+        <a href="ahamove.html" aria-current="page">AhaMove</a>
+      </div>
+    </div>
+    <p class="ft-final reveal">Building brands people notice — and journeys that move them forward.</p>
+  </div>
+</footer>
+<script src="case.js"></script>
+</body>
+</html>
