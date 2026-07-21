@@ -142,7 +142,8 @@ footer .ft-lede{color:rgba(245,242,236,.75);max-width:56ch;font-size:15px}
 :focus-visible{outline:2.5px solid var(--coral);outline-offset:3px;border-radius:3px}
 
 @media(max-width:820px){
-  .hero-grid,.levers,.proof-grid,.cols-3,.eco3,.oc{grid-template-columns:1fr}
+  .hero-grid,.levers,.proof-grid,.cols-3,.eco3,.oc,.vcband{grid-template-columns:1fr !important}
+  .vcband #vcfig{min-height:220px}
   .metrics{grid-template-columns:repeat(3,1fr);gap:16px}
   .hero-img{aspect-ratio:3/2}
 }
@@ -273,8 +274,25 @@ footer .ft-lede{color:rgba(245,242,236,.75);max-width:56ch;font-size:15px}
         <p class="cap"><b>Paid + Owned</b> — winning creator assets amplified, then held in email &amp; lifecycle.</p>
       </div>
     </div>
+
+    <!-- Events & partnerships highlight -->
+    <div class="reveal vcband" style="margin-top:clamp(20px,3vw,32px);background:var(--mist);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:grid;grid-template-columns:0.9fr 1.1fr">
+      <figure style="margin:0;background:#e6e2d8;min-height:230px" id="vcfig">
+        <img src="assets/halio-vietcetera.jpg" alt="Arie at the Vietcetera Global Content Creators Meetup, Halio backdrop" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" onerror="document.getElementById('vcfig').style.display='none';this.closest('div').style.gridTemplateColumns='1fr'">
+      </figure>
+      <div style="padding:clamp(20px,2.6vw,34px)">
+        <div style="font-family:var(--mono,inherit);font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--coral);margin-bottom:12px">Events &amp; Partnerships</div>
+        <h3 style="font-family:var(--serif);font-weight:400;font-size:clamp(20px,2.6vw,30px);line-height:1.12;margin-bottom:12px">Sponsored the Global Content Creators Meetup — 150+ creators, with Vietcetera.</h3>
+        <p style="font-size:14px;color:var(--charcoal);max-width:52ch">Together with the Lixibox brand teams, we partnered directly with Vietcetera's founder to sponsor the meetup at Mam Mam by KOTO — putting the brands in front of Vietnam's top creators, and earning coverage from <b>Vietcetera</b> and global creator <b>Best Ever Food Review Show</b>.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:16px;font-size:12.5px;font-weight:700">
+          <a href="https://www.instagram.com/p/DSZboXkgSAF/" target="_blank" rel="noopener" style="color:var(--coral)">As featured by Vietcetera →</a>
+          <a href="https://www.instagram.com/besteverfoodreviewshow/" target="_blank" rel="noopener" style="color:var(--coral)">Best Ever Food Review Show →</a>
+        </div>
+      </div>
+    </div>
+
     <div class="eco3">
-      <div class="e reveal"><h3><span class="d" style="background:var(--coral)"></span>Earned</h3><p>Organic creators, PR, events, NYFW, Miss Universe.</p></div>
+      <div class="e reveal"><h3><span class="d" style="background:var(--coral)"></span>Earned</h3><p>Creator meetups, PR, events, NYFW, Miss Universe.</p></div>
       <div class="e reveal"><h3><span class="d" style="background:var(--ink)"></span>Paid</h3><p>Collab Ads, whitelisting, retargeting, scaling winners.</p></div>
       <div class="e reveal"><h3><span class="d" style="background:var(--grey)"></span>Owned</h3><p>Site, product pages, email, community, retention.</p></div>
     </div>
