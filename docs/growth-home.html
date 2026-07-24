@@ -36,7 +36,7 @@
 .wthumb.deck{background:var(--ink);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px}
 .wthumb.deck .dn{font-family:var(--serif);font-size:34px;color:#8C9BFF;line-height:1}
 .wthumb.deck .dl{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,242,236,.65)}
-.wtag{position:absolute;top:12px;left:12px;display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.92);border-radius:99px;padding:5px 11px;font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);box-shadow:0 2px 8px rgba(23,34,59,.1)}
+.wtag{position:absolute;top:12px;left:12px;z-index:3;display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.92);border-radius:99px;padding:5px 11px;font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);box-shadow:0 2px 8px rgba(23,34,59,.1)}
 .wtag i{width:8px;height:8px;border-radius:50%;background:var(--c,var(--accent))}
 .wbody{padding:clamp(16px,2vw,22px);display:flex;flex-direction:column;gap:8px;flex:1}
 .wbody h3{font-family:var(--serif);font-weight:400;font-size:clamp(18px,2vw,22px);line-height:1.14;letter-spacing:-.005em}
@@ -51,7 +51,16 @@
 .capcell{border-top:2px solid var(--ink);padding-top:12px}
 .capcell .k{font-family:var(--serif);font-size:15px}
 .capcell p{font-size:12.5px;color:var(--charcoal);margin-top:3px}
-@media(max-width:860px){.wgrid{grid-template-columns:1fr}.caprow{grid-template-columns:1fr 1fr}}
+.wthumb.fit{display:flex;align-items:center;justify-content:center}
+.wthumb.fit img{object-fit:contain;object-position:center}
+.wcard:hover .wthumb.fit img{transform:scale(1.02)}
+.wgroup{display:flex;align-items:baseline;gap:14px;margin-top:clamp(30px,4.4vw,52px)}
+.wgroup.first{margin-top:clamp(18px,2.6vw,28px)}
+.wg-k{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);white-space:nowrap}
+.wgroup .rule{flex:1;height:1px;background:var(--line);transform:translateY(-3px)}
+.wg-note{font-size:12.5px;color:var(--grey)}
+.wgrid.grouped{margin-top:clamp(14px,2vw,22px)}
+@media(max-width:860px){.wgrid{grid-template-columns:1fr}.caprow{grid-template-columns:1fr 1fr}.wg-note{display:none}}
 </style>
 </head>
 <body>
@@ -89,12 +98,13 @@
   <div class="wrap">
     <div class="slabel reveal">Case Studies</div>
     <h2 class="reveal">Six ways to move a metric.</h2>
-    <div class="wgrid">
+    <div class="wgroup first reveal"><span class="wg-k">Professional Work</span><span class="rule"></span><span class="wg-note">Brands I grew in role — beauty tech, luxury body care, cross-border logistics</span></div>
+    <div class="wgrid grouped">
 
       <a class="wcard reveal" href="halio-growth-case.html">
         <div class="wthumb"><span class="wtag"><i style="--c:#E77868"></i>Beauty Tech · U.S.</span><img src="assets/photoshoot-halio.jpg" alt="Halio Sonic campaign key visual"></div>
         <div class="wbody">
-          <h3>From a niche audience to a scalable U.S. growth engine</h3>
+          <h3>Halio: From a niche audience to a scalable U.S. growth engine</h3>
           <p>Grew Halio beyond a saturated diaspora creator pool — U.S.-native creative, connected media, offer architecture and lifecycle.</p>
           <div class="wmetrics"><span>2× YoY</span><span>3–4× ROAS</span><span>1M+ views</span></div>
           <span class="wgo">Read case →</span>
@@ -104,7 +114,7 @@
       <a class="wcard reveal" href="coba.html">
         <div class="wthumb"><span class="wtag"><i style="--c:#4B6043"></i>Luxury Body Care</span><img src="assets/coba-thumb-hero.jpg" alt="CoBa's Daughter equestrian editorial — model with horse holding the Body Exfoliator"></div>
         <div class="wbody">
-          <h3>A heritage brand, built for a global shelf</h3>
+          <h3>CoBa&rsquo;s Daughter: A heritage brand, built for a global shelf</h3>
           <p>Took CoBa's Daughter to Top #5 on Amazon US through a brand world, an affiliate engine, refill economics and community.</p>
           <div class="wmetrics"><span>Top #5 Amazon</span><span>300–400 affiliates/mo</span></div>
           <span class="wgo">Read case →</span>
@@ -112,19 +122,24 @@
       </a>
 
       <a class="wcard reveal" href="amamy.html">
-        <div class="wthumb"><span class="wtag"><i style="--c:#2F6BE0"></i>Cross-Border · Freelance</span><img src="assets/amamy-thumb.jpg" alt="Amamy — the #1 Vietnam cross-border delivery brand website"></div>
+        <div class="wthumb fit" style="background:linear-gradient(135deg,#E9F3FB,#D5E8F7)"><span class="wtag"><i style="--c:#2F6BE0"></i>Cross-Border · Freelance</span><img src="assets/amamy-thumb-full.jpg" alt="Amamy brand hero — Con người phía sau công nghệ, full key visual"></div>
         <div class="wbody">
-          <h3>Growing a cross-border brand where its customers live</h3>
+          <h3>Amamy: Growing a cross-border brand where its customers live</h3>
           <p>×1.5 revenue in a year with market-native content, a double-sided referral loop and embassy-backed community — no ad budget.</p>
           <div class="wmetrics"><span>×1.5 revenue</span><span>60K fanpage</span><span>200+ copies</span></div>
           <span class="wgo">Read case →</span>
         </div>
       </a>
 
+    </div>
+
+    <div class="wgroup reveal"><span class="wg-k">Competition &amp; Training</span><span class="rule"></span><span class="wg-note">Social Business Creation, Montréal · Tomorrow Marketers — 1st-prize final case</span></div>
+    <div class="wgrid grouped">
+
       <a class="wcard reveal" href="melius.html">
-        <div class="wthumb"><span class="wtag"><i style="--c:#5E9B3E"></i>Product Innovation</span><img src="assets/melius-photos.png" alt="Melius healthy-lifestyle workshop"></div>
+        <div class="wthumb"><span class="wtag"><i style="--c:#5E9B3E"></i>SBC · Product Innovation</span><img src="assets/melius-photos.png" alt="Melius healthy-lifestyle workshop"></div>
         <div class="wbody">
-          <h3>From nutrition anxiety to guided action</h3>
+          <h3>Melius: From nutrition anxiety to guided action</h3>
           <p>An AI/AR product concept that turns overwhelming health info into one clear action at the moment of a food decision.</p>
           <div class="wmetrics"><span>Top 10 Global</span><span>3,000+ teams</span></div>
           <span class="wgo">Read case →</span>
@@ -132,33 +147,25 @@
       </a>
 
       <a class="wcard reveal" href="ahamove.html">
-        <div class="wthumb"><span class="wtag"><i style="--c:#E8560E"></i>Independent Study</span><img src="assets/ahamove-hero.jpg" alt="AhaMove delivery truck and driver"></div>
+        <div class="wthumb"><span class="wtag"><i style="--c:#E8560E"></i>SBC · Growth Study</span><img src="assets/ahamove-hero.jpg" alt="AhaMove delivery truck and driver"></div>
         <div class="wbody">
-          <h3>From first booking to repeat habit</h3>
-          <p>An independent, hypothesis-led merchant-growth study for AhaMove: friction diagnosis → hypotheses → prioritized experiments.</p>
+          <h3>AhaMove: From first booking to repeat habit</h3>
+          <p>A hypothesis-led merchant-growth study for AhaMove: friction diagnosis → hypotheses → prioritized experiments.</p>
           <div class="wmetrics"><span>Journey mapping</span><span>Experiment design</span></div>
           <span class="wgo">Read study →</span>
         </div>
       </a>
 
       <a class="wcard reveal" href="base.html">
-        <div class="wthumb"><span class="wtag"><i style="--c:#3B82F6"></i>Brand Strategy</span><img src="assets/base-thumb.jpg" alt="Base.vn Brand Penetration deck cover — team credits including Tao Giang My" style="object-position:center"></div>
+        <div class="wthumb fit" style="background:#0A1228"><span class="wtag"><i style="--c:#3B82F6"></i>Brand Strategy · 1st Prize</span><img src="assets/base-thumb.jpg" alt="Base.vn Brand Penetration deck cover — full slide with team credits including Tao Giang My"></div>
         <div class="wbody">
-          <h3>Scaling brand penetration with one hero product</h3>
+          <h3>Base.vn: Scaling brand penetration with one hero product</h3>
           <p>A go-to-market strategy for Base.vn: market sizing, BCG portfolio, competitive 4P and a three-pillar campaign framework.</p>
-          <div class="wmetrics"><span>1.2 → 2.5%</span><span>Strategy &amp; GTM</span></div>
+          <div class="wmetrics"><span>1st Prize · TM</span><span>1.2 → 2.5%</span><span>Strategy &amp; GTM</span></div>
           <span class="wgo">Read case →</span>
         </div>
       </a>
 
-      <a class="wcard deckcard reveal" href="growth.html">
-        <div class="wthumb deck"><span class="dn">14</span><span class="dl">Slide deck</span></div>
-        <div class="wbody">
-          <h3>All cases, one 14-slide deck</h3>
-          <p>Prefer to skim? The full growth story — framework, three cases and two mini cases — as a fast slide deck.</p>
-          <span class="wgo">Open the deck →</span>
-        </div>
-      </a>
 
     </div>
   </div>
