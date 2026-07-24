@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MoMo — Growth After the QR Wars · Arie</title>
+<meta name="description" content="A slide-style independent deep dive: why Vietnam's e-wallet acquisition era is over, and how MoMo grows through retention, frequency and ARPU. Every number cited.">
+<meta property="og:title" content="MoMo — Growth After the QR Wars">
+<meta property="og:description" content="Independent retention &amp; ARPU strategy deck on Vietnam's largest fintech — market forensics, lifecycle model, one fully specified experiment. By Tao Giang My (Arie).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+:root{
+  --plum:#150713; --plum-2:#26102A; --panel:rgba(255,255,255,.05); --panel-2:rgba(255,255,255,.08);
+  --ink:#F8EDF4; --sub:#C9A9BD; --dim:#8E7186; --line:rgba(232,150,200,.16);
+  --pink:#D82D8B; --pink-2:#F08BC4; --glow:rgba(216,45,139,.5);
+  --chart-pink:#D8478F; --chart-blue:#3987e5;
+  --serif:'DM Serif Display',Georgia,serif; --sans:'Manrope',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--plum);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(1200px 700px at 78% -5%,rgba(216,45,139,.20),transparent 60%),radial-gradient(900px 600px at -5% 30%,rgba(216,45,139,.09),transparent 55%)}
+a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+@media(min-width:1000px){body{zoom:.92}}
+
+#progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--pink),var(--pink-2));width:0;z-index:80}
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;z-index:99;background:var(--pink);color:#fff;padding:8px 14px;border-radius:8px}
+nav{position:fixed;top:0;left:0;right:0;z-index:70;background:rgba(21,7,19,.74);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:56px}
+.brand{font-weight:800;font-size:17px;letter-spacing:-.01em;text-decoration:none}.brand em{font-style:normal;color:var(--pink-2)}
+.nav-right{display:flex;gap:20px;align-items:center;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+.nav-right a{color:var(--sub);text-decoration:none;transition:color .2s}.nav-right a:hover,.nav-right a.active{color:#fff}
+.nav-cta{border:1.5px solid var(--pink);border-radius:99px;padding:6px 14px;color:var(--pink-2) !important}
+.nav-cta:hover{background:var(--pink);color:#fff !important}
+@media(max-width:860px){.nav-right a:not(.nav-cta){display:none}}
+
+section{padding:clamp(52px,7vw,96px) 0;position:relative}
+section+section{border-top:1px solid rgba(232,150,200,.08)}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--pink-2);display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.eyebrow .bar{width:26px;height:1.5px;background:var(--pink-2)}
+h1{font-weight:800;font-size:clamp(38px,6vw,74px);line-height:1.03;letter-spacing:-.025em}
+h1 .g,.g{background:linear-gradient(120deg,#fff,var(--pink-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+h2{font-weight:800;font-size:clamp(24px,3.4vw,42px);line-height:1.08;letter-spacing:-.02em;max-width:26ch}
+.lede{color:var(--sub);max-width:62ch;font-size:clamp(14.5px,1.5vw,17px);margin-top:14px}
+.lede b{color:#fff}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:clamp(16px,2.2vw,26px);backdrop-filter:blur(6px)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,22px)}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,22px)}
+.klabel{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--pink-2);font-weight:700;margin-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font-size:11.5px;background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:6px 13px;color:var(--sub)}
+.chips span b{color:#fff}
+sup.cit{font-size:9.5px;line-height:0}
+sup.cit a{color:var(--pink-2);text-decoration:none;font-weight:800}
+
+/* hero */
+.hero{padding-top:118px}
+.hero .tag{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--pink-2);font-weight:800;margin-bottom:18px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.hero h1{margin:8px 0 20px;max-width:15ch}
+.hero .sub{color:var(--sub);max-width:54ch;font-size:clamp(16px,1.7vw,20px)}
+.hero .sub b{color:#fff}
+.metrics{display:grid;grid-template-columns:repeat(3,auto);gap:clamp(20px,4vw,54px);margin:30px 0 14px}
+.metric .num{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4vw,52px);line-height:1;background:linear-gradient(120deg,#fff,var(--pink-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.metric .cap{font-size:12px;color:var(--sub);margin-top:7px;max-width:23ch}
+.disc{font-size:12px;color:var(--dim);font-style:italic;max-width:70ch;margin-top:6px}
+@media(max-width:860px){.metrics{grid-template-columns:1fr 1fr;gap:18px}}
+
+/* context pills */
+.ctx-3 .p{border-top:2px solid var(--pink);padding-top:12px}
+.ctx-3 .p .k{font-weight:800;font-size:15px;margin-bottom:4px}
+.ctx-3 .p p{font-size:13.5px;color:var(--sub)}
+.ctx-3 .p p b{color:#fff}
+.bigq{font-family:var(--serif);font-size:clamp(22px,3vw,38px);line-height:1.14;max-width:26ch;margin-top:clamp(26px,3.4vw,42px);color:#fff}
+.bigq .c{color:var(--pink-2)}
+
+/* chart */
+.chartbox{position:relative}
+.chartbox svg{width:100%;height:auto;display:block}
+.legend{display:flex;gap:16px;font-size:12px;color:var(--sub);flex-wrap:wrap;margin-bottom:8px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:9px;height:9px;border-radius:50%;flex:none}
+.chart-tip{position:absolute;pointer-events:none;background:#fff;color:var(--plum);border-radius:8px;padding:9px 12px;font-size:12px;line-height:1.5;opacity:0;transition:opacity .12s;transform:translate(-50%,-100%);white-space:nowrap;z-index:5;font-weight:600}
+.chart-tip b{font-weight:800}
+
+/* equation */
+.eq{display:flex;align-items:stretch;justify-content:center;gap:clamp(8px,1.6vw,18px);flex-wrap:wrap;margin-top:clamp(20px,3vw,34px)}
+.eq .term{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;min-width:170px;flex:1;max-width:260px}
+.eq .term .h{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--dim)}
+.eq .term .v{font-family:var(--serif);font-size:clamp(18px,2.2vw,24px);margin:5px 0 3px;color:#fff}
+.eq .term p{font-size:12px;color:var(--sub)}
+.eq .op{font-family:var(--serif);font-size:30px;color:var(--pink-2);align-self:center}
+.eq .term.hot{border-color:rgba(240,139,196,.5);box-shadow:0 0 26px rgba(216,45,139,.18)}
+.eq .term.hot .h{color:var(--pink-2)}
+
+/* gap bar */
+.gapbar{margin-top:clamp(18px,2.4vw,28px)}
+.gapbar .row{height:36px;border-radius:9px;background:var(--panel-2);position:relative;overflow:hidden;margin:10px 0 8px;border:1px solid var(--line)}
+.gapbar .row i{position:absolute;left:0;top:0;bottom:0;width:25%;background:linear-gradient(120deg,var(--pink),#9C1163);border-radius:8px 0 0 8px}
+.gapbar .row span{position:absolute;font-size:11px;font-weight:800;top:50%;transform:translateY(-50%)}
+.gapbar .row .in{left:10px;color:#fff}
+.gapbar .row .out{left:calc(25% + 12px);color:var(--sub)}
+.gapbar .cap{font-size:12px;color:var(--dim)}
+
+/* lifecycle strip */
+.states{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:clamp(20px,3vw,32px)}
+.state{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 14px 12px;position:relative}
+.state .n{font-family:var(--serif);font-size:22px;color:var(--pink-2);line-height:1}
+.state .t{font-weight:800;font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;margin:7px 0 6px}
+.state p{font-size:11.5px;color:var(--sub);line-height:1.45}
+.state .sig{display:block;font-size:10px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;color:var(--pink-2);margin-top:8px;border-top:1px solid var(--line);padding-top:7px}
+.state.cliff{border-color:rgba(240,139,196,.55);box-shadow:0 0 26px rgba(216,45,139,.2)}
+@media(max-width:860px){.states{grid-template-columns:1fr 1fr}.state:last-child{grid-column:1/-1}}
+
+/* hypotheses */
+.hrow{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 16px;display:grid;grid-template-columns:30px 1fr auto;gap:12px;align-items:baseline;margin-bottom:9px}
+.hrow .hn{font-family:var(--serif);font-size:17px;color:var(--pink-2)}
+.hrow .ht{font-size:13.5px;color:var(--sub)}
+.hrow .ht b{color:#fff;font-weight:700}
+.hrow .hm{font-size:10px;letter-spacing:.04em;text-transform:uppercase;font-weight:700;background:var(--panel-2);color:var(--ink);border-radius:6px;padding:4px 8px;white-space:nowrap}
+@media(max-width:860px){.hrow{grid-template-columns:30px 1fr}.hrow .hm{grid-column:2;justify-self:start}}
+
+/* phone mocks (light screens on dark stage) */
+.phones{display:flex;gap:clamp(14px,2.2vw,26px);flex-wrap:wrap;justify-content:center}
+.phone{width:212px;background:#000;border-radius:28px;padding:8px;box-shadow:0 20px 46px rgba(0,0,0,.55),0 0 40px rgba(216,45,139,.12);flex-shrink:0}
+.phone .scr{background:#fff;border-radius:21px;overflow:hidden;display:flex;flex-direction:column;aspect-ratio:9/17.4;color:#1A1220}
+.scr .abar{background:#F3EDF2;padding:8px 11px;font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:#8E7186;border-bottom:1px solid #E8DFE6;display:flex;justify-content:space-between}
+.scr .body{padding:11px;display:flex;flex-direction:column;gap:7px;flex:1}
+.uiq{font-family:var(--serif);font-size:12.5px}
+.uichips{display:flex;gap:4px;flex-wrap:wrap}
+.uichips span{font-size:9px;border:1px solid #E0D5DD;border-radius:99px;padding:3px 7px;color:#8E7186}
+.uichips span.on{background:var(--pink);border-color:var(--pink);color:#fff}
+.uicard{background:#F6F0F5;border:1px solid #E8DFE6;border-radius:9px;padding:8px}
+.uicard .t{font-size:8px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--pink);display:block;margin-bottom:2px}
+.uicard .n{font-family:var(--serif);font-size:12px;display:block}
+.uicard .d{font-size:9px;color:#8E7186;display:block}
+.uibtn{background:var(--pink);color:#fff;border-radius:8px;text-align:center;font-weight:700;font-size:10.5px;padding:8px;margin-top:auto}
+.uibtn.sec{background:#fff;border:1.5px solid #E0D5DD;color:#1A1220;margin-top:0}
+.uiok{width:30px;height:30px;border-radius:50%;background:#E6F7F0;color:#0B7A55;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;margin:4px auto 0}
+.uibar{height:6px;border-radius:99px;background:#EDE4EB}
+.uibar i{display:block;height:100%;border-radius:99px;background:var(--pink)}
+.uimetric{display:grid;grid-template-columns:46px 1fr 30px;gap:6px;align-items:center;font-size:9px;color:#8E7186}
+.phone-cap{text-align:center;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--dim);margin-top:8px}
+
+/* experiment table */
+.fw{overflow-x:auto;border-radius:16px;border:1px solid var(--line);margin-top:clamp(20px,3vw,32px)}
+.fw table{width:100%;border-collapse:collapse;font-size:12.5px;min-width:680px}
+.fw th{background:var(--panel-2);color:var(--pink-2);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;text-align:left;padding:12px 14px;font-weight:800;border-bottom:1px solid var(--line)}
+.fw td{padding:12px 14px;border-bottom:1px solid var(--line);color:var(--sub);vertical-align:top}
+.fw td:first-child{color:#fff;font-weight:700;white-space:nowrap;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.fw tr:last-child td{border-bottom:none}
+.fw td b{color:#fff}
+
+/* impact + risks */
+.learn{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,22px);margin-top:clamp(20px,3vw,30px)}
+.learn .l{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--pink);border-radius:12px;padding:clamp(16px,2vw,22px)}
+.learn .l h4{font-size:15px;font-weight:800;margin-bottom:8px}
+.learn .l p{font-size:13px;color:var(--sub)}
+.learn .l p b{color:#fff}
+
+/* pillars (90 days) */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,22px);margin-top:clamp(28px,3.4vw,44px)}
+.pillar{position:relative;padding-top:22px}
+.pillar .cap{position:absolute;top:0;left:50%;transform:translate(-50%,-50%);background:var(--plum);border:1px solid var(--pink);border-radius:99px;padding:6px 16px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--pink-2);white-space:nowrap;box-shadow:0 0 20px var(--glow)}
+.pillar .body{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:clamp(18px,2.2vw,26px);height:100%}
+.pillar h4{font-size:16px;font-weight:800;margin-bottom:8px}
+.pillar p{font-size:13px;color:var(--sub)}
+
+/* sources */
+.srcs{columns:2;column-gap:36px;font-size:12px;color:var(--sub);margin-top:18px}
+.srcs li{margin:0 0 9px 16px;break-inside:avoid}
+.srcs a{color:var(--pink-2);text-decoration:none;font-weight:600}
+.srcs a:hover{text-decoration:underline}
+@media(max-width:700px){.srcs{columns:1}}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:clamp(48px,6vw,84px) 0 40px;margin-top:clamp(20px,3vw,40px);background:rgba(21,7,19,.6)}
+footer h2{max-width:26ch}
+.ft-lede{color:var(--sub);max-width:60ch;font-size:15px;margin-top:14px}
+.contact{display:flex;flex-wrap:wrap;gap:22px;align-items:baseline;margin-top:22px}
+.contact a{color:var(--pink-2);text-decoration:none;font-weight:600}
+.contact .who{font-family:var(--serif);font-size:22px}
+.switcher{margin-top:26px}
+.switcher .sl{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--dim);margin-bottom:12px}
+.switcher .cases{display:flex;flex-wrap:wrap;gap:10px}
+.switcher a{font-size:12.5px;font-weight:600;border:1px solid var(--line);border-radius:99px;padding:8px 16px;color:var(--sub);text-decoration:none;transition:all .2s}
+.switcher a:hover{border-color:var(--pink-2);color:#fff}
+.switcher a.home{background:var(--panel-2)}
+.switcher a[aria-current="page"]{background:var(--pink);border-color:var(--pink);color:#fff}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.6,.2,1)}
+body.js-anim .reveal:not(.in){opacity:0}
+.reveal.in,body:not(.js-anim) .reveal{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.reveal{opacity:1 !important;transform:none !important;transition:none !important}html{scroll-behavior:auto}}
+:focus-visible{outline:2.5px solid var(--pink);outline-offset:3px;border-radius:3px}
+@media(max-width:860px){.grid-2,.grid-3,.learn,.pillars{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<a href="#market" class="skip">Skip to content</a>
+<nav aria-label="Case navigation">
+  <div class="wrap nav-in">
+    <a href="index.html" class="brand">MoMo<em>.</em> Study</a>
+    <div class="nav-right">
+      <a href="#market">Market</a>
+      <a href="#problem">Problem</a>
+      <a href="#thesis">Thesis</a>
+      <a href="#experiment">Experiment</a>
+      <a href="#impact">Impact</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- SLIDE 00 · HERO -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="tag reveal">Independent deep-dive · Fintech growth · July 2026</div>
+    <h1 class="reveal">Growth after the <span class="g">QR wars.</span></h1>
+    <p class="sub reveal">Payments keep booming. Active wallets are <b>shrinking</b>. This deck is how MoMo grows its next revenue curve from <b>retention, frequency and ARPU</b> — not new installs.</p>
+    <div class="metrics reveal">
+      <div class="metric"><div class="num" data-count="30.3" data-suffix="M">30.3M</div><div class="cap">active e-wallets nationwide, 9/2025 — down from 36.2M in 2023<sup class="cit"><a href="#sources">1</a></sup></div></div>
+      <div class="metric"><div class="num" data-count="32" data-prefix="&gt;" data-suffix="M">&gt;32M</div><div class="cap">NAPAS transactions per day, 2025<sup class="cit"><a href="#sources">4</a></sup></div></div>
+      <div class="metric"><div class="num" data-count="10" data-suffix="M">10M</div><div class="cap">MoMo monthly actives on 40M registered<sup class="cit"><a href="#sources">10</a></sup></div></div>
+    </div>
+    <p class="disc reveal">Independent portfolio analysis on public data — SBV, NAPAS, Decision Lab, company disclosures, all cited on the last slide. Not an internal MoMo project. I first met MoMo as a research subject: my UEH Young Researcher study applied UTAUT2 to e-wallet purchase behavior.</p>
+  </div>
+</header>
+
+<!-- SLIDE 01 · MARKET -->
+<section id="market">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 01 · Market forensics</div>
+    <h2 class="reveal">Payments boomed. Wallets shrank.</h2>
+    <div class="grid-2" style="align-items:start;margin-top:clamp(20px,3vw,32px)">
+      <div class="panel reveal">
+        <div class="legend">
+          <span><i style="background:#D8478F"></i>Payments — NAPAS tx/day</span>
+          <span><i style="background:#3987e5"></i>Active e-wallets — SBV</span>
+        </div>
+        <div class="chartbox" id="mmChartWrap">
+          <svg id="mmChart" viewBox="0 0 560 320" role="img" aria-label="Indexed lines, 2023 equals 100: NAPAS daily payment transactions rise to about 160 by 2025 while SBV-counted active e-wallets fall to about 84.">
+            <line x1="50" y1="201.1" x2="510" y2="201.1" stroke="rgba(248,237,244,.18)" stroke-dasharray="3 4"/>
+            <text x="44" y="205" text-anchor="end" font-size="10" fill="#8E7186" font-family="Manrope,sans-serif">100</text>
+            <line x1="50" y1="280" x2="510" y2="280" stroke="rgba(248,237,244,.25)"/>
+            <g font-family="Manrope,sans-serif" font-size="11" fill="#8E7186" text-anchor="middle">
+              <text x="80" y="300">2023</text><text x="280" y="300">2024</text><text x="480" y="300">2025</text>
+            </g>
+            <line id="mmCross" x1="80" y1="30" x2="80" y2="280" stroke="rgba(248,237,244,.3)" stroke-width="1" stroke-dasharray="3 3" opacity="0"/>
+            <polyline points="80,201.1 280,213.8 480,241" fill="none" stroke="#3987e5" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+            <polyline points="80,201.1 280,127.8 480,54.4" fill="none" stroke="#D8478F" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+            <g fill="#3987e5" stroke="#150713" stroke-width="2">
+              <circle cx="80" cy="201.1" r="4.5"/><circle cx="280" cy="213.8" r="4.5"/><circle cx="480" cy="241" r="4.5"/>
+            </g>
+            <g fill="#D8478F" stroke="#150713" stroke-width="2">
+              <circle cx="80" cy="201.1" r="4.5"/><circle cx="280" cy="127.8" r="4.5"/><circle cx="480" cy="54.4" r="4.5"/>
+            </g>
+            <g font-family="Manrope,sans-serif" font-size="11" font-weight="700">
+              <text x="492" y="50" fill="#F08BC4">≈160</text>
+              <text x="492" y="252" fill="#7fb0e8">≈84</text>
+            </g>
+          </svg>
+          <div class="chart-tip" id="mmTip"></div>
+        </div>
+        <p style="font-size:11px;color:var(--dim);margin-top:4px">Indexed, 2023 = 100. NAPAS 20M → 26M → 32M+ tx/day vs SBV 36.2M → 34.3M → 30.3M active wallets.<sup class="cit"><a href="#sources">1,4</a></sup></p>
+      </div>
+      <div class="grid-3 ctx-3" style="grid-template-columns:1fr;gap:clamp(14px,2vw,20px)">
+        <div class="p reveal"><div class="k">QR became a public utility</div><p>VietQR grew 8x in 2023, 2.2x in 2024; <b>~90M bank accounts</b> now scan the same codes MoMo does. The core wallet job is commoditized.<sup class="cit"><a href="#sources">2,3</a></sup></p></div>
+        <div class="p reveal"><div class="k">Banks stopped charging</div><p>Zero-fee transfers since 2022 plus NAPAS fee cuts killed the payment rail as a profit pool. <b>Nobody monetizes the transfer anymore.</b><sup class="cit"><a href="#sources">5</a></sup></p></div>
+        <div class="p reveal"><div class="k">The shake-out is public</div><p>Moca dead (7/2024). SmartPay's consumer wallet dead (8/2025). ZaloPay pivoted off "e-wallet". MoMo penetration <b>68% → 61%</b> while bank apps became the #3 platform.<sup class="cit"><a href="#sources">6,7</a></sup></p></div>
+      </div>
+    </div>
+    <p class="bigq reveal">When the product everyone fought over becomes free plumbing, <span class="c">the war moves from winning users to keeping habits.</span></p>
+  </div>
+</section>
+
+<!-- SLIDE 02 · PROBLEM -->
+<section id="problem">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 02 · The problem, quantified</div>
+    <h2 class="reveal">MoMo owns the users. It doesn't yet own the month.</h2>
+    <p class="lede reveal">First full-year profit in 2024 — 347.5 billion VND on revenue up 27% — and profitable again in 2025.<sup class="cit"><a href="#sources">11</a></sup> The model works when users transact. Write growth as an equation and the leverage is obvious:</p>
+    <div class="eq reveal">
+      <div class="term"><div class="h">Reach</div><div class="v">Monthly actives</div><p>~10M MAU on ~40M registered. Install growth is capped by a shrinking market.</p></div>
+      <div class="op">×</div>
+      <div class="term hot"><div class="h">Frequency · the lever</div><div class="v">Habits per user</div><p>QR is a habit MoMo shares with every bank app. A second habit is one it owns.</p></div>
+      <div class="op">×</div>
+      <div class="term hot"><div class="h">Depth · the margin</div><div class="v">Revenue per habit</div><p>Payments earn ~nothing. Credit, savings, investment carry the P&amp;L — the Toss and Paytm pattern.<sup class="cit"><a href="#sources">14</a></sup></p></div>
+    </div>
+    <div class="gapbar reveal">
+      <div class="row"><i></i><span class="in">~10M monthly active</span><span class="out">~30M registered but not monthly active</span></div>
+      <p class="cap">Roughly 1 in 4 registered users transacts in a given month (derived from co-founder disclosures, 3/2026<sup class="cit"><a href="#sources">10</a></sup>). MoMo already paid for these users once.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 03 · LIFECYCLE -->
+<section id="lifecycle">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 03 · Outside-in lifecycle model</div>
+    <h2 class="reveal">Five user states. One cliff that matters.</h2>
+    <div class="states reveal">
+      <div class="state"><div class="n">1</div><div class="t">Registered, dormant</div><p>Installed for one promo. Bank app covers QR.</p><span class="sig">0 tx in 90 days</span></div>
+      <div class="state"><div class="n">2</div><div class="t">First transaction</div><p>"It worked. Anyway." Zero switching cost.</p><span class="sig">1st tx · no 2nd category</span></div>
+      <div class="state cliff"><div class="n">3</div><div class="t">Single-habit</div><p>Scans QR only. Habit without loyalty — promo-sensitive.</p><span class="sig">1 category ≥ 90% of tx</span></div>
+      <div class="state"><div class="n">4</div><div class="t">Multi-habit</div><p>Bills + transport + piggy bank live here. Leaving costs effort.</p><span class="sig">2+ categories / 30 days</span></div>
+      <div class="state"><div class="n">5</div><div class="t">Monetized</div><p>Ví Trả Sau, Vay Nhanh, savings. Where the P&amp;L lives.</p><span class="sig">Financial product active</span></div>
+    </div>
+    <p class="bigq reveal">The cliff is states 2–3: <span class="c">users who never form a second habit are renting MoMo, not living in it</span> — and rented users churn to whichever app pays next.</p>
+  </div>
+</section>
+
+<!-- SLIDE 04 · THESIS -->
+<section id="thesis">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 04 · The thesis</div>
+    <h2 class="reveal">Not an acquisition problem. A <span class="g">second-habit</span> problem.</h2>
+    <div class="grid-3 ctx-3" style="margin-top:clamp(22px,3vw,36px)">
+      <div class="p reveal"><div class="k">Evidence: multi-service compounding</div><p>Grab investor data: 1-year retention jumps <b>37% → 88%</b> from one to 3+ services; multi-service users spend ~4x. Ant's IPO filing: 80% of Alipay users ran 3+ categories.<sup class="cit"><a href="#sources">13</a></sup></p></div>
+      <div class="p reveal"><div class="k">Economics: retention pays in finance</div><p>Bain: +5% retention → <b>&gt;25% profit</b> in financial services. The industry already moved: SEA finance-app remarketing spend <b>+193%</b> in 2025 while installs went negative.<sup class="cit"><a href="#sources">15,17</a></sup></p></div>
+      <div class="p reveal"><div class="k">Warning: promos don't retain</div><p>Ipsos Indonesia: <b>71%</b> of e-wallet users arrived for promotions; only <b>23%</b> stay for them. This plan pays for behavior change, not transactions.<sup class="cit"><a href="#sources">16</a></sup></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 05 · FIVE BETS -->
+<section id="bets">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 05 · Five testable bets</div>
+    <h2 class="reveal">Every bet owns one metric.</h2>
+    <div class="grid-2" style="align-items:center;margin-top:clamp(20px,3vw,32px)">
+      <div class="reveal">
+        <div class="hrow"><span class="hn">H1</span><span class="ht"><b>Second Habit in 30 Days</b> — guided ladder after first transaction</span><span class="hm">30-day 2nd-category rate</span></div>
+        <div class="hrow"><span class="hn">H2</span><span class="ht"><b>Payday money moments</b> — salary-cycle triggers, not generic promo pushes<sup class="cit"><a href="#sources">18</a></sup></span><span class="hm">CTR → tx conversion</span></div>
+        <div class="hrow"><span class="hn">H3</span><span class="ht"><b>Bill autopilot + streaks</b> — recurring bills anchor retention</span><span class="hm">M2 retention delta</span></div>
+        <div class="hrow"><span class="hn">H4</span><span class="ht"><b>Credit graduation ladder</b> — habit cohorts qualify into Ví Trả Sau</span><span class="hm">Approved rate · NPL guardrail</span></div>
+        <div class="hrow"><span class="hn">H5</span><span class="ht"><b>State-based winback</b> — message the ~30M dormant by state, not blast</span><span class="hm">Reactivation → M1 stick</span></div>
+      </div>
+      <div class="reveal">
+        <div class="phones">
+          <div>
+            <div class="phone"><div class="scr">
+              <div class="abar"><span>Payday · Moni</span><span>9:41</span></div>
+              <div class="body">
+                <span class="uiq">Salary just landed. Set your month up in 20 seconds?</span>
+                <div class="uichips"><span class="on">Auto-pay 2 bills</span><span>Sweep to savings</span><span>Not now</span></div>
+                <div class="uicard"><span class="t">This month's bills</span><span class="n">Electricity + 4G · 612.000đ</span><span class="d">due 8 &amp; 12 Aug · autopilot ready</span></div>
+                <div class="uicard"><span class="t">Túi Thần Tài</span><span class="n">Sweep 200.000đ</span><span class="d">before you can spend it</span></div>
+                <div class="uibtn">Do both</div>
+              </div>
+            </div></div>
+            <div class="phone-cap">H2 + H3 · concept mock</div>
+          </div>
+          <div>
+            <div class="phone"><div class="scr">
+              <div class="abar"><span>Streak</span><span>9:58</span></div>
+              <div class="body">
+                <div class="uiok">✓</div>
+                <div style="text-align:center"><span class="uiq">Bills paid — 4-month streak</span><div style="font-size:9px;color:#8E7186">never missed · never late-fee'd</div></div>
+                <div class="uimetric"><span>Streak</span><div class="uibar"><i style="width:80%"></i></div><span>4/5</span></div>
+                <div class="uicard"><span class="t">Month 5 unlocks</span><span class="n">Ví Trả Sau pre-approval</span><span class="d">your payment history is your credit record</span></div>
+                <div class="uibtn sec">See my progress</div>
+              </div>
+            </div></div>
+            <div class="phone-cap">H3 → H4 · concept mock</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 06 · EXPERIMENT -->
+<section id="experiment">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 06 · Flagship experiment</div>
+    <h2 class="reveal">Designed to ship: <span class="g">EXP-01 "Second Habit".</span></h2>
+    <p class="lede reveal">One experiment, fully specified. Wins → it becomes the onboarding default and the template for H2–H5. Loses → it dies cheaply in six weeks.</p>
+    <div class="fw reveal">
+      <table>
+        <tr><td>Hypothesis</td><td>A guided path to one extra money category within 30 days of first transaction lifts 30-day second-category adoption by <b>+8pp</b> and M2 retention by <b>≥5pp</b>.</td></tr>
+        <tr><td>Arms</td><td><b>A</b> control · <b>B</b> guided "next habit" ladder on the Moni surface · <b>C</b> = B + one-time 20.000đ seed that only activates <b>inside</b> the second habit — pays for behavior, not transactions.</td></tr>
+        <tr><td>Primary metric</td><td>% of new-active users with a <b>2nd-category transaction within 30 days</b>. Secondary: M2 retention, tx per active, time-to-second-category.</td></tr>
+        <tr><td>Guardrails</td><td>Uninstalls · notification opt-outs · incentive cost per incremental converter · support tickets. Credit is excluded from EXP-01 by design.</td></tr>
+        <tr><td>Size &amp; runtime</td><td>~<b>1,000 users/arm</b> detects +8pp (α .05, power .8) — MoMo onboards multiples of that daily. <b>6 weeks:</b> 2 to fill cohorts, 4 to observe.</td></tr>
+        <tr><td>Decision rule</td><td>B beats A → ship as default. C beats B net of incentive cost → keep the seed for high-value segments. Neither → kill, publish the learning, move to H2.</td></tr>
+      </table>
+    </div>
+    <p class="disc reveal">Baselines are unknowable from outside — placeholders by design. The deliverable is the design, guardrails and kill rules; week one of real data fills the numbers.</p>
+  </div>
+</section>
+
+<!-- SLIDE 07 · OPERATE -->
+<section id="operate">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 07 · How it runs</div>
+    <h2 class="reveal">One north star. Guardrails always on.</h2>
+    <div class="grid-2" style="align-items:start;margin-top:clamp(20px,3vw,32px)">
+      <div class="panel reveal">
+        <div class="klabel">North-star candidate</div>
+        <p style="font-size:17px;font-weight:700;color:#fff">Monthly users with 2+ money habits</p>
+        <p style="font-size:13px;color:var(--sub);margin-top:6px">Trailing twin: revenue per multi-habit user. Each experiment owns exactly one input metric, reviewed weekly: 30-day 2nd-category rate ← payday conversion ← reactivation-to-stick.</p>
+      </div>
+      <div class="reveal">
+        <div class="klabel">Guardrails</div>
+        <div class="chips">
+          <span>Uninstall rate</span><span>Incentive cost / <b>incremental</b> habit</span><span>Notification opt-out</span><span>NPL on credit cohorts</span><span>Fraud flags</span>
+        </div>
+        <p style="font-size:13px;color:var(--sub);margin-top:14px">Sequence by proof: EXP-01 first (cheapest, fastest read), payday triggers second, bill autopilot third, credit graduation only on clean cohorts, dormant winback after the engine works on actives.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 08 · IMPACT -->
+<section id="impact">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 08 · What it's worth</div>
+    <h2 class="reveal">Sized honestly. Assumptions attached.</h2>
+    <div class="metrics reveal" style="margin-top:clamp(24px,3vw,36px)">
+      <div class="metric"><div class="num">≈1.1M</div><div class="cap">users moved to a second habit in 12 months — 20% of a modeled ~5.5M single-habit base</div></div>
+      <div class="metric"><div class="num">+30pp</div><div class="cap">retention delta on converts (haircut vs Grab's 37→88) ≈ 330K MAU saved from churn<sup class="cit"><a href="#sources">13</a></sup></div></div>
+      <div class="metric"><div class="num">&gt;25%</div><div class="cap">profit leverage retention carries in financial services (Reichheld/Bain)<sup class="cit"><a href="#sources">15</a></sup></div></div>
+    </div>
+    <p class="disc reveal">Assumptions: 10M MAU (self-reported, 3/2026) · 55% single-habit share (assumption — no public mix data) · 20% conversion is the program target EXP-01 validates · no revenue projection, because product mix decides it and is unknowable outside-in. The structural claim stands: multi-habit users are where fintech P&amp;L accrues — Toss turned profitable in 2024 only after multi-product expansion.<sup class="cit"><a href="#sources">10,14</a></sup></p>
+    <div class="learn">
+      <div class="l reveal"><h4>Risk · promo-loyalty trap</h4><p>Cashback buys transactions, not habits. <b>Mitigation:</b> incentives only in arm C, capped, paid on behavior change, killed at the cost ceiling.<sup class="cit"><a href="#sources">16</a></sup></p></div>
+      <div class="l reveal"><h4>Risk · regulatory friction</h4><p>Biometric checks &gt;10M VND, 100M VND/month wallet caps. <b>Mitigation:</b> habits built on small recurring amounts sit far below every threshold.<sup class="cit"><a href="#sources">8,9</a></sup></p></div>
+      <div class="l reveal"><h4>Risk · vanity metrics</h4><p>"30M+ users" is cumulative, not active. <b>Mitigation:</b> dashboards run on MAU, cohorts and habit counts only.<sup class="cit"><a href="#sources">10</a></sup></p></div>
+    </div>
+    <p class="bigq reveal">The pitch in one line: <span class="c">MoMo already paid to acquire 40 million users. Make the next 30 million transactions come from them.</span></p>
+  </div>
+</section>
+
+<!-- SLIDE 09 · 90 DAYS -->
+<section id="plan">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 09 · First 90 days in the seat</div>
+    <h2 class="reveal">Weeks, not quarters.</h2>
+    <div class="pillars reveal">
+      <div class="pillar"><span class="cap">Days 1–30</span><div class="body"><h4>Replace my assumptions</h4><p>Pull real cohorts: category mix, second-habit baseline, payday curves. Rebuild this deck's model with internal data. Instrument the five states.</p></div></div>
+      <div class="pillar"><span class="cap">Days 31–60</span><div class="body"><h4>Ship EXP-01</h4><p>Launch Second Habit exactly as specified. Draft the payday-trigger pilot (H2) in parallel with CRM.</p></div></div>
+      <div class="pillar"><span class="cap">Days 61–90</span><div class="body"><h4>Decide and scale</h4><p>Read EXP-01 against the decision rule. Ship the winner as default or kill it publicly. The metric tree becomes the team's weekly cadence.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 10 · SOURCES -->
+<section id="sources">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 10 · Sources &amp; method</div>
+    <h2 class="reveal">Every number, cited.</h2>
+    <p class="lede reveal" style="font-size:13.5px">Official data (SBV, NAPAS), third-party research (Decision Lab, Ipsos), primary filings (Ant IPO, Bain/HBR) and company disclosures — self-reported figures labeled. Compiled July 2026. Known conflicts (e.g., MoMo revenue scope, ~3,300 vs 9,400 tỷ VND across sources) are excluded from the argument rather than resolved by guesswork.</p>
+    <ol class="srcs reveal">
+      <li>SBV wallet counts: <a href="https://tapchinganhang.gov.vn/phat-trien-thi-truong-vi-dien-tu-gop-phan-thuc-day-thanh-toan-so-va-chuyen-doi-so-16719.html" target="_blank" rel="noopener">Tạp chí Ngân hàng (11/2025)</a>; <a href="https://cafef.vn/viet-nam-co-hon-34-trieu-vi-dien-tu-dang-hoat-dong-188240804170124167.chn" target="_blank" rel="noopener">CafeF/SBV (8/2024)</a>; Vietdata (2024).</li>
+      <li>VietQR growth: <a href="https://baophapluat.vn/thanh-toan-bang-phuong-thuc-quet-vietqr-tang-8-lan-ve-so-luong-va-4-lan-ve-gia-tri-post496053.html" target="_blank" rel="noopener">Báo Pháp luật (2023)</a>; <a href="https://nhandan.vn/nam-2024-he-thong-napas-xu-ly-956-ty-giao-dich-post856147.html" target="_blank" rel="noopener">Nhân Dân (1/2025)</a>.</li>
+      <li>90M accounts scan VietQR: <a href="https://baochinhphu.vn/napas-cung-co-ha-tang-thanh-toan-so-102251124201316237.htm" target="_blank" rel="noopener">Báo Chính phủ (11/2025)</a>.</li>
+      <li>NAPAS 2025 (+24% volume, &gt;32M tx/day): <a href="https://fili.vn/2026/01/nam-2025-giao-dich-qua-napas-tang-24-ve-so-luong-8-ve-gia-tri-757-1393244.htm" target="_blank" rel="noopener">Vietstock/Fili (1/2026)</a>.</li>
+      <li>Zero-fee wave: <a href="https://nhandan.vn/ngan-hang-chay-dua-mien-phi-tren-nen-tang-so-post686396.html" target="_blank" rel="noopener">Nhân Dân (2022)</a>; <a href="https://baochinhphu.vn/napas-gop-phan-tao-cuoc-cach-mang-ve-phi-10224020517542487.htm" target="_blank" rel="noopener">Báo Chính phủ (2024)</a>.</li>
+      <li>Consolidation: <a href="https://tuoitre.vn/grab-ngung-hoat-dong-vi-dien-tu-moca-tai-viet-nam-20240531150120387.htm" target="_blank" rel="noopener">Tuổi Trẻ — Moca (5/2024)</a>; <a href="https://www.smartpayvn.com/tin-tuc/thong-bao-ve-viec-ung-dung-vi-smartpay-ngung-hoat-dong/" target="_blank" rel="noopener">SmartPay (8/2025)</a>; <a href="https://www.vng.com.vn/news/enterprise/zalopay-rebranding.html" target="_blank" rel="noopener">VNG — ZaloPay (7/2024)</a>.</li>
+      <li>Penetration &amp; bank apps: <a href="https://fintechnews.sg/110658/vietnam/fintech-platforms-in-vietnam-lose-momentum-to-bank-apps/" target="_blank" rel="noopener">Decision Lab Q4 2024</a>; <a href="https://vir.com.vn/momo-dominates-vietnams-e-wallet-market-with-68-per-cent-share-102059.html" target="_blank" rel="noopener">Decision Lab Q1 2023 via VIR</a>.</li>
+      <li>Biometric rules (QĐ 2345): <a href="https://luatvietnam.vn/hanh-chinh/giao-dich-chuyen-tien-nao-phai-xac-thuc-sinh-trac-hoc-570-98389-article.html" target="_blank" rel="noopener">LuatVietnam</a>.</li>
+      <li>Circular 40/2024 — wallet caps, official instrument: <a href="https://vnba.org.vn/vi/nhung-quy-dinh-moi-ve-vi-dien-tu-tu-ngay-01-7-2025-theo-thong-tu-40-2024-tt-nhnn-18054.htm" target="_blank" rel="noopener">VNBA (2025)</a>.</li>
+      <li>40M registered / 10M MAU / $25B GTV / $700M loans / $300M AUM: co-founder Nguyễn Bá Diệp, <a href="https://markettimes.vn/sep-momo-thong-tin-ve-tinh-hinh-lo-lai-va-ke-hoach-ipo-109301.html" target="_blank" rel="noopener">MarketTimes (3/2026)</a> — self-reported.</li>
+      <li>First profit (347.5 tỷ VND, 2024): <a href="https://asia.nikkei.com/spotlight/dealstreetasia/vietnam-s-fintech-unicorn-momo-posts-first-full-year-profit" target="_blank" rel="noopener">Nikkei/DealStreetAsia (5/2025)</a>; 2025 again per <a href="https://vietnamfinance.vn/co-lai-lien-tiep-2-nam-vi-sao-ky-lan-momo-chon-ban-50-co-phan-thay-vi-ipo-d146698.html" target="_blank" rel="noopener">VietnamFinance (6/2026)</a>.</li>
+      <li>Rebrand "Trợ thủ tài chính với AI", products: <a href="https://tuoitre.vn/vi-dien-tu-momo-tro-thanh-tro-thu-tai-chinh-voi-ai-20241029143350172.htm" target="_blank" rel="noopener">Tuổi Trẻ (10/2024)</a>; <a href="https://www.momo.vn/tin-tuc/thong-cao-bao-chi/15-nam-momo-hanh-trinh-chuyen-minh-cung-su-lon-8211" target="_blank" rel="noopener">MoMo (11/2025)</a>.</li>
+      <li>Grab 37→88% &amp; ~4x spend: Grab investor materials via <a href="https://rscapital.substack.com/p/a-deep-dive-on-grab-holdings-grab" target="_blank" rel="noopener">RS Capital</a>. Ant 80%/3+: <a href="https://technode.com/2020/08/26/ant-group-ipo-filings-five-key-takeaways/" target="_blank" rel="noopener">Ant IPO via TechNode</a>.</li>
+      <li>Toss first profit FY2024: <a href="https://www.koreatimes.co.kr/business/banking-finance/20250328/toss-posts-first-ever-annual-profit-in-2024" target="_blank" rel="noopener">Korea Times</a>. Paytm financial-services-led profit: <a href="https://paytm.com/blog/investor-relations/paytm-fy24-revenue-increases/" target="_blank" rel="noopener">Paytm IR (2024)</a>.</li>
+      <li>Retention → profit: Reichheld &amp; Sasser, <a href="https://hbr.org/1990/09/zero-defections-quality-comes-to-services" target="_blank" rel="noopener">HBR 1990</a>; Reichheld, <a href="https://media.bain.com/Images/BB_Prescription_cutting_costs.pdf" target="_blank" rel="noopener">Bain 2001</a>.</li>
+      <li>Promo loyalty (71% vs 23%): Ipsos via <a href="https://www.thejakartapost.com/news/2020/02/14/no-discounts-no-problem-e-wallet-users-stick-around-despite-less-cash-back.html" target="_blank" rel="noopener">The Jakarta Post (2020)</a>.</li>
+      <li>SEA remarketing +193%: <a href="https://www.appsflyer.com/resources/reports/apac-finance-marketing/" target="_blank" rel="noopener">AppsFlyer APAC Finance (2026)</a>.</li>
+      <li>Payday effect: Olafsson &amp; Pagel, <a href="https://academic.oup.com/rfs/article-abstract/31/11/4398/4986471" target="_blank" rel="noopener">RFS 2018</a>. Streaks: <a href="https://blog.duolingo.com/how-streaks-keep-duolingo-learners-committed-to-their-language-goals/" target="_blank" rel="noopener">Duolingo A/B writeups</a>.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="bar"></span>Let's talk</div>
+    <h2 class="reveal">Growth, when the land grab is over.</h2>
+    <p class="ft-lede reveal">This is how I'd think inside a fintech: verify the market with primary data, model what the company won't publish, bet on behavior change over promo spend, and ship experiments with kill rules.</p>
+    <div class="contact reveal">
+      <span class="who">Tào Giáng My — Arie</span>
+      <span style="color:var(--dim)">Ho Chi Minh City, Vietnam</span>
+      <a href="mailto:taogiangmy.vn@gmail.com">taogiangmy.vn@gmail.com</a>
+      <a href="https://linkedin.com/in/giangmytao" target="_blank" rel="noopener">linkedin.com/in/giangmytao</a>
+    </div>
+    <div class="switcher reveal">
+      <div class="sl">Case studies</div>
+      <div class="cases">
+        <a class="home" href="growth-home.html">← All cases</a>
+        <a href="halio-growth-case.html">Halio Sonic</a>
+        <a href="coba.html">CoBa's Daughter</a>
+        <a href="amamy.html">Amamy</a>
+        <a href="guardian.html">Guardian</a>
+        <a href="momo.html" aria-current="page">MoMo</a>
+        <a href="ahamove.html">AhaMove</a>
+        <a href="melius.html">Melius</a>
+        <a href="base.html">Base.vn</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // reveal — armed only on a visible tab so content is never stuck hidden
+  if (document.visibilityState === 'visible' && 'IntersectionObserver' in window && !reduce) {
+    document.body.classList.add('js-anim');
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  // scroll progress
+  var bar = document.getElementById('progress');
+  if(bar) addEventListener('scroll', function(){
+    var h = document.documentElement.scrollHeight - innerHeight;
+    bar.style.width = (h>0 ? scrollY/h*100 : 0) + '%';
+  }, {passive:true});
+
+  // active nav
+  var links = [].slice.call(document.querySelectorAll('.nav-right a[href^="#"]'));
+  var map = links.map(function(a){ return {a:a, el:document.querySelector(a.getAttribute('href'))}; }).filter(function(m){ return m.el; });
+  if(map.length){
+    var nio = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ map.forEach(function(m){ m.a.classList.toggle('active', m.el===e.target); }); } });
+    },{rootMargin:'-45% 0px -50% 0px'});
+    map.forEach(function(m){ nio.observe(m.el); });
+  }
+
+  // metric count-up
+  function countUp(el){
+    var target = parseFloat(el.getAttribute('data-count'));
+    var pre = el.getAttribute('data-prefix')||'', suf = el.getAttribute('data-suffix')||'';
+    if(reduce || isNaN(target)) return;
+    var start=null;
+    function tick(t){
+      if(!start) start=t;
+      var p = Math.min((t-start)/800,1);
+      var shown = (p<1) ? Math.round(target*p*10)/10 : target;
+      el.textContent = pre + (Number.isInteger(target)?Math.round(shown):shown) + suf;
+      if(p<1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  var mio = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ countUp(e.target); mio.unobserve(e.target); } });
+  },{threshold:.6});
+  document.querySelectorAll('.num[data-count]').forEach(function(el){ mio.observe(el); });
+
+  // chart crosshair + tooltip
+  var svg = document.getElementById('mmChart');
+  var wrap = document.getElementById('mmChartWrap');
+  var tip = document.getElementById('mmTip');
+  var cross = document.getElementById('mmCross');
+  if(svg && wrap && tip && cross){
+    var years = ['2023','2024','2025'];
+    var xs = [80, 280, 480];
+    var pay = ['100 (20M tx/day)','≈130 (26M)','≈160 (32M+)'];
+    var wal = ['100 (36.2M)','≈95 (34.3M)','≈84 (30.3M)'];
+    var VBW = 560;
+    svg.addEventListener('pointermove', function(ev){
+      var r = svg.getBoundingClientRect();
+      var scale = r.width / VBW;
+      var px = (ev.clientX - r.left) / scale;
+      var best = 0, bd = Infinity;
+      for(var i=0;i<xs.length;i++){ var d = Math.abs(xs[i]-px); if(d<bd){bd=d;best=i;} }
+      cross.setAttribute('x1', xs[best]); cross.setAttribute('x2', xs[best]);
+      cross.setAttribute('opacity','1');
+      tip.innerHTML = '<b>'+years[best]+'</b><br><span style="color:#D8478F">●</span> Payments: <b>'+pay[best]+'</b><br><span style="color:#3987e5">●</span> Active wallets: <b>'+wal[best]+'</b>';
+      var wr = wrap.getBoundingClientRect();
+      var left = (r.left - wr.left) + xs[best]*scale;
+      left = Math.max(85, Math.min(left, wr.width - 85));
+      tip.style.left = left + 'px';
+      tip.style.top = (r.top - wr.top + 24*scale) + 'px';
+      tip.style.opacity = '1';
+    });
+    svg.addEventListener('pointerleave', function(){ tip.style.opacity='0'; cross.setAttribute('opacity','0'); });
+  }
+})();
+</script>
+</body>
+</html>

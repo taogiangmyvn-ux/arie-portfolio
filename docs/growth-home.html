@@ -33,6 +33,10 @@
 .wthumb.baseblue{background:radial-gradient(120% 120% at 78% 0,#1e40af,#070C1A);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px}
 .wthumb.baseblue .hex{width:46px;height:52px;background:linear-gradient(150deg,#3B82F6,#1e40af);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);box-shadow:0 0 30px rgba(59,130,246,.6)}
 .wthumb.baseblue .bt{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:#7CB0FF}
+/* MoMo magenta thumbnail */
+.wthumb.momoviz{background:radial-gradient(120% 120% at 78% 0,#D82D8B,#3D0523);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px}
+.wthumb.momoviz svg{width:64%;height:auto}
+.wthumb.momoviz .mt{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:#F5A9D3}
 .wthumb.deck{background:var(--ink);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px}
 .wthumb.deck .dn{font-family:var(--serif);font-size:34px;color:#8C9BFF;line-height:1}
 .wthumb.deck .dl{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,242,236,.65)}
@@ -176,6 +180,25 @@
 
     <div class="wgroup reveal"><span class="wg-k">Applied Research &amp; Product Case Studies</span><span class="rule"></span><span class="wg-note">Product-led growth &amp; UX friction mapping — SBC Montréal · Tomorrow Marketers, 1st-prize final case</span></div>
     <div class="wgrid grouped">
+
+      <a class="wcard reveal" href="momo.html">
+        <div class="wthumb momoviz"><span class="wtag"><i style="--c:#B4126B"></i>Independent Research · Fintech</span>
+          <svg viewBox="0 0 220 110" aria-hidden="true">
+            <line x1="10" y1="55" x2="210" y2="55" stroke="rgba(255,255,255,.25)" stroke-dasharray="3 4"/>
+            <polyline points="10,55 110,62 210,74" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="10,55 110,32 210,10" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="210" cy="10" r="5" fill="#fff"/>
+            <circle cx="210" cy="74" r="5" fill="rgba(255,255,255,.55)"/>
+          </svg>
+          <span class="mt">Retention &gt; Acquisition</span>
+        </div>
+        <div class="wbody">
+          <h3>MoMo: Growth after the QR wars</h3>
+          <p>A research-backed retention &amp; ARPU deep dive on Vietnam's largest fintech: market forensics with SBV/NAPAS data, an outside-in lifecycle model, and a fully specified flagship experiment.</p>
+          <div class="wmetrics"><span>Market forensics</span><span>Retention &amp; ARPU</span><span>Experiment design</span></div>
+          <span class="wgo">Read study →</span>
+        </div>
+      </a>
 
       <a class="wcard reveal" href="ahamove.html">
         <div class="wthumb"><span class="wtag"><i style="--c:#E8560E"></i>SBC · Product-Led Growth</span><img src="assets/ahamove-hero.jpg" alt="AhaMove delivery truck and driver"></div>
