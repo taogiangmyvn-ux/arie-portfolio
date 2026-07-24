@@ -130,6 +130,12 @@ h1 .g{background:linear-gradient(120deg,#fff,var(--blue-2));-webkit-background-c
 
 /* learnings */
 .learn{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,22px);margin-top:clamp(20px,3vw,30px)}
+.deckgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,2vw,22px);margin-top:clamp(20px,3vw,30px)}
+.dslide{display:block;border-radius:14px;overflow:hidden;box-shadow:0 18px 45px rgba(0,0,0,.45);transition:transform .3s ease,box-shadow .3s ease}
+.dslide:first-child{grid-column:1/-1}
+.dslide img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
+.dslide:hover{transform:translateY(-5px);box-shadow:0 26px 60px rgba(0,0,0,.55)}
+@media(max-width:760px){.deckgrid{grid-template-columns:1fr}}
 .certgrid{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(20px,3vw,44px);align-items:center;margin-top:clamp(20px,3vw,30px)}
 .certframe{margin:0;background:#fff;border-radius:16px;padding:13px;box-shadow:0 22px 55px rgba(0,0,0,.4)}
 .certframe img{width:100%;display:block;border-radius:8px}
@@ -174,6 +180,7 @@ footer h2{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.4vw,40
   <div class="wrap nav-in">
     <a href="growth-home.html" class="brand">Base<em>.</em> Case</a>
     <div class="nav-right">
+      <a href="#deck">Deck</a>
       <a href="#context">Context</a>
       <a href="#market">Market</a>
       <a href="#bcg">Portfolio</a>
@@ -198,6 +205,46 @@ footer h2{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.4vw,40
     <p class="disc reveal">A team project; this page presents the strategic thinking and framework I contributed to.</p>
   </div>
 </header>
+
+
+<!-- CERTIFICATE -->
+<section id="cert">
+  <div class="wrap">
+    <div class="baselabel reveal"><span class="b">Tomorrow Marketers</span><span class="sep">|</span>Certified · Rank: Excellent</div>
+    <div class="certgrid">
+      <figure class="certframe reveal">
+        <img src="assets/base-certificate.jpg" alt="Tomorrow Marketers Certificate of Completion — Brand Development, Rank: Excellent, awarded to Tao Giang My">
+        <figcaption>Brand Development · Rank: Excellent · Tomorrow Marketers</figcaption>
+      </figure>
+      <div class="learn">
+        <div class="l reveal"><div class="n">★</div><h4>Highest-scoring team of the class</h4><p>This case is the capstone of Tomorrow Marketers’ Brand Development course — our team finished top of the cohort.</p></div>
+        <div class="l reveal"><div class="n">11</div><h4>The original deck, below</h4><p>All 11 slides are embedded next — the strategy exactly as we presented it, no re-touching.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DECK -->
+<section id="deck">
+  <div class="wrap">
+    <div class="baselabel reveal"><span class="b">Base.vn</span><span class="sep">|</span>The Original Deck</div>
+    <h2 class="reveal">The Brand Penetration strategy — as presented.</h2>
+    <p class="reveal" style="color:var(--dim);margin-top:10px;max-width:62ch">11 slides for Work+ by Base — market sizing, portfolio choice, competitive 4P and the campaign framework. Click any slide to open it full-size.</p>
+    <div class="deckgrid">
+      <a class="dslide reveal" href="assets/base-slide-00.jpg" target="_blank" rel="noopener"><img src="assets/base-slide-00.jpg" alt="Base.vn Brand Penetration deck — slide 1 of 11" loading="lazy"></a>
+      <a class="dslide reveal" href="assets/base-slide-01.jpg" target="_blank" rel="noopener"><img src="assets/base-slide-01.jpg" alt="Base.vn Brand Penetration deck — slide 2 of 11" loading="lazy"></a>
+      <a class="dslide reveal" href="assets/base-slide-02.jpg" target="_blank" rel="noopener"><img src="assets/base-slide-02.jpg" alt="Base.vn Brand Penetration deck — slide 3 of 11" loading="lazy"></a>
+      <a class="dslide reveal" href="assets/base-slide-03.jpg" target="_blank" rel="noopener"><img src="assets/base-slide-03.jpg" alt="Base.vn Brand Penetration deck — slide 4 of 11" loading="lazy"></a>
+      <a class="dslide reveal" href="assets/base-slide-04.jpg" target="_blank" rel="noopener"><img src="assets/base-slide-04.jpg" alt="Base.vn Brand Penetration deck — slide 5 of 11" loading="lazy"></a>
+      <a class="dslide reveal" href="assets/base-slide-05.jpg" target="_blank" rel="noopener"><img src="assets/base-slide-05.jpg" alt="Base.vn Brand Penetration deck — slide 6 of 11" loading="lazy"></a>
+      <a class="dslide reveal" href="assets/base-slide-06.jpg" target="_blank" rel="noopener"><img src="assets/base-slide-06.jpg" alt="Base.vn Brand Penetration deck — slide 7 of 11" loading="lazy"></a>
+      <a class="dslide reveal" href="assets/base-slide-07.jpg" target="_blank" rel="noopener"><img src="assets/base-slide-07.jpg" alt="Base.vn Brand Penetration deck — slide 8 of 11" loading="lazy"></a>
+      <a class="dslide reveal" href="assets/base-slide-08.jpg" target="_blank" rel="noopener"><img src="assets/base-slide-08.jpg" alt="Base.vn Brand Penetration deck — slide 9 of 11" loading="lazy"></a>
+      <a class="dslide reveal" href="assets/base-slide-09.jpg" target="_blank" rel="noopener"><img src="assets/base-slide-09.jpg" alt="Base.vn Brand Penetration deck — slide 10 of 11" loading="lazy"></a>
+      <a class="dslide reveal" href="assets/base-slide-10.jpg" target="_blank" rel="noopener"><img src="assets/base-slide-10.jpg" alt="Base.vn Brand Penetration deck — slide 11 of 11" loading="lazy"></a>
+    </div>
+  </div>
+</section>
 
 <!-- 01 CONTEXT -->
 <section id="context">
@@ -353,16 +400,10 @@ footer h2{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.4vw,40
 <section id="learn">
   <div class="wrap">
     <div class="baselabel reveal"><span class="b">Base.vn</span><span class="sep">|</span>What This Case Shows</div>
-    <div class="certgrid">
-      <figure class="certframe reveal">
-        <img src="assets/base-certificate.jpg" alt="Tomorrow Marketers Certificate of Completion — Brand Development, Rank: Excellent, awarded to Tao Giang My">
-        <figcaption>Brand Development · Rank: Excellent · Tomorrow Marketers</figcaption>
-      </figure>
-      <div class="learn">
+    <div class="learn">
         <div class="l reveal"><div class="n">01</div><h4>Penetration is a focus problem</h4><p>Growth didn't need more products — it needed one hero to win a single, ownable job first.</p></div>
         <div class="l reveal"><div class="n">02</div><h4>Position against the price fight</h4><p>Unbundling Work+ and owning the CEO/COO conversation sidesteps the discount war with specialized rivals.</p></div>
         <div class="l reveal"><div class="n">03</div><h4>Strategy → executable system</h4><p>Every pillar carries an objective, audience, message and touchpoints — a plan a team can actually run.</p></div>
-      </div>
     </div>
   </div>
 </section>

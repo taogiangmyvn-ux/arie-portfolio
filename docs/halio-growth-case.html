@@ -115,6 +115,15 @@ h2{font-family:var(--serif);font-weight:400;font-size:clamp(26px,3.8vw,44px);lin
 .jkey{font-family:var(--serif);font-size:clamp(18px,2.4vw,28px);line-height:1.2;max-width:34ch;margin-top:clamp(22px,3vw,36px)}
 .jkey .c{color:var(--coral)}
 
+/* journey v2: flow arrows + mindset fields */
+.journey{gap:26px}
+.jstage{flex-basis:clamp(240px,27vw,290px)}
+.jstage:not(:last-child)::after{content:"\2192";position:absolute;top:50%;right:-25px;transform:translateY(-50%);width:24px;height:24px;border-radius:50%;background:var(--coral);color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 9px rgba(23,34,59,.25);z-index:3;pointer-events:none}
+.jbody dd.mind{font-style:italic;color:var(--ink)}
+.jbody dd.move{color:var(--ink);font-weight:600}
+.jbody dd.sig{color:var(--coral);font-weight:700;font-size:12px}
+
+
 /* outcomes */
 .oc{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px);margin-top:clamp(18px,2.4vw,30px)}
 .oc .metric{background:#fff;border:1px solid var(--line);border-radius:16px;padding:clamp(18px,2.4vw,28px)}
@@ -378,44 +387,44 @@ footer .ft-lede{color:rgba(245,242,236,.75);max-width:56ch;font-size:15px}
       <article class="jstage" role="listitem"><button class="toggle" aria-hidden="true" tabindex="-1">–</button>
         <div class="jhead"><span class="jt">Awareness</span><span class="jn">01</span></div>
         <p class="jq">Why should I care?</p>
-        <div class="jbody"><dl><dt>Touchpoints</dt><dd>Native creators · PR · events · paid discovery</dd><dt>Friction</dt><dd class="fric">Brand may feel unfamiliar.</dd></dl></div>
-        <div class="jobj">Build relevance with a broader U.S. audience.</div>
+        <div class="jbody"><dl><dt>In her head</dt><dd class="mind">“Another skincare gadget. Scroll.”</dd><dt>Touchpoints</dt><dd>Native creators · PR · events · paid discovery</dd><dt>Friction</dt><dd class="fric">Diaspora-flavored content reads “not for me” to the mainstream buyer.</dd><dt>My move</dt><dd class="move">Stop translating Vietnamese creative. Brief U.S.-native creators to open on the problem — dull skin, harsh actives — before the device ever appears.</dd><dt>Signal I watch</dt><dd class="sig">3-second hold rate by segment — not raw reach.</dd></dl></div>
+        <div class="jobj">Relevance is won in the first 3 seconds, in her language.</div>
       </article>
       <article class="jstage" role="listitem"><button class="toggle" aria-hidden="true" tabindex="-1">–</button>
         <div class="jhead"><span class="jt">Interest</span><span class="jn">02</span></div>
         <p class="jq">Is this relevant to me?</p>
-        <div class="jbody"><dl><dt>Touchpoints</dt><dd>U.S. hooks · problem-solution · routine integrations</dd><dt>Friction</dt><dd class="fric">Looks technical or unnecessary.</dd></dl></div>
-        <div class="jobj">Turn exposure into curiosity.</div>
+        <div class="jbody"><dl><dt>In her head</dt><dd class="mind">“Looks high-tech. Probably complicated. Probably not for my skin.”</dd><dt>Touchpoints</dt><dd>U.S. hooks · problem-solution · routine integrations</dd><dt>Friction</dt><dd class="fric">Tech-first framing reads technical or unnecessary.</dd><dt>My move</dt><dd class="move">Sell a 4-minute routine, not a technology. Every asset answers one question: where does this fit in her night?</dd><dt>Signal I watch</dt><dd class="sig">Saves &amp; profile visits — curiosity, not applause.</dd></dl></div>
+        <div class="jobj">Curiosity follows familiarity — show the routine, skip the spec sheet.</div>
       </article>
       <article class="jstage" role="listitem"><button class="toggle" aria-hidden="true" tabindex="-1">–</button>
         <div class="jhead"><span class="jt">Consideration</span><span class="jn">03</span></div>
         <p class="jq">Can I trust it?</p>
-        <div class="jbody"><dl><dt>Touchpoints</dt><dd>Reviews · tech explainers · comparisons · email</dd><dt>Friction</dt><dd class="fric">Price, credibility, confusion.</dd></dl></div>
-        <div class="jobj">Reduce uncertainty, clarify fit.</div>
+        <div class="jbody"><dl><dt>In her head</dt><dd class="mind">“$149 for something I might use twice? Prove it.”</dd><dt>Touchpoints</dt><dd>Reviews · tech explainers · comparisons · email</dd><dt>Friction</dt><dd class="fric">Price, credibility, confusion vs. lookalike devices.</dd><dt>My move</dt><dd class="move">Stack proof in order — expert explainers, side-by-sides, 30-day results — then let email answer objections one at a time.</dd><dt>Signal I watch</dt><dd class="sig">Branded search volume &amp; email CTR on proof content.</dd></dl></div>
+        <div class="jobj">Trust isn’t claimed. It’s stacked, one objection at a time.</div>
       </article>
       <article class="jstage" role="listitem"><button class="toggle" aria-hidden="true" tabindex="-1">–</button>
         <div class="jhead"><span class="jt">Purchase</span><span class="jn">04</span></div>
         <p class="jq">Worth buying now?</p>
-        <div class="jbody"><dl><dt>Touchpoints</dt><dd>Product pages · bundles · retargeting · cart recovery</dd><dt>Friction</dt><dd class="fric">Price, urgency, unclear routine value.</dd></dl></div>
-        <div class="jobj">Resolve objections, raise basket value.</div>
+        <div class="jbody"><dl><dt>In her head</dt><dd class="mind">“I want it. Maybe next payday.”</dd><dt>Touchpoints</dt><dd>Product pages · bundles · retargeting · cart recovery</dd><dt>Friction</dt><dd class="fric">Price, no urgency, unclear routine value.</dd><dt>My move</dt><dd class="move">Offer architecture over discounting — bundles that complete the routine, cart recovery that restates value instead of shouting a coupon.</dd><dt>Signal I watch</dt><dd class="sig">AOV &amp; bundle attach rate, not just CVR.</dd></dl></div>
+        <div class="jobj">Raise the basket by completing the routine, not cutting the price.</div>
       </article>
       <article class="jstage" role="listitem"><button class="toggle" aria-hidden="true" tabindex="-1">–</button>
         <div class="jhead"><span class="jt">Adoption</span><span class="jn">05</span></div>
         <p class="jq">How do I get value?</p>
-        <div class="jbody"><dl><dt>Touchpoints</dt><dd>Post-purchase email · usage &amp; frequency · routine content</dd><dt>Friction</dt><dd class="fric">Inconsistent use, wrong expectations.</dd></dl></div>
-        <div class="jobj">Reach the intended product experience.</div>
+        <div class="jbody"><dl><dt>In her head</dt><dd class="mind">“Week two. Am I even doing this right?”</dd><dt>Touchpoints</dt><dd>Post-purchase email · usage &amp; frequency · routine content</dd><dt>Friction</dt><dd class="fric">Inconsistent use, wrong expectations — silent churn before results show.</dd><dt>My move</dt><dd class="move">A 30-day onboarding flow that sets expectations week by week and celebrates the first visible result. An unused device never reorders serum.</dd><dt>Signal I watch</dt><dd class="sig">Flow engagement, support tickets, early refund rate.</dd></dl></div>
+        <div class="jobj">The sale isn’t done at checkout — value happens in week three.</div>
       </article>
       <article class="jstage" role="listitem"><button class="toggle" aria-hidden="true" tabindex="-1">–</button>
         <div class="jhead"><span class="jt">Repeat</span><span class="jn">06</span></div>
         <p class="jq">My next reason to return?</p>
-        <div class="jbody"><dl><dt>Touchpoints</dt><dd>Gel-mask launch · cross-sell · replenishment · win-back</dd><dt>Friction</dt><dd class="fric">No routine, no relevant next product.</dd></dl></div>
-        <div class="jobj">Increase repeat purchase &amp; CLV.</div>
+        <div class="jbody"><dl><dt>In her head</dt><dd class="mind">“The wand works. What goes with it?”</dd><dt>Touchpoints</dt><dd>Gel-mask launch · cross-sell · replenishment · win-back</dd><dt>Friction</dt><dd class="fric">No routine, no relevant next product.</dd><dt>My move</dt><dd class="move">Launch consumables the device makes better — the gel mask turned one-time device buyers into replenishment customers.</dd><dt>Signal I watch</dt><dd class="sig">60/90-day repeat rate, LTV by cohort.</dd></dl></div>
+        <div class="jobj">The device wins the customer. Consumables build the lifetime.</div>
       </article>
       <article class="jstage" role="listitem"><button class="toggle" aria-hidden="true" tabindex="-1">–</button>
         <div class="jhead"><span class="jt">Advocacy</span><span class="jn">07</span></div>
         <p class="jq">Worth recommending?</p>
-        <div class="jbody"><dl><dt>Touchpoints</dt><dd>Reviews · referrals · UGC · affiliate · community</dd><dt>Friction</dt><dd class="fric">No simple advocacy path.</dd></dl></div>
-        <div class="jobj">Turn success into organic growth.</div>
+        <div class="jbody"><dl><dt>In her head</dt><dd class="mind">“My friend asked what I use. Where do I send her?”</dd><dt>Touchpoints</dt><dd>Reviews · referrals · UGC · affiliate · community</dd><dt>Friction</dt><dd class="fric">No simple advocacy path.</dd><dt>My move</dt><dd class="move">Time review prompts to first results, give real fans affiliate codes, feed UGC back into ads as proof.</dd><dt>Signal I watch</dt><dd class="sig">Referral share of new customers, UGC per 100 orders.</dd></dl></div>
+        <div class="jobj">Happy customers are a channel — if you build them a door.</div>
       </article>
     </div>
   </div>

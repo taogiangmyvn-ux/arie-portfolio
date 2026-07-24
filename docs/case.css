@@ -203,3 +203,11 @@ footer .ft-lede{color:rgba(245,242,236,.75);max-width:56ch;font-size:15px}
   .metrics{grid-template-columns:repeat(3,1fr);gap:16px}
   .hero-img{aspect-ratio:3/2}
 }
+
+/* journey v2: flow arrows + mindset fields */
+.journey{gap:26px}
+.jstage{flex-basis:clamp(240px,27vw,290px)}
+.jstage:not(:last-child)::after{content:"\2192";position:absolute;top:50%;right:-25px;transform:translateY(-50%);width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 9px rgba(23,34,59,.25);z-index:3;pointer-events:none}
+.jbody dd.mind{font-style:italic;color:var(--ink)}
+.jbody dd.move{color:var(--ink);font-weight:600}
+.jbody dd.sig{color:var(--accent);font-weight:700;font-size:12px}
