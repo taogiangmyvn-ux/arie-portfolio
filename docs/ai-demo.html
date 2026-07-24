@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LLM-Powered Niche Discovery Engine — Interactive Demo · Tao Giang My (Arie)</title>
+<meta name="description" content="Interactive demo of an LLM-powered creator vetting pipeline: paste TikTok/Shopee URLs, watch the AI scrape, score and route creators. Production Python source included.">
+<meta property="og:title" content="LLM-Powered Niche Discovery Engine — Interactive Demo">
+<meta property="og:description" content="An AI vetting pipeline for e-commerce affiliate creators — scrape, score against brand positioning, route. Built by Tao Giang My (Arie).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="case.css">
+<link rel="stylesheet" href="ai-demo.css">
+</head>
+<body>
+<div id="progress"></div>
+<a href="#demo" class="skip">Skip to demo</a>
+<nav aria-label="Demo navigation">
+  <div class="wrap nav-in">
+    <a href="growth-home.html" class="brand">Arie<em>.</em> Growth</a>
+    <div class="nav-right">
+      <a href="growth-home.html">Growth Portfolio</a>
+      <a href="coba.html">CoBa Case</a>
+      <a href="https://github.com/taogiangmyvn-ux/arie-portfolio/blob/main/docs/source-code/llm_vetting_agent.py" target="_blank" rel="noopener">Source Code</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top" style="padding-top:110px;padding-bottom:clamp(10px,2vw,24px)">
+  <div class="wrap">
+    <div class="slabel reveal">Interactive Demo — LLM Workflows</div>
+    <h1 class="reveal" style="max-width:16ch">Niche Discovery Engine</h1>
+    <p class="sub reveal" style="max-width:56ch;font-size:clamp(15px,1.6vw,18px);margin-top:16px;color:var(--charcoal)">
+      An AI pipeline that vets e-commerce affiliate creators. Paste video URLs, and it scrapes each profile,
+      scores niche fit against the brand positioning, flags spam — and tells the outreach team who's worth their time.
+    </p>
+    <div class="chips reveal" style="margin-top:18px">
+      <span>Apify Scraping</span><span>Claude API</span><span>Python</span><span>Structured JSON</span><span>Vanilla JS Frontend</span>
+    </div>
+    <div class="notice reveal">
+      <span class="ic">🔒</span>
+      <p>This portfolio runs on GitHub Pages, a static host — so the demo below simulates the pipeline in your browser with mock data. No API keys ever touch frontend code. The real backend is public: <a href="https://github.com/taogiangmyvn-ux/arie-portfolio/blob/main/docs/source-code/llm_vetting_agent.py" target="_blank" rel="noopener">llm_vetting_agent.py</a>.</p>
+    </div>
+  </div>
+</header>
+
+<!-- DEMO -->
+<section id="demo">
+  <div class="wrap">
+    <div class="slabel reveal">Live Simulation</div>
+    <h2 class="reveal">Paste URLs. Watch the pipeline decide.</h2>
+
+    <div class="demo-grid reveal">
+      <div class="panel">
+        <div class="panel-h"><span class="t">Input</span><span class="n">01</span></div>
+        <textarea id="urls" spellcheck="false" placeholder="Paste TikTok/Shopee Video URLs here (1 per line)...&#10;&#10;https://www.tiktok.com/@creator/video/730112...&#10;https://shopee.vn/@creator/video/730223..."></textarea>
+        <p class="input-hint" id="hint">Add at least one URL — or load the sample batch.</p>
+        <div class="input-foot">
+          <button class="btn-ghost" id="sample" type="button">Load sample batch</button>
+          <button class="btn-run" id="run" type="button"><span class="spin" aria-hidden="true"></span><span id="run-label">Run AI Vetting Pipeline</span></button>
+        </div>
+        <div class="steps" aria-hidden="true">
+          <div class="step">1 · Scrape</div>
+          <div class="step">2 · Extract</div>
+          <div class="step">3 · Analyze</div>
+          <div class="step">4 · Score</div>
+        </div>
+      </div>
+
+      <div class="term" aria-label="Pipeline log">
+        <div class="term-bar"><i></i><i></i><i></i><span>vetting-pipeline — zsh</span></div>
+        <div class="term-body" id="term-body" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <!-- RESULTS -->
+    <div id="results" aria-live="polite">
+      <div class="sum-row">
+        <div class="sum"><div class="v">3</div><div class="k">Creators vetted</div></div>
+        <div class="sum"><div class="v blue">2</div><div class="k">Ready for outreach</div></div>
+        <div class="sum"><div class="v" style="color:var(--bad)">1</div><div class="k">Rejected</div></div>
+        <div class="sum"><div class="v">6.9</div><div class="k">Avg niche score</div></div>
+      </div>
+      <div class="rgrid" id="rgrid"></div>
+      <p class="disc" style="margin-top:16px">Simulated output with fictitious creators. In production, every field above comes back as schema-validated JSON from the Claude API.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" class="paperflip">
+  <div class="wrap">
+    <div class="slabel reveal">Under the Hood</div>
+    <h2 class="reveal">How it runs in production</h2>
+    <p class="lede reveal" style="margin-top:12px">Four stages, one contract: the LLM never returns prose — it returns JSON that matches a fixed schema, so a VA team can act on it without interpretation.</p>
+
+    <div class="pipe reveal">
+      <div class="pnode"><div class="pn">01 · ingest</div><h3>URL list in</h3><p>Video URLs from prospecting sheets — one line per creator, thousands per batch.</p></div>
+      <div class="pnode"><div class="pn">02 · scrape</div><h3>Apify actor</h3><p>Pulls bio, recent captions, follower count, views and engagement rate per profile.</p></div>
+      <div class="pnode"><div class="pn">03 · analyze</div><h3>Claude + strict prompt</h3><p>A fixed rubric scores niche fit 0–10 against the brand positioning and flags spam patterns.</p></div>
+      <div class="pnode"><div class="pn">04 · route</div><h3>Decision out</h3><p>≥7.5 goes to outreach, &lt;5 or high spam risk is rejected, the middle gets a human look.</p></div>
+    </div>
+
+    <div class="code-peek reveal" aria-label="Excerpt from the backend script">
+<pre><span class="c"># from source-code/llm_vetting_agent.py — the schema IS the contract</span>
+<span class="kw">class</span> VettingResult(BaseModel):
+    handle: <span class="kw">str</span>
+    niche: <span class="kw">str</span>          <span class="c"># "Clean Beauty", "Minimalist Lifestyle"...</span>
+    niche_score: <span class="kw">float</span>  <span class="c"># brand fit, 0.0-10.0</span>
+    spam_risk: SpamRisk  <span class="c"># LOW / MEDIUM / HIGH</span>
+    red_flags: List[<span class="kw">str</span>]
+    rationale: <span class="kw">str</span>      <span class="c"># two sentences, written for an operator</span>
+
+response = client.messages.parse(
+    model=<span class="st">"claude-sonnet-5"</span>,
+    system=SYSTEM_PROMPT,      <span class="c"># strict vetting rubric</span>
+    output_format=VettingResult,  <span class="c"># schema-validated, never prose</span>
+)</pre>
+    </div>
+
+    <div class="src-cta reveal">
+      <a class="pri" href="https://github.com/taogiangmyvn-ux/arie-portfolio/blob/main/docs/source-code/llm_vetting_agent.py" target="_blank" rel="noopener">Read the full Python source →</a>
+      <a class="sec" href="source-code/llm_vetting_agent.py" target="_blank" rel="noopener">View raw file</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHERE THIS RAN -->
+<section id="context">
+  <div class="wrap">
+    <div class="slabel reveal">Where This Ran for Real</div>
+    <h2 class="reveal">The engine behind a 5,000-creator pipeline.</h2>
+    <p class="lede reveal" style="margin-top:12px;max-width:62ch">This pattern powered creator vetting at CoBa's Daughter — LLM-assisted scraping and niche-fit scoring against a clean-beauty, low-maintenance-luxury positioning. Run on SOPs by a 10+ VA team: 300–400 active affiliate nodes a month behind a Top #5 spot on Amazon US.</p>
+    <p class="reveal" style="margin-top:18px"><a href="coba.html" style="font-weight:800;font-size:13px;letter-spacing:.04em;color:var(--accent);text-decoration:none">Read the full CoBa's Daughter case →</a></p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="wrap">
+    <div class="slabel reveal" style="color:var(--accent-2)"><span style="color:var(--accent-2)">Let's talk</span></div>
+    <h2 class="reveal">Growth systems, not one-off posts.</h2>
+    <p class="ft-lede reveal">I build acquisition engines that scale past manual effort — creator pipelines, LLM workflows and lifecycle systems measured in CVR, CAC and repeat rate.</p>
+    <div class="contact reveal">
+      <span class="who">Tào Giáng My — Arie</span>
+      <span style="color:rgba(245,242,236,.7)">Ho Chi Minh City, Vietnam</span>
+      <a href="mailto:taogiangmy.vn@gmail.com">taogiangmy.vn@gmail.com</a>
+      <a href="https://linkedin.com/in/giangmytao" target="_blank" rel="noopener">linkedin.com/in/giangmytao</a>
+    </div>
+    <div class="switcher reveal">
+      <div class="sl">Jump to a case</div>
+      <div class="cases">
+        <a href="ai-demo.html" aria-current="page">AI Vetting Demo</a>
+        <a href="coba.html">CoBa's Daughter</a>
+        <a href="halio-growth-case.html">Halio Sonic</a>
+        <a href="amamy.html">Amamy</a>
+        <a href="ahamove.html">AhaMove</a>
+        <a class="home" href="growth-home.html">Growth portfolio →</a>
+      </div>
+    </div>
+    <p class="ft-final reveal">Building brands people notice — and journeys that move them forward.</p>
+  </div>
+</footer>
+<script src="case.js"></script>
+<script src="ai-demo.js"></script>
+</body>
+</html>
