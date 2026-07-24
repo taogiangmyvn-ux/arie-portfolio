@@ -61,16 +61,22 @@
   ];
 
   // Log script: [delay ms, css class, text]. Timing per production spec.
-  var SCRIPT = [
-    [500,  'info', 'Initializing Apify scraper...'],
-    [900,  'dim',  '  actor: clockworks/tiktok-scraper · 3 URLs queued'],
-    [1500, 'info', 'Extracting bio, captions, and metrics...'],
-    [2100, 'dim',  '  3/3 profiles resolved · 118 captions · 21 data points each'],
-    [3000, 'info', 'Running Claude Sonnet context analysis...'],
-    [3600, 'dim',  '  scoring niche fit vs. brand positioning · strict JSON schema'],
-    [4500, 'info', 'Generating Niche Scores...'],
-    [5100, 'ok',   'Done. 2 approved · 1 rejected · avg score 6.9/10']
-  ];
+  // Counts reflect what the visitor actually pasted, then the log says out
+  // loud that a static host can't scrape — so sample profiles take over.
+  function buildScript(count) {
+    var u = count === 1 ? '1 URL' : count + ' URLs';
+    return [
+      [500,  'info', 'Initializing Apify scraper...'],
+      [900,  'dim',  '  actor: clockworks/tiktok-scraper · ' + u + ' queued'],
+      [1300, 'warn', '  demo mode: static host, live scraping off — swapping in 3 sample profiles'],
+      [1500, 'info', 'Extracting bio, captions, and metrics...'],
+      [2100, 'dim',  '  3/3 sample profiles resolved · 118 captions · 21 data points each'],
+      [3000, 'info', 'Running Claude Sonnet context analysis...'],
+      [3600, 'dim',  '  scoring niche fit vs. brand positioning · strict JSON schema'],
+      [4500, 'info', 'Generating Niche Scores...'],
+      [5100, 'ok',   'Done. 2 approved · 1 rejected · avg score 6.9/10']
+    ];
+  }
 
   var STEP_AT = [500, 1500, 3000, 4500]; // when each pipeline step lights up
 
@@ -155,6 +161,9 @@
     }
     hint.classList.remove('show');
 
+    var urlCount = value.split('\n').filter(function (l) { return l.trim(); }).length;
+    var script = buildScript(urlCount);
+
     runBtn.disabled = true;
     runBtn.classList.add('busy');
     runLbl.textContent = 'Vetting creators…';
@@ -164,10 +173,10 @@
 
     var speed = reduce ? 0.4 : 1; // shorten the wait if motion is reduced
 
-    SCRIPT.forEach(function (entry) {
+    script.forEach(function (entry, idx) {
       setTimeout(function () {
         logLine(entry[1], entry[2], entry[0]);
-        if (entry !== SCRIPT[SCRIPT.length - 1]) addCaret();
+        if (idx !== script.length - 1) addCaret();
       }, entry[0] * speed);
     });
 
