@@ -107,6 +107,31 @@
     ['btn-lookup', 'btn-source', 'btn-sample'].forEach(function (id) { $(id).disabled = b; });
   }
 
+  // ---------------------------------------------------------- content themes
+
+  var STOP_TAGS = { fyp: 1, fypage: 1, foryou: 1, foryoupage: 1, viral: 1, tiktok: 1, trending: 1, fy: 1, stitch: 1, duet: 1, capcut: 1, ad: 1, asmr: 1, xuhuong: 1, parati: 1, pourtoi: 1, video: 1, explore: 1 };
+  var WORD_STOP = { the: 1, and: 1, for: 1, with: 1, you: 1, your: 1, this: 1, that: 1, have: 1, from: 1, when: 1, what: 1, our: 1, are: 1, was: 1, how: 1, not: 1, just: 1, its: 1, all: 1, out: 1, get: 1, can: 1, will: 1, one: 1, like: 1, love: 1, new: 1, who: 1, she: 1, him: 1, her: 1, his: 1, had: 1, has: 1, been: 1, were: 1, them: 1, they: 1, their: 1, about: 1, into: 1, more: 1, some: 1, than: 1, then: 1, there: 1 };
+
+  function themesFrom(captions) {
+    var text = (captions || []).join(' ').toLowerCase();
+    var tags = {}, m;
+    var tagRe = /#([a-z0-9]{3,30})/g;
+    while ((m = tagRe.exec(text))) { if (!STOP_TAGS[m[1]]) tags[m[1]] = (tags[m[1]] || 0) + 1; }
+    var themes = Object.keys(tags).filter(function (t) { return tags[t] >= 2; })
+      .sort(function (a, b) { return tags[b] - tags[a]; }).slice(0, 4);
+    if (themes.length < 3) {
+      var words = {}, w;
+      var wordRe = /[a-z]{4,15}/g;
+      var plain = text.replace(/#\w+/g, ' ');
+      while ((w = wordRe.exec(plain))) { if (!WORD_STOP[w[0]]) words[w[0]] = (words[w[0]] || 0) + 1; }
+      Object.keys(words).filter(function (k) { return words[k] >= 2 && themes.indexOf(k) < 0; })
+        .sort(function (a, b) { return words[b] - words[a]; })
+        .slice(0, 5 - themes.length)
+        .forEach(function (k) { themes.push(k); });
+    }
+    return themes.slice(0, 5);
+  }
+
   // ---------------------------------------------------------- lookup (real)
 
   var EMAIL_RE = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/;
@@ -165,7 +190,28 @@
       prog(true, i / handles.length * 100, 'Extracting @' + handles[i] + '…');
       try {
         var data = await tikwm('user/info', { unique_id: handles[i] });
-        if (upsertFromInfo(data, 'profile')) got++;
+        var c = upsertFromInfo(data, 'profile');
+        if (c) {
+          got++;
+          // second pass: search their handle to find their own videos →
+          // real avg views, real ER, and what they usually post about
+          prog(true, (i + 0.5) / handles.length * 100, 'Reading @' + c.handle + '’s recent videos…');
+          await sleep(1300);
+          try {
+            var sd = await tikwm('feed/search', { keywords: c.handle, count: 20, cursor: 0 });
+            var mine = (sd.videos || []).filter(function (v) {
+              return ((v.author || {}).unique_id || '').toLowerCase() === c.handle.toLowerCase();
+            });
+            if (mine.length) {
+              var plays = 0, diggs = 0;
+              c.captions = mine.map(function (v) { plays += v.play_count || 0; diggs += v.digg_count || 0; return v.title || ''; });
+              c.avg_views = Math.round(plays / mine.length);
+              if (plays) c.er = Math.round(diggs / plays * 10000) / 100;
+              c.themes = themesFrom(c.captions);
+              score(c);
+            }
+          } catch (e2) { /* profile info still stands without video data */ }
+        }
       } catch (e) {
         toast('@' + handles[i] + ': ' + (e.name === 'AbortError' ? 'timed out' : e.message), true);
       }
@@ -214,6 +260,8 @@
           if (c) {
             c.captions = pool[h].captions;
             c.er = pool[h].plays ? Math.round(pool[h].diggs / pool[h].plays * 10000) / 100 : c.er;
+            c.avg_views = Math.round(pool[h].plays / Math.max(pool[h].captions.length, 1));
+            c.themes = themesFrom(c.captions);
             score(c);
             got++;
           }
@@ -328,8 +376,12 @@
       var av = c.avatar
         ? '<img src="' + c.avatar + '" alt="" loading="lazy" onerror="this.outerHTML=\'<span class=ph>' + init + '</span>\'">'
         : '<span class="ph">' + init + '</span>';
+      var matchedSet = {};
+      (c.matched || []).forEach(function (k) { matchedSet[k.toLowerCase()] = 1; });
       var chips = (c.matched || []).map(function (k) { return '<span>' + k + '</span>'; })
         .concat((c.flags || []).map(function (k) { return '<span class="flag">⚠ ' + k + '</span>'; }))
+        .concat((c.themes || []).filter(function (t) { return !matchedSet[t.toLowerCase()]; })
+          .map(function (t) { return '<span class="theme">#' + t + '</span>'; }))
         .join('') || '<span style="background:none;color:var(--grey)">—</span>';
       var contact = [];
       if (c.email) contact.push('<span class="email">' + c.email + '</span>');
@@ -341,6 +393,7 @@
         '<td><div class="who">' + av + '<div><a href="' + c.url + '" target="_blank" rel="noopener">@' + c.handle + '</a>' +
         '<small>' + (c.demo ? 'sample · ' : '') + (c.name || '') + '</small></div></div></td>' +
         '<td class="num">' + fmt(c.followers || 0) + '</td>' +
+        '<td class="num">' + (c.avg_views ? fmt(c.avg_views) : '—') + '</td>' +
         '<td class="num">' + (c.er || 0).toFixed(1) + '</td>' +
         '<td class="num scorecell"><b>' + c.score.toFixed(1) + '</b>' +
         '<div class="sbar"><i class="' + (c.score < 5 ? 'low' : '') + '" style="width:' + (c.score * 10) + '%"></i></div></td>' +
@@ -396,12 +449,13 @@
   // ---------------------------------------------------------- export csv
 
   $('btn-export').onclick = function () {
-    var rows = ['handle,name,url,followers,er,score,verdict,email,instagram,youtube,biolink,status'];
+    var rows = ['handle,name,url,followers,avg_views,er,score,verdict,email,instagram,youtube,biolink,content_themes,status'];
     Object.keys(state.creators).forEach(function (h) {
       var c = state.creators[h];
       rows.push([c.handle, '"' + (c.name || '').replace(/"/g, "'") + '"', c.url,
-        c.followers, c.er, c.score, c.verdict, c.email || '', c.instagram || '',
-        '"' + (c.youtube || '').replace(/"/g, "'") + '"', c.biolink || '', c.status].join(','));
+        c.followers, c.avg_views || 0, c.er, c.score, c.verdict, c.email || '', c.instagram || '',
+        '"' + (c.youtube || '').replace(/"/g, "'") + '"', c.biolink || '',
+        '"' + (c.themes || []).join(' | ') + '"', c.status].join(','));
     });
     var a = document.createElement('a');
     a.href = URL.createObjectURL(new Blob([rows.join('\n')], { type: 'text/csv' }));
