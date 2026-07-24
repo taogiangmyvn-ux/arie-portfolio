@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CreatorOS — Creator Sourcing &amp; Outreach Engine · Live Demo · Tao Giang My (Arie)</title>
+<meta name="description" content="Live demo: paste a TikTok profile link and extract followers, engagement and contact info in your browser. Keyword sourcing, brand-fit scoring, simulated bulk outreach.">
+<meta property="og:title" content="CreatorOS — Creator Sourcing &amp; Outreach Engine · Live Demo">
+<meta property="og:description" content="Paste a TikTok profile link, watch real extraction happen in your browser. Built by Tao Giang My (Arie).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="case.css">
+<link rel="stylesheet" href="creatoros.css">
+</head>
+<body>
+<div id="progress-top"></div>
+<a href="#app" class="skip">Skip to demo</a>
+<nav aria-label="Demo navigation">
+  <div class="wrap nav-in">
+    <a href="growth-home.html" class="brand">Arie<em>.</em> Growth</a>
+    <div class="nav-right">
+      <a href="growth-home.html">Growth Portfolio</a>
+      <a href="ai-demo.html">LLM Vetting Demo</a>
+      <a href="https://github.com/arietao-stack/creator-outreach" target="_blank" rel="noopener">Source Code</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top" style="padding-top:110px;padding-bottom:clamp(10px,2vw,24px)">
+  <div class="wrap">
+    <div class="slabel reveal">Interactive Demo — Live API Calls</div>
+    <h1 class="reveal" style="max-width:16ch">CreatorOS</h1>
+    <p class="sub reveal" style="max-width:58ch;font-size:clamp(15px,1.6vw,18px);margin-top:16px;color:var(--charcoal)">
+      A creator sourcing &amp; outreach engine. Paste any TikTok profile link and watch it extract
+      followers, engagement and contact info — <b>live, in your browser</b>. Then score everyone
+      against a brand profile and build the outreach batch.
+    </p>
+    <div class="chips reveal" style="margin-top:18px">
+      <span>Live TikTok Extraction</span><span>Free tikwm API</span><span>Heuristic Scoring</span><span>Zero Backend</span><span>Vanilla JS</span>
+    </div>
+    <div class="notice reveal">
+      <span>⚡</span>
+      <p><b>This demo makes real API calls</b> — profile extraction and keyword sourcing hit TikTok data
+      through the free tikwm API, right from this page. Only the bulk-email step is simulated (a public
+      page can't hold mail credentials). The full tool — real Gmail sending, 300-creator discovery runs,
+      daily caps — is open source: <a href="https://github.com/arietao-stack/creator-outreach" target="_blank" rel="noopener">arietao-stack/creator-outreach</a>.</p>
+    </div>
+  </div>
+</header>
+
+<!-- APP -->
+<section id="app" style="padding-top:clamp(30px,4vw,50px)">
+  <div class="wrap">
+    <div class="slabel reveal">Try It</div>
+    <h2 class="reveal">Paste a profile. Get the intel.</h2>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px" class="reveal" id="stats"></div>
+
+    <div class="cos reveal">
+      <div class="cos-side">
+        <div class="card">
+          <h3>1 · Profile lookup — live</h3>
+          <label>Profile links <small>or @handles, one per line (max 5)</small></label>
+          <textarea id="lk-links" rows="4" spellcheck="false" placeholder="https://www.tiktok.com/@glowrecipe&#10;@fentybeauty"></textarea>
+          <button class="btn pri" id="btn-lookup" type="button">Extract creator info</button>
+          <p class="hint">Pulls followers, engagement, bio, <b>email</b> + Instagram / YouTube / bio link. ER is estimated from avg likes per video ÷ followers.</p>
+        </div>
+
+        <div class="card">
+          <h3>2 · Source by keyword — live</h3>
+          <label>Search keyword</label>
+          <input id="src-kw" type="text" spellcheck="false" placeholder="clean beauty">
+          <button class="btn pri" id="btn-source" type="button">Source from TikTok</button>
+          <p class="hint">Demo fetches the top 6 creators per keyword (~10s). The full tool paginates to 100–300 per run with hashtag auto-expansion.</p>
+          <div class="progress" id="progress" hidden>
+            <div class="pbar"><i id="pbar-fill"></i></div>
+            <p id="pnote"></p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>3 · Brand fit profile</h3>
+          <label>Brand name</label>
+          <input id="cfg-brand" type="text" spellcheck="false">
+          <label>Brand keywords <small>comma separated</small></label>
+          <textarea id="cfg-keywords" rows="3" spellcheck="false"></textarea>
+          <label>Negative keywords <small>spam signals</small></label>
+          <textarea id="cfg-negative" rows="2" spellcheck="false"></textarea>
+          <div class="grid2">
+            <div><label>Followers min</label><input id="cfg-fmin" type="number"></div>
+            <div><label>Followers max</label><input id="cfg-fmax" type="number"></div>
+            <div><label>Good ER %</label><input id="cfg-er" type="number" step="0.1"></div>
+            <div><label>Ready at ≥</label><input id="cfg-approve" type="number" step="0.1"></div>
+          </div>
+          <button class="btn pri" id="btn-rescore" type="button">Save &amp; re-score live</button>
+        </div>
+
+        <div class="card" style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn ghost" id="btn-sample" type="button" style="flex:1">Load sample data</button>
+          <button class="btn ghost" id="btn-export" type="button" style="flex:1">Export CSV</button>
+          <button class="btn ghost" id="btn-reset" type="button" style="flex:1">Reset demo</button>
+        </div>
+      </div>
+
+      <div class="cos-main">
+        <div class="filters">
+          <input id="f-search" type="search" placeholder="Search handle / bio…">
+          <select id="f-verdict">
+            <option value="">All verdicts</option>
+            <option>Ready</option><option>Review</option><option>Rejected</option>
+          </select>
+          <label class="chk"><input id="f-email" type="checkbox"> has email</label>
+          <span class="spacer"></span>
+          <button class="btn pri" id="btn-compose" type="button" style="width:auto;margin:0" disabled>✉ Compose (0)</button>
+        </div>
+        <div class="tablewrap">
+          <table>
+            <thead>
+              <tr>
+                <th style="width:34px"><input id="chk-all" type="checkbox"></th>
+                <th data-sort="handle">Creator</th>
+                <th data-sort="followers" class="num">Followers</th>
+                <th data-sort="er" class="num">ER %</th>
+                <th data-sort="score" class="num">Score</th>
+                <th>Fit signals</th>
+                <th>Contact</th>
+                <th data-sort="verdict">Verdict</th>
+              </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
+          <div class="empty" id="empty">
+            <p><b>Empty table, endless possibility.</b></p>
+            <p>Paste a TikTok profile link on the left for a live extraction — or load the sample data.</p>
+          </div>
+        </div>
+        <p class="disc" style="margin-top:12px">Live data comes from public TikTok profiles via tikwm.
+        Scores are a keyword heuristic against the brand profile — the production variant adds an LLM pass
+        (see the <a href="ai-demo.html" style="color:var(--accent)">LLM vetting demo</a>).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UNDER THE HOOD -->
+<section id="how" class="paperflip">
+  <div class="wrap">
+    <div class="slabel reveal">Under the Hood</div>
+    <h2 class="reveal">Same engine that runs my real pipeline</h2>
+    <div class="uh3 reveal">
+      <div class="uh"><div class="n">01 · discover</div><h3>Free-API sourcing</h3><p>Cursor-paginated keyword search plus auto-expansion on co-occurring hashtags. One run pools 100–300 creators, zero API cost.</p></div>
+      <div class="uh"><div class="n">02 · qualify</div><h3>Brand-fit rubric</h3><p>Keyword match, audience-size fit, engagement quality, reachability — minus spam signals. Thresholds are business policy, editable without touching code.</p></div>
+      <div class="uh"><div class="n">03 · reach</div><h3>Outreach with guardrails</h3><p>Personalized Gmail batches with preview-first sending, dry-run default, daily caps, pacing and opt-out — the parts a public demo rightly can't do.</p></div>
+    </div>
+    <div class="src-cta reveal" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:22px">
+      <a style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:12.5px;border-radius:99px;padding:10px 18px;background:var(--ink);color:var(--paper)" href="https://github.com/arietao-stack/creator-outreach" target="_blank" rel="noopener">Full tool on GitHub →</a>
+      <a style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:12.5px;border-radius:99px;padding:10px 18px;border:1.5px solid var(--line);color:var(--ink)" href="ai-demo.html">LLM vetting demo</a>
+    </div>
+  </div>
+</section>
+
+<!-- OUTREACH MODAL -->
+<div class="cos-overlay" id="m-outreach" hidden>
+  <div class="cos-modal">
+    <div class="m-head"><h3>Outreach — simulated</h3>
+      <button class="x" data-close type="button">×</button></div>
+    <div class="o-grid cos">
+      <div style="display:block">
+        <label>Subject</label>
+        <input id="o-subject" type="text" spellcheck="false">
+        <label>Message <small>tags: {{name}} {{handle}} {{niche}} {{followers}} {{brand}}</small></label>
+        <textarea id="o-template" rows="10" spellcheck="false"></textarea>
+        <div class="demo-note"><b>Demo mode:</b> nothing is sent — this renders each personalized email
+        and marks the creator "Contacted". The real tool sends through Gmail with a dry-run default,
+        50/day cap, 8–15s pacing and an opt-out footer.</div>
+      </div>
+      <div>
+        <div class="o-nav">
+          <button class="btn ghost" id="o-prev" type="button" style="padding:5px 10px">←</button>
+          <span id="o-who"></span>
+          <button class="btn ghost" id="o-next" type="button" style="padding:5px 10px">→</button>
+        </div>
+        <div class="mail">
+          <div class="mail-h" id="o-to"></div>
+          <div class="mail-h" id="o-sub"></div>
+          <pre id="o-body"></pre>
+        </div>
+      </div>
+    </div>
+    <div class="m-foot cos">
+      <div class="progress" id="o-progress" hidden>
+        <div class="pbar"><i id="o-pbar"></i></div><p id="o-pnote"></p>
+      </div>
+      <button class="btn pri" id="o-send" type="button" style="width:auto;margin:0">Simulate send</button>
+    </div>
+  </div>
+</div>
+
+<div class="cos-toast" id="toast" hidden></div>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="wrap">
+    <div class="slabel reveal" style="color:var(--accent-2)"><span style="color:var(--accent-2)">Let's talk</span></div>
+    <h2 class="reveal">Growth systems, not one-off posts.</h2>
+    <p class="ft-lede reveal">I build acquisition engines that scale past manual effort — creator pipelines, LLM workflows and lifecycle systems measured in CVR, CAC and repeat rate.</p>
+    <div class="contact reveal">
+      <span class="who">Tào Giáng My — Arie</span>
+      <span style="color:rgba(245,242,236,.7)">Ho Chi Minh City, Vietnam</span>
+      <a href="mailto:taogiangmy.vn@gmail.com">taogiangmy.vn@gmail.com</a>
+      <a href="https://linkedin.com/in/giangmytao" target="_blank" rel="noopener">linkedin.com/in/giangmytao</a>
+    </div>
+    <div class="switcher reveal">
+      <div class="sl">Jump to a case</div>
+      <div class="cases">
+        <a href="creatoros.html" aria-current="page">CreatorOS Demo</a>
+        <a href="ai-demo.html">LLM Vetting Demo</a>
+        <a href="coba.html">CoBa's Daughter</a>
+        <a href="halio-growth-case.html">Halio Sonic</a>
+        <a class="home" href="growth-home.html">Growth portfolio →</a>
+      </div>
+    </div>
+    <p class="ft-final reveal">Building brands people notice — and journeys that move them forward.</p>
+  </div>
+</footer>
+<script src="case.js"></script>
+<script src="creatoros.js"></script>
+</body>
+</html>

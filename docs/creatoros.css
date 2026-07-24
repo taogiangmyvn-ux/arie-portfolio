@@ -1,0 +1,111 @@
+/* CreatorOS portfolio demo — scoped under .cos, layered on case.css */
+:root{
+  --accent:#3D5AFE; --accent-2:#B9C4FF; --accent-soft:#E8EDFF;
+  --mono:'JetBrains Mono','SF Mono',Menlo,Consolas,monospace;
+  --ok:#0B7A55; --ok-bg:#E6F7F0; --bad:#B3372B; --bad-bg:#FBEAE7;
+  --warn:#9A6B00; --warn-bg:#FBF3DF;
+}
+
+.notice{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:12px;padding:14px 18px;margin-top:22px;max-width:74ch}
+.notice p{font-size:13px;color:var(--charcoal)}
+.notice p a{color:var(--accent);font-weight:600}
+
+/* app frame */
+.cos{display:grid;grid-template-columns:290px 1fr;gap:clamp(14px,2vw,22px);align-items:start;margin-top:clamp(22px,3vw,34px)}
+.cos-side{display:flex;flex-direction:column;gap:14px}
+.cos .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+.cos .card h3{font-family:var(--sans);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:800;margin-bottom:12px}
+.cos label{display:block;font-size:11.5px;font-weight:700;color:var(--charcoal);margin:10px 0 4px}
+.cos label small{font-weight:600;color:var(--grey)}
+.cos input[type=text],.cos input[type=number],.cos input[type=search],.cos textarea,.cos select{width:100%;border:1px solid var(--line);border-radius:8px;background:var(--paper);padding:8px 10px;font-family:var(--sans);font-size:13px;color:var(--ink);outline:none}
+.cos textarea{font-family:var(--mono);font-size:12px;line-height:1.6;resize:vertical}
+.cos input:focus,.cos textarea:focus,.cos select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(61,90,254,.1)}
+.cos .grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 10px}
+.cos .hint{font-size:11px;color:var(--grey);margin-top:10px;line-height:1.5}
+.cos .btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border-radius:9px;padding:10px 16px;font-weight:800;font-size:12.5px;cursor:pointer;border:none;text-decoration:none;transition:all .15s;font-family:var(--sans)}
+.cos .btn.pri{background:var(--accent);color:#fff;box-shadow:0 6px 16px rgba(61,90,254,.28);width:100%;margin-top:12px}
+.cos .btn.pri:hover:not(:disabled){transform:translateY(-1px)}
+.cos .btn.pri:disabled{opacity:.45;cursor:wait;box-shadow:none}
+.cos .btn.ghost{background:#fff;border:1.5px solid var(--line);color:var(--charcoal)}
+.cos .btn.ghost:hover:not(:disabled){border-color:var(--ink);color:var(--ink)}
+.cos .btn.ghost:disabled{opacity:.45;cursor:not-allowed}
+
+.cos .progress{margin-top:12px}
+.cos .pbar{height:6px;border-radius:99px;background:var(--mist);overflow:hidden}
+.cos .pbar i{display:block;height:100%;width:0;border-radius:99px;background:var(--accent);transition:width .4s}
+.cos .progress p{font-size:11px;color:var(--charcoal);margin-top:6px;font-family:var(--mono)}
+.cos .progress[hidden]{display:none}
+
+/* main pane */
+.cos-main{min-width:0}
+.cos .filters{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:1px solid var(--line);border-radius:14px 14px 0 0;padding:10px 14px;border-bottom:none}
+.cos .filters input[type=search]{width:180px}
+.cos .filters select{width:auto}
+.cos .chk{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--charcoal);margin:0;white-space:nowrap}
+.cos .spacer{flex:1}
+.cos .tablewrap{background:#fff;border:1px solid var(--line);border-radius:0 0 14px 14px;overflow-x:auto}
+.cos table{width:100%;border-collapse:collapse;font-size:13px}
+.cos th{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--grey);text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap;user-select:none}
+.cos th.num,.cos td.num{text-align:right}
+.cos td{padding:10px 12px;border-bottom:1px solid var(--line-soft);vertical-align:middle}
+.cos tr:hover td{background:#FAF8F4}
+.cos tr.sel td{background:var(--accent-soft)}
+.cos .who{display:flex;align-items:center;gap:9px;min-width:160px}
+.cos .who img,.cos .who .ph{width:30px;height:30px;border-radius:50%;object-fit:cover;background:var(--mist);flex-shrink:0}
+.cos .who .ph{display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:var(--grey)}
+.cos .who a{color:var(--ink);font-weight:800;text-decoration:none;font-size:13px}
+.cos .who a:hover{color:var(--accent)}
+.cos .who small{display:block;color:var(--grey);font-weight:600;font-size:11px}
+.cos .scorecell{min-width:86px}
+.cos .scorecell b{font-family:var(--mono);font-size:13px}
+.cos .sbar{height:4px;border-radius:99px;background:var(--mist);margin-top:4px;overflow:hidden}
+.cos .sbar i{display:block;height:100%;background:var(--accent)}
+.cos .sbar i.low{background:var(--bad)}
+.cos .kwchips{display:flex;gap:4px;flex-wrap:wrap;max-width:200px}
+.cos .kwchips span{font-size:10px;font-weight:700;background:var(--accent-soft);color:var(--accent);border-radius:5px;padding:2px 6px;white-space:nowrap}
+.cos .kwchips span.flag{background:var(--bad-bg);color:var(--bad)}
+.cos .email{font-family:var(--mono);font-size:11px;color:var(--charcoal);display:inline-block;max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:bottom}
+.cos .email.none{color:var(--grey)}
+.cos .soc{font-family:var(--mono);font-size:10.5px;color:var(--grey);text-decoration:none}
+.cos a.soc:hover{color:var(--accent)}
+.cos .pill{display:inline-block;font-size:10px;letter-spacing:.05em;text-transform:uppercase;font-weight:800;border-radius:6px;padding:3px 8px;white-space:nowrap}
+.cos .pill.Ready{background:var(--ok-bg);color:var(--ok)}
+.cos .pill.Review{background:var(--warn-bg);color:var(--warn)}
+.cos .pill.Rejected{background:var(--bad-bg);color:var(--bad)}
+.cos .pill.Contacted{background:var(--accent-soft);color:var(--accent)}
+.cos .empty{padding:56px 20px;text-align:center;color:var(--grey);font-size:13.5px}
+.cos .empty b{color:var(--ink)}
+
+/* modal */
+.cos-overlay{position:fixed;inset:0;background:rgba(23,34,59,.45);display:flex;align-items:center;justify-content:center;z-index:90;padding:20px}
+.cos-overlay[hidden]{display:none}
+.cos-modal{background:#fff;border-radius:16px;padding:20px 22px;width:min(860px,100%);max-height:92vh;overflow-y:auto;box-shadow:0 30px 70px rgba(23,34,59,.35)}
+.cos-modal .m-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.cos-modal h3{font-family:var(--sans);font-size:16px;font-weight:800}
+.cos-modal .x{background:none;border:none;font-size:22px;color:var(--grey);cursor:pointer;line-height:1}
+.cos-modal .x:hover{color:var(--ink)}
+.cos-modal .o-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.cos-modal .o-nav{display:flex;align-items:center;justify-content:space-between;margin:10px 0 8px;font-weight:800;font-size:12.5px}
+.cos-modal .mail{border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.cos-modal .mail-h{font-size:11.5px;font-family:var(--mono);padding:7px 12px;border-bottom:1px solid var(--line-soft);color:var(--charcoal);background:var(--paper)}
+.cos-modal .mail pre{font-family:var(--sans);font-size:12.5px;line-height:1.6;padding:12px;white-space:pre-wrap;max-height:300px;overflow-y:auto;margin:0}
+.cos-modal .m-foot{display:flex;align-items:center;justify-content:flex-end;gap:14px;margin-top:16px}
+.cos-modal .m-foot .progress{flex:1;margin:0}
+.demo-note{background:var(--warn-bg);border:1px solid rgba(154,107,0,.22);color:#6B4E00;border-radius:10px;padding:10px 14px;font-size:12px;line-height:1.55;margin-top:12px}
+
+.cos-toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;font-size:12.5px;font-weight:700;border-radius:10px;padding:11px 18px;z-index:99;box-shadow:0 12px 30px rgba(23,34,59,.4)}
+.cos-toast.err{background:var(--bad)}
+.cos-toast[hidden]{display:none}
+
+/* under the hood cards */
+.uh3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.8vw,20px);margin-top:clamp(20px,2.6vw,30px)}
+.uh{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+.uh .n{font-family:var(--mono);font-size:11px;color:var(--accent);margin-bottom:7px}
+.uh h3{font-family:var(--serif);font-weight:400;font-size:17px;margin-bottom:6px}
+.uh p{font-size:12.5px;color:var(--charcoal)}
+
+@media(max-width:900px){
+  .cos{grid-template-columns:1fr}
+  .cos-modal .o-grid{grid-template-columns:1fr}
+  .uh3{grid-template-columns:1fr}
+}
