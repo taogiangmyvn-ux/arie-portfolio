@@ -51,6 +51,19 @@
 .capcell{border-top:2px solid var(--ink);padding-top:12px}
 .capcell .k{font-family:var(--serif);font-size:15px}
 .capcell p{font-size:12.5px;color:var(--charcoal);margin-top:3px}
+.research{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(18px,2.6vw,30px);margin-top:clamp(14px,2vw,22px);background:#fff;border:1px solid var(--line);border-radius:18px;padding:clamp(18px,2.6vw,30px)}
+.ra-head b{font-family:var(--serif);font-weight:400;font-size:clamp(17px,2vw,22px);display:block;line-height:1.22}
+.ra-head span{font-size:12.5px;color:var(--grey);display:block;margin-top:4px}
+.ra-list{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px}
+.ra-list li{font-size:13px;color:var(--charcoal);padding-left:14px;position:relative}
+.ra-list li::before{content:"";position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.ra-note{margin-top:14px;font-size:12.5px;color:var(--ink);font-weight:600;border-top:1px solid var(--line);padding-top:12px}
+.rm-covers{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.rm-covers img{width:100%;border-radius:10px;border:1px solid var(--line);box-shadow:0 10px 26px rgba(23,34,59,.12)}
+.rm-cap{margin-top:12px}
+.rm-cap b{font-size:13.5px}
+.rm-cap span{display:block;font-size:12.5px;color:var(--grey);margin-top:3px}
+@media(max-width:860px){.research{grid-template-columns:1fr}}
 .wthumb.fit{display:flex;align-items:center;justify-content:center}
 .wthumb.fit img{object-fit:contain;object-position:center}
 .wcard:hover .wthumb.fit img{transform:scale(1.02)}
@@ -175,7 +188,28 @@
         </div>
       </a>
 
+    </div>
 
+    <div class="wgroup reveal"><span class="wg-k">Research Roots</span><span class="rule"></span><span class="wg-note">Where the hypothesis habit started — UEH · Margroup R&amp;D</span></div>
+    <div class="research reveal">
+      <div>
+        <div class="ra-head">
+          <div><b>UEH Young Researcher — 2nd Prize, three years in a row</b><span>Project lead on all three studies · University of Economics Ho Chi Minh City</span></div>
+        </div>
+        <ul class="ra-list">
+          <li><b>MoMo mobile payments</b> — UTAUT2 applied to purchase decisions on e-wallets.</li>
+          <li><b>Storytelling advertising</b> — narrative transportation → brand experience, love &amp; loyalty among Gen Z, HCMC.</li>
+          <li><b>AI-generated art</b> — how HCMC youth adopt AI artworks.</li>
+        </ul>
+        <p class="ra-note">Consumer adoption, brand love, new-tech behavior — the same questions growth and product teams ask. I learned to answer them with method first.</p>
+      </div>
+      <div>
+        <div class="rm-covers">
+          <img src="assets/martrend-cover-1.jpg" alt="Martrend 05/2023 English edition cover — AI-driven content, partnership marketing, conversational queries" loading="lazy">
+          <img src="assets/martrend-cover-2.jpg" alt="Martrend 06/2023 English edition cover" loading="lazy">
+        </div>
+        <div class="rm-cap"><b>Martrend — 4 published issues</b><span>Marketing-trend reports researched, edited and shipped with Margroup's R&amp;D team (UEH) — in Vietnamese and English.</span></div>
+      </div>
     </div>
   </div>
 </section>
