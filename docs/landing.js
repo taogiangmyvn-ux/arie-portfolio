@@ -47,12 +47,6 @@
   }
   if(resEl) resEl.innerHTML = P.researchHTML;
 
-  /* CV button: show only if the role PDF actually exists */
-  var cv = document.getElementById('cvbtn');
-  if(cv && L.cv){
-    cv.setAttribute('href', L.cv);
-    fetch(L.cv, {method:'HEAD'}).then(function(r){ if(r.ok) cv.hidden = false; }).catch(function(){});
-  }
 
   /* Role switcher: close on outside click */
   document.addEventListener('click', function(e){

@@ -131,32 +131,23 @@ window.PORTFOLIO = {
         ctx:"Partner pipelines break on manual sourcing and outreach — so I built the engine.",
         myrole:"Built with LLM workflows: creator sourcing, brand-fit scoring and bulk outreach with caps & dry-runs — the ops layer behind the CoBa pipeline.",
         metrics:["Live demo","LLM vetting","Scalable ops"] } },
-
-    { id:'aidemo', href:'ai-demo.html', badge:'AI project · Interactive',
-      title:"Niche Discovery Engine: LLM-assisted creator vetting",
-      thumb:'<div class="wthumb tile-ai"><span class="wtag"><i style="--c:#8B5CF6"></i>AI Project · Interactive</span><div class="ost"><span class="k">Niche Discovery</span><span class="s">LLM workflows · live calls</span></div></div>',
-      base:{ desc:"Interactive demo of the LLM niche-discovery and vetting workflow used to qualify creators against brand positioning at scale.",
-        metrics:["Interactive demo","LLM workflows"] } }
   ],
 
   landings: {
     growth: {
       label:"Growth & Platform",
       featured:['momo','zalopay','halio','ahamove','coba','melius'],
-      h2:"The work closest to a growth seat.",
-      cv:"assets/cv/Arie_TaoGiangMy_CV_Growth_Platform.pdf"
+      h2:"The work closest to a growth seat."
     },
     brand: {
       label:"Brand & Commerce",
       featured:['halio','coba','guardian','amamy','base'],
-      h2:"The work closest to a brand & commerce seat.",
-      cv:"assets/cv/Arie_TaoGiangMy_CV_Brand_Commerce.pdf"
+      h2:"The work closest to a brand & commerce seat."
     },
     partners: {
       label:"Partnerships & Client Solutions",
       featured:['halio','coba','amamy','guardian','creatoros'],
-      h2:"The work closest to a partnerships seat.",
-      cv:"assets/cv/Arie_TaoGiangMy_CV_Partnerships_Client_Solutions.pdf"
+      h2:"The work closest to a partnerships seat."
     }
   },
 
