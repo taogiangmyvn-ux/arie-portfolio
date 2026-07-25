@@ -136,7 +136,7 @@ window.PORTFOLIO = {
   landings: {
     growth: {
       label:"Growth & Platform",
-      featured:['momo','zalopay','halio','ahamove','coba','melius'],
+      featured:['halio','coba','momo','zalopay','ahamove','melius'],
       h2:"Selected work across funnels, retention and growth systems."
     },
     brand: {
