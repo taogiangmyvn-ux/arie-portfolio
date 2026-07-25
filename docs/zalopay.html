@@ -162,6 +162,24 @@ figure figcaption b{color:var(--sub)}
 .uichips span.on{background:var(--green-2);border-color:var(--green-2);color:#fff}
 .phone-cap{text-align:center;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--dim);margin-top:8px}
 
+/* big idea band */
+.bigidea{position:relative;background:linear-gradient(135deg,rgba(1,207,106,.16),rgba(61,107,255,.12));border:1px solid rgba(1,207,106,.45);border-radius:20px;padding:clamp(22px,3vw,38px);margin-top:clamp(20px,3vw,30px);box-shadow:0 0 60px rgba(1,207,106,.12)}
+.bigidea .bi-tag{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--green);margin-bottom:10px}
+.bigidea .bi-name{font-family:var(--serif);font-size:clamp(30px,5vw,58px);line-height:1.02;color:#fff;letter-spacing:-.01em}
+.bigidea .bi-def{font-size:clamp(15px,1.7vw,19px);color:var(--ink);max-width:62ch;margin-top:14px;font-weight:500}
+.bigidea .bi-def b{color:var(--green)}
+.bi-split{display:grid;grid-template-columns:1fr auto 1fr;gap:clamp(14px,2.4vw,26px);align-items:center;margin-top:clamp(20px,2.6vw,30px);padding-top:clamp(18px,2.4vw,24px);border-top:1px solid rgba(1,207,106,.28)}
+.bi-split .s{font-size:13.5px;color:var(--sub)}
+.bi-split .s .h{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;margin-bottom:6px;color:var(--dim)}
+.bi-split .s.now .h{color:var(--green)}
+.bi-split .s.now{color:#fff;font-weight:500}
+.bi-split .vs{font-family:var(--serif);font-size:20px;color:var(--green)}
+@media(max-width:760px){.bi-split{grid-template-columns:1fr}.bi-split .vs{display:none}}
+
+/* loop diagram */
+.loopwrap{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:clamp(16px,2.2vw,26px);margin-top:clamp(16px,2.2vw,24px);overflow-x:auto}
+.loopwrap svg{width:100%;min-width:760px;height:auto;display:block}
+
 /* media plan */
 .plan{overflow-x:auto;border-radius:16px;border:1px solid var(--line);margin-top:clamp(20px,3vw,30px)}
 .plan table{width:100%;border-collapse:collapse;font-size:12.5px;min-width:820px}
@@ -438,24 +456,139 @@ footer h2{max-width:26ch}
 <!-- 06 THE FIX -->
 <section id="fix">
   <div class="wrap">
-    <div class="eyebrow reveal"><span class="bar"></span>Slide 06 · The fix</div>
-    <h2 class="reveal">Build the homecoming, not another launch.</h2>
-    <p class="lede reveal">The intervention isn't a bigger campaign. It's a loop that treats <b>landing</b> as the start of the funnel rather than the end of it — triggered by a signal the app already has. And note what the goal is <em>not</em>: turning a traveller into a daily domestic user moves them onto the zero-margin flow. The goal is to <b>stay installed, stay remembered, and win the next trip</b> — with a light domestic habit as the means of survival, not the destination.</p>
-    <div class="grid-2" style="align-items:center;margin-top:clamp(20px,3vw,30px)">
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 06 · The idea</div>
+    <h2 class="reveal">One idea, and it is not another launch.</h2>
+
+    <div class="bigidea reveal">
+      <div class="bi-tag">The big idea</div>
+      <div class="bi-name">The Homecoming Loop</div>
+      <p class="bi-def">Treat <b>landing</b> — not the first scan — as the start of the funnel. Use the trip the traveller just finished as the proof, the leftover balance as the wedge, and one small domestic habit as the heartbeat that keeps the app alive until <b>they fly again.</b></p>
+      <div class="bi-split">
+        <div class="s">
+          <div class="h">What runs today</div>
+          A campaign is a <b>funnel</b>: awareness → offer → first scan → done. It ends the week the holiday ends, and next year it has to be bought all over again.
+        </div>
+        <div class="vs">vs</div>
+        <div class="s now">
+          <div class="h">What I'd build</div>
+          A <b>loop</b> returns. Each trip finances the next one: no new incentive, no new ambassador, the rail already integrated. Retention here is not daily habit — it is <b>surviving 8–12 months.</b>
+        </div>
+      </div>
+    </div>
+
+    <div class="loopwrap reveal">
+      <div class="klabel" style="margin-bottom:12px">How the loop runs · one traveller, one year</div>
+      <svg viewBox="0 0 1040 320" role="img" aria-label="Diagram of the Homecoming Loop: landing triggers a trip recap, which leads to one pre-filled domestic habit, which keeps the app alive through eight to twelve quiet months, until the next trip is detected and the loop repeats without a new incentive.">
+        <defs>
+          <linearGradient id="lg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3D6BFF"/><stop offset="1" stop-color="#01CF6A"/></linearGradient>
+          <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 9 5 L 0 9 z" fill="#01CF6A"/>
+          </marker>
+        </defs>
+
+        <!-- stage boxes -->
+        <g font-family="Manrope,sans-serif">
+          <!-- 1 -->
+          <rect x="16" y="18" width="228" height="104" rx="14" fill="rgba(61,107,255,.16)" stroke="#3D6BFF" stroke-width="1.5"/>
+          <text x="32" y="44" font-size="11" font-weight="800" fill="#8FADFF" letter-spacing="1.4">01 · TRIGGER</text>
+          <text x="32" y="70" font-size="17" font-weight="800" fill="#fff">Landing</text>
+          <text x="32" y="92" font-size="11.5" fill="#A5B0DC">last foreign payment +</text>
+          <text x="32" y="108" font-size="11.5" fill="#A5B0DC">home network reconnect</text>
+
+          <!-- 2 -->
+          <rect x="282" y="18" width="228" height="104" rx="14" fill="rgba(1,207,106,.14)" stroke="rgba(1,207,106,.6)" stroke-width="1.5"/>
+          <text x="298" y="44" font-size="11" font-weight="800" fill="#01CF6A" letter-spacing="1.4">02 · PROOF</text>
+          <text x="298" y="70" font-size="17" font-weight="800" fill="#fff">The recap</text>
+          <text x="298" y="92" font-size="11.5" fill="#A5B0DC">"you saved 612.000đ</text>
+          <text x="298" y="108" font-size="11.5" fill="#A5B0DC">vs paying by card"</text>
+
+          <!-- 3 -->
+          <rect x="548" y="18" width="228" height="104" rx="14" fill="rgba(1,207,106,.14)" stroke="rgba(1,207,106,.6)" stroke-width="1.5"/>
+          <text x="564" y="44" font-size="11" font-weight="800" fill="#01CF6A" letter-spacing="1.4">03 · WEDGE</text>
+          <text x="564" y="70" font-size="17" font-weight="800" fill="#fff">One habit</text>
+          <text x="564" y="92" font-size="11.5" fill="#A5B0DC">leftover balance →</text>
+          <text x="564" y="108" font-size="11.5" fill="#A5B0DC">a bill on autopay</text>
+
+          <!-- 4 -->
+          <rect x="814" y="18" width="210" height="104" rx="14" fill="rgba(255,255,255,.05)" stroke="rgba(140,165,255,.35)" stroke-width="1.5" stroke-dasharray="6 5"/>
+          <text x="830" y="44" font-size="11" font-weight="800" fill="#7180B4" letter-spacing="1.4">04 · HEARTBEAT</text>
+          <text x="830" y="70" font-size="17" font-weight="800" fill="#fff">Quiet months</text>
+          <text x="830" y="92" font-size="11.5" fill="#A5B0DC">the autopay is the only</text>
+          <text x="830" y="108" font-size="11.5" fill="#A5B0DC">reason to still exist</text>
+        </g>
+
+        <!-- forward arrows -->
+        <line x1="248" y1="70" x2="276" y2="70" stroke="url(#lg)" stroke-width="3" marker-end="url(#ah)"/>
+        <line x1="514" y1="70" x2="542" y2="70" stroke="#01CF6A" stroke-width="3" marker-end="url(#ah)"/>
+        <line x1="780" y1="70" x2="808" y2="70" stroke="#01CF6A" stroke-width="3" marker-end="url(#ah)"/>
+
+        <!-- return arc -->
+        <path d="M 919 126 L 919 210 Q 919 240 889 240 L 160 240 Q 130 240 130 210 L 130 126"
+              fill="none" stroke="#01CF6A" stroke-width="3" stroke-linecap="round" marker-end="url(#ah)"/>
+        <rect x="352" y="216" width="346" height="48" rx="12" fill="#070C28" stroke="rgba(1,207,106,.5)"/>
+        <text x="525" y="238" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12.5" font-weight="800" fill="#01CF6A">05 · NEXT TRIP — booking signal fires</text>
+        <text x="525" y="255" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11.5" fill="#A5B0DC">same rail, no new incentive — this lap is pure margin</text>
+
+        <text x="525" y="296" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11.5" fill="#7180B4">Every completed lap earns again. The campaign that runs today stops at box 02 and never draws the return arc.</text>
+      </svg>
+    </div>
+
+    <div class="plan reveal">
+      <table>
+        <tr><th>Stage</th><th>Signal that fires it</th><th>Surface / touchpoint</th><th>The one ask</th><th>Metric</th></tr>
+        <tr>
+          <td>01 Landing<span class="ph">T+0, hours</span></td>
+          <td>Last foreign transaction, then a home-network or home-SIM reconnect</td>
+          <td>Push notification → single in-app screen</td>
+          <td>Nothing. Just look.</td>
+          <td>Open rate</td>
+        </tr>
+        <tr class="key">
+          <td>02 The recap<span class="ph">T+0 to T+2 days</span></td>
+          <td>Trip closed and reconciled</td>
+          <td>In-app recap card, shareable</td>
+          <td>"See what you saved" — their own spend, their own rates, and the card comparison</td>
+          <td>Tap-through</td>
+        </tr>
+        <tr class="key">
+          <td>03 One habit<span class="ph">T+2 to T+14 days</span></td>
+          <td>Leftover trip balance &gt; 0</td>
+          <td>Pre-filled autopay or savings sweep, attached to the recap</td>
+          <td>One switch, pre-filled. Not a menu.</td>
+          <td>2nd-category adoption in 14 days</td>
+        </tr>
+        <tr>
+          <td>04 Quiet months<span class="ph">T+15 days to T+8 mo</span></td>
+          <td>The habit runs itself monthly</td>
+          <td>Autopay receipt · one seasonal travel-content touch on Zalo OA</td>
+          <td>Still nothing. Stay useful, stay quiet.</td>
+          <td><b>Still-installed rate</b></td>
+        </tr>
+        <tr class="key">
+          <td>05 Next trip<span class="ph">T+8 to T+12 mo</span></td>
+          <td>Flight or hotel booking, eSIM purchase, FX search in-app</td>
+          <td>One-tap "turn on paying in [country]"</td>
+          <td>Switch the market on before departure</td>
+          <td><b>Next-trip win rate</b></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="grid-2" style="align-items:center;margin-top:clamp(20px,2.6vw,30px)">
       <div class="reveal">
+        <div class="klabel">Why each move should work</div>
         <div class="xp">
-          <div class="xt"><span class="xn">01</span><span class="xh">Trip recap on landing</span><span class="xm">Open rate → tap-through</span></div>
-          <p>Detect the return — last foreign transaction plus a home-network reconnect — and deliver one screen: what they spent, the rates they got, <b>and what the same trip would have cost on a card</b>. Proof they already lived through, in their own numbers.</p>
+          <div class="xt"><span class="xn">01</span><span class="xh">Proof beats persuasion</span></div>
+          <p>The recap is not a marketing claim — it is <b>their own receipt</b>. They already watched the product work in a foreign country, which is the highest-trust moment in the whole relationship. Today it passes unused.</p>
         </div>
         <div class="xp">
-          <div class="xt"><span class="xn">02</span><span class="xh">One domestic habit, pre-filled</span><span class="xm">2nd-category adoption in 14 days</span></div>
-          <p>Attach exactly one next action to that recap, pre-filled and small: put the electricity bill on autopay, or sweep the leftover trip balance into savings. <b>One ask, not a menu.</b> The leftover balance is the perfect wedge — it's already sitting there doing nothing.</p>
+          <div class="xt"><span class="xn">02</span><span class="xh">The leftover balance is free leverage</span></div>
+          <p>Money already sitting in the wallet, already theirs, already doing nothing. Moving it into a bill or a savings pot costs the company nothing and creates a <b>recurring reason to open the app</b> — which is what survives the quiet months.</p>
         </div>
         <div class="xp">
-          <div class="xt"><span class="xn">03</span><span class="xh">Turn the trip into next season's proof</span><span class="xm">UGC per 1,000 returning travellers</span></div>
-          <p>Ask for the receipt, not a review: prompt a shareable card built from their real saving. It converts a retention touch into acquisition creative — and it's cheaper and more credible than the next ambassador film.</p>
+          <div class="xt"><span class="xn">03</span><span class="xh">One ask, or none</span></div>
+          <p>Every stage has exactly one ask, and two stages deliberately ask for nothing. Loops die from over-asking. <b>Guardrails:</b> no push without a genuine return signal, no dark patterns on the pre-fill, and the card comparison stays honest even when the card wins.</p>
         </div>
-        <p class="disc">Guardrails on all three: no push to users without a genuine return signal, no dark patterns on the pre-fill, and the recap must be accurate even when the comparison flatters a card.</p>
       </div>
       <div class="reveal">
         <div class="phones">
