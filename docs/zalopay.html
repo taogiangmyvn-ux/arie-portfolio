@@ -391,6 +391,12 @@ footer h2{max-width:26ch}
         <p style="margin-top:10px">Domestic volume only becomes revenue <b style="color:#fff">indirectly</b>, by cross-selling credit, savings or insurance on top of it. The payment is the hook, never the product.</p>
       </div>
     </div>
+    <div class="panel reveal" style="border-color:rgba(255,193,46,.42);margin-top:clamp(18px,2.4vw,26px)">
+      <div class="klabel" style="color:var(--amber)">The condition nobody explains at the counter</div>
+      <p style="font-size:13.5px;color:var(--sub)">ZaloPay charges <span class="vn">"không phí chuyển đổi ngoại tệ cho tất cả giao dịch"</span> at bank rates — the FX really is free.<sup class="cit"><a href="#sources">20</a></sup> But the payment can be funded four ways (wallet balance, linked bank account, VietQR transfer, or a postpaid account), and the <b style="color:#fff">funding source carries its own fee</b>: wallet and domestic bank/card are free, while an <b style="color:#fff">international or credit card costs 1,000đ + 1.0%</b> for the first three transactions a month and 2,000đ + 2.0% after that.<sup class="cit"><a href="#sources">21</a></sup></p>
+      <p style="font-size:13.5px;color:#fff;font-weight:600;margin-top:10px">So a traveller whose default source is a credit card pays roughly what the Visa would have charged them anyway — and never finds out. The saving is real, but it is <b style="color:var(--amber)">conditional on a setting most people never open.</b></p>
+      <p style="font-size:13px;color:var(--sub);margin-top:8px">That is a growth job, not a fine-print job: getting the funding source right has to happen <b style="color:#fff">before departure</b>, which is exactly what phase 02 of the media plan is for. It also means the trip-recap number in the big idea has to be computed honestly per user, not as a marketing average.</p>
+    </div>
     <p class="bigq reveal">So the correction matters: a trip is not a cheap acquisition event. <span class="c">It may be the best-margin retail payment ZaloPay has</span> — which is exactly why losing the traveller is expensive.</p>
     <p class="disc reveal">Assumption ranges are mine, built on the cited MDR bands and spend-per-trip survey; neither wallet discloses its share of the fee pool, its FX spread, or wallet-share of trip spend. Treat the per-trip figure as an order of magnitude whose <em>sign</em> is the point, not its precision.</p>
   </div>
@@ -462,7 +468,7 @@ footer h2{max-width:26ch}
     <div class="bigidea reveal">
       <div class="bi-tag">The big idea</div>
       <div class="bi-name">The Homecoming Loop</div>
-      <p class="bi-def">Treat <b>landing</b> — not the first scan — as the start of the funnel. Use the trip the traveller just finished as the proof, the leftover balance as the wedge, and one small domestic habit as the heartbeat that keeps the app alive until <b>they fly again.</b></p>
+      <p class="bi-def">Treat <b>landing</b> — not the first scan — as the start of the funnel. Use the trip they just finished as the proof, one small pre-filled domestic habit as the heartbeat, and a leftover balance as the wedge <em>where there is one</em> — so the app is still alive when <b>they fly again.</b></p>
       <div class="bi-split">
         <div class="s">
           <div class="h">What runs today</div>
@@ -506,8 +512,8 @@ footer h2{max-width:26ch}
           <rect x="548" y="18" width="228" height="104" rx="14" fill="rgba(1,207,106,.14)" stroke="rgba(1,207,106,.6)" stroke-width="1.5"/>
           <text x="564" y="44" font-size="11" font-weight="800" fill="#01CF6A" letter-spacing="1.4">03 · WEDGE</text>
           <text x="564" y="70" font-size="17" font-weight="800" fill="#fff">One habit</text>
-          <text x="564" y="92" font-size="11.5" fill="#A5B0DC">leftover balance →</text>
-          <text x="564" y="108" font-size="11.5" fill="#A5B0DC">a bill on autopay</text>
+          <text x="564" y="92" font-size="11.5" fill="#A5B0DC">one pre-filled habit —</text>
+          <text x="564" y="108" font-size="11.5" fill="#A5B0DC">autopay, or sweep a balance</text>
 
           <!-- 4 -->
           <rect x="814" y="18" width="210" height="104" rx="14" fill="rgba(255,255,255,.05)" stroke="rgba(140,165,255,.35)" stroke-width="1.5" stroke-dasharray="6 5"/>
@@ -552,8 +558,8 @@ footer h2{max-width:26ch}
         </tr>
         <tr class="key">
           <td>03 One habit<span class="ph">T+2 to T+14 days</span></td>
-          <td>Leftover trip balance &gt; 0</td>
-          <td>Pre-filled autopay or savings sweep, attached to the recap</td>
+          <td>Recap opened. A leftover balance if the trip was wallet-funded; otherwise the bill data the app can already see</td>
+          <td>Pre-filled autopay, or a sweep of whatever balance is left, attached to the recap</td>
           <td>One switch, pre-filled. Not a menu.</td>
           <td>2nd-category adoption in 14 days</td>
         </tr>
@@ -583,7 +589,7 @@ footer h2{max-width:26ch}
         </div>
         <div class="xp">
           <div class="xt"><span class="xn">02</span><span class="xh">The leftover balance is free leverage</span></div>
-          <p>Money already sitting in the wallet, already theirs, already doing nothing. Moving it into a bill or a savings pot costs the company nothing and creates a <b>recurring reason to open the app</b> — which is what survives the quiet months.</p>
+          <p>Travellers who topped the wallet up leave money sitting there doing nothing — free leverage. Those who funded from a linked bank account leave none, so the ask falls back to a bill the app can already see. Either way the point is a <b>recurring reason to open the app</b>, which is what survives the quiet months.</p>
         </div>
         <div class="xp">
           <div class="xt"><span class="xn">03</span><span class="xh">One ask, or none</span></div>
@@ -647,7 +653,7 @@ footer h2{max-width:26ch}
           <td>02 Plan<span class="ph">T–3 weeks to T–3 days</span></td>
           <td>Booking flights, hotels, eSIM. Actively solving money logistics.</td>
           <td>Search &amp; app-store intent · placements at flight/hotel/eSIM checkout · Zalo OA reminder · airport-route OOH</td>
-          <td>Be the answer to "how do I pay there?" — a 20-second setup checklist, not a brand film.</td>
+          <td>Be the answer to "how do I pay there?" — a 20-second checklist whose <b>first item is setting a zero-fee funding source</b>, because a credit-card default quietly costs 1–2%.</td>
           <td><b>Pre-trip activation rate</b></td>
           <td><span class="wt">Heavy</span></td>
         </tr>
@@ -729,7 +735,7 @@ footer h2{max-width:26ch}
       <li>Active e-wallets 36.2M (end-2023) → 30.3M (Sep 2025): SBV data via <a href="https://tapchinganhang.gov.vn/phat-trien-thi-truong-vi-dien-tu-gop-phan-thuc-day-thanh-toan-so-va-chuyen-doi-so-16719.html" target="_blank" rel="noopener">Tạp chí Ngân hàng (11/2025)</a> and <a href="https://cafef.vn/viet-nam-co-hon-34-trieu-vi-dien-tu-dang-hoat-dong-188240804170124167.chn" target="_blank" rel="noopener">CafeF/SBV (8/2024)</a>.</li>
       <li>Payment volume boom / VietQR ubiquity: <a href="https://fili.vn/2026/01/nam-2025-giao-dich-qua-napas-tang-24-ve-so-luong-8-ve-gia-tri-757-1393244.htm" target="_blank" rel="noopener">NAPAS 2025 results via Vietstock (1/2026)</a>.</li>
       <li>ZaloPay feature mechanics, markets, in-app FX display, Alipay+/DuitNow logos: ZaloPay official guide <a href="https://zalopay.vn/thanh-toan-quoc-te-7975" target="_blank" rel="noopener">"Thanh toán quốc tế"</a> — company material; screenshots reproduced above.</li>
-      <li>Country-by-country rail mapping and the 0–1% vs card 2–4% fee range: third-party guide <a href="https://gohub.vn/quet-qr-zalopay-du-lich-nuoc-ngoai" target="_blank" rel="noopener">Gohub (7/2024)</a> — single-source, not confirmed by ZaloPay.</li>
+      <li>Country-by-country rail mapping, and card FX markups of roughly 2–4%: third-party guide <a href="https://gohub.vn/quet-qr-zalopay-du-lich-nuoc-ngoai" target="_blank" rel="noopener">Gohub (7/2024)</a> — single-source, not confirmed by ZaloPay.</li>
       <li>NAPAS bilateral cross-border QR with Thailand, Cambodia, Laos, China, Korea; VietQRGlobal (2025): <a href="https://vietnamnews.vn/economy/1778741/napas-expands-cross-border-qr-payment-connectivity-between-viet-nam-and-china.html" target="_blank" rel="noopener">Vietnam News</a>; <a href="https://www.ncb-bank.vn/en/news/ncb-partners-with-napas-to-deploy-cross-border-qr-code-payment-connectivity-n112096" target="_blank" rel="noopener">NCB / NAPAS</a>.</li>
       <li>Alipay+ scale: 90M+ merchants / 66 markets / 1.6B accounts — <a href="https://www.businesswire.com/news/home/20250127889352/en/More-than-90-Million-Global-Merchants-Leverage-Alipay-Payment-and-Digitalisation-Solutions-to-Attract-and-Engage-Travellers-this-Chinese-New-Year" target="_blank" rel="noopener">Ant International via Business Wire (1/2025)</a>. Company-reported.</li>
       <li>VNG fintech segment FY2025 revenue 1,111 tỷ VND, pre-tax loss 489 tỷ, ZaloPay breakeven targeted end-2026: <a href="https://vietnambiz.vn/vng-tiep-tuc-gong-lo-zalopay-lan-dau-he-lo-ket-qua-kinh-doanh-cua-zalo-20264117301049.htm" target="_blank" rel="noopener">Vietnambiz (4/2026)</a>, from VNG financial reports.</li>
@@ -740,12 +746,14 @@ footer h2{max-width:26ch}
       <li><span class="vn">"Từ trung tâm thương mại đến gánh hàng rong"</span> and the no-fee/competitive-rate claim: <a href="https://thanhnien.vn/thanh-toan-zalopay-tai-trung-quoc-tu-trung-tam-thuong-mai-den-ganh-hang-rong-185260429153330117.htm" target="_blank" rel="noopener">Thanh Niên (29/4/2026)</a>.</li>
       <li>Khoai Lang Thang: ~3.2M YouTube subscribers, ~7.3M across platforms, Content Creator of the Year at Vietnam iContent 2025 — <a href="https://vi.wikipedia.org/wiki/Khoai_Lang_Thang" target="_blank" rel="noopener">Wikipedia (tiếng Việt)</a>; <a href="https://nld.com.vn/tet-dac-biet-cua-khoai-lang-thang-196260210142028678.htm" target="_blank" rel="noopener">Người Lao Động (2/2026)</a>.</li>
       <li>Promo-acquired vs promo-retained (71% / 23%): Ipsos Indonesia via <a href="https://www.thejakartapost.com/news/2020/02/14/no-discounts-no-problem-e-wallet-users-stick-around-despite-less-cash-back.html" target="_blank" rel="noopener">The Jakarta Post (2/2020)</a>.</li>
+      <li>Four funding sources — <span class="vn">"Sử dụng trực tiếp nguồn tiền ví Zalopay, liên kết tài khoản ngân hàng, chuyển khoản VietQR, tài khoản trả sau"</span> — and <span class="vn">"Tỉ giá minh bạch theo tỷ giá ngân hàng. Không phí chuyển đổi ngoại tệ cho tất cả giao dịch"</span>: ZaloPay official service page <a href="https://zalopay.vn/dich-vu/quet-qr-quoc-te-tren-zalopay" target="_blank" rel="noopener">Quét QR quốc tế</a>. Company material.</li>
+      <li>Funding-source fees — wallet balance and domestic card free; international debit or credit card 1,000đ + 1.0% for the first three transactions a month, then 2,000đ + 2.0%: <a href="https://zalopay.vn/quy-dinh/chinh-sach-phi-dich-vu-tren-ung-dung-thanh-toan-zalopay" target="_blank" rel="noopener">ZaloPay official fee schedule</a>, which states no cross-border-specific or FX fee.</li>
       <li>Finance-app D30 retention ~7–9%: Adjust finance app benchmarks and industry aggregates, via <a href="https://www.adjust.com/blog/finance-app-insights/" target="_blank" rel="noopener">Adjust</a> and <a href="https://uxcam.com/blog/mobile-app-retention-benchmarks/" target="_blank" rel="noopener">UXCam benchmark roundup (2026)</a>. Ranges vary by methodology and cohort; used directionally.</li>
       <li>ZaloPay cross-border launched late 2024; no comparable MoMo or VNPay offering as of Sep 2025; six markets; CEO Lê Lan Chi quoted; ~16M active users via Zalo's ~77M MAU; ~4.5M Vietnamese trips to China in 2024: <a href="https://vietnambiz.vn/mo-rong-ra-nuoc-ngoai-chien-luoc-tranh-ba-moi-cua-zalopay-20259221380243.htm" target="_blank" rel="noopener">Vietnambiz (22/9/2025)</a>.</li>
       <li>Merchant discount rate 1.6–2.2% by volume tier on Alipay cross-border, and the fee being split among participants with an acquirer service fee plus <em>inter-partner fee</em> per transaction: <a href="https://www.rfp.wiki/payments-fraud/digital-wallets/alipay" target="_blank" rel="noopener">Alipay cost-drivers summary (2026)</a>; <a href="https://docs.antom.com/ac/cashierpay/reconcile_settle" target="_blank" rel="noopener">Antom (Ant International) settlement docs</a>; MDR-sharing mechanics in wallet acquiring: <a href="https://www.cgap.org/research/publication/acquiring-models" target="_blank" rel="noopener">CGAP, Acquiring Models</a>. The wallet's own share is not publicly disclosed.</li>
       <li>Vietnam's zero-fee domestic payment market and why wallets cannot monetise the payment itself: <a href="https://nhandan.vn/ngan-hang-chay-dua-mien-phi-tren-nen-tang-so-post686396.html" target="_blank" rel="noopener">Nhân Dân (2022)</a>; <a href="https://vneconomy.vn/huong-di-moi-cua-vi-dien-tu-sau-cuoc-dua-dot-tien.htm" target="_blank" rel="noopener">VnEconomy — wallets after the cash-burn race</a>.</li>
     </ol>
-    <p class="disc reveal" style="max-width:none">Correction log, kept deliberately: an earlier version of this deck asserted that ZaloPay "earns close to nothing" on a cross-border payment because the route is fee-free to the user. That conflated a zero <em>user</em> fee with zero revenue and it was wrong — the merchant-side discount rate is shared with the issuing wallet. Slides 03, 04, 06 and 08 were rebuilt on the corrected economics, which strengthened the conclusion rather than weakening it.</p>
+    <p class="disc reveal" style="max-width:none">Correction log, kept deliberately: an earlier version of this deck asserted that ZaloPay "earns close to nothing" on a cross-border payment because the route is fee-free to the user. That conflated a zero <em>user</em> fee with zero revenue and it was wrong — the merchant-side discount rate is shared with the issuing wallet. Slides 03, 04, 06 and 08 were rebuilt on the corrected economics, which strengthened the conclusion rather than weakening it. A second pass corrected the wedge: an earlier draft treated a leftover wallet balance as universal, but these payments can be funded four ways including a linked bank account, so many travellers never hold a balance — and an international or credit card as the source costs 1–2%, quietly erasing the saving. Both are now stated on slide 03.</p>
   </div>
 </section>
 
