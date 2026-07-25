@@ -56,9 +56,19 @@ h2{font-weight:800;font-size:clamp(24px,3.4vw,42px);line-height:1.08;letter-spac
 sup.cit{font-size:9.5px;line-height:0}
 sup.cit a{color:var(--pink-2);text-decoration:none;font-weight:800}
 
+/* figures */
+figure{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+figure img{width:100%;display:block}
+figure figcaption{font-size:11.5px;color:var(--dim);padding:10px 14px;border-top:1px solid var(--line);line-height:1.5}
+figure figcaption b{color:var(--sub)}
+.vn{color:var(--pink-2);font-style:italic}
+.brandmark{height:26px;width:auto;background:#fff;border-radius:6px;padding:4px 7px}
+
 /* hero */
 .hero{padding-top:118px}
-.hero .tag{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--pink-2);font-weight:800;margin-bottom:18px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(24px,4vw,50px);align-items:center}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+.hero .tag{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--pink-2);font-weight:800;margin-bottom:18px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 .hero h1{margin:8px 0 20px;max-width:15ch}
 .hero .sub{color:var(--sub);max-width:54ch;font-size:clamp(16px,1.7vw,20px)}
 .hero .sub b{color:#fff}
@@ -218,15 +228,23 @@ body.js-anim .reveal:not(.in){opacity:0}
 <!-- SLIDE 00 · HERO -->
 <header class="hero" id="top">
   <div class="wrap">
-    <div class="tag reveal">Independent deep-dive · Fintech growth · July 2026</div>
-    <h1 class="reveal">Growth after the <span class="g">QR wars.</span></h1>
-    <p class="sub reveal">Payments keep booming. Active wallets are <b>shrinking</b>. This deck is how MoMo grows its next revenue curve from <b>retention, frequency and ARPU</b> — not new installs.</p>
-    <div class="metrics reveal">
-      <div class="metric"><div class="num" data-count="30.3" data-suffix="M">30.3M</div><div class="cap">active e-wallets nationwide, 9/2025 — down from 36.2M in 2023<sup class="cit"><a href="#sources">1</a></sup></div></div>
-      <div class="metric"><div class="num" data-count="32" data-prefix="&gt;" data-suffix="M">&gt;32M</div><div class="cap">NAPAS transactions per day, 2025<sup class="cit"><a href="#sources">4</a></sup></div></div>
-      <div class="metric"><div class="num" data-count="10" data-suffix="M">10M</div><div class="cap">MoMo monthly actives on 40M registered<sup class="cit"><a href="#sources">10</a></sup></div></div>
+    <div class="hero-grid">
+      <div>
+        <div class="tag reveal"><img class="brandmark" src="assets/mm-logo.png" alt="MoMo logo" width="248" height="57"><span>Independent deep-dive · Fintech growth · July 2026</span></div>
+        <h1 class="reveal">Growth after the <span class="g">QR wars.</span></h1>
+        <p class="sub reveal">Payments keep booming. Active wallets are <b>shrinking</b>. This deck is how MoMo grows its next revenue curve from <b>retention, frequency and ARPU</b> — not new installs.</p>
+        <div class="metrics reveal">
+          <div class="metric"><div class="num" data-count="30.3" data-suffix="M">30.3M</div><div class="cap">active e-wallets nationwide, 9/2025 — down from 36.2M in 2023<sup class="cit"><a href="#sources">1</a></sup></div></div>
+          <div class="metric"><div class="num" data-count="32" data-prefix="&gt;" data-suffix="M">&gt;32M</div><div class="cap">NAPAS transactions per day, 2025<sup class="cit"><a href="#sources">4</a></sup></div></div>
+          <div class="metric"><div class="num" data-count="10" data-suffix="M">10M</div><div class="cap">MoMo monthly actives on 40M registered<sup class="cit"><a href="#sources">10</a></sup></div></div>
+        </div>
+      </div>
+      <figure class="reveal">
+        <img src="assets/mm-ecosystem.jpg" alt="A MoMo executive presenting on stage beside a slide reading 'Với năng lực công nghệ, MoMo đang đóng vai trò là nền tảng kết nối toàn bộ hệ sinh thái tài chính số'" loading="eager">
+        <figcaption><b>How MoMo describes itself now:</b> <span class="vn">"nền tảng kết nối toàn bộ hệ sinh thái tài chính số"</span> — the platform connecting the whole digital-finance ecosystem. An ecosystem story only pays if users adopt more than one part of it, which is exactly the gap this deck measures. <span style="color:var(--dim)">Source: momo.vn</span></figcaption>
+      </figure>
     </div>
-    <p class="disc reveal">Independent portfolio analysis on public data — SBV, NAPAS, Decision Lab, company disclosures, all cited on the last slide. Not an internal MoMo project. I first met MoMo as a research subject: my UEH Young Researcher study applied UTAUT2 to e-wallet purchase behavior.</p>
+    <p class="disc reveal">Independent portfolio analysis on public data — SBV, NAPAS, Decision Lab, company disclosures, all cited on the last slide. Not an internal MoMo project; imagery is MoMo's own, published on momo.vn. I first met MoMo as a research subject: my UEH Young Researcher study applied UTAUT2 to e-wallet purchase behavior.</p>
   </div>
 </header>
 
@@ -318,6 +336,10 @@ body.js-anim .reveal:not(.in){opacity:0}
   <div class="wrap">
     <div class="eyebrow reveal"><span class="bar"></span>Slide 04 · The thesis</div>
     <h2 class="reveal">Not an acquisition problem. A <span class="g">second-habit</span> problem.</h2>
+    <figure class="reveal" style="max-width:560px;margin-top:clamp(18px,2.4vw,26px)">
+      <img src="assets/mm-ceo-fraud.jpg" alt="MoMo on stage presenting an anti-fraud slide headed 'Chặn kẻ xấu', noting that over 90% of money lost to fraud on MoMo was transferred by users themselves under psychological manipulation" loading="lazy">
+      <figcaption><b>The asset a second habit is built on.</b> MoMo's own stage data: over 90% of fraud losses came from users transferring money themselves under manipulation — so the company already invests heavily in being the app people trust with a decision, not just a tap. Trust is the permission to sell a second product. <span style="color:var(--dim)">Source: momo.vn</span></figcaption>
+    </figure>
     <div class="grid-3 ctx-3" style="margin-top:clamp(22px,3vw,36px)">
       <div class="p reveal"><div class="k">Evidence: multi-service compounding</div><p>Grab investor data: 1-year retention jumps <b>37% → 88%</b> from one to 3+ services; multi-service users spend ~4x. Ant's IPO filing: 80% of Alipay users ran 3+ categories.<sup class="cit"><a href="#sources">13</a></sup></p></div>
       <div class="p reveal"><div class="k">Economics: retention pays in finance</div><p>Bain: +5% retention → <b>&gt;25% profit</b> in financial services. The industry already moved: SEA finance-app remarketing spend <b>+193%</b> in 2025 while installs went negative.<sup class="cit"><a href="#sources">15,17</a></sup></p></div>

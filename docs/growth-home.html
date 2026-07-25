@@ -39,7 +39,8 @@
 .wthumb.zpviz .zt{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:#6BE8A8}
 /* MoMo magenta thumbnail */
 .wthumb.momoviz{background:radial-gradient(120% 120% at 78% 0,#D82D8B,#3D0523);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px}
-.wthumb.momoviz svg{width:64%;height:auto}
+.wthumb.momoviz svg{width:66%;height:auto}
+.wthumb.momoviz .mmlogo{height:24px;width:auto;background:#fff;border-radius:6px;padding:4px 8px}
 .wthumb.momoviz .mt{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:#F5A9D3}
 .wthumb.deck{background:var(--ink);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px}
 .wthumb.deck .dn{font-family:var(--serif);font-size:34px;color:#8C9BFF;line-height:1}
@@ -208,12 +209,14 @@
 
       <a class="wcard reveal" href="momo.html">
         <div class="wthumb momoviz"><span class="wtag"><i style="--c:#B4126B"></i>Independent Research · Fintech</span>
-          <svg viewBox="0 0 220 110" aria-hidden="true">
-            <line x1="10" y1="55" x2="210" y2="55" stroke="rgba(255,255,255,.25)" stroke-dasharray="3 4"/>
-            <polyline points="10,55 110,62 210,74" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            <polyline points="10,55 110,32 210,10" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="210" cy="10" r="5" fill="#fff"/>
-            <circle cx="210" cy="74" r="5" fill="rgba(255,255,255,.55)"/>
+          <img src="assets/mm-logo.png" alt="MoMo logo" class="mmlogo">
+          <svg viewBox="0 0 240 96" aria-hidden="true">
+            <line x1="12" y1="48" x2="228" y2="48" stroke="rgba(255,255,255,.22)" stroke-dasharray="3 4"/>
+            <polyline points="12,48 120,56 228,70" fill="none" stroke="rgba(255,255,255,.42)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="12,48 120,28 228,8" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="228" cy="8" r="5" fill="#fff"/>
+            <circle cx="228" cy="70" r="5" fill="rgba(255,255,255,.5)"/>
+            <text x="12" y="88" font-family="Manrope,sans-serif" font-size="10" font-weight="700" fill="rgba(255,255,255,.55)">payments up · wallets down</text>
           </svg>
           <span class="mt">Retention &gt; Acquisition</span>
         </div>
