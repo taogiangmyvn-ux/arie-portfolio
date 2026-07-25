@@ -137,17 +137,17 @@ window.PORTFOLIO = {
     growth: {
       label:"Growth & Platform",
       featured:['momo','zalopay','halio','ahamove','coba','melius'],
-      h2:"The work closest to a growth seat."
+      h2:"Selected work across funnels, retention and growth systems."
     },
     brand: {
       label:"Brand & Commerce",
       featured:['halio','coba','guardian','amamy','base'],
-      h2:"The work closest to a brand & commerce seat."
+      h2:"Selected work across brand building, commerce and consumer growth."
     },
     partners: {
       label:"Partnerships & Client Solutions",
       featured:['halio','coba','amamy','guardian','creatoros'],
-      h2:"The work closest to a partnerships seat."
+      h2:"Selected work across partner ecosystems, onboarding and activation."
     }
   },
 

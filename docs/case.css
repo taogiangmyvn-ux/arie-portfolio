@@ -313,3 +313,8 @@ footer .ft-lede{color:rgba(245,242,236,.75);max-width:56ch;font-size:15px}
 @media(max-width:960px){.fcard{grid-template-columns:1fr}.fthumb{min-height:0}.fthumb .wthumb{position:relative;aspect-ratio:16/9;height:auto}}
 @media(max-width:860px){.wgrid{grid-template-columns:1fr 1fr}.caprow{grid-template-columns:1fr 1fr}.wg-note{display:none}.research{grid-template-columns:1fr}}
 @media(max-width:560px){.wgrid{grid-template-columns:1fr}}
+
+/* 4-up hero metrics */
+.metrics.m4{grid-template-columns:repeat(4,auto);gap:clamp(14px,2.6vw,36px)}
+.metrics.m4 .num{font-size:clamp(26px,3.2vw,42px)}
+@media(max-width:760px){.metrics.m4{grid-template-columns:repeat(2,auto);row-gap:18px}}
