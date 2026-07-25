@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZaloPay — Follow the Passport · Arie</title>
+<meta name="description" content="An independent brand, marketing and growth deep dive on ZaloPay's cross-border payment play: the strategic read, the Khoai Lang Thang ambassador choice, plus a media plan and growth plan I'd run next.">
+<meta property="og:title" content="ZaloPay — Follow the Passport">
+<meta property="og:description" content="Why taking existing users abroad beats fighting for new ones at home. Independent cross-border growth case study by Tao Giang My (Arie).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#070C28; --navy-2:#0D1440; --panel:rgba(255,255,255,.05); --panel-2:rgba(255,255,255,.085);
+  --ink:#EEF2FF; --sub:#A5B0DC; --dim:#7180B4; --line:rgba(140,165,255,.17);
+  --blue:#3D6BFF; --blue-2:#8FADFF; --green:#01CF6A; --green-2:#0FA95C; --amber:#FFC12E;
+  --glow:rgba(61,107,255,.5);
+  --serif:'DM Serif Display',Georgia,serif; --sans:'Manrope',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--navy);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(1100px 700px at 80% -8%,rgba(1,207,106,.16),transparent 60%),radial-gradient(1000px 650px at -8% 26%,rgba(61,107,255,.20),transparent 58%)}
+a{color:inherit}
+img{display:block;max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+@media(min-width:1000px){body{zoom:.92}}
+
+#progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--green));width:0;z-index:80}
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;z-index:99;background:var(--blue);color:#fff;padding:8px 14px;border-radius:8px}
+nav{position:fixed;top:0;left:0;right:0;z-index:70;background:rgba(7,12,40,.76);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:56px}
+.brand{font-weight:800;font-size:17px;letter-spacing:-.01em;text-decoration:none}.brand em{font-style:normal;color:var(--green)}
+.nav-right{display:flex;gap:20px;align-items:center;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+.nav-right a{color:var(--sub);text-decoration:none;transition:color .2s}.nav-right a:hover,.nav-right a.active{color:#fff}
+.nav-cta{border:1.5px solid var(--blue);border-radius:99px;padding:6px 14px;color:var(--blue-2) !important}
+.nav-cta:hover{background:var(--blue);color:#fff !important}
+@media(max-width:900px){.nav-right a:not(.nav-cta){display:none}}
+
+section{padding:clamp(50px,6.5vw,92px) 0;position:relative}
+section+section{border-top:1px solid rgba(140,165,255,.09)}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--green);display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.eyebrow .bar{width:26px;height:1.5px;background:var(--green)}
+h1{font-weight:800;font-size:clamp(38px,6vw,76px);line-height:1.02;letter-spacing:-.03em}
+h1 .g,.g{background:linear-gradient(115deg,#fff,var(--green));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+h2{font-weight:800;font-size:clamp(24px,3.4vw,42px);line-height:1.08;letter-spacing:-.02em;max-width:27ch}
+.lede{color:var(--sub);max-width:64ch;font-size:clamp(14.5px,1.5vw,17px);margin-top:14px}
+.lede b{color:#fff}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:clamp(16px,2.2vw,26px)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,22px)}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,22px)}
+.klabel{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--green);font-weight:700;margin-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font-size:11.5px;background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:6px 13px;color:var(--sub)}
+.chips span b{color:#fff}
+sup.cit{font-size:9.5px;line-height:0}
+sup.cit a{color:var(--green);text-decoration:none;font-weight:800}
+.vn{color:var(--green);font-style:italic}
+
+/* hero */
+.hero{padding-top:116px}
+.hero .tag{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);font-weight:800;margin-bottom:18px}
+.hero h1{margin:6px 0 20px;max-width:16ch}
+.hero .sub{color:var(--sub);max-width:56ch;font-size:clamp(16px,1.7vw,20px)}
+.hero .sub b{color:#fff}
+.hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:clamp(24px,4vw,52px);align-items:center}
+.metrics{display:grid;grid-template-columns:repeat(3,auto);gap:clamp(18px,3.4vw,46px);margin:28px 0 12px}
+.metric .num{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3.8vw,50px);line-height:1;background:linear-gradient(115deg,#fff,var(--green));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.metric .cap{font-size:12px;color:var(--sub);margin-top:7px;max-width:23ch}
+.disc{font-size:12px;color:var(--dim);font-style:italic;max-width:72ch;margin-top:8px}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.metrics{grid-template-columns:1fr 1fr;gap:18px}}
+
+/* figures */
+figure{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+figure img{width:100%}
+figure figcaption{font-size:11.5px;color:var(--dim);padding:10px 14px;border-top:1px solid var(--line);line-height:1.5}
+figure figcaption b{color:var(--sub)}
+.shot-tall img{background:#0033CA}
+
+/* pills */
+.ctx .p{border-top:2px solid var(--blue);padding-top:12px}
+.ctx .p .k{font-weight:800;font-size:15px;margin-bottom:4px}
+.ctx .p p{font-size:13.5px;color:var(--sub)}
+.ctx .p p b{color:#fff}
+.bigq{font-family:var(--serif);font-size:clamp(22px,3vw,38px);line-height:1.14;max-width:27ch;margin-top:clamp(24px,3.2vw,40px);color:#fff}
+.bigq .c{color:var(--green)}
+
+/* before/after strategic frame */
+.frame{display:grid;grid-template-columns:1fr auto 1fr;align-items:stretch;margin-top:clamp(20px,3vw,32px);gap:0}
+.frame .col{padding:clamp(18px,2.4vw,30px)}
+.frame .old{background:var(--panel);border:1px solid var(--line);border-right:none;border-radius:16px 0 0 16px}
+.frame .old .h{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--dim);margin-bottom:10px}
+.frame .old p{color:var(--dim);font-size:13.5px}
+.frame .new{background:linear-gradient(140deg,rgba(1,207,106,.14),rgba(61,107,255,.10));border:1px solid rgba(1,207,106,.4);border-left:none;border-radius:0 16px 16px 0}
+.frame .new .h{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--green);margin-bottom:10px}
+.frame .new p{color:#fff;font-size:14px;font-weight:500}
+.frame .arrow{width:44px;height:44px;border-radius:50%;background:var(--green);color:#04231A;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;align-self:center;justify-self:center;z-index:2;box-shadow:0 6px 20px rgba(1,207,106,.4)}
+@media(max-width:760px){.frame{grid-template-columns:1fr}.frame .old{border-radius:16px 16px 0 0;border-right:1px solid var(--line);border-bottom:none}.frame .new{border-radius:0 0 16px 16px;border-left:1px solid rgba(1,207,106,.4)}.frame .arrow{margin:-22px auto;transform:rotate(90deg)}}
+
+/* cost comparison bars */
+.costs{margin-top:clamp(18px,2.4vw,26px)}
+.cost{display:grid;grid-template-columns:132px 1fr auto;gap:12px;align-items:center;margin-bottom:11px;font-size:13px}
+.cost .l{color:var(--sub);font-weight:600}
+.cost .track{height:22px;background:var(--panel-2);border-radius:6px;overflow:hidden;border:1px solid var(--line)}
+.cost .track i{display:block;height:100%;border-radius:5px}
+.cost .v{font-weight:800;font-size:13px;font-variant-numeric:tabular-nums;min-width:72px;text-align:right}
+
+/* rail diagram */
+.rail{margin-top:clamp(20px,3vw,32px)}
+.rail svg{width:100%;height:auto;display:block}
+
+/* ambassador fit */
+.fit{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.8vw,20px);margin-top:clamp(18px,2.4vw,28px)}
+.fitcard{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--green);border-radius:12px;padding:clamp(14px,1.9vw,20px)}
+.fitcard .n{font-family:var(--serif);font-size:24px;color:var(--green)}
+.fitcard h4{font-size:14.5px;font-weight:800;margin:5px 0 7px}
+.fitcard p{font-size:12.5px;color:var(--sub)}
+.fitcard p b{color:#fff}
+
+/* campaign anatomy */
+.anat{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:clamp(18px,2.4vw,28px)}
+.anat .a{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}
+.anat .a .t{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--blue-2);margin-bottom:7px}
+.anat .a .v{font-size:13.5px;font-weight:700;margin-bottom:5px}
+.anat .a p{font-size:12px;color:var(--sub)}
+@media(max-width:900px){.anat{grid-template-columns:1fr 1fr}.fit{grid-template-columns:1fr}}
+
+/* media plan */
+.plan{overflow-x:auto;border-radius:16px;border:1px solid var(--line);margin-top:clamp(20px,3vw,30px)}
+.plan table{width:100%;border-collapse:collapse;font-size:12.5px;min-width:780px}
+.plan th{background:var(--panel-2);color:var(--green);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;text-align:left;padding:12px 14px;font-weight:800;border-bottom:1px solid var(--line)}
+.plan td{padding:12px 14px;border-bottom:1px solid var(--line);border-left:1px solid var(--line);color:var(--sub);vertical-align:top}
+.plan td:first-child{border-left:none;color:#fff;font-weight:700;white-space:nowrap}
+.plan tr:last-child td{border-bottom:none}
+.plan td b{color:#fff}
+.plan .ph{font-size:10px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;color:var(--dim);display:block;margin-top:3px}
+
+/* funnel */
+.funnel{margin-top:clamp(18px,2.4vw,28px)}
+.fstep{display:grid;grid-template-columns:150px 1fr;gap:14px;align-items:center;margin-bottom:9px}
+.fstep .fl{font-size:12px;color:var(--sub);font-weight:600;text-align:right}
+.fstep .fb{height:38px;border-radius:8px;display:flex;align-items:center;padding:0 14px;font-size:12.5px;font-weight:700;color:#04231A;border:1px solid rgba(255,255,255,.14)}
+@media(max-width:700px){.fstep{grid-template-columns:1fr}.fstep .fl{text-align:left}}
+
+/* experiments */
+.xp{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:clamp(15px,2vw,22px);margin-bottom:12px}
+.xp .xt{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.xp .xn{font-family:var(--serif);font-size:19px;color:var(--green)}
+.xp .xh{font-size:15px;font-weight:800}
+.xp .xm{font-size:10px;letter-spacing:.05em;text-transform:uppercase;font-weight:800;background:var(--panel-2);border:1px solid var(--line);border-radius:6px;padding:4px 9px;color:var(--blue-2)}
+.xp p{font-size:13px;color:var(--sub)}
+.xp p b{color:#fff}
+
+/* risks */
+.learn{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,22px);margin-top:clamp(18px,2.4vw,28px)}
+.learn .l{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--amber);border-radius:12px;padding:clamp(15px,2vw,21px)}
+.learn .l h4{font-size:14.5px;font-weight:800;margin-bottom:8px}
+.learn .l p{font-size:12.5px;color:var(--sub)}
+.learn .l p b{color:#fff}
+@media(max-width:900px){.learn{grid-template-columns:1fr}}
+
+/* sources */
+.srcs{columns:2;column-gap:36px;font-size:12px;color:var(--sub);margin-top:18px}
+.srcs li{margin:0 0 9px 16px;break-inside:avoid}
+.srcs a{color:var(--blue-2);text-decoration:none;font-weight:600}
+.srcs a:hover{text-decoration:underline}
+@media(max-width:700px){.srcs{columns:1}}
+
+footer{border-top:1px solid var(--line);padding:clamp(46px,6vw,80px) 0 40px;margin-top:clamp(20px,3vw,40px);background:rgba(7,12,40,.6)}
+footer h2{max-width:26ch}
+.ft-lede{color:var(--sub);max-width:60ch;font-size:15px;margin-top:14px}
+.contact{display:flex;flex-wrap:wrap;gap:22px;align-items:baseline;margin-top:22px}
+.contact a{color:var(--green);text-decoration:none;font-weight:600}
+.contact .who{font-family:var(--serif);font-size:22px}
+.switcher{margin-top:26px}
+.switcher .sl{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--dim);margin-bottom:12px}
+.switcher .cases{display:flex;flex-wrap:wrap;gap:10px}
+.switcher a{font-size:12.5px;font-weight:600;border:1px solid var(--line);border-radius:99px;padding:8px 16px;color:var(--sub);text-decoration:none;transition:all .2s}
+.switcher a:hover{border-color:var(--green);color:#fff}
+.switcher a.home{background:var(--panel-2)}
+.switcher a[aria-current="page"]{background:var(--blue);border-color:var(--blue);color:#fff}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.6,.2,1)}
+.reveal.in,body:not(.js-anim) .reveal{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.reveal{opacity:1 !important;transform:none !important;transition:none !important}html{scroll-behavior:auto}}
+:focus-visible{outline:2.5px solid var(--green);outline-offset:3px;border-radius:3px}
+@media(max-width:900px){.grid-2,.grid-3,.anat{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<a href="#read" class="skip">Skip to content</a>
+<nav aria-label="Case navigation">
+  <div class="wrap nav-in">
+    <a href="index.html" class="brand">ZaloPay<em>.</em> Study</a>
+    <div class="nav-right">
+      <a href="#read">Strategy</a>
+      <a href="#product">Product</a>
+      <a href="#brand">Brand</a>
+      <a href="#media">Media plan</a>
+      <a href="#growth">Growth plan</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- 00 HERO -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="tag reveal">Independent deep-dive · Brand · Marketing · Growth · July 2026</div>
+        <h1 class="reveal">Follow the <span class="g">passport.</span></h1>
+        <p class="sub reveal">Vietnam's wallet market stopped growing. So ZaloPay stopped chasing new users and followed the ones it already had — <b>out of the country.</b> A teardown of the smartest move in Vietnamese fintech marketing, plus the media plan and growth plan I'd run next.</p>
+        <div class="metrics reveal">
+          <div class="metric"><div class="num" data-count="4.06" data-suffix="M">4.06M</div><div class="cap">Vietnamese trips abroad in H1 2025 alone — up 54% YoY<sup class="cit"><a href="#sources">1</a></sup></div></div>
+          <div class="metric"><div class="num" data-count="90" data-prefix="" data-suffix="M+">90M+</div><div class="cap">merchants on the Alipay+ rail ZaloPay plugged into<sup class="cit"><a href="#sources">6</a></sup></div></div>
+          <div class="metric"><div class="num" data-count="0" data-suffix="đ">0đ</div><div class="cap">transaction fee abroad vs 2–4% on a Visa/Mastercard<sup class="cit"><a href="#sources">4,5</a></sup></div></div>
+        </div>
+        <p class="disc reveal">Independent portfolio analysis built on public sources — all cited on the last slide. Not commissioned by ZaloPay. Product screenshots and brand creative are ZaloPay's own, published on zalopay.vn.</p>
+      </div>
+      <figure class="reveal shot-tall">
+        <img src="assets/zp-qr-intl.jpg" alt="ZaloPay official guide: three app screens showing the international QR scan flow, a country picker with Singapore, Korea, Malaysia and China, and a Malaysia transaction converting 12.00 MYR to 75,989 VND" loading="eager">
+        <figcaption><b>The product, in one image.</b> Pick a country → scan any local QR → the app converts and shows the rate before you confirm. Real example: a Malaysian café, <b>12.00 MYR at 1 MYR = 6,332 VND</b>. Note the rails it accepts: DuitNow QR and Alipay+. <span style="color:var(--dim)">Source: zalopay.vn</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</header>
+
+<!-- 01 STRATEGIC READ -->
+<section id="read">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 01 · The strategic read</div>
+    <h2 class="reveal">Same user. New occasion.</h2>
+    <p class="lede reveal">Vietnam's e-wallet market is not just saturated — it is <b>contracting</b>. Active wallets nationwide fell from 36.2M (end-2023) to 30.3M (Sep 2025) while payment volume boomed, because bank apps and VietQR made basic payments free for everyone.<sup class="cit"><a href="#sources">2,3</a></sup> In that market, buying a new user is the most expensive thing you can do.</p>
+    <div class="frame reveal">
+      <div class="col old">
+        <div class="h">The losing game</div>
+        <p>Fight MoMo, ShopeePay, VNPay and every bank app for the same shrinking pool of Vietnamese wallet users. Compete on cashback. Burn budget on installs that scan one QR and go quiet.</p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="col new">
+        <div class="h">The move ZaloPay made</div>
+        <p>Don't find a new user. Find a new <b>occasion</b> for the user you already have. The 4M+ trips Vietnamese people take abroad each half-year are moments where cash and cards actively hurt — and where nobody had built the habit yet.</p>
+      </div>
+    </div>
+    <div class="grid-3 ctx" style="margin-top:clamp(22px,3vw,34px)">
+      <div class="p reveal"><div class="k">Demand was already moving</div><p>Outbound travel is running well above pre-COVID levels: <b>4.06M trips in H1 2025, +54% YoY</b>. Japan alone took a record <b>678,500</b> Vietnamese visitors in 2025.<sup class="cit"><a href="#sources">1,10</a></sup></p></div>
+      <div class="p reveal"><div class="k">The category was empty</div><p>Vietnamese travellers abroad had two bad options: exchange cash before flying, or eat a card FX markup. No wallet owned "pay abroad" in the traveller's head.</p></div>
+      <div class="p reveal"><div class="k">It fits the rebrand</div><p>ZaloPay dropped "e-wallet" for "payment platform" in July 2024 — <span class="vn">"Làm mới mọi trải nghiệm về tiền"</span>. Cross-border is the proof of that promise, not a side feature.<sup class="cit"><a href="#sources">7,8</a></sup></p></div>
+    </div>
+    <p class="bigq reveal">The insight is not "go international". It is: <span class="c">when you cannot add users, add occasions.</span></p>
+  </div>
+</section>
+
+<!-- 02 FRICTION -->
+<section id="friction">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 02 · The friction it removes</div>
+    <h2 class="reveal">The trip is paid for. The paying is the annoying part.</h2>
+    <div class="grid-2" style="align-items:start;margin-top:clamp(20px,3vw,30px)">
+      <div class="panel reveal">
+        <div class="klabel">Cost of spending 1,000,000đ abroad</div>
+        <div class="costs">
+          <div class="cost"><span class="l">Cash exchange</span><span class="track"><i style="width:62%;background:linear-gradient(90deg,#7180B4,#5A6796)"></i></span><span class="v" style="color:var(--sub)">spread + risk</span></div>
+          <div class="cost"><span class="l">Visa / Mastercard</span><span class="track"><i style="width:100%;background:linear-gradient(90deg,#FFC12E,#E0932A)"></i></span><span class="v" style="color:var(--amber)">2–4%</span></div>
+          <div class="cost"><span class="l">ZaloPay QR</span><span class="track"><i style="width:14%;background:linear-gradient(90deg,var(--green),var(--green-2))"></i></span><span class="v" style="color:var(--green)">0–1%</span></div>
+        </div>
+        <p style="font-size:12.5px;color:var(--sub);margin-top:14px">Cards carry a 2–4% foreign-transaction and conversion markup. ZaloPay's QR route runs <span class="vn">"không phát sinh phí và áp dụng tỷ giá cạnh tranh"</span> — no fee, competitive rate — and shows the rate <b>before</b> you confirm.<sup class="cit"><a href="#sources">4,5</a></sup></p>
+        <p class="disc" style="margin-top:10px">Bar widths are illustrative of the fee ranges cited, not a measured basket.</p>
+      </div>
+      <div class="reveal">
+        <div class="grid-3 ctx" style="grid-template-columns:1fr;gap:14px">
+          <div class="p"><div class="k">Cash means planning to be wrong</div><p>You guess the amount before you fly, queue at a counter, carry it, and come home with leftover notes you exchange back at a loss. The friction is <b>upfront and irreversible</b>.</p></div>
+          <div class="p"><div class="k">Cards fail exactly where you spend</div><p>Street stalls, night markets, small cafés and local transit — the places that define a trip — are the places a Visa terminal isn't. Asia solved that with QR, not plastic.</p></div>
+          <div class="p"><div class="k">QR is already the local default</div><p>China, Japan, Korea, Singapore and Malaysia all run national or near-universal QR schemes. The traveller doesn't need a new behaviour — <b>they need their own app to speak the local QR.</b></p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 PRODUCT -->
+<section id="product">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 03 · What actually shipped</div>
+    <h2 class="reveal">Two directions, zero new behaviour.</h2>
+    <p class="lede reveal">The whole feature is deliberately unremarkable to use, which is the point. Nothing about it asks the traveller to learn anything: it is the same <span class="vn">"Quét QR"</span> button they already press in Vietnam, with a country picker added.</p>
+    <div class="grid-2" style="align-items:start;margin-top:clamp(20px,3vw,30px)">
+      <figure class="reveal shot-tall">
+        <img src="assets/zp-paycode.jpg" alt="ZaloPay official guide showing the payment-code flow: home screen, QR scanner, a country picker listing Vietnam, Singapore, Malaysia, Korea and China, and a China payment code screen displaying an exchange rate of 1 CNY = 3,734 VND" loading="lazy">
+        <figcaption><b>Direction 2: let them scan you.</b> Switch region, show your code, the merchant scans it like any local wallet. The China screen states the rate up front — <b>1 CNY = 3,734 VND</b>. <span style="color:var(--dim)">Source: zalopay.vn</span></figcaption>
+      </figure>
+      <div class="reveal">
+        <div class="anat" style="grid-template-columns:1fr 1fr">
+          <div class="a"><div class="t">Markets in-app</div><div class="v">Singapore · Korea · Malaysia · China</div><p>Japan and Indonesia also reported in coverage and third-party guides; ZaloPay says more markets are coming.<sup class="cit"><a href="#sources">4,5</a></sup></p></div>
+          <div class="a"><div class="t">Rails it rides</div><div class="v">Alipay+ · DuitNow QR</div><p>Both logos appear in ZaloPay's own product screen. Third-party guides also map NETS/SGQR in Singapore, ZeroPay in Korea, QRIS in Indonesia.<sup class="cit"><a href="#sources">5</a></sup></p></div>
+          <div class="a"><div class="t">FX handling</div><div class="v">Shown before confirm</div><p>Amount in local currency, the rate, and the VND total on one screen. Transparency <em>is</em> the feature — it removes the "what did that cost me?" anxiety cards create.</p></div>
+          <div class="a"><div class="t">Wallet balance pays</div><div class="v">Existing VND balance</div><p>No foreign-currency account, no new card, no separate app. The user's existing balance and KYC do the work.<sup class="cit"><a href="#sources">4,5</a></sup></p></div>
+        </div>
+        <p class="lede" style="margin-top:18px">Read as a growth decision, this is a <b>zero-learning-curve</b> feature attached to a <b>high-anxiety moment</b>. That combination is rare and it is why the campaign could lean entirely on demonstration rather than explanation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 RAIL -->
+<section id="rail">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 04 · Why it was possible at all</div>
+    <h2 class="reveal">ZaloPay didn't build a network. It plugged into one.</h2>
+    <p class="lede reveal">Signing overseas merchants one by one would take a decade and a balance sheet ZaloPay does not have — VNG's fintech arm was still loss-making in 2025, with breakeven targeted for end-2026.<sup class="cit"><a href="#sources">9</a></sup> Joining an existing cross-border rail converts that decade into an integration.</p>
+    <div class="rail panel reveal">
+      <svg viewBox="0 0 1040 300" role="img" aria-label="Diagram: ZaloPay's Vietnamese users connect through the Alipay+ and DuitNow rails to merchants in China, Japan, Korea, Singapore, Malaysia and Indonesia, alongside peer wallets GCash, TrueMoney, TNG and DANA.">
+        <defs>
+          <linearGradient id="flow" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#3D6BFF"/><stop offset="1" stop-color="#01CF6A"/>
+          </linearGradient>
+        </defs>
+        <!-- left: user -->
+        <rect x="14" y="104" width="176" height="92" rx="14" fill="rgba(61,107,255,.18)" stroke="#3D6BFF"/>
+        <text x="102" y="138" text-anchor="middle" font-family="Manrope,sans-serif" font-size="15" font-weight="800" fill="#EEF2FF">ZaloPay user</text>
+        <text x="102" y="160" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12" fill="#A5B0DC">VND balance</text>
+        <text x="102" y="178" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12" fill="#A5B0DC">existing KYC</text>
+        <!-- middle: rail -->
+        <rect x="352" y="86" width="230" height="128" rx="16" fill="rgba(1,207,106,.14)" stroke="#01CF6A" stroke-width="1.5"/>
+        <text x="467" y="122" text-anchor="middle" font-family="Manrope,sans-serif" font-size="15" font-weight="800" fill="#fff">The rail</text>
+        <text x="467" y="146" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" fill="#01CF6A">Alipay+ · DuitNow QR</text>
+        <text x="467" y="170" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11.5" fill="#A5B0DC">90M+ merchants, 66 markets</text>
+        <text x="467" y="188" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11.5" fill="#A5B0DC">1.6B accounts on the network</text>
+        <!-- arrows -->
+        <line x1="196" y1="150" x2="344" y2="150" stroke="url(#flow)" stroke-width="3" stroke-linecap="round"/>
+        <polygon points="344,150 334,145 334,155" fill="#01CF6A"/>
+        <line x1="588" y1="150" x2="700" y2="150" stroke="url(#flow)" stroke-width="3" stroke-linecap="round"/>
+        <polygon points="700,150 690,145 690,155" fill="#01CF6A"/>
+        <!-- right: markets -->
+        <g font-family="Manrope,sans-serif" font-size="12.5" font-weight="700" fill="#EEF2FF">
+          <rect x="708" y="34" width="152" height="34" rx="9" fill="rgba(255,255,255,.06)" stroke="rgba(140,165,255,.25)"/><text x="784" y="56" text-anchor="middle">China</text>
+          <rect x="708" y="76" width="152" height="34" rx="9" fill="rgba(255,255,255,.06)" stroke="rgba(140,165,255,.25)"/><text x="784" y="98" text-anchor="middle">Japan</text>
+          <rect x="708" y="118" width="152" height="34" rx="9" fill="rgba(255,255,255,.06)" stroke="rgba(140,165,255,.25)"/><text x="784" y="140" text-anchor="middle">Korea</text>
+          <rect x="708" y="160" width="152" height="34" rx="9" fill="rgba(255,255,255,.06)" stroke="rgba(140,165,255,.25)"/><text x="784" y="182" text-anchor="middle">Singapore</text>
+          <rect x="708" y="202" width="152" height="34" rx="9" fill="rgba(255,255,255,.06)" stroke="rgba(140,165,255,.25)"/><text x="784" y="224" text-anchor="middle">Malaysia</text>
+          <rect x="708" y="244" width="152" height="34" rx="9" fill="rgba(255,255,255,.06)" stroke="rgba(140,165,255,.25)"/><text x="784" y="266" text-anchor="middle">Indonesia</text>
+        </g>
+        <!-- peers -->
+        <text x="882" y="56" font-family="Manrope,sans-serif" font-size="11" fill="#7180B4">Same rail also carries</text>
+        <text x="882" y="76" font-family="Manrope,sans-serif" font-size="11.5" font-weight="700" fill="#8FADFF">GCash · TrueMoney</text>
+        <text x="882" y="94" font-family="Manrope,sans-serif" font-size="11.5" font-weight="700" fill="#8FADFF">TNG · DANA</text>
+        <text x="882" y="118" font-family="Manrope,sans-serif" font-size="11" fill="#7180B4">→ the rail is a</text>
+        <text x="882" y="134" font-family="Manrope,sans-serif" font-size="11" fill="#7180B4">shortcut, not a moat</text>
+      </svg>
+    </div>
+    <div class="grid-2 reveal" style="margin-top:clamp(18px,2.4vw,26px)">
+      <div class="panel"><div class="klabel">What it buys</div><p style="font-size:13.5px;color:var(--sub)">Overnight acceptance at the merchant density a wallet could never sign alone — and the network keeps growing without ZaloPay spending anything. Ant International now reports <b style="color:#fff">150M+ merchants across 100+ markets</b>.<sup class="cit"><a href="#sources">6</a></sup></p></div>
+      <div class="panel" style="border-color:rgba(255,193,46,.35)"><div class="klabel" style="color:var(--amber)">What it doesn't buy</div><p style="font-size:13.5px;color:var(--sub)">Exclusivity. GCash, TrueMoney, TNG and DANA ride the same rail, and Vietnamese banks are wiring up bilateral QR too. <b style="color:#fff">The feature is copyable; the brand association is not.</b> That is exactly why the marketing mattered more than the integration.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 BRAND / AMBASSADOR -->
+<section id="brand">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 05 · The brand decision</div>
+    <h2 class="reveal">They bought trust, not reach.</h2>
+    <p class="lede reveal">For the April 2026 push, ZaloPay made <b>Khoai Lang Thang</b> (Đinh Võ Hoài Phương) the face of paying abroad.<sup class="cit"><a href="#sources">11,12</a></sup> On a reach basis he is not Vietnam's biggest creator. On a <b>believability</b> basis for this specific product, he is close to the only right answer.</p>
+    <figure class="reveal" style="margin-top:clamp(18px,2.4vw,26px)">
+      <img src="assets/zp-brand.jpg" alt="ZaloPay brand campaign visual with the Vietnamese line 'Làm mới mọi trải nghiệm về tiền' and four young people, one holding a phone showing the ZaloPay app" loading="lazy">
+      <figcaption><b>The brand promise the ambassador has to carry:</b> <span class="vn">"Làm mới mọi trải nghiệm về tiền"</span> — renew every experience with money. Bright, young, everyday. A cross-border feature demoed by a trusted traveller is that promise made literal. <span style="color:var(--dim)">Source: zalopay.vn</span></figcaption>
+    </figure>
+    <div class="fit reveal">
+      <div class="fitcard">
+        <div class="n">01</div>
+        <h4>His genre <em>is</em> the payment moment</h4>
+        <p>He built a decade of work on street food, local markets and small vendors across Asia. Those are precisely the counters where a card fails and a QR works. <b>The demo doesn't need a script — it's his normal footage.</b></p>
+      </div>
+      <div class="fitcard">
+        <div class="n">02</div>
+        <h4>Trust is the actual conversion lever</h4>
+        <p>Paying abroad with an unfamiliar method is a fear purchase: <em>will my money work in a country where I can't argue?</em> That objection is answered by a person the audience already believes, not by a media buy. He won <b>Content Creator of the Year at Vietnam iContent 2025</b>, co-run by the Ministry of Culture, Sports and Tourism and VnExpress.<sup class="cit"><a href="#sources">13</a></sup></p>
+      </div>
+      <div class="fitcard">
+        <div class="n">03</div>
+        <h4>The persona matches the price point</h4>
+        <p><span class="vn">"Khoai lang thang"</span> means a wandering sweet potato — deliberately humble, unbranded, mass-accessible. It maps onto a product used for a 12-ringgit coffee, not a luxury purchase. <b>A glossier celebrity would have made the feature feel expensive.</b></p>
+      </div>
+    </div>
+    <p class="bigq reveal">Reach tells people a feature exists. <span class="c">Trust is what makes them try it 3,000km from home.</span></p>
+  </div>
+</section>
+
+<!-- 06 CAMPAIGN ANATOMY -->
+<section id="campaign">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 06 · Campaign anatomy</div>
+    <h2 class="reveal">Every choice in it is an activation choice.</h2>
+    <p class="lede reveal">Coverage of the China trip ran on <b>29 April 2026</b> — the eve of Vietnam's 30/4–1/5 holiday, the single biggest outbound travel window of the first half of the year. Nothing about the mechanics is accidental.<sup class="cit"><a href="#sources">11,12</a></sup></p>
+    <div class="anat reveal">
+      <div class="a"><div class="t">The proof point</div><div class="v vn">"Từ trung tâm thương mại đến gánh hàng rong"</div><p>From shopping malls to street carts. They led with the <b>hardest</b> case, killing the obvious objection that it only works at big chains.</p></div>
+      <div class="a"><div class="t">The offer</div><div class="v">Code KHOAIZLP · 50% off, max 50,000đ</div><p>Minimum spend 10,000đ, two uses. Tiny by design — this is not a discount play.</p></div>
+      <div class="a"><div class="t">The gate</div><div class="v">First-time international QR users only</div><p>The incentive is aimed exactly at the behaviour that's missing: the <b>first</b> foreign scan. It buys a habit, not volume.</p></div>
+      <div class="a"><div class="t">The timing</div><div class="v">Live through 30 April</div><p>Published into peak trip-planning and departure, not into a quiet week. Offer expiry matches the travel window.</p></div>
+    </div>
+    <div class="grid-2 reveal" style="margin-top:clamp(20px,2.6vw,30px)">
+      <div class="panel"><div class="klabel">What I'd copy</div><p style="font-size:13.5px;color:var(--sub)">The <b style="color:#fff">first-use gate</b>. Most wallet promos pay everyone for transactions they'd make anyway. Capping the reward at 50,000đ and restricting it to first-time cross-border users means the money goes to changing behaviour, not subsidising it. Indonesia already ran the counter-experiment: 71% of e-wallet users there were acquired by promotions, but only 23% stayed for them.<sup class="cit"><a href="#sources">14</a></sup></p></div>
+      <div class="panel"><div class="klabel">What looks thin</div><p style="font-size:13.5px;color:var(--sub)">It reads as a <b style="color:#fff">holiday burst, not a system</b>. One creator, one destination, one PR wave, one expiring code. Travel is a repeating four-stage journey and the campaign only shows up at stage three. No visible pre-trip capture, no post-trip retention hook, no second destination. That gap is what the next two slides fix.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 MEDIA PLAN -->
+<section id="media">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 07 · The media plan I'd run</div>
+    <h2 class="reveal">Meet the traveller four times, not once.</h2>
+    <p class="lede reveal">A trip is a funnel with dates on it. The install decision happens weeks <b>before</b> departure, the habit forms in-destination, and the business value lands after the plane home. One plan, four moments, each with its own job and its own metric.</p>
+    <div class="plan reveal">
+      <table>
+        <tr>
+          <th>Phase</th><th>Traveller state</th><th>Channels &amp; content</th><th>Creative job</th><th>Metric that matters</th>
+        </tr>
+        <tr>
+          <td>01 Dream<span class="ph">T–8 to T–4 weeks</span></td>
+          <td>"Where should we go?" Scrolling destination content, no dates booked.</td>
+          <td>Creator long-form (YouTube travel series) · TikTok destination edits · Zalo OA content hub · SEO on <span class="vn">"chi phí du lịch [nước]"</span></td>
+          <td>Attach the app to the <b>daydream</b>: cost-per-day breakdowns where every price is shown paid by QR.</td>
+          <td>Assisted reach → content-hub visits</td>
+        </tr>
+        <tr>
+          <td>02 Plan<span class="ph">T–3 weeks to T–3 days</span></td>
+          <td>Booking flights, hotels, eSIM, insurance. Actively solving money logistics.</td>
+          <td>Search &amp; app-store intent · partner placements at flight/hotel/eSIM checkout · Zalo OA reminder · airport-route OOH</td>
+          <td>Be the answer to <b>"how do I pay there?"</b> — a 20-second setup checklist, not a brand film.</td>
+          <td><b>Pre-trip activation rate:</b> % of travellers who enable international QR before departure</td>
+        </tr>
+        <tr>
+          <td>03 In-destination<span class="ph">Trip days 1–7</span></td>
+          <td>Standing at a counter, deciding between cash, card and app. High anxiety, low patience.</td>
+          <td>Geo-triggered in-app card on arrival · creator street-level demos · merchant-side signage via the rail partner</td>
+          <td>Make the <b>first scan</b> happen in the first 24 hours. Nothing else matters this week.</td>
+          <td><b>First-scan rate within 24h of arrival</b> · scans per trip</td>
+        </tr>
+        <tr>
+          <td>04 Return<span class="ph">T+1 to T+30 days</span></td>
+          <td>Home, unpacking, posting photos, back to normal spending.</td>
+          <td>Trip-recap in-app summary · UGC prompt with the trip's own numbers · lifecycle push into domestic habits</td>
+          <td>Convert the trip into a <b>domestic habit</b> and turn the user's own receipts into next season's proof.</td>
+          <td><b>D30 domestic retention of cross-border users</b> · UGC submissions</td>
+        </tr>
+      </table>
+    </div>
+    <div class="grid-3 ctx reveal" style="margin-top:clamp(20px,2.6vw,30px)">
+      <div class="p"><div class="k">Budget shape</div><p>Weight toward <b>Plan</b> and <b>In-destination</b>, where intent is highest and the behaviour is actually set. Dream is earned-first: creator content, not paid reach.</p></div>
+      <div class="p"><div class="k">Creator portfolio</div><p>Keep one anchor of Khoai's calibre for trust, then add <b>destination-specialist micro-creators</b> — Japan, Korea, Thailand — so each market gets a local proof rather than one national campaign.</p></div>
+      <div class="p"><div class="k">Always-on beats bursts</div><p>Travel demand has a calendar: Tết, 30/4, summer, year-end. A burst wins one holiday; a seasonal always-on plan compounds across all four.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 GROWTH PLAN -->
+<section id="growth">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 08 · The growth plan</div>
+    <h2 class="reveal">The trip is the wedge. Home is the business.</h2>
+    <p class="lede reveal">Paying abroad is a brilliant <b>activation</b> story and a poor revenue story on its own — a handful of trips a year cannot carry a P&amp;L. Its real value is that it creates a high-trust moment the wallet can convert into everyday domestic use, which is where frequency and margin live.</p>
+    <div class="funnel reveal">
+      <div class="fstep"><span class="fl">Vietnamese trips abroad</span><span class="fb" style="width:100%;background:linear-gradient(90deg,#3D6BFF,#5B8DEF);color:#fff">~4M+ per half-year — the addressable occasion<sup class="cit"><a href="#sources" style="color:#fff">1</a></sup></span></div>
+      <div class="fstep"><span class="fl">Aware it's possible</span><span class="fb" style="width:74%;background:linear-gradient(90deg,#2F7FD8,#3FA3C9);color:#fff">campaign + creator + partner reach</span></div>
+      <div class="fstep"><span class="fl">Enabled before flying</span><span class="fb" style="width:50%;background:linear-gradient(90deg,#12B481,#0FA95C)">pre-trip activation — the biggest leak</span></div>
+      <div class="fstep"><span class="fl">First scan abroad</span><span class="fb" style="width:33%;background:linear-gradient(90deg,#01CF6A,#12B481)">the habit moment</span></div>
+      <div class="fstep"><span class="fl">Still active at home, D30</span><span class="fb" style="width:20%;background:linear-gradient(90deg,#01CF6A,#8DE8B8)">where the money is</span></div>
+      <p class="disc">Stage shapes are illustrative of where the leaks sit, not published data — ZaloPay discloses none of these rates. The point is the sequence: the campaign optimises stage 4, but stages 3 and 5 decide whether it pays.</p>
+    </div>
+    <div class="grid-2" style="align-items:start;margin-top:clamp(22px,3vw,32px)">
+      <div class="reveal">
+        <div class="klabel">Three experiments, in order</div>
+        <div class="xp">
+          <div class="xt"><span class="xn">01</span><span class="xh">Pre-trip trigger</span><span class="xm">Pre-trip activation rate</span></div>
+          <p>Detect trip intent already visible in-app — a flight or hotel booking, an eSIM purchase, an FX search — and fire a one-tap "turn on paying in [country]" flow. <b>Hypothesis:</b> travellers activated before departure scan abroad at materially higher rates than those who discover the feature at a counter. Guardrail: no notification to users without trip signals.</p>
+        </div>
+        <div class="xp">
+          <div class="xt"><span class="xn">02</span><span class="xh">First-scan concierge</span><span class="xm">First scan within 24h</span></div>
+          <p>On first connection to a foreign network, surface three <em>nearby</em> accepting merchants and the live rate. <b>Hypothesis:</b> the blocker at the counter isn't trust in the app, it's not knowing which counters accept it. Show acceptance, remove the guess. Guardrail: location permission opt-in, no dark patterns.</p>
+        </div>
+        <div class="xp">
+          <div class="xt"><span class="xn">03</span><span class="xh">Homecoming loop</span><span class="xm">D30 domestic retention</span></div>
+          <p>On return, deliver a trip spend recap — what they paid, the rate they got, what a card would have cost — and pair it with one domestic habit offer. <b>Hypothesis:</b> a user shown their own saved money converts to a second habit better than a generic promo. This is where the wedge either compounds or ends.</p>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="panel" style="border-color:rgba(1,207,106,.4)">
+          <div class="klabel">North star</div>
+          <p style="font-size:17px;font-weight:700;color:#fff;margin-bottom:6px">Share of trips paid with ZaloPay</p>
+          <p style="font-size:13px;color:var(--sub)">Not installs, not campaign reach, not cumulative users. One number that only improves if travellers actually pay — measurable per destination, per season, per creator cohort.</p>
+        </div>
+        <div class="panel" style="margin-top:14px">
+          <div class="klabel">Trailing twin</div>
+          <p style="font-size:15px;font-weight:700;color:#fff;margin-bottom:6px">D30 domestic retention of cross-border users</p>
+          <p style="font-size:13px;color:var(--sub)">The honesty check. If this doesn't move, cross-border is an expensive brand campaign wearing a product costume.</p>
+        </div>
+        <div class="panel" style="margin-top:14px">
+          <div class="klabel">Guardrails, always on</div>
+          <div class="chips" style="margin-top:4px">
+            <span>Cost per <b>first</b> foreign scan</span><span>Notification opt-out rate</span><span>FX complaint tickets</span><span>Failed-scan rate by market</span><span>Fraud flags on foreign QR</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 RISKS -->
+<section id="risks">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 09 · What I'd watch</div>
+    <h2 class="reveal">Three ways this stops working.</h2>
+    <div class="learn">
+      <div class="l reveal"><h4>The feature gets commoditised</h4><p>The same rail carries GCash, TrueMoney, TNG and DANA, and Vietnamese banks are building bilateral QR links. <b>Mitigation:</b> race to own the <em>occasion</em> in memory — the traveller's default — while the capability is still novel. Brand association outlives feature parity.</p></div>
+      <div class="l reveal"><h4>Seasonality masquerades as growth</h4><p>Holiday spikes will look like traction. <b>Mitigation:</b> judge every campaign on same-season comparisons and on D30 domestic retention, never on peak-week transaction counts.</p></div>
+      <div class="l reveal"><h4>One trip, then silence</h4><p>A user who scans in Osaka and never opens the app in Ho Chi Minh City is a cost, not a win. <b>Mitigation:</b> the homecoming loop is not optional — it's the experiment that decides whether the whole play has a return.</p></div>
+    </div>
+    <p class="bigq reveal">A wallet that travels with you earns a place on the home screen. <span class="c">That place is the asset — not the trip.</span></p>
+  </div>
+</section>
+
+<!-- 10 SOURCES -->
+<section id="sources">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 10 · Sources &amp; method</div>
+    <h2 class="reveal">Every number, cited.</h2>
+    <p class="lede reveal" style="font-size:13.5px">Compiled July 2026 from official data (SBV, national tourism statistics), company material (zalopay.vn, Ant International releases, VNG financials) and named press. Company self-reported figures are labelled. Where ZaloPay publishes nothing — activation rates, cross-border transaction volumes, the ambassador deal's value — I model or say so rather than guess. Product screenshots and brand creative are ZaloPay's own, reproduced for analysis with the source stated.</p>
+    <ol class="srcs reveal">
+      <li>Vietnamese outbound travel, H1 2025: 4.06M trips, +54% YoY — Vietnam National Authority of Tourism statistics, via <a href="https://thongke.tourism.vn/index.php/news/items/354" target="_blank" rel="noopener">thongke.tourism.vn</a>.</li>
+      <li>Active e-wallets 36.2M (end-2023) → 30.3M (Sep 2025): SBV data via <a href="https://tapchinganhang.gov.vn/phat-trien-thi-truong-vi-dien-tu-gop-phan-thuc-day-thanh-toan-so-va-chuyen-doi-so-16719.html" target="_blank" rel="noopener">Tạp chí Ngân hàng (11/2025)</a> and <a href="https://cafef.vn/viet-nam-co-hon-34-trieu-vi-dien-tu-dang-hoat-dong-188240804170124167.chn" target="_blank" rel="noopener">CafeF/SBV (8/2024)</a>.</li>
+      <li>Payment volume boom / VietQR ubiquity: <a href="https://fili.vn/2026/01/nam-2025-giao-dich-qua-napas-tang-24-ve-so-luong-8-ve-gia-tri-757-1393244.htm" target="_blank" rel="noopener">NAPAS 2025 results via Vietstock (1/2026)</a>; <a href="https://baochinhphu.vn/napas-cung-co-ha-tang-thanh-toan-so-102251124201316237.htm" target="_blank" rel="noopener">Báo Chính phủ (11/2025)</a>.</li>
+      <li>Feature mechanics, markets, in-app FX display: ZaloPay official guide <a href="https://zalopay.vn/thanh-toan-quoc-te-7975" target="_blank" rel="noopener">"Thanh toán quốc tế"</a> (zalopay.vn) — company material; screenshots reproduced above.</li>
+      <li>Country-by-country rail mapping (Alipay+, DuitNow, NETS/SGQR, ZeroPay, QRIS), fee range 0–1% vs card 2–4%, transaction limits: third-party guide <a href="https://gohub.vn/quet-qr-zalopay-du-lich-nuoc-ngoai" target="_blank" rel="noopener">Gohub (7/2024)</a> — single-source, not confirmed by ZaloPay.</li>
+      <li>Alipay+ scale: 90M+ merchants / 66 markets / 1.6B accounts / 35+ partners — <a href="https://www.businesswire.com/news/home/20250127889352/en/More-than-90-Million-Global-Merchants-Leverage-Alipay-Payment-and-Digitalisation-Solutions-to-Attract-and-Engage-Travellers-this-Chinese-New-Year" target="_blank" rel="noopener">Ant International via Business Wire (1/2025)</a>; later 150M+ merchants / 100+ markets per <a href="https://www.antom.com/news/ant-international-powered-over-2-billion-transactions-in-its-core-emerging-markets-in-2025" target="_blank" rel="noopener">Ant International (2025)</a>. Company-reported.</li>
+      <li>ZaloPay repositioning from e-wallet to payment platform (7/2024): <a href="https://www.vng.com.vn/news/enterprise/zalopay-rebranding.html" target="_blank" rel="noopener">VNG corporate</a>; <a href="https://thanhnien.vn/zalopay-ra-mat-nhan-dien-thuong-hieu-moi-185240702155156718.htm" target="_blank" rel="noopener">Thanh Niên (7/2024)</a>.</li>
+      <li>Brand line <span class="vn">"Làm mới mọi trải nghiệm về tiền"</span> and brand creative: <a href="https://zalopay.vn/" target="_blank" rel="noopener">zalopay.vn</a>.</li>
+      <li>VNG fintech segment FY2025 — revenue 1,111 tỷ VND (+47%), pre-tax loss narrowed to 489 tỷ, ZaloPay breakeven targeted end-2026: <a href="https://vietnambiz.vn/vng-tiep-tuc-gong-lo-zalopay-lan-dau-he-lo-ket-qua-kinh-doanh-cua-zalo-20264117301049.htm" target="_blank" rel="noopener">Vietnambiz (4/2026)</a>, from VNG financial reports.</li>
+      <li>Japan: record 678,500 Vietnamese visitors in 2025, +9.2%, highest since 2019 — JNTO data via <a href="https://www.travelandtourworld.com/news/article/vietnamese-travelers-flock-to-japan-setting-new-tourism-record-as-the-country-is-crowned-most-favorite-destination-globally/" target="_blank" rel="noopener">Travel And Tour World (2026)</a>.</li>
+      <li>Khoai Lang Thang campaign, promo code KHOAIZLP mechanics, markets list: <a href="https://kenh14.vn/khoai-lang-thang-thoai-mai-vi-vu-khap-trung-quoc-ma-khong-can-doi-tien-mat-nho-ung-dung-viet-nam-nay-215260429141819889.chn" target="_blank" rel="noopener">Kenh14 (29/4/2026)</a>.</li>
+      <li><span class="vn">"Từ trung tâm thương mại đến gánh hàng rong"</span>, no-fee/competitive-rate claim: <a href="https://thanhnien.vn/thanh-toan-zalopay-tai-trung-quoc-tu-trung-tam-thuong-mai-den-ganh-hang-rong-185260429153330117.htm" target="_blank" rel="noopener">Thanh Niên (29/4/2026)</a>.</li>
+      <li>Khoai Lang Thang profile — ~3.2M YouTube subscribers, ~7.3M across platforms, Content Creator of the Year at Vietnam iContent 2025: <a href="https://vi.wikipedia.org/wiki/Khoai_Lang_Thang" target="_blank" rel="noopener">Wikipedia (tiếng Việt)</a>; <a href="https://nld.com.vn/tet-dac-biet-cua-khoai-lang-thang-196260210142028678.htm" target="_blank" rel="noopener">Người Lao Động (2/2026)</a>.</li>
+      <li>Promo-acquired vs promo-retained (71% / 23%): Ipsos Indonesia via <a href="https://www.thejakartapost.com/news/2020/02/14/no-discounts-no-problem-e-wallet-users-stick-around-despite-less-cash-back.html" target="_blank" rel="noopener">The Jakarta Post (2/2020)</a>.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="bar"></span>Let's talk</div>
+    <h2 class="reveal">Read the market, then pick the occasion.</h2>
+    <p class="ft-lede reveal">I like growth problems where the answer isn't more budget. This one was a market that stopped growing and a company that found a new moment inside the users it already had — then had to earn belief before it could earn a transaction.</p>
+    <div class="contact reveal">
+      <span class="who">Tào Giáng My — Arie</span>
+      <span style="color:var(--dim)">Ho Chi Minh City, Vietnam</span>
+      <a href="mailto:taogiangmy.vn@gmail.com">taogiangmy.vn@gmail.com</a>
+      <a href="https://linkedin.com/in/giangmytao" target="_blank" rel="noopener">linkedin.com/in/giangmytao</a>
+    </div>
+    <div class="switcher reveal">
+      <div class="sl">Case studies</div>
+      <div class="cases">
+        <a class="home" href="growth-home.html">← All cases</a>
+        <a href="halio-growth-case.html">Halio Sonic</a>
+        <a href="coba.html">CoBa's Daughter</a>
+        <a href="amamy.html">Amamy</a>
+        <a href="guardian.html">Guardian</a>
+        <a href="momo.html">MoMo</a>
+        <a href="zalopay.html" aria-current="page">ZaloPay</a>
+        <a href="ahamove.html">AhaMove</a>
+        <a href="melius.html">Melius</a>
+        <a href="base.html">Base.vn</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (document.visibilityState === 'visible' && 'IntersectionObserver' in window && !reduce) {
+    document.body.classList.add('js-anim');
+    // fixed-pixel margin, not a percentage: on very tall viewports a -8% band
+    // can swallow the whole footer and leave it stuck at opacity 0.
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{rootMargin:'0px 0px -60px 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+    // safety sweep: anything already on screen at load is revealed regardless
+    addEventListener('load', function(){
+      document.querySelectorAll('.reveal:not(.in)').forEach(function(el){
+        if (el.getBoundingClientRect().top < innerHeight) el.classList.add('in');
+      });
+    });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  var bar = document.getElementById('progress');
+  if(bar) addEventListener('scroll', function(){
+    var h = document.documentElement.scrollHeight - innerHeight;
+    bar.style.width = (h>0 ? scrollY/h*100 : 0) + '%';
+  }, {passive:true});
+
+  var links = [].slice.call(document.querySelectorAll('.nav-right a[href^="#"]'));
+  var map = links.map(function(a){ return {a:a, el:document.querySelector(a.getAttribute('href'))}; }).filter(function(m){ return m.el; });
+  if(map.length){
+    var nio = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ map.forEach(function(m){ m.a.classList.toggle('active', m.el===e.target); }); } });
+    },{rootMargin:'-45% 0px -50% 0px'});
+    map.forEach(function(m){ nio.observe(m.el); });
+  }
+
+  function countUp(el){
+    var target = parseFloat(el.getAttribute('data-count'));
+    var pre = el.getAttribute('data-prefix')||'', suf = el.getAttribute('data-suffix')||'';
+    if(reduce || isNaN(target)) return;
+    var start=null, dec = (String(target).indexOf('.')>-1);
+    function tick(t){
+      if(!start) start=t;
+      var p = Math.min((t-start)/850,1);
+      var shown = dec ? Math.round(target*p*100)/100 : Math.round(target*p);
+      el.textContent = pre + (p<1 ? shown : target) + suf;
+      if(p<1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  var mio = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ countUp(e.target); mio.unobserve(e.target); } });
+  },{threshold:.6});
+  document.querySelectorAll('.num[data-count]').forEach(function(el){ mio.observe(el); });
+})();
+</script>
+</body>
+</html>

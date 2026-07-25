@@ -498,6 +498,7 @@ body.js-anim .reveal:not(.in){opacity:0}
         <a href="amamy.html">Amamy</a>
         <a href="guardian.html">Guardian</a>
         <a href="momo.html" aria-current="page">MoMo</a>
+        <a href="zalopay.html">ZaloPay</a>
         <a href="ahamove.html">AhaMove</a>
         <a href="melius.html">Melius</a>
         <a href="base.html">Base.vn</a>
@@ -513,10 +514,17 @@ body.js-anim .reveal:not(.in){opacity:0}
   // reveal — armed only on a visible tab so content is never stuck hidden
   if (document.visibilityState === 'visible' && 'IntersectionObserver' in window && !reduce) {
     document.body.classList.add('js-anim');
+    // fixed-pixel margin, not a percentage: on very tall viewports a -8% band
+    // can swallow the whole footer and leave it stuck at opacity 0.
     var io = new IntersectionObserver(function(es){
       es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-    },{rootMargin:'0px 0px -8% 0px'});
+    },{rootMargin:'0px 0px -60px 0px'});
     document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+    addEventListener('load', function(){
+      document.querySelectorAll('.reveal:not(.in)').forEach(function(el){
+        if (el.getBoundingClientRect().top < innerHeight) el.classList.add('in');
+      });
+    });
   } else {
     document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
   }
