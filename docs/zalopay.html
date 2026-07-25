@@ -163,9 +163,34 @@ figure figcaption b{color:var(--sub)}
 .phone-cap{text-align:center;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--dim);margin-top:8px}
 
 /* big idea band */
-.bigidea{position:relative;background:linear-gradient(135deg,rgba(1,207,106,.16),rgba(61,107,255,.12));border:1px solid rgba(1,207,106,.45);border-radius:20px;padding:clamp(22px,3vw,38px);margin-top:clamp(20px,3vw,30px);box-shadow:0 0 60px rgba(1,207,106,.12)}
-.bigidea .bi-tag{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--green);margin-bottom:10px}
-.bigidea .bi-name{font-family:var(--serif);font-size:clamp(30px,5vw,58px);line-height:1.02;color:#fff;letter-spacing:-.01em}
+.bigidea{position:relative;overflow:hidden;isolation:isolate;background:linear-gradient(135deg,rgba(1,207,106,.16),rgba(61,107,255,.12));border:1px solid rgba(1,207,106,.45);border-radius:20px;padding:clamp(22px,3vw,38px);margin-top:clamp(20px,3vw,30px);box-shadow:0 0 60px rgba(1,207,106,.12),inset 0 1px 0 rgba(255,255,255,.07)}
+/* drifting aurora behind the band */
+.bigidea::before{content:"";position:absolute;inset:-40%;z-index:-1;pointer-events:none;
+  background:radial-gradient(38% 46% at 22% 30%,rgba(1,207,106,.34),transparent 62%),
+             radial-gradient(34% 42% at 78% 68%,rgba(61,107,255,.32),transparent 64%);
+  animation:auroraDrift 17s ease-in-out infinite alternate}
+@keyframes auroraDrift{
+  0%{transform:translate3d(-4%,-3%,0) scale(1)}
+  50%{transform:translate3d(5%,4%,0) scale(1.1)}
+  100%{transform:translate3d(-2%,5%,0) scale(1.04)}}
+/* light sweeping the top edge */
+.bigidea::after{content:"";position:absolute;top:0;left:0;height:1px;width:34%;pointer-events:none;
+  background:linear-gradient(90deg,transparent,var(--green),transparent);opacity:.9;
+  animation:edgeSweep 6.5s cubic-bezier(.5,0,.5,1) infinite}
+@keyframes edgeSweep{0%{transform:translateX(-110%)}55%,100%{transform:translateX(330%)}}
+.bigidea .bi-tag{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--green);margin-bottom:10px;display:flex;align-items:center;gap:9px}
+.bigidea .bi-tag i{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(1,207,106,.55);animation:pip 2.4s ease-out infinite}
+@keyframes pip{0%{box-shadow:0 0 0 0 rgba(1,207,106,.5)}70%{box-shadow:0 0 0 11px rgba(1,207,106,0)}100%{box-shadow:0 0 0 0 rgba(1,207,106,0)}}
+.bigidea .bi-name{font-family:var(--serif);font-size:clamp(32px,5.4vw,64px);line-height:1.01;letter-spacing:-.015em;
+  background:linear-gradient(100deg,#fff 18%,#B6FFDA 34%,#fff 52%,#fff 100%);background-size:260% 100%;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
+  animation:nameShine 7.5s ease-in-out infinite}
+@keyframes nameShine{0%,100%{background-position:100% 0}50%{background-position:0 0}}
+@media (prefers-reduced-motion: reduce){
+  .bigidea::before,.bigidea::after,.bigidea .bi-tag i,.bigidea .bi-name{animation:none}
+  .bigidea::after{display:none}
+  .bigidea .bi-name{background-position:0 0}
+}
 .bigidea .bi-def{font-size:clamp(15px,1.7vw,19px);color:var(--ink);max-width:62ch;margin-top:14px;font-weight:500}
 .bigidea .bi-def b{color:var(--green)}
 .bi-split{display:grid;grid-template-columns:1fr auto 1fr;gap:clamp(14px,2.4vw,26px);align-items:center;margin-top:clamp(20px,2.6vw,30px);padding-top:clamp(18px,2.4vw,24px);border-top:1px solid rgba(1,207,106,.28)}
@@ -179,6 +204,15 @@ figure figcaption b{color:var(--sub)}
 /* loop diagram */
 .loopwrap{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:clamp(16px,2.2vw,26px);margin-top:clamp(16px,2.2vw,24px);overflow-x:auto}
 .loopwrap svg{width:100%;min-width:760px;height:auto;display:block}
+.loop-arc{stroke-dasharray:1000;stroke-dashoffset:1000;transition:stroke-dashoffset 1.9s cubic-bezier(.25,.7,.25,1) .35s}
+.loopwrap.in .loop-arc,body:not(.js-anim) .loop-arc{stroke-dashoffset:0}
+.comet{opacity:0;transition:opacity .8s ease 1.9s}
+.cdot{offset-path:path("M 130 70 L 919 70 L 919 210 Q 919 240 889 240 L 160 240 Q 130 240 130 210 Z");offset-rotate:0deg;animation:cometRun 11s linear infinite}
+.cdot.t2{animation-delay:-.22s}
+.cdot.t1{animation-delay:-.44s}
+@keyframes cometRun{from{offset-distance:0%}to{offset-distance:100%}}
+.loopwrap.in .comet,body:not(.js-anim) .comet{opacity:1}
+@media (prefers-reduced-motion: reduce){.loop-arc{stroke-dasharray:none;stroke-dashoffset:0;transition:none}.comet{display:none}.cdot{animation:none}}
 
 /* media plan */
 .plan{overflow-x:auto;border-radius:16px;border:1px solid var(--line);margin-top:clamp(20px,3vw,30px)}
@@ -466,7 +500,7 @@ footer h2{max-width:26ch}
     <h2 class="reveal">One idea, and it is not another launch.</h2>
 
     <div class="bigidea reveal">
-      <div class="bi-tag">The big idea</div>
+      <div class="bi-tag"><i></i>The big idea</div>
       <div class="bi-name">The Homecoming Loop</div>
       <p class="bi-def">Treat <b>landing</b> — not the first scan — as the start of the funnel. Use the trip they just finished as the proof, and turn the next one into a <b>savings goal</b> — a small monthly transfer that needs no wallet balance, keeps a heartbeat through the quiet months, and quietly becomes the zero-fee funding source when <b>they fly again.</b></p>
       <div class="bi-split">
@@ -490,6 +524,10 @@ footer h2{max-width:26ch}
           <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
             <path d="M 0 1 L 9 5 L 0 9 z" fill="#01CF6A"/>
           </marker>
+          <filter id="cometGlow" x="-260%" y="-260%" width="620%" height="620%">
+            <feGaussianBlur stdDeviation="4.5" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
         </defs>
 
         <!-- stage boxes -->
@@ -528,9 +566,16 @@ footer h2{max-width:26ch}
         <line x1="514" y1="70" x2="542" y2="70" stroke="#01CF6A" stroke-width="3" marker-end="url(#ah)"/>
         <line x1="780" y1="70" x2="808" y2="70" stroke="#01CF6A" stroke-width="3" marker-end="url(#ah)"/>
 
-        <!-- return arc -->
-        <path d="M 919 126 L 919 210 Q 919 240 889 240 L 160 240 Q 130 240 130 210 L 130 126"
+        <!-- return arc, drawn as the slide comes into view -->
+        <path class="loop-arc" d="M 919 126 L 919 210 Q 919 240 889 240 L 160 240 Q 130 240 130 210 L 130 126"
               fill="none" stroke="#01CF6A" stroke-width="3" stroke-linecap="round" marker-end="url(#ah)"/>
+
+        <!-- comet: one payment travelling the full lap (CSS offset-path) -->
+        <g class="comet">
+          <circle class="cdot t3" r="3" fill="#A8F5CE" opacity=".28"/>
+          <circle class="cdot t2" r="4.5" fill="#6BE8A8" opacity=".5"/>
+          <circle class="cdot t1" r="6" fill="#01CF6A" filter="url(#cometGlow)"/>
+        </g>
         <rect x="352" y="216" width="346" height="48" rx="12" fill="#070C28" stroke="rgba(1,207,106,.5)"/>
         <text x="525" y="238" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12.5" font-weight="800" fill="#01CF6A">05 · NEXT TRIP — booking signal fires</text>
         <text x="525" y="255" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11.5" fill="#A5B0DC">the fund IS the wallet balance — a zero-fee source, no new incentive, pure margin</text>
