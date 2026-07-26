@@ -318,3 +318,16 @@ footer .ft-lede{color:rgba(245,242,236,.75);max-width:56ch;font-size:15px}
 .metrics.m4{grid-template-columns:repeat(4,auto);gap:clamp(14px,2.6vw,36px)}
 .metrics.m4 .num{font-size:clamp(26px,3.2vw,42px)}
 @media(max-width:760px){.metrics.m4{grid-template-columns:repeat(2,auto);row-gap:18px}}
+
+/* hero 3-beat headline + motion */
+.hero-lines{margin:6px 0 18px;font-size:clamp(36px,5.6vw,66px);line-height:1.04}
+.hero-lines .hl-wrap{display:block;overflow:hidden;padding-bottom:.10em;margin-bottom:-.10em}
+.hero-lines .hl{display:block;transform:translateY(115%);opacity:.001;animation:hlup .85s cubic-bezier(.22,.68,.16,1) forwards}
+.hero-lines .hl-wrap:nth-child(1) .hl{animation-delay:.06s}
+.hero-lines .hl-wrap:nth-child(2) .hl{animation-delay:.18s}
+.hero-lines .hl-wrap:nth-child(3) .hl{animation-delay:.30s}
+@keyframes hlup{to{transform:translateY(0);opacity:1}}
+.hero-lines .acc{color:var(--accent);font-style:italic;position:relative;padding:0 .04em}
+.hero-lines .acc::after{content:"";position:absolute;left:0;right:0;bottom:.02em;height:.10em;background:var(--accent-2);z-index:-1;border-radius:2px;transform:scaleX(0);transform-origin:left;animation:ruledraw .6s .95s cubic-bezier(.22,.68,.16,1) forwards}
+@keyframes ruledraw{to{transform:scaleX(1)}}
+@media (prefers-reduced-motion:reduce){.hero-lines .hl{animation:none;transform:none;opacity:1}.hero-lines .acc::after{animation:none;transform:scaleX(1)}}
