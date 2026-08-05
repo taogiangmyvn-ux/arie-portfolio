@@ -116,6 +116,20 @@ ul.bl li b{color:#fff}
 .proof .pf p b{color:#fff}
 @media(max-width:900px){.proof{grid-template-columns:1fr}}
 
+/* price gap bars */
+.pgap{margin-top:clamp(12px,1.8vw,18px)}
+.pgap .r{display:grid;grid-template-columns:120px 1fr auto;gap:12px;align-items:center;margin-bottom:9px}
+.pgap .r .nm{font-size:12.5px;font-weight:700;color:var(--sub)}
+.pgap .r .bar{height:26px;border-radius:6px;border:1px solid rgba(255,255,255,.12)}
+.pgap .r .vl{font-size:12.5px;font-weight:800;font-variant-numeric:tabular-nums;min-width:78px;text-align:right}
+.pgap .r.me .nm{color:#fff}
+/* why-us grid */
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.5vw,16px);margin-top:clamp(12px,1.8vw,18px)}
+.why .w{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--y);border-radius:12px;padding:clamp(12px,1.7vw,17px)}
+.why .w .n{font-family:var(--serif);font-weight:700;font-size:clamp(17px,2.1vw,24px);color:var(--y);line-height:1.14}
+.why .w p{font-size:11.5px;color:var(--sub);margin-top:6px;line-height:1.5}
+.why .w p b{color:#fff}
+@media(max-width:900px){.why{grid-template-columns:1fr 1fr}}
 /* hero */
 .hero{padding-top:104px}
 .brandchip{display:inline-flex;align-items:center;gap:10px;background:var(--y);border-radius:11px;padding:7px 14px 7px 9px;margin-bottom:18px}
@@ -265,7 +279,8 @@ footer h2{max-width:29ch}
     <a href="index.html" class="brand"><span class="disc"></span>TGDĐ Study</a>
     <div class="nav-right">
       <a href="#reframe">Đọc lại đề</a>
-      <a href="#diagnosis">Chẩn đoán</a>
+      <a href="#objective">Objective</a>
+      <a href="#diagnosis">Key problem</a>
       <a href="#segment">Phân khúc</a>
       <a href="#position">Định vị</a>
       <a href="#price">Giá</a>
@@ -290,18 +305,18 @@ footer h2{max-width:29ch}
     </div>
     <div class="tag reveal">Case brand strategy độc lập · Tầm nhìn 2025–2030</div>
     <h1 class="reveal">Độ phủ không còn<br><span class="g">là lợi thế cạnh tranh.</span></h1>
-    <p class="sub reveal">Lợi thế 20 năm của TGDĐ là mật độ điểm bán: 63/63 tỉnh, gần 2.000 cửa hàng. Thương mại điện tử đã vô hiệu hoá lợi thế đó. Doanh thu kỷ lục 2025 đến từ <b>cắt chi phí, không từ tăng thị phần</b>.</p>
+    <p class="sub reveal">Lợi thế 20 năm của TGDĐ là mật độ điểm bán: 63/63 tỉnh, gần 2.000 cửa hàng. Thương mại điện tử đã vô hiệu hoá lợi thế đó. Doanh thu kỷ lục 2025 đến từ <b>cắt chi phí, không từ tăng thị phần</b> — và cắt chi phí không lặp lại được.</p>
     <div class="metrics reveal">
       <div class="m"><div class="n"><em>156.166</em> tỷ</div><p>Doanh thu thuần MWG 2025, <b>tăng 16%</b> — mức cao nhất từ khi thành lập<sup class="cit"><a href="#sources">1</a></sup></p></div>
       <div class="m"><div class="n"><em>2,9</em> điểm %</div><p>Biên lãi gộp giảm trong chiến tranh giá 2023: 21,4% xuống 18,5%, thấp nhất kể từ Q3/2019<sup class="cit"><a href="#sources">4</a></sup></p></div>
       <div class="m"><div class="n"><em>~200</em> cửa hàng</div><p>Số điểm bán đã đóng, doanh thu vẫn tăng. Đòn bẩy hiệu suất đã dùng gần hết<sup class="cit"><a href="#sources">3</a></sup></p></div>
     </div>
     <div class="argstrip reveal">
-      <div class="a"><div class="n">01</div><div class="t">Sản phẩm, giá, độ phủ đều hội tụ</div><p>Cùng SKU, giá dễ bị sao chép, online xoá khoảng cách.</p></div>
-      <div class="a"><div class="n">02</div><div class="t">Mạng lưới lớn nhất thành chi phí lớn nhất</div><p>Gần 2.000 điểm bán, lợi thế mang lại đã bị vô hiệu.</p></div>
-      <div class="a"><div class="n">03</div><div class="t">Kỷ lục 2025 đến từ cắt chi phí</div><p>Đóng điểm yếu, siết logistics, biên lợi nhuận cải thiện.</p></div>
-      <div class="a"><div class="n">04</div><div class="t">Đòn bẩy này chỉ dùng một lần</div><p>Không thể đóng cùng một điểm bán hai lần.</p></div>
-      <div class="a"><div class="n">05</div><div class="t">Chuyển sang lợi thế đối thủ khó theo</div><p>Hàng chính hãng, dịch vụ, cam kết thu lại.</p></div>
+      <div class="a"><div class="n">01</div><div class="t">Sản phẩm không còn khác biệt</div><p>Cùng SKU, cùng bảo hành hãng.</p></div>
+      <div class="a"><div class="n">02</div><div class="t">Mạng lưới lớn nhất = biggest cost</div><p>Gần 2.000 điểm bán, không còn đổi ra lợi thế.</p></div>
+      <div class="a"><div class="n">03</div><div class="t">Revenue record 2025 = cost cut</div><p>Không phải do tăng thị phần.</p></div>
+      <div class="a"><div class="n">04</div><div class="t">Cắt chi phí không lặp lại được</div><p>Không thể đóng cùng một cửa hàng hai lần.</p></div>
+      <div class="a"><div class="n">05</div><div class="t">Lối ra: cam kết giá trị máy</div><p>Việc cần vốn lớn — đối thủ khó theo.</p></div>
     </div>
     <p class="disc reveal">Bài giải độc lập cho một case retail branding trong khoá Brand Development của Tomorrow Marketers. Không tái sử dụng tài liệu khoá học — mọi số liệu từ nguồn công khai, dẫn nguồn ở slide cuối. Không do MWG đặt hàng.</p>
   </div>
@@ -348,41 +363,71 @@ footer h2{max-width:29ch}
   </div>
 </section>
 
+<!-- 03 OBJECTIVE -->
+<section id="objective">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 03 · Objective</div>
+    <h2 class="reveal">Giành lại thị phần bằng giá trị, không bằng giá.</h2>
+    <p class="lede reveal">TGDĐ đang giữ khoảng <b>25% thị phần điện thoại</b>.<sup class="cit"><a href="#sources">9</a></sup> Mục tiêu 2025–2030: tăng thị phần mà <b>không hạ margin thêm lần nào nữa</b>. Cuộc chiến giá 2023 đã cho thấy hướng còn lại là hướng nào.</p>
+    <div class="klabel reveal" style="margin-top:clamp(16px,2.2vw,22px)">Vì sao chỉ TGDĐ làm được việc gánh rủi ro sau bán</div>
+    <div class="why reveal">
+      <div class="w"><div class="n">24.400 tỷ</div><p>tiền và tiền gửi ngắn hạn cuối Q2 — khoảng <b>1 tỷ USD</b>. Bảo lãnh giá trị máy cần vốn, và chỉ TGDĐ có sẵn<sup class="cit"><a href="#sources">4</a></sup></p></div>
+      <div class="w"><div class="n">63/63 tỉnh</div><p>gần 2.000 điểm bán. Muốn thu lại và sửa máy ở đâu cũng được thì <b>phải có mạng lưới này</b><sup class="cit"><a href="#sources">7</a></sup></p></div>
+      <div class="w"><div class="n">Hạ tầng sẵn</div><p>thu cũ đổi mới, app tự định giá, trung tâm bảo hành, bán máy qua sử dụng — <b>đã chạy, không cần xây mới</b><sup class="cit"><a href="#sources">8</a></sup></p></div>
+      <div class="w"><div class="n">Đã trả được</div><p>đang tặng 24 tháng bảo hành mở rộng trên flagship. <b>P&amp;L chịu được chi phí này</b><sup class="cit"><a href="#sources">12</a></sup></p></div>
+    </div>
+    <div class="concl reveal">
+      <span class="ar">→</span>
+      <div>
+        <div class="lb">Lợi thế cạnh tranh cần xây</div>
+        <div class="tx">Đối thủ không thiếu ý tưởng. Họ thiếu <em>vốn và mạng lưới</em> để cam kết giá trị máy trong 24 tháng.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- 03 KEY PROBLEM -->
 <section id="diagnosis">
   <div class="wrap">
-    <div class="eyebrow reveal"><span class="bar"></span>Slide 03 · Key problem</div>
-    <h2 class="reveal">Khách không thấy lý do trả thêm 5–10%.</h2>
-    <p class="lede reveal">TGDĐ đắt hơn CellphoneS và Hoàng Hà 5–10%. Ba lợi thế từng bù cho phần chênh đó nay đã mất tác dụng.<sup class="cit"><a href="#sources">5</a></sup></p>
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 04 · Key problem</div>
+    <h2 class="reveal">Mua ở TGDĐ phải trả thêm 5–10%. Khách đã thấy lý do chưa?</h2>
+    <p class="lede reveal">Ba lý do từng giải thích cho phần chênh này đều đã hết hiệu lực.<sup class="cit"><a href="#sources">5</a></sup></p>
+    <div class="viz pgap reveal" style="margin-top:clamp(13px,1.9vw,20px)">
+      <div class="klabel">Giá cùng một mã máy, chỉ số hoá — TGDĐ = 100</div>
+      <div class="r me"><span class="nm">TGDĐ</span><span class="bar" style="width:100%;background:linear-gradient(90deg,#FFCD00,#E0A800)"></span><span class="vl" style="color:var(--y)">100</span></div>
+      <div class="r"><span class="nm">CellphoneS</span><span class="bar" style="width:93%;background:linear-gradient(90deg,#5B8DEF,#3E6BC4)"></span><span class="vl" style="color:var(--blue)">93–95</span></div>
+      <div class="r"><span class="nm">Hoàng Hà</span><span class="bar" style="width:91%;background:linear-gradient(90deg,#5B8DEF,#3E6BC4)"></span><span class="vl" style="color:var(--blue)">90–95</span></div>
+      <p class="disc" style="margin-top:4px">Khoảng chênh 5–10% theo phản ánh trên VNReview, Tinh Tế và các group Facebook. Chỉ số minh hoạ, không phải giá niêm yết từng thời điểm.<sup class="cit"><a href="#sources">5</a></sup></p>
+    </div>
     <div class="probs reveal">
       <div class="p">
         <span class="num">01</span>
-        <div><div class="t">Sản phẩm giống nhau</div><p>Cùng SKU, cùng bảo hành hãng. Một chiếc iPhone mua ở đâu cũng là chiếc iPhone đó. <b>Danh mục rộng không còn là lý do để đi xa hơn.</b></p></div>
+        <div><div class="t">Sản phẩm giống nhau</div><p>Cùng SKU, cùng bảo hành hãng. <b>Danh mục rộng không còn giúp giành thị phần.</b></p></div>
       </div>
       <div class="p">
         <span class="num">02</span>
-        <div><div class="t">Giá bị sao chép trong vài tuần</div><p>Chiến dịch "Giá rẻ quá" 2023 chứng minh ai cũng hạ được. Kết quả: mất 2,9 điểm biên lãi gộp, và <b>khách hiểu rằng giá TGDĐ vốn có thể giảm.</b><sup class="cit"><a href="#sources">4</a></sup></p></div>
+        <div><div class="t">Giá bị sao chép trong vài tuần</div><p>"Giá rẻ quá" 2023: mất 2,9 điểm margin, và <b>perceived value giảm</b> — khách biết giá TGDĐ vốn có thể hạ.<sup class="cit"><a href="#sources">4</a></sup></p></div>
       </div>
       <div class="p">
         <span class="num">03</span>
-        <div><div class="t">Ở gần hết là lợi thế</div><p>Khách tra cứu online rồi tới lấy máy. <b>Cửa hàng gần hơn 3km không còn giá trị</b> khi cửa hàng gần nhất là chiếc điện thoại trong tay họ.<sup class="cit"><a href="#sources">6</a></sup></p></div>
+        <div><div class="t">Vị trí địa lý hết là lợi thế</div><p>Khách tra cứu online rồi tới lấy máy. <b>Ở gần hơn không còn là lý do chọn.</b><sup class="cit"><a href="#sources">6</a></sup></p></div>
       </div>
     </div>
     <div class="concl reveal">
       <span class="ar">→</span>
       <div>
-        <div class="lb">Chỉ còn hai thứ đối thủ chưa làm được</div>
-        <div class="tx"><em>Gánh rủi ro sau khi bán</em> — bảo đảm hàng chính hãng, sửa ở năm thứ hai, giữ giá khi đổi máy. Và <em>hiện diện chịu trách nhiệm</em> ở 63/63 tỉnh.</div>
+        <div class="lb">Còn lại một lợi thế duy nhất</div>
+        <div class="tx">Chỉ TGDĐ đủ vốn và đủ mạng lưới để <em>nhận phần rủi ro sau khi bán</em>: bảo đảm hàng chính hãng, sửa máy nhiều năm sau, và <em>cam kết trước giá thu lại</em>.</div>
       </div>
     </div>
-    <p class="disc reveal">Sàn thương mại điện tử không cam kết được điều thứ nhất. Chuỗi nhỏ không đủ lực cho điều thứ hai. TGDĐ đã chi cho cả hai nhiều năm — và chưa bao giờ nói ra.</p>
+    <p class="disc reveal">Sàn thương mại điện tử không bảo đảm được hàng chính hãng. Chuỗi nhỏ không đủ vốn bảo lãnh giá trị máy. TGDĐ đã chi cho cả hai nhiều năm mà chưa bao giờ nói ra.</p>
   </div>
 </section>
 
 <!-- 04 NEED STATE -->
 <section id="segment">
   <div class="wrap">
-    <div class="eyebrow reveal"><span class="bar"></span>Slide 04 · Need state <span class="qtag">Đề · Câu 1</span></div>
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 05 · Need state <span class="qtag">Đề · Câu 1</span></div>
     <h2 class="reveal">Khách lo gì khi bỏ 20 triệu mua một chiếc máy?</h2>
     <div class="grid-2" style="align-items:start;margin-top:clamp(13px,1.9vw,20px)">
       <div class="reveal">
@@ -395,7 +440,7 @@ footer h2{max-width:29ch}
           <span class="ar">→</span>
           <div>
             <div class="lb">Đây là need state chưa ai đáp ứng</div>
-            <div class="tx">Khách không cần <em>rẻ hơn</em>. Khách cần <em>chắc chắn hơn</em>.</div>
+            <div class="tx">Khách không cần giá thấp hơn. Khách cần <em>rủi ro thấp hơn</em>.</div>
           </div>
         </div>
       </div>
@@ -406,9 +451,16 @@ footer h2{max-width:29ch}
             <tr><th>Nhóm</th><th>Quyết định mua theo</th><th>TGDĐ nên làm</th></tr>
             <tr><td>Giá</td><td>Rẻ nhất, chấp nhận rủi ro</td><td>Không cạnh tranh — sân của Hoàng Hà</td></tr>
             <tr><td>Công nghệ</td><td>Cộng đồng, hàng mới nhất</td><td>Chọn lọc qua TopZone — sân của CellphoneS</td></tr>
-            <tr class="key"><td>An tâm</td><td><b>Sợ rủi ro hơn sợ đắt</b></td><td><b>Tập trung toàn lực. Chưa ai sở hữu nhóm này.</b></td></tr>
+            <tr class="key"><td>An tâm</td><td><b>Sợ rủi ro hơn sợ đắt</b></td><td><b>Tập trung toàn lực — chưa ai sở hữu</b></td></tr>
           </table>
         </div>
+        <div class="klabel reveal" style="margin-top:14px">Nhóm này mang lại gì cho objective</div>
+        <ul class="bl reveal">
+          <li><b>75 triệu</b> người dùng smartphone tại VN — tập máy cần bảo hành, sửa và đổi mới<sup class="cit"><a href="#sources">11</a></sup></li>
+          <li>Khách thu cũ đổi mới ở các chuỗi lớn <b>tăng 20–30%</b> so với cùng kỳ<sup class="cit"><a href="#sources">11</a></sup></li>
+          <li>Sợ rủi ro nên <b>không mặc cả tới đồng cuối</b> — bảo vệ được margin</li>
+          <li>Có lịch quay lại cố định <b>2 năm một lần</b> — nền cho thị phần bền, không phải thị phần mua bằng giảm giá</li>
+        </ul>
         <figure class="viz reveal" style="margin-top:14px">
           <svg viewBox="0 0 520 340" role="img" aria-label="Bản đồ định vị: trục ngang giá cảm nhận, trục dọc mức cam kết sau bán. Vùng white space ở góc cam kết cao chưa thương hiệu nào chiếm trong nhận thức khách hàng.">
             <line x1="62" y1="286" x2="492" y2="286" stroke="rgba(247,244,236,.3)" stroke-width="1.5"/>
@@ -446,42 +498,42 @@ footer h2{max-width:29ch}
 <!-- 05 WHAT THEY ALREADY DO -->
 <section id="already">
   <div class="wrap">
-    <div class="eyebrow reveal"><span class="bar"></span>Slide 05 · Kiểm tra thực tế</div>
-    <h2 class="reveal">TGDĐ đã đầu tư vào dịch vụ. Vậy còn thiếu gì?</h2>
-    <p class="lede reveal">Trước khi đề xuất, cần kiểm tra họ đang làm gì. Trên website hiện tại: trung tâm bảo hành toàn quốc, bảo hành mở rộng, bảo hiểm rơi vỡ, thu cũ đổi mới với app tự định giá trong 5 phút, và dịch vụ sửa chữa.<sup class="cit"><a href="#sources">8</a></sup> Đây không phải ý tưởng mới.</p>
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 06 · Kiểm tra thực tế</div>
+    <h2 class="reveal">Bảo hành, sửa chữa, thu cũ — TGDĐ đã có gần hết. Thiếu một thứ.</h2>
+    <p class="lede reveal">Website hiện tại đã có đủ: trung tâm bảo hành toàn quốc, bảo hành mở rộng, bảo hiểm rơi vỡ, thu cũ đổi mới với app tự định giá, dịch vụ sửa chữa.<sup class="cit"><a href="#sources">8</a></sup></p>
     <figure class="viz reveal" style="margin-top:clamp(13px,1.9vw,20px)">
       <img src="assets/tgdd-thucu.jpg" alt="Banner Thu cũ đổi mới của Thế Giới Di Động: trợ giá đến 5 triệu cho điện thoại và máy tính bảng, đến 3 triệu cho laptop và thiết bị đeo, thu mua toàn quốc, tự định giá qua app trong 5 phút" loading="lazy" style="border-radius:10px">
-      <figcaption><b>Chương trình hiện tại của TGDĐ.</b> Hạ tầng đã có: thu mua toàn quốc, app tự định giá, mức trợ giá công bố rõ. <span style="color:var(--dim)">Nguồn: thegioididong.com</span></figcaption>
+      <figcaption><b>Hạ tầng đã chạy:</b> thu mua toàn quốc, app tự định giá 5 phút, mức trợ giá công bố rõ. <span style="color:var(--dim)">Nguồn: thegioididong.com</span></figcaption>
     </figure>
     <div class="probs reveal" style="margin-top:clamp(14px,2vw,20px)">
       <div class="p">
         <span class="num">01</span>
-        <div><div class="t">Trợ giá "đến 5 triệu" là con số có điều kiện</div><p>"Đến" nghĩa là khách không biết mình được bao nhiêu cho tới lúc ra quầy. Con số này áp cho <b>chiếc máy cũ đang mang tới</b>, không nói gì về chiếc máy sắp mua.</p></div>
+        <div><div class="t">"Đến 5 triệu" là con số khách chưa biết trước</div><p>Áp cho <b>máy cũ mang tới</b>, và chỉ biết chính xác khi ra quầy.</p></div>
       </div>
       <div class="p">
         <span class="num">02</span>
-        <div><div class="t">Bảo hành và bảo hiểm được đóng gói thành "tặng"</div><p>Trên trang Galaxy Z Fold 8 Ultra: <em>"Tặng bảo hành mở rộng 24 tháng. Tặng bảo hiểm rơi vỡ 24 tháng."</em> Chữ "tặng" biến cam kết thành <b>quà khuyến mãi</b> — cùng logic với giảm giá, và hết hiệu lực khi hết đợt.<sup class="cit"><a href="#sources">12</a></sup></p></div>
+        <div><div class="t">Cam kết bị đóng gói thành chữ "tặng"</div><p><em>"Tặng bảo hành mở rộng 24 tháng"</em> — chữ "tặng" hạ cam kết xuống thành <b>quà khuyến mãi</b>, hết đợt là hết.<sup class="cit"><a href="#sources">12</a></sup></p></div>
       </div>
       <div class="p">
         <span class="num">03</span>
-        <div><div class="t">Không ai trả lời câu hỏi quan trọng nhất</div><p><b>"Chiếc máy tôi mua hôm nay, hai năm sau bán lại được bao nhiêu?"</b> Cả thị trường đều để khách tự chịu rủi ro mất giá.</p></div>
+        <div><div class="t">Câu hỏi lớn nhất vẫn chưa ai trả lời</div><p><b>"Máy tôi mua hôm nay, hai năm sau bán được bao nhiêu?"</b> Cả thị trường để khách tự chịu.</p></div>
       </div>
     </div>
     <div class="concl reveal">
       <span class="ar">→</span>
       <div>
-        <div class="lb">Khoảng trống thật</div>
-        <div class="tx">Hiện tại là <em>trợ giá cho máy cũ, có điều kiện, hôm nay</em>. Còn thiếu: <em>cam kết giá trị cho máy mới, chắc chắn, sau 24 tháng.</em></div>
+        <div class="lb">Khoảng trống</div>
+        <div class="tx">Hôm nay TGDĐ trả tiền cho <em>máy khách mang đến</em>. Chưa ai dám định giá <em>chiếc máy khách mang về</em>.</div>
       </div>
     </div>
-    <p class="disc reveal">Việc TGDĐ đang tặng được 24 tháng bảo hành mở rộng trên máy flagship cho thấy P&amp;L chịu được chi phí này. Vấn đề không phải năng lực — mà là cách đóng gói và cách nói.</p>
+    <p class="disc reveal">Vấn đề không nằm ở năng lực. Nằm ở cách đóng gói và cách nói.</p>
   </div>
 </section>
 
 <!-- 05 BIG IDEA + POSITIONING -->
 <section id="position">
   <div class="wrap">
-    <div class="eyebrow reveal"><span class="bar"></span>Slide 06 · Big idea <span class="qtag">Đề · Câu 1</span></div>
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 07 · Big idea <span class="qtag">Đề · Câu 1</span></div>
     <div class="bigidea reveal">
       <div class="bt"><i></i>Big idea</div>
       <div class="bn">Bảo hành giá trị</div>
@@ -502,7 +554,8 @@ footer h2{max-width:29ch}
       <div class="posbox reveal" style="margin-top:0">
         <div class="ph">Câu định vị</div>
         <div class="pb">
-          <p class="stmt">Với người Việt chi một khoản lớn cho thiết bị dùng hằng ngày, <b>thegioididong</b> là nhà bán lẻ duy nhất <b>bảo hành cả giá trị</b> của thiết bị đó — bằng hàng chính hãng, dịch vụ ở 63/63 tỉnh, và giá thu lại cam kết trước.</p>
+          <p class="stmt">Ai cũng bảo hành cái máy. <b>thegioididong bảo hành cả số tiền bạn đã bỏ ra.</b> Hàng chính hãng, sửa được ở mọi tỉnh, và một mức giá thu lại ghi sẵn trên hoá đơn — để hai năm sau, bạn biết mình còn lại bao nhiêu.</p>
+          <p class="disc" style="margin-top:12px">Cấu trúc định vị: <b style="color:var(--sub)">với</b> người Việt chi một khoản lớn cho thiết bị dùng hằng ngày · <b style="color:var(--sub)">thegioididong là</b> nhà bán lẻ duy nhất bảo hành giá trị còn lại · <b style="color:var(--sub)">vì</b> chỉ TGDĐ có đủ vốn và mạng lưới 63/63 tỉnh để làm việc đó.</p>
         </div>
       </div>
       <div class="reveal">
@@ -518,8 +571,8 @@ footer h2{max-width:29ch}
         <div class="panel" style="margin-top:12px">
           <div class="klabel">Emotional benefit</div>
           <ul class="bl">
-            <li>Chọn được máy tốt hơn mà <b>không phải tính rủi ro</b></li>
-            <li>Biết trước hai năm nữa mình còn lại bao nhiêu</li>
+            <li><b>Yên tâm chọn cấu hình cao hơn</b> vì phần rủi ro đã có người nhận</li>
+            <li><b>Không còn cảm giác lỗ khi đổi máy</b> — con số đã biết từ ngày mua</li>
           </ul>
         </div>
         <div class="panel" style="margin-top:12px">
@@ -536,7 +589,7 @@ footer h2{max-width:29ch}
       <span class="ar">→</span>
       <div>
         <div class="lb">TGDĐ cần làm</div>
-        <div class="tx">Không hạ giá. <em>Chứng minh giá.</em></div>
+        <div class="tx">TGDĐ cần chứng minh phần chênh 5–10% bằng <em>một con số ghi trên hoá đơn</em> — không phải bằng một đợt giảm giá nữa.</div>
       </div>
     </div>
   </div>
@@ -545,8 +598,8 @@ footer h2{max-width:29ch}
 <!-- 06 PRICING -->
 <section id="price">
   <div class="wrap">
-    <div class="eyebrow reveal"><span class="bar"></span>Slide 07 · Kiến trúc giá <span class="qtag">Đề · Câu 3</span></div>
-    <h2 class="reveal">Định lượng phần chênh giá thay vì hạ nó.</h2>
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 08 · Kiến trúc giá <span class="qtag">Đề · Câu 3</span></div>
+    <h2 class="reveal">Cho phần chênh 5–10% một con số cụ thể.</h2>
     <div class="grid-2" style="align-items:start;margin-top:clamp(13px,1.9vw,20px)">
       <figure class="viz reveal">
         <svg viewBox="0 0 520 344" role="img" aria-label="Hai tem giá cạnh nhau: tem đối thủ chỉ có con số, tem TGDĐ ghi rõ giá này gồm đổi mới 30 ngày, bảo hành mở rộng 12 tháng và cam kết thu lại tối thiểu 40 phần trăm sau 24 tháng.">
@@ -573,20 +626,20 @@ footer h2{max-width:29ch}
             <text x="394" y="292" text-anchor="middle" font-size="10" font-weight="800" fill="#5A4800">Cam kết thu lại ~9,2 triệu</text>
           </g>
         </svg>
-        <figcaption><b>Phép tính khách tự làm được.</b> Trả thêm khoảng 5% để đổi lấy một khoản thu lại chắc chắn, lớn gấp nhiều lần phần chênh. Số liệu minh hoạ trên mức giá tham chiếu, không phải giá niêm yết.</figcaption>
+        <figcaption>Số liệu minh hoạ trên mức giá tham chiếu, không phải giá niêm yết.</figcaption>
       </figure>
       <div class="reveal">
-        <div class="mv"><div class="mt"><span class="mn">01</span><span class="mh">Đưa cam kết lên tem giá</span></div><p>Ghi bằng con số khách kiểm được: số ngày, số tháng, tỷ lệ. <b>Không dùng tính từ.</b></p></div>
-        <div class="mv"><div class="mt"><span class="mn">02</span><span class="mh">Cam kết giá thu lại</span></div><p>Ghi trên hoá đơn mức thu lại tối thiểu sau 24 tháng. Cam kết này <b>tạo một lần quay lại có hẹn trước</b> và giữ chỗ cho lần mua kế tiếp. TGDĐ đã có thu cũ đổi mới và bán máy qua sử dụng: hạ tầng sẵn có.<sup class="cit"><a href="#sources">8</a></sup></p></div>
-        <div class="mv"><div class="mt"><span class="mn">03</span><span class="mh">Bằng giá ở sản phẩm, hơn ở cam kết</span></div><p>Khách đối chiếu thì bằng giá đúng mã đó, xử lý phản đối ngay tại quầy. Nhưng <b>không truyền thông về giá.</b> Phần lớn khách không đối chiếu; người đối chiếu phần lớn đã quyết đi.</p></div>
-        <div class="mv"><div class="mt"><span class="mn">04</span><span class="mh">Bỏ phản xạ giảm giá</span></div><p>Trên nền doanh thu TGDĐ + ĐMX 2025 khoảng 105.700 tỷ, <b>một điểm biên lãi gộp trị giá khoảng 1.057 tỷ đồng/năm</b>. Chiến tranh giá 2023 đã cho đi 2,9 điểm.<sup class="cit"><a href="#sources">1,4</a></sup> Chuyển một phần khoản đó sang bảo lãnh cam kết thu lại: cùng một dòng chi phí, nhưng tạo tài sản thương hiệu thay vì một đợt truyền thông.</p></div>
+        <div class="mv"><div class="mt"><span class="mn">01</span><span class="mh">Đưa cam kết lên tem giá</span></div><p>Số ngày, số tháng, tỷ lệ — <b>không dùng tính từ.</b></p></div>
+        <div class="mv"><div class="mt"><span class="mn">02</span><span class="mh">Cam kết giá thu lại</span></div><p>Mức thu lại tối thiểu sau 24 tháng, ghi trên hoá đơn. <b>Tạo một lần quay lại có hẹn trước</b> và giữ chỗ cho lần mua kế tiếp.<sup class="cit"><a href="#sources">8</a></sup></p></div>
+        <div class="mv"><div class="mt"><span class="mn">03</span><span class="mh">Bằng giá ở sản phẩm, hơn ở cam kết</span></div><p>Khách đối chiếu thì bằng giá đúng mã đó. Nhưng <b>không truyền thông về giá</b> — phần lớn khách không đối chiếu.</p></div>
+        <div class="mv"><div class="mt"><span class="mn">04</span><span class="mh">Bỏ phản xạ giảm giá</span></div><p>Doanh thu TGDĐ + ĐMX 2025 ≈ <b>105.700 tỷ</b> → 1 điểm margin ≈ <b>1.057 tỷ/năm</b>. Chiến tranh giá 2023 đã cho đi 2,9 điểm.<sup class="cit"><a href="#sources">1,4</a></sup> Chuyển một phần sang bảo lãnh cam kết thu lại.</p></div>
       </div>
     </div>
     <div class="concl reveal">
       <span class="ar">→</span>
       <div>
         <div class="lb">Đổi cách chi tiền, không đổi mức giá</div>
-        <div class="tx">Một điểm biên lãi gộp bằng <em>1.057 tỷ/năm</em>. Dùng nó để bảo lãnh cam kết thu lại, thay vì để giảm giá.</div>
+        <div class="tx">Số tiền đang dùng để giảm giá <em>đủ để bảo lãnh cam kết thu lại</em> — và cam kết thì để lại tài sản, giảm giá thì không.</div>
       </div>
     </div>
   </div>
@@ -595,9 +648,9 @@ footer h2{max-width:29ch}
 <!-- 07 PORTFOLIO -->
 <section id="portfolio">
   <div class="wrap">
-    <div class="eyebrow reveal"><span class="bar"></span>Slide 08 · Portfolio <span class="qtag">Đề · Câu 4</span></div>
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 09 · Portfolio <span class="qtag">Đề · Câu 4</span></div>
     <h2 class="reveal">Mỗi ngành hàng phải có một vai trò rõ ràng.</h2>
-    <p class="lede reveal">Danh mục hiện được xếp theo <b>loại sản phẩm</b>: điện thoại, điện máy, đồng hồ, dịch vụ, Apple. Cách xếp đó không cho biết ngành hàng nào đáng đầu tư. Xếp lại theo <b>việc từng nhóm làm được cho thương hiệu</b> thì câu trả lời hiện ra ngay.</p>
+    <p class="lede reveal">Xếp theo loại sản phẩm thì không biết nên đầu tư vào đâu. Xếp theo <b>vai trò với thương hiệu</b> thì thấy ngay.</p>
     <figure class="viz reveal" style="margin-top:clamp(13px,1.9vw,20px)">
       <svg viewBox="0 0 1060 320" role="img" aria-label="Ma trận bong bóng: trục ngang tần suất mua lại, trục dọc biên lợi nhuận, kích thước theo doanh thu. Nhóm dịch vụ ở góc tần suất cao biên cao là nhóm cần lớn lên.">
         <line x1="70" y1="272" x2="1010" y2="272" stroke="rgba(247,244,236,.28)" stroke-width="1.5"/>
@@ -640,8 +693,8 @@ footer h2{max-width:29ch}
       </svg>
     </figure>
     <div class="keep reveal">
-      <div class="h">Nguyên tắc giữ hoặc bỏ một ngành hàng</div>
-      <p>Một ngành hàng chỉ được giữ nếu làm được ít nhất một trong bốn việc: <b>dẫn khách vào cửa hàng</b>, <b>tạo margin</b>, <b>tăng uy tín</b>, hoặc <b>tăng số lần khách quay lại</b>. Không làm được việc nào thì đưa về Điện Máy Xanh hoặc chỉ để trong app — <b>không trưng ở mặt tiền và không đưa vào thông điệp thương hiệu.</b> Doanh thu lớn không phải lý do để giữ.</p>
+      <div class="h">Nguyên tắc quyết định</div>
+      <p>Giữ một ngành hàng khi nó làm được ít nhất một việc: <b>dẫn khách</b>, <b>tạo margin</b>, <b>tăng uy tín</b>, hoặc <b>tăng số lần quay lại</b>. Không việc nào thì chuyển sang Điện Máy Xanh hoặc chỉ để trong app. <b>Doanh thu lớn không phải lý do để giữ.</b></p>
     </div>
   </div>
 </section>
@@ -649,7 +702,7 @@ footer h2{max-width:29ch}
 <!-- 08 GROWTH DRIVER -->
 <section id="growth">
   <div class="wrap">
-    <div class="eyebrow reveal"><span class="bar"></span>Slide 09 · Growth driver <span class="qtag">Đề · Câu 2</span></div>
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 10 · Growth driver <span class="qtag">Đề · Câu 2</span></div>
     <h2 class="reveal">Đây là lúc TGDĐ đổi từ ĐỘ PHỦ sang TẦN SUẤT.</h2>
     <figure class="viz reveal" style="margin-top:clamp(13px,1.9vw,20px)">
       <svg viewBox="0 0 1060 290" role="img" aria-label="So sánh số dịp tiếp xúc mỗi năm: chỉ mua điện thoại cho khoảng 0,4 dịp một năm, thêm dịch vụ và thu cũ đưa lên hơn 3 dịp một năm.">
@@ -711,7 +764,7 @@ footer h2{max-width:29ch}
 <!-- 09 ACTIVATION -->
 <section id="activation">
   <div class="wrap">
-    <div class="eyebrow reveal"><span class="bar"></span>Slide 10 · Kích hoạt</div>
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 11 · Kích hoạt</div>
     <h2 class="reveal">Nói ở đúng nơi khách đang bàn về giá.</h2>
     <p class="lede reveal">Định kiến "TGDĐ đắt" hình thành trên diễn đàn và group Facebook — đúng nơi khách tra cứu trước khi mua.<sup class="cit"><a href="#sources">5</a></sup> Quảng cáo trên TV không chạm được vào đó. Vì vậy đảo thứ tự kênh: earned trước, owned sau, paid sau cùng và hẹp.</p>
     <div class="tbl reveal">
@@ -746,7 +799,7 @@ footer h2{max-width:29ch}
 <!-- 10 MEASURE -->
 <section id="measure">
   <div class="wrap">
-    <div class="eyebrow reveal"><span class="bar"></span>Slide 11 · Đo lường &amp; rủi ro</div>
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 12 · Đo lường &amp; rủi ro</div>
     <h2 class="reveal">Một chỉ số duy nhất để theo.</h2>
     <div class="grid-2" style="align-items:start;margin-top:clamp(13px,1.9vw,20px)">
       <div class="reveal">
@@ -782,7 +835,7 @@ footer h2{max-width:29ch}
 <!-- 11 SOURCES -->
 <section id="sources">
   <div class="wrap">
-    <div class="eyebrow reveal"><span class="bar"></span>Slide 12 · Nguồn &amp; phương pháp</div>
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 13 · Nguồn &amp; phương pháp</div>
     <h2 class="reveal">Mọi con số đều có nguồn.</h2>
     <p class="lede reveal" style="font-size:12.5px">Chỉ dùng nguồn công khai, số nào do công ty tự báo thì ghi rõ. Phần nào là mô hình đều được đánh dấu ngay tại slide: tỷ lệ số dịp, phép tính điểm biên lãi gộp. Còn chiến lược — định vị, kiến trúc giá, vai trò portfolio, growth driver — là của tôi.</p>
     <details class="srcbox reveal">
@@ -844,7 +897,7 @@ footer h2{max-width:29ch}
 <div class="deckdots" id="deckdots" aria-hidden="true"></div>
 <div class="deckui" role="group" aria-label="Điều hướng slide">
   <button id="dprev" aria-label="Slide trước">&#8592;</button>
-  <span class="count" id="dcount"><b>01</b> / 13</span>
+  <span class="count" id="dcount"><b>01</b> / 14</span>
   <button id="dnext" aria-label="Slide sau">&#8594;</button>
   <span class="hint">← → để chuyển</span>
 </div>
