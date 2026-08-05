@@ -130,6 +130,18 @@ ul.bl li b{color:#fff}
 .why .w p{font-size:11.5px;color:var(--sub);margin-top:6px;line-height:1.5}
 .why .w p b{color:#fff}
 @media(max-width:900px){.why{grid-template-columns:1fr 1fr}}
+/* business case table */
+.bcase{overflow-x:auto;border-radius:13px;border:1px solid rgba(255,205,0,.4);margin-top:clamp(12px,1.8vw,18px)}
+.bcase table{width:100%;border-collapse:collapse;font-size:12.5px;min-width:520px}
+.bcase th{background:rgba(255,205,0,.14);color:var(--y);font-size:10px;letter-spacing:.07em;text-transform:uppercase;text-align:left;padding:11px 13px;font-weight:800;border-bottom:1px solid rgba(255,205,0,.3)}
+.bcase td{padding:11px 13px;border-bottom:1px solid var(--line);color:var(--sub);font-variant-numeric:tabular-nums}
+.bcase td:first-child{color:#fff;font-weight:700}
+.bcase tr:last-child td{border-bottom:none}
+.bcase tr.ref td{background:rgba(255,107,107,.1);color:var(--red);font-weight:700}
+/* strategic roadmap */
+.road{margin-top:clamp(13px,1.9vw,20px)}
+.road svg{width:100%;min-width:700px;height:auto;display:block}
+.roadwrap{overflow-x:auto}
 /* hero */
 .hero{padding-top:104px}
 .brandchip{display:inline-flex;align-items:center;gap:10px;background:var(--y);border-radius:11px;padding:7px 14px 7px 9px;margin-bottom:18px}
@@ -376,11 +388,22 @@ footer h2{max-width:29ch}
       <div class="w"><div class="n">Hạ tầng sẵn</div><p>thu cũ đổi mới, app tự định giá, trung tâm bảo hành, bán máy qua sử dụng — <b>đã chạy, không cần xây mới</b><sup class="cit"><a href="#sources">8</a></sup></p></div>
       <div class="w"><div class="n">Đã trả được</div><p>đang tặng 24 tháng bảo hành mở rộng trên flagship. <b>P&amp;L chịu được chi phí này</b><sup class="cit"><a href="#sources">12</a></sup></p></div>
     </div>
+    <div class="klabel reveal" style="margin-top:clamp(16px,2.2vw,22px)">Business case — cần tăng bao nhiêu thị phần để hoà vốn</div>
+    <div class="bcase reveal">
+      <table>
+        <tr><th>Ngân sách bảo lãnh cam kết</th><th>Chi phí / năm</th><th>Cần tăng thị phần để hoà</th></tr>
+        <tr><td>0,3 điểm margin</td><td>~317 tỷ</td><td><b style="color:var(--y)">+1,1 pp</b></td></tr>
+        <tr><td>0,5 điểm margin</td><td>~530 tỷ</td><td>+1,9 pp</td></tr>
+        <tr><td>1,0 điểm margin</td><td>~1.057 tỷ</td><td>+3,8 pp</td></tr>
+        <tr class="ref"><td>Chiến tranh giá 2023</td><td>2,9 điểm margin</td><td>thị phần không tăng</td></tr>
+      </table>
+    </div>
+    <p class="disc reveal">Cách tính: doanh thu TGDĐ + ĐMX 2025 ≈ 105.700 tỷ → 1 điểm margin ≈ 1.057 tỷ. 1 pp thị phần ≈ 1.500 tỷ doanh thu, ở biên gộp 18,8% cho khoảng 280 tỷ lợi nhuận gộp.<sup class="cit"><a href="#sources">1,9</a></sup> Mô hình của tôi trên số liệu công khai, không phải dự báo của công ty.</p>
     <div class="concl reveal">
       <span class="ar">→</span>
       <div>
-        <div class="lb">Lợi thế cạnh tranh cần xây</div>
-        <div class="tx">Đối thủ không thiếu ý tưởng. Họ thiếu <em>vốn và mạng lưới</em> để cam kết giá trị máy trong 24 tháng.</div>
+        <div class="lb">Vì sao đáng đầu tư</div>
+        <div class="tx">Kịch bản rẻ nhất chỉ cần <em>+1,1 pp thị phần</em> để hoà. Năm 2023 TGDĐ đã bỏ ra 2,9 điểm margin và <em>không tăng được thị phần nào</em>.</div>
       </div>
     </div>
   </div>
@@ -523,7 +546,7 @@ footer h2{max-width:29ch}
       <span class="ar">→</span>
       <div>
         <div class="lb">Khoảng trống</div>
-        <div class="tx">Hôm nay TGDĐ trả tiền cho <em>máy khách mang đến</em>. Chưa ai dám định giá <em>chiếc máy khách mang về</em>.</div>
+        <div class="tx"><em>Hiện tại:</em> định giá máy cũ tại thời điểm khách đổi. <em>Còn thiếu:</em> cam kết giá thu lại cho máy mới, xác định ngay khi mua.</div>
       </div>
     </div>
     <p class="disc reveal">Vấn đề không nằm ở năng lực. Nằm ở cách đóng gói và cách nói.</p>
@@ -554,8 +577,13 @@ footer h2{max-width:29ch}
       <div class="posbox reveal" style="margin-top:0">
         <div class="ph">Câu định vị</div>
         <div class="pb">
-          <p class="stmt">Ai cũng bảo hành cái máy. <b>thegioididong bảo hành cả số tiền bạn đã bỏ ra.</b> Hàng chính hãng, sửa được ở mọi tỉnh, và một mức giá thu lại ghi sẵn trên hoá đơn — để hai năm sau, bạn biết mình còn lại bao nhiêu.</p>
-          <p class="disc" style="margin-top:12px">Cấu trúc định vị: <b style="color:var(--sub)">với</b> người Việt chi một khoản lớn cho thiết bị dùng hằng ngày · <b style="color:var(--sub)">thegioididong là</b> nhà bán lẻ duy nhất bảo hành giá trị còn lại · <b style="color:var(--sub)">vì</b> chỉ TGDĐ có đủ vốn và mạng lưới 63/63 tỉnh để làm việc đó.</p>
+          <p class="stmt">Với người tiêu dùng Việt chi từ 15 triệu cho thiết bị dùng hằng ngày, <b>thegioididong</b> là nhà bán lẻ duy nhất <b>cam kết giá trị còn lại</b> của thiết bị — nhờ mạng lưới 63/63 tỉnh và năng lực tài chính đủ để bảo lãnh cam kết đó.</p>
+          <div class="pos3" style="grid-template-columns:1fr;padding-top:14px">
+            <div>
+              <div class="k">Thông điệp ra thị trường</div>
+              <p style="font-size:15px;color:#fff;font-weight:600;font-family:var(--serif)">"Mua an tâm, dùng an tâm — và biết trước máy còn giá bao nhiêu."</p>
+            </div>
+          </div>
         </div>
       </div>
       <div class="reveal">
@@ -761,38 +789,68 @@ footer h2{max-width:29ch}
   </div>
 </section>
 
-<!-- 09 ACTIVATION -->
+<!-- STRATEGIC APPROACH -->
 <section id="activation">
   <div class="wrap">
-    <div class="eyebrow reveal"><span class="bar"></span>Slide 11 · Kích hoạt</div>
-    <h2 class="reveal">Nói ở đúng nơi khách đang bàn về giá.</h2>
-    <p class="lede reveal">Định kiến "TGDĐ đắt" hình thành trên diễn đàn và group Facebook — đúng nơi khách tra cứu trước khi mua.<sup class="cit"><a href="#sources">5</a></sup> Quảng cáo trên TV không chạm được vào đó. Vì vậy đảo thứ tự kênh: earned trước, owned sau, paid sau cùng và hẹp.</p>
-    <div class="tbl reveal">
-      <table>
-        <tr><th>Kênh</th><th>Việc phải làm</th><th>Chạy cái gì</th><th>Đo bằng</th></tr>
-        <tr class="key">
-          <td>Earned</td><td>Phá định kiến giá</td>
-          <td>Đưa cam kết thu lại vào VNReview, Tinh Tế và các group mua bán dưới dạng <b>phép tính, không phải khẩu hiệu</b>. Cam kết về giá trị còn lại sẽ bị đưa ra mổ xẻ, và đó là mục đích</td>
-          <td>Tỷ trọng tiếng nói trong thread "đắt/rẻ"</td>
-        </tr>
-        <tr class="key">
-          <td>Owned</td><td>Giữ khách quay lại</td>
-          <td>Tem giá làm kênh truyền thông; app nhắc theo tuổi máy; kịch bản tư vấn nói cam kết <b>trước</b> khi nói giá</td>
-          <td>Tỷ lệ nhận cam kết thu lại</td>
-        </tr>
-        <tr>
-          <td>Paid</td><td>Chứng minh, không hô</td>
-          <td>Minh chứng thay vì người nổi tiếng: một phim ghi lại chiếc máy 24 tháng tuổi được thu lại đúng con số đã cam kết, tại cửa hàng thật</td>
-          <td>Mức đóng góp vào số dịp dịch vụ</td>
-        </tr>
-        <tr>
-          <td>Tại cửa hàng</td><td>Nơi thực hiện lời hứa</td>
-          <td>Đưa quầy dịch vụ ra <b>mặt tiền</b> thay vì để phía trong. Lợi thế phải nằm ở chỗ khách thấy trước tiên</td>
-          <td>Số lượt dịch vụ mỗi cửa hàng</td>
-        </tr>
-      </table>
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 11 · Strategic approach</div>
+    <h2 class="reveal">Giành Share of Voice trước, giành thị phần sau.</h2>
+    <p class="lede reveal">Định kiến "TGDĐ đắt" hình thành trên diễn đàn và group Facebook — nơi khách tra cứu trước khi mua.<sup class="cit"><a href="#sources">5</a></sup> Không sửa được nhận thức ở đó thì mọi ngân sách phía sau đều rơi vào khoảng không.</p>
+    <div class="road roadwrap reveal">
+      <svg viewBox="0 0 1060 250" role="img" aria-label="Lộ trình ba giai đoạn: giai đoạn một giành Share of Voice trên diễn đàn, giai đoạn hai chuyển thành Consideration tại điểm bán, giai đoạn ba chuyển thành thị phần và tần suất quay lại.">
+        <defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#B7791F"/><stop offset="1" stop-color="#FFCD00"/></linearGradient></defs>
+        <line x1="40" y1="126" x2="1020" y2="126" stroke="url(#rg)" stroke-width="3"/>
+        <g font-family="Be Vietnam Pro,sans-serif">
+          <!-- P1 -->
+          <circle cx="180" cy="126" r="9" fill="#B7791F"/>
+          <text x="180" y="52" text-anchor="middle" font-size="10.5" font-weight="800" letter-spacing="1.2" fill="#B7791F">GIAI ĐOẠN 1 · EARNED</text>
+          <text x="180" y="76" text-anchor="middle" font-size="15" font-weight="800" fill="#F7F4EC">Sửa nhận thức</text>
+          <text x="180" y="98" text-anchor="middle" font-size="11" fill="#B7B0A2">VNReview · Tinh Tế · group mua bán</text>
+          <rect x="72" y="150" width="216" height="60" rx="10" fill="rgba(183,121,31,.16)" stroke="rgba(183,121,31,.5)"/>
+          <text x="180" y="171" text-anchor="middle" font-size="10" font-weight="800" letter-spacing=".8" fill="#B7791F">KPI</text>
+          <text x="180" y="189" text-anchor="middle" font-size="11.5" font-weight="700" fill="#F7F4EC">Share of Voice</text>
+          <text x="180" y="204" text-anchor="middle" font-size="10.5" fill="#B7B0A2">+ Sentiment trên chủ đề giá</text>
+          <!-- P2 -->
+          <circle cx="530" cy="126" r="9" fill="#E0A800"/>
+          <text x="530" y="52" text-anchor="middle" font-size="10.5" font-weight="800" letter-spacing="1.2" fill="#E0A800">GIAI ĐOẠN 2 · OWNED</text>
+          <text x="530" y="76" text-anchor="middle" font-size="15" font-weight="800" fill="#F7F4EC">Chứng minh tại điểm bán</text>
+          <text x="530" y="98" text-anchor="middle" font-size="11" fill="#B7B0A2">tem giá · app nhắc theo tuổi máy · kịch bản tư vấn</text>
+          <rect x="422" y="150" width="216" height="60" rx="10" fill="rgba(224,168,0,.16)" stroke="rgba(224,168,0,.5)"/>
+          <text x="530" y="171" text-anchor="middle" font-size="10" font-weight="800" letter-spacing=".8" fill="#E0A800">KPI</text>
+          <text x="530" y="189" text-anchor="middle" font-size="11.5" font-weight="700" fill="#F7F4EC">Brand consideration</text>
+          <text x="530" y="204" text-anchor="middle" font-size="10.5" fill="#B7B0A2">+ tỷ lệ nhận cam kết thu lại</text>
+          <!-- P3 -->
+          <circle cx="880" cy="126" r="11" fill="#FFCD00"/>
+          <text x="880" y="52" text-anchor="middle" font-size="10.5" font-weight="800" letter-spacing="1.2" fill="#FFCD00">GIAI ĐOẠN 3 · PAID + RETAIL</text>
+          <text x="880" y="76" text-anchor="middle" font-size="15" font-weight="800" fill="#FFCD00">Nhân rộng</text>
+          <text x="880" y="98" text-anchor="middle" font-size="11" fill="#B7B0A2">phim minh chứng · quầy dịch vụ ra mặt tiền</text>
+          <rect x="772" y="150" width="216" height="60" rx="10" fill="rgba(255,205,0,.18)" stroke="rgba(255,205,0,.6)"/>
+          <text x="880" y="171" text-anchor="middle" font-size="10" font-weight="800" letter-spacing=".8" fill="#FFCD00">KPI</text>
+          <text x="880" y="189" text-anchor="middle" font-size="11.5" font-weight="700" fill="#F7F4EC">Thị phần + tần suất</text>
+          <text x="880" y="204" text-anchor="middle" font-size="10.5" fill="#B7B0A2">market share · repeat rate</text>
+          <!-- arrows -->
+          <polygon points="360,126 344,119 344,133" fill="#D09A20"/>
+          <polygon points="712,126 696,119 696,133" fill="#FFCD00"/>
+        </g>
+      </svg>
     </div>
-    <p class="disc reveal">Chọn thời điểm theo phản đối, không theo mùa lễ. Cam kết cho năm thứ hai không phải thông điệp Tết.</p>
+    <div class="grid-2 reveal" style="margin-top:clamp(14px,2vw,20px)">
+      <div class="panel">
+        <div class="klabel">Nguyên tắc phân bổ</div>
+        <ul class="bl">
+          <li><b>Earned trước, paid sau cùng.</b> Định kiến giá không sửa được bằng ngân sách media</li>
+          <li><b>Không truyền thông về giá.</b> Truyền thông về con số cam kết</li>
+          <li><b>Chọn thời điểm theo phản đối</b>, không theo mùa lễ — cam kết cho năm thứ hai không phải thông điệp Tết</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <div class="klabel">Điều kiện chuyển giai đoạn</div>
+        <ul class="bl">
+          <li>Chỉ sang giai đoạn 2 khi <b>Sentiment trên chủ đề giá</b> chuyển dương</li>
+          <li>Chỉ sang giai đoạn 3 khi <b>tỷ lệ nhận cam kết thu lại</b> đạt ngưỡng đặt trước</li>
+          <li>Không đạt thì <b>dừng, không tăng ngân sách</b> — sai ở nhận thức thì paid chỉ khuếch đại cái sai</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -835,8 +893,8 @@ footer h2{max-width:29ch}
 <!-- 11 SOURCES -->
 <section id="sources">
   <div class="wrap">
-    <div class="eyebrow reveal"><span class="bar"></span>Slide 13 · Nguồn &amp; phương pháp</div>
-    <h2 class="reveal">Mọi con số đều có nguồn.</h2>
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 13 · References</div>
+    <h2 class="reveal">References</h2>
     <p class="lede reveal" style="font-size:12.5px">Chỉ dùng nguồn công khai, số nào do công ty tự báo thì ghi rõ. Phần nào là mô hình đều được đánh dấu ngay tại slide: tỷ lệ số dịp, phép tính điểm biên lãi gộp. Còn chiến lược — định vị, kiến trúc giá, vai trò portfolio, growth driver — là của tôi.</p>
     <details class="srcbox reveal">
       <summary>12 nguồn, có link — kèm ghi chú phương pháp</summary>
@@ -864,9 +922,6 @@ footer h2{max-width:29ch}
 <!-- 12 FOOTER -->
 <footer id="contact">
   <div class="wrap">
-    <div class="eyebrow reveal"><span class="bar"></span>Nói chuyện nhé</div>
-    <h2 class="reveal">Tôi kiểm lại đề bài trước khi trả lời.</h2>
-    <p class="ft-lede reveal">Đề bài mô tả một thương hiệu gặp khó. Số liệu 2025 cho thấy một năm kỷ lục. Khoảng cách giữa hai điều đó là bài toán thật: tăng trưởng đến từ tối ưu vận hành, còn định vị thương hiệu chưa được xử lý. Cách làm của tôi: xác định đúng vấn đề, quy về con số, rồi thiết kế phép thử.</p>
     <div class="contact reveal">
       <span class="who">Tào Giáng My — Arie</span>
       <span style="color:var(--dim)">TP. Hồ Chí Minh, Việt Nam</span>
