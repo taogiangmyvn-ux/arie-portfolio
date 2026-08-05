@@ -122,6 +122,19 @@ window.PORTFOLIO = {
         myrole:"Market sizing, BCG portfolio, competitive 4P and the campaign framework — highest-scoring team of the course.",
         metrics:["1st Prize · TM","1.2 → 2.5% target","11-slide deck"] } },
 
+    { id:'tgdd', href:'tgdd.html', badge:'Tomorrow Marketers',
+      title:"Thế Giới Di Động: Everywhere is not a reason",
+      thumb:'<div class="wthumb tgviz"><span class="wtag"><i style="--c:#FFCD00"></i>Retail Branding</span><span class="tgmark"><svg viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="15" fill="#111"/><g fill="#FFCD00"><rect x="7" y="17" width="4" height="4"/><rect x="11" y="13" width="4" height="4"/><rect x="15" y="9" width="4" height="4"/><rect x="19" y="13" width="4" height="4"/><rect x="11" y="21" width="4" height="4"/></g></svg><b>thegioididong</b></span><svg class="tgchart" viewBox="0 0 240 96" aria-hidden="true"><line x1="12" y1="70" x2="228" y2="70" stroke="rgba(255,255,255,.2)"/><rect x="26" y="30" width="26" height="40" rx="3" fill="#B7791F"/><rect x="66" y="20" width="26" height="50" rx="3" fill="#B7791F"/><rect x="106" y="36" width="26" height="34" rx="3" fill="#B7791F"/><rect x="186" y="56" width="26" height="14" rx="3" fill="#5B8DEF"/><text x="199" y="50" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" fill="rgba(255,255,255,.75)">brand</text><text x="12" y="88" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" fill="rgba(255,255,255,.5)">P&amp;L fixed · brand not</text></svg><span class="tgt">Reach &gt; Reason</span></div>',
+      base:{ desc:"When product, price and availability all converge, the biggest store network becomes the biggest cost. Repositioning, pricing architecture, portfolio roles and the next growth driver.",
+        metrics:["Repositioning","Pricing architecture","Portfolio roles"] },
+      brand:{ desc:"A retail brand-strategy case: TGDĐ fixed its P&L with store closures but never answered the brand question. Repositioning on risk-free ownership, priced and testable.",
+        ctx:"Record 2025 revenue won by cost discipline — while “buying anywhere is the same” went unanswered.",
+        myrole:"Independent strategy on public MWG data: segmentation with an explicit cede/own choice, positioning statement, pricing architecture, portfolio-by-role and the next growth driver.",
+        metrics:["Repositioning","Pricing architecture","Portfolio by role"] },
+      growth:{ ctx:"Store expansion is a spent lever — so where does a retail brand grow next?",
+        myrole:"Reframed the brief against 2025 results, then built the growth model: penetration capped, frequency the only opening — funded by a guaranteed trade-in instead of discounts.",
+        metrics:["Growth model","Frequency > footprint","Guarantee > discount"] } },
+
     { id:'creatoros', href:'creatoros.html', badge:'AI project · Live demo',
       title:"CreatorOS: An AI sourcing & outreach engine",
       thumb:'<div class="wthumb tile-os"><span class="wtag"><i style="--c:#10B981"></i>AI Project · Live Demo</span><div class="ost"><span class="k">CreatorOS</span><span class="s">source → vet → outreach</span></div></div>',
@@ -141,7 +154,7 @@ window.PORTFOLIO = {
     },
     brand: {
       label:"Brand & Commerce",
-      featured:['halio','coba','guardian','amamy','base'],
+      featured:['halio','coba','guardian','amamy','tgdd','base'],
       h2:"Selected work across brand building, commerce and consumer growth."
     },
     partners: {

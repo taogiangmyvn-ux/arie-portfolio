@@ -238,6 +238,12 @@ footer .ft-lede{color:rgba(245,242,236,.75);max-width:56ch;font-size:15px}
 .wthumb.fit{display:flex;align-items:center;justify-content:center}
 .wthumb.fit img{object-fit:contain;object-position:center}
 .wcard:hover .wthumb.fit img{transform:scale(1.02)}
+.wthumb.tgviz{background:radial-gradient(120% 120% at 80% 0,#2E2712,#0B0B10);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:9px;padding:14px}
+.wthumb.tgviz .tgmark{display:inline-flex;align-items:center;gap:8px;background:#FFCD00;border-radius:10px;padding:6px 12px 6px 7px;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.wthumb.tgviz .tgmark svg{width:22px;height:22px;display:block;flex:none}
+.wthumb.tgviz .tgmark b{font-size:12.5px;font-weight:800;font-style:italic;letter-spacing:-.02em;color:#111}
+.wthumb.tgviz .tgchart{width:68%;height:auto}
+.wthumb.tgviz .tgt{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:#FFCD00}
 .wthumb.zpviz{background:radial-gradient(120% 120% at 78% 0,#3D6BFF,#050B26);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px}
 .wthumb.zpviz svg{width:64%;height:auto;margin-top:2px}
 .wthumb.zpviz .zt{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:#6BE8A8}
