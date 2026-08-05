@@ -76,6 +76,16 @@ sup.cit a{color:var(--green);text-decoration:none;font-weight:800}
 .probrow .pc p{font-size:12.5px;color:var(--sub);margin-top:8px}
 @media(max-width:900px){.hero-grid{grid-template-columns:1fr}.probrow{grid-template-columns:1fr}}
 
+/* argument strip */
+.argstrip{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:clamp(24px,3.2vw,38px)}
+.argstrip .a{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 14px 13px}
+.argstrip .a:last-child{border-color:rgba(1,207,106,.5);background:linear-gradient(150deg,rgba(1,207,106,.14),rgba(255,255,255,.04))}
+.argstrip .n{font-family:var(--serif);font-size:15px;color:var(--dim);line-height:1}
+.argstrip .a:last-child .n{color:var(--green)}
+.argstrip .t{font-size:13.5px;font-weight:700;color:#fff;margin:7px 0 4px;line-height:1.25}
+.argstrip p{font-size:11.5px;color:var(--sub);line-height:1.45}
+.argstrip .a:not(:last-child)::after{content:"";position:absolute;top:50%;right:-7px;width:5px;height:5px;border-top:1.5px solid var(--dim);border-right:1.5px solid var(--dim);transform:translateY(-50%) rotate(45deg)}
+@media(max-width:900px){.argstrip{grid-template-columns:1fr 1fr}.argstrip .a::after{display:none}.argstrip .a:last-child{grid-column:1/-1}}
 /* figures */
 figure{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden}
 figure img{width:100%}
@@ -244,6 +254,13 @@ figure figcaption b{color:var(--sub)}
 @media(max-width:900px){.learn{grid-template-columns:1fr}}
 
 /* sources */
+.srcbox{border:1px solid var(--line);border-radius:14px;background:var(--panel);margin-top:clamp(16px,2.2vw,24px)}
+.srcbox>summary{cursor:pointer;list-style:none;padding:16px 20px;font-size:13.5px;font-weight:700;color:var(--green);display:flex;align-items:center;gap:10px}
+.srcbox>summary::-webkit-details-marker{display:none}
+.srcbox>summary::before{content:"+";font-size:17px;line-height:1;width:20px;height:20px;border:1px solid rgba(1,207,106,.5);border-radius:6px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.srcbox[open]>summary::before{content:"–"}
+.srcbox[open]>summary{border-bottom:1px solid var(--line)}
+.srcbody{padding:4px 20px 20px}
 .srcs{columns:2;column-gap:36px;font-size:12px;color:var(--sub);margin-top:18px}
 .srcs li{margin:0 0 9px 16px;break-inside:avoid}
 .srcs a{color:var(--blue-2);text-decoration:none;font-weight:600}
@@ -313,7 +330,14 @@ footer h2{max-width:26ch}
       <div class="pc"><div class="n"><em>50,000đ</em></div><p>capped incentive to win that traveller — paid <b style="color:#fff">once</b>, while the trip repeats every year<sup class="cit"><a href="#sources">11,12</a></sup></p></div>
       <div class="pc"><div class="n"><em>8–12 mo</em></div><p>until they fly again — how long the app has to survive on a home screen it gave no reason to occupy</p></div>
     </div>
-    <p class="disc reveal">Independent portfolio analysis on public sources, all cited on the last slide. Not commissioned by ZaloPay. Product and brand imagery is ZaloPay's own, published on zalopay.vn. Where the companies publish nothing — activation rates, retention, campaign cost — I build a labelled model instead of inventing a figure.</p>
+    <div class="argstrip reveal">
+      <div class="a"><div class="n">01</div><div class="t">The feature is rented</div><p>Same Alipay+ rail as MoMo, which now runs a longer offer.</p></div>
+      <div class="a"><div class="n">02</div><div class="t">But a trip earns real money</div><p>Merchants pay 1.6–2.2%; domestic payments earn ~nothing.</p></div>
+      <div class="a"><div class="n">03</div><div class="t">Then the app gets deleted</div><p>The trigger was geographic. Landing kills it.</p></div>
+      <div class="a"><div class="n">04</div><div class="t">So every future trip is lost</div><p>The incentive is paid once; the occasion repeats yearly.</p></div>
+      <div class="a"><div class="n">05</div><div class="t">Fix: survive to the next flight</div><p>Not daily habit — 8–12 months of staying installed.</p></div>
+    </div>
+    <p class="disc reveal">Independent analysis on public sources, all cited at the end. Not commissioned by ZaloPay; imagery is theirs. Where nothing is published I model and label it.</p>
   </div>
 </header>
 
@@ -322,11 +346,11 @@ footer h2{max-width:26ch}
   <div class="wrap">
     <div class="eyebrow reveal"><span class="bar"></span>Slide 01 · Credit where it's due</div>
     <h2 class="reveal">The activation half is excellent.</h2>
-    <p class="lede reveal">Before the criticism, the case for the move. Vietnam's wallet market is contracting — active wallets fell from 36.2M (end-2023) to 30.3M (Sep 2025) while payment volume boomed, because bank apps and VietQR made basic payments free.<sup class="cit"><a href="#sources">2,3</a></sup> Chasing new users in that market is the most expensive thing you can do. Chasing a <b>new occasion</b> for users you already have is not — and outbound travel is a big one: <b>4.06M Vietnamese trips abroad in H1 2025, up 54%</b>, at roughly <b>$1,000–1,500 spent per trip</b>.<sup class="cit"><a href="#sources">1,10</a></sup></p>
+    <p class="lede reveal">Active wallets nationwide fell <b>36.2M → 30.3M</b> while payment volume boomed.<sup class="cit"><a href="#sources">2,3</a></sup> Chasing new users there is the most expensive thing you can do. Chasing a new <b>occasion</b> is not: <b>4.06M trips abroad in H1 2025, +54%</b>, at <b>$1,000–1,500</b> a trip.<sup class="cit"><a href="#sources">1,10</a></sup></p>
     <div class="grid-3 ctx reveal" style="margin-top:clamp(22px,3vw,32px)">
-      <div class="p"><div class="k">They led with the hardest proof</div><p>The Khoai Lang Thang films sold it <span class="vn">"từ trung tâm thương mại đến gánh hàng rong"</span> — malls to street carts. Leading with the street cart kills the obvious objection that it only works at big chains.<sup class="cit"><a href="#sources">13</a></sup></p></div>
-      <div class="p"><div class="k">They bought trust, not reach</div><p>He is not Vietnam's biggest creator, but his decade of street-food and local-market work <b>is the payment moment</b>, and he was named Content Creator of the Year at Vietnam iContent 2025. Paying abroad is a fear purchase; belief converts it, media weight doesn't.<sup class="cit"><a href="#sources">14</a></sup></p></div>
-      <div class="p"><div class="k">They gated the incentive correctly</div><p>Code KHOAIZLP: 50% back, capped at 50,000đ, minimum 10,000đ, <b>first-time international QR users only</b>. That is an activation gate, not a discount. Indonesia's lesson holds: 71% of e-wallet users there arrived for promos, only 23% stayed for them.<sup class="cit"><a href="#sources">11,15</a></sup></p></div>
+      <div class="p"><div class="k">Hardest proof first</div><p>Sold <span class="vn">"từ trung tâm thương mại đến gánh hàng rong"</span> — malls to street carts. Leading with the cart kills the "only big chains" objection.<sup class="cit"><a href="#sources">13</a></sup></p></div>
+      <div class="p"><div class="k">Trust, not reach</div><p>Not the biggest creator — but a decade of street food <b>is</b> the payment moment, and he won Content Creator of the Year 2025. Paying abroad is a fear purchase.<sup class="cit"><a href="#sources">14</a></sup></p></div>
+      <div class="p"><div class="k">Incentive gated right</div><p>KHOAIZLP: 50% back, cap 50,000đ, <b>first-time users only</b> — an activation gate, not a discount. Indonesia: 71% arrived for promos, only 23% stayed.<sup class="cit"><a href="#sources">11,15</a></sup></p></div>
     </div>
     <div class="grid-2 reveal" style="margin-top:clamp(18px,2.4vw,26px);align-items:start">
       <figure>
@@ -347,7 +371,7 @@ footer h2{max-width:26ch}
   <div class="wrap">
     <div class="eyebrow reveal"><span class="bar"></span>Slide 02 · The parity problem</div>
     <h2 class="reveal">They were 18 months ahead. Then MoMo copied it and out-committed them.</h2>
-    <p class="lede reveal">Credit first: ZaloPay went cross-border in <b>late 2024</b>, and as late as September 2025 no comparable MoMo or VNPay offering existed.<sup class="cit"><a href="#sources">17</a></sup> That was a real first-mover window. It closed in April 2026 — and it closed badly, because the follower arrived with the <b>same rail, the same cap, and a much longer offer</b>, down to the same Vietnamese word for wandering, <span class="vn">"vi vu"</span>.</p>
+    <p class="lede reveal">Credit first: ZaloPay went cross-border in <b>late 2024</b>, and as late as Sep 2025 no comparable MoMo or VNPay offering existed.<sup class="cit"><a href="#sources">17</a></sup> That window closed in April 2026 — and it closed badly.</p>
     <figure class="reveal" style="max-width:520px;margin-top:clamp(18px,2.4vw,26px)">
       <img src="assets/mm-alipay-offer.jpg" alt="MoMo's own campaign creative reading 'Vi vu đa quốc gia — Ưu đãi 50%, giảm đến 50K qua Alipay+', showing a phone scanning a QR code at a café, with the MoMo and Alipay+ logos side by side" loading="lazy">
       <figcaption><b>The follower's own artwork.</b> MoMo × Alipay+, <span class="vn">"Vi vu đa quốc gia"</span> — 50% off, up to 50K, the identical cap ZaloPay used. Same rail, same offer shape, longer run. <span style="color:var(--dim)">Source: momo.vn</span></figcaption>
@@ -399,7 +423,7 @@ footer h2{max-width:26ch}
       </table>
     </div>
     <p class="bigq reveal">ZaloPay won the news cycle. <span class="w">MoMo is winning the eight months after it.</span></p>
-    <p class="disc reveal">Which reframes everything. Coverage was never the advantage — the country lists are level. And rails do not stack into revenue: any one payment travels down exactly one rail, so eight rails buy <b style="color:#fff">reach and optionality, not eight income streams</b>. In China and Malaysia both wallets sit on the same rail and are equally exposed to its owner; MoMo is only wider in Singapore, Korea and Thailand. The durable difference is therefore dependency, not coverage: <b style="color:#fff">ZaloPay rents from effectively one landlord.</b> A rented capability cannot be a moat. So the honest question is not "how do we win travellers?" It is: <b style="color:#fff">what is a trip actually worth to us?</b></p>
+    <p class="disc reveal">Coverage was never the advantage — the lists are level. And rails do not stack into revenue: one payment travels one rail. The durable gap is <b style="color:#fff">dependency — ZaloPay rents from effectively one landlord.</b> So the honest question is not "how do we win travellers?" but <b style="color:#fff">what is a trip actually worth to us?</b></p>
   </div>
 </section>
 
@@ -408,7 +432,7 @@ footer h2{max-width:26ch}
   <div class="wrap">
     <div class="eyebrow reveal"><span class="bar"></span>Slide 03 · What a trip is actually worth</div>
     <h2 class="reveal">Rare, but it is the one payment they get paid for.</h2>
-    <p class="lede reveal">"Free for the user" is not the same as "no revenue", and this is where I had to correct my own first draft. The traveller pays no fee — but on the Alipay network the <b>merchant</b> pays a discount rate of <b>1.6–2.2%</b> depending on volume, and that fee is <b>split between the players</b>, with the issuing wallet taking a share the documentation calls an inter-partner fee.<sup class="cit"><a href="#sources">18</a></sup> Set that against the domestic market Vietnam built, where transfers and QR are free and a wallet earns essentially nothing on the payment itself.<sup class="cit"><a href="#sources">3,19</a></sup></p>
+    <p class="lede reveal">"Free for the user" ≠ "no revenue" — the correction I had to make to my own draft. The traveller pays nothing, but the <b>merchant</b> pays a <b>1.6–2.2%</b> discount rate that is <b>split between the players</b>, the wallet taking a share.<sup class="cit"><a href="#sources">18</a></sup> Domestically, transfers and QR are free and a wallet earns almost nothing on the payment itself.<sup class="cit"><a href="#sources">3,19</a></sup></p>
     <div class="freq reveal">
       <div class="fcol hot">
         <div class="h">A trip abroad · rare, monetised</div>
@@ -427,12 +451,10 @@ footer h2{max-width:26ch}
     </div>
     <div class="panel reveal" style="border-color:rgba(255,193,46,.42);margin-top:clamp(18px,2.4vw,26px)">
       <div class="klabel" style="color:var(--amber)">The condition nobody explains at the counter</div>
-      <p style="font-size:13.5px;color:var(--sub)">ZaloPay charges <span class="vn">"không phí chuyển đổi ngoại tệ cho tất cả giao dịch"</span> at bank rates — the FX really is free.<sup class="cit"><a href="#sources">20</a></sup> But the payment can be funded four ways (wallet balance, linked bank account, VietQR transfer, or a postpaid account), and the <b style="color:#fff">funding source carries its own fee</b>: wallet and domestic bank/card are free, while an <b style="color:#fff">international or credit card costs 1,000đ + 1.0%</b> for the first three transactions a month and 2,000đ + 2.0% after that.<sup class="cit"><a href="#sources">21</a></sup></p>
-      <p style="font-size:13.5px;color:#fff;font-weight:600;margin-top:10px">So a traveller whose default source is a credit card pays roughly what the Visa would have charged them anyway — and never finds out. The saving is real, but it is <b style="color:var(--amber)">conditional on a setting most people never open.</b></p>
-      <p style="font-size:13px;color:var(--sub);margin-top:8px">That is a growth job, not a fine-print job: getting the funding source right has to happen <b style="color:#fff">before departure</b>, which is exactly what phase 02 of the media plan is for. It also means the trip-recap number in the big idea has to be computed honestly per user, not as a marketing average.</p>
+      <p style="font-size:13.5px;color:var(--sub)">FX really is free — <span class="vn">"không phí chuyển đổi ngoại tệ cho tất cả giao dịch"</span>, at bank rates.<sup class="cit"><a href="#sources">20</a></sup> But the <b style="color:#fff">funding source</b> carries its own fee: wallet and domestic card free, <b style="color:#fff">international or credit card 1–2%</b>.<sup class="cit"><a href="#sources">21</a></sup></p><p style="font-size:13.5px;color:#fff;font-weight:600;margin-top:10px">So a credit-card default pays roughly what the Visa would have — and never finds out. The saving is <b style="color:var(--amber)">conditional on a setting nobody opens</b>, which makes it a pre-trip job.</p>
     </div>
     <p class="bigq reveal">So the correction matters: a trip is not a cheap acquisition event. <span class="c">It may be the best-margin retail payment ZaloPay has</span> — which is exactly why losing the traveller is expensive.</p>
-    <p class="disc reveal">Assumption ranges are mine, built on the cited MDR bands and spend-per-trip survey; neither wallet discloses its share of the fee pool, its FX spread, or wallet-share of trip spend. Treat the per-trip figure as an order of magnitude whose <em>sign</em> is the point, not its precision.</p>
+    <p class="disc reveal">Ranges are mine, from the cited MDR bands and spend survey; neither wallet discloses its share of the fee pool. The <em>sign</em> is the point, not the precision.</p>
   </div>
 </section>
 
@@ -441,7 +463,7 @@ footer h2{max-width:26ch}
   <div class="wrap">
     <div class="eyebrow reveal"><span class="bar"></span>Slide 04 · The leak, quantified</div>
     <h2 class="reveal">The first trip probably pays. The second one is the one they lost.</h2>
-    <p class="lede reveal">Rebuilt on the corrected economics. The incentive is paid <b>once</b>; the occasion <b>repeats every year</b>. So the question is not whether the promo pays back — at 30,000–200,000đ of revenue per trip against a 50,000đ one-time cap, plausibly it does. The question is how many future trips walk out of the door with the uninstall.</p>
+    <p class="lede reveal">The incentive is paid <b>once</b>; the occasion <b>repeats every year</b>. So the question is not whether the promo pays back — at 30,000–200,000đ a trip against a 50,000đ one-time cap, plausibly it does. It is how many <b>future</b> trips leave with the uninstall.</p>
     <div class="grid-2" style="align-items:start;margin-top:clamp(20px,3vw,30px)">
       <div class="panel reveal">
         <div class="klabel">Lifetime value of one traveller, by how long they stay</div>
@@ -455,7 +477,7 @@ footer h2{max-width:26ch}
             <tr><td>5</td><td>+100,000đ</td><td>+950,000đ</td></tr>
           </table>
         </div>
-        <p style="font-size:13.5px;color:var(--sub);margin-top:12px">Every row after the first is <b style="color:#fff">pure margin</b> — no new incentive, no new campaign, the rail already integrated. Which is the whole argument: the money in cross-border is not in the first trip you buy, it's in the trips you keep. <b style="color:#fff">A deleted app forfeits the entire column.</b></p>
+        <p style="font-size:13.5px;color:var(--sub);margin-top:12px">Every row after the first is <b style="color:#fff">pure margin</b> — no new incentive, no new campaign. The money is not in the trip you buy, it is in the trips you keep. <b style="color:#fff">A deleted app forfeits the column.</b></p>
         <p class="disc" style="margin-top:10px">Simple arithmetic on the stated assumptions, not a disclosed P&amp;L. It ignores discounting and any cross-sell revenue, both of which favour retention further.</p>
       </div>
       <div class="reveal">
@@ -470,7 +492,7 @@ footer h2{max-width:26ch}
         <div class="panel" style="border-color:rgba(255,107,107,.4);margin-top:16px">
           <div class="klabel" style="color:var(--red)">The finding</div>
           <p style="font-size:14px;color:#fff;font-weight:600">The retention that matters here is not daily habit. It is <em>still being installed and chosen 8–12 months later, when they fly again.</em></p>
-          <p style="font-size:13px;color:var(--sub);margin-top:8px">That reframe is the useful part. Daily habit is expensive to build and, in Vietnam's zero-fee domestic market, barely monetisable on its own. <b style="color:#fff">Surviving until the next trip is a much cheaper problem</b> — and nobody, ZaloPay or MoMo, is currently working on it.</p>
+          <p style="font-size:13px;color:var(--sub);margin-top:8px">Daily habit is expensive and barely monetisable here. <b style="color:#fff">Surviving to the next trip is far cheaper</b> — and nobody is working on it.</p>
         </div>
       </div>
     </div>
@@ -484,10 +506,10 @@ footer h2{max-width:26ch}
     <h2 class="reveal">Why I deleted it — and why that's designed, not personal.</h2>
     <p class="lede reveal">Four reasons, and none of them is "the app was bad". Each one is a design decision that could be made differently.</p>
     <div class="diag">
-      <div class="dcard reveal"><h4>The trigger was geographic</h4><p>Every reason to open the app was on the other side of a border. Land at Tan Son Nhat and the trigger evaporates — <b>nothing about the product follows you home.</b></p></div>
-      <div class="dcard reveal"><h4>Nothing was set up at home</h4><p>No bill on autopay, no balance left, no saved habit, no reason to be the default. The trip account is a <b>single-purpose account</b> that finished its purpose.</p></div>
-      <div class="dcard reveal"><h4>The home slot was already taken</h4><p>My domestic default was another app I'd used for years. Switching cost is zero — but so is switching <em>benefit</em>, because ZaloPay never made a case for anything beyond the trip.</p></div>
-      <div class="dcard reveal"><h4>The app never noticed the trip ended</h4><p>No recap, no "here's what you saved versus a card", no next step. The single highest-trust moment in the whole relationship — <b>I just watched it work in a foreign country</b> — passed without being used.</p></div>
+      <div class="dcard reveal"><h4>The trigger was geographic</h4><p>Every reason to open it sat on the other side of a border. Land at Tan Son Nhat and the trigger evaporates — <b>nothing follows you home.</b></p></div>
+      <div class="dcard reveal"><h4>Nothing was set up at home</h4><p>No habit, no balance, no reason to be the default. A <b>single-purpose account</b> that finished its purpose.</p></div>
+      <div class="dcard reveal"><h4>The home slot was already taken</h4><p>My default was an app I'd used for years. Switching cost is zero — but so is switching <em>benefit</em>, because nothing was offered beyond the trip.</p></div>
+      <div class="dcard reveal"><h4>The app never noticed the trip ended</h4><p>No recap, no next step. The highest-trust moment in the relationship — <b>I just watched it work abroad</b> — passed unused.</p></div>
     </div>
     <p class="bigq reveal">A traveller who just watched your app work abroad is the <span class="c">warmest lead you will ever have.</span> Both wallets currently let that lead walk.</p>
   </div>
@@ -502,7 +524,7 @@ footer h2{max-width:26ch}
     <div class="bigidea reveal">
       <div class="bi-tag"><i></i>The big idea</div>
       <div class="bi-name">The Homecoming Loop</div>
-      <p class="bi-def">Treat <b>landing</b> — not the first scan — as the start of the funnel. Use the trip they just finished as the proof, and turn the next one into a <b>savings goal</b> — a small monthly transfer that needs no wallet balance, keeps a heartbeat through the quiet months, and quietly becomes the zero-fee funding source when <b>they fly again.</b></p>
+      <p class="bi-def">Treat <b>landing</b> — not the first scan — as the start of the funnel. Turn the next trip into a <b>savings goal</b>: a small monthly transfer that needs no wallet balance, keeps a heartbeat through the quiet months, and becomes the zero-fee funding source when <b>they fly again.</b></p>
       <div class="bi-split">
         <div class="s">
           <div class="h">What runs today</div>
@@ -586,39 +608,39 @@ footer h2{max-width:26ch}
 
     <div class="plan reveal">
       <table>
-        <tr><th>Stage</th><th>Signal that fires it</th><th>Surface / touchpoint</th><th>The one ask</th><th>Metric</th></tr>
+        <tr><th>Stage</th><th>Fires on</th><th>Touchpoint</th><th>The one ask</th><th>Metric</th></tr>
         <tr>
-          <td>01 Landing<span class="ph">T+0, hours</span></td>
-          <td>Last foreign transaction, then a home-network or home-SIM reconnect</td>
-          <td>Push notification → single in-app screen</td>
+          <td>01 Landing<span class="ph">T+0</span></td>
+          <td>Home network reconnect</td>
+          <td>Push → one screen</td>
           <td>Nothing. Just look.</td>
           <td>Open rate</td>
         </tr>
         <tr class="key">
-          <td>02 The recap<span class="ph">T+0 to T+2 days</span></td>
-          <td>Trip closed and reconciled</td>
-          <td>In-app recap card, shareable</td>
-          <td>"See what you saved" — their own spend, their own rates, and the card comparison</td>
+          <td>02 The recap<span class="ph">T+0–2 days</span></td>
+          <td>Trip reconciled</td>
+          <td>Shareable recap card</td>
+          <td>"See what you saved" — their spend, their rates, vs a card</td>
           <td>Tap-through</td>
         </tr>
         <tr class="key">
-          <td>03 Next Trip Fund<span class="ph">T+2 to T+14 days</span></td>
-          <td>Recap opened. Trip total known, so the target is computable</td>
-          <td>A pre-filled monthly transfer into <span class="vn">Số dư sinh lời</span>, seeded with any leftover balance</td>
-          <td>"This trip cost 31M. Next one in ~10 months. Set aside 3M a month?" One switch.</td>
+          <td>03 Next Trip Fund<span class="ph">T+2–14 days</span></td>
+          <td>Recap opened; trip total known</td>
+          <td>Pre-filled transfer into <span class="vn">Số dư sinh lời</span></td>
+          <td>"31M this trip. Next in ~10 months. Save 3M a month?"</td>
           <td>Fund opened in 14 days</td>
         </tr>
         <tr>
-          <td>04 Quiet months<span class="ph">T+15 days to T+8 mo</span></td>
-          <td>The transfer runs itself monthly and earns daily</td>
-          <td>Monthly "your trip fund grew" note · one seasonal travel-content touch on Zalo OA</td>
+          <td>04 Quiet months<span class="ph">to T+8 mo</span></td>
+          <td>Transfer runs itself</td>
+          <td>Monthly "fund grew" note</td>
           <td>Still nothing. Stay useful, stay quiet.</td>
           <td><b>Still-installed rate</b></td>
         </tr>
         <tr class="key">
-          <td>05 Next trip<span class="ph">T+8 to T+12 mo</span></td>
-          <td>Flight or hotel booking, eSIM purchase, FX search in-app</td>
-          <td>One-tap "turn on paying in [country]"</td>
+          <td>05 Next trip<span class="ph">T+8–12 mo</span></td>
+          <td>Booking, eSIM or FX search</td>
+          <td>One tap: "pay in [country]"</td>
           <td>Switch the market on before departure</td>
           <td><b>Next-trip win rate</b></td>
         </tr>
@@ -627,20 +649,19 @@ footer h2{max-width:26ch}
 
     <div class="grid-2" style="align-items:center;margin-top:clamp(20px,2.6vw,30px)">
       <div class="reveal">
-        <div class="klabel">Why each move should work</div>
+        <div class="klabel">Why it should work</div>
         <div class="xp">
           <div class="xt"><span class="xn">01</span><span class="xh">Proof beats persuasion</span></div>
-          <p>The recap is not a marketing claim — it is <b>their own receipt</b>. They already watched the product work in a foreign country, which is the highest-trust moment in the whole relationship. Today it passes unused.</p>
+          <p>The recap is <b>their own receipt</b>, not a claim. They just watched the product work abroad — the highest-trust moment in the relationship, currently unused.</p>
         </div>
         <div class="xp">
           <div class="xt"><span class="xn">02</span><span class="xh">A travel fund beats a utility bill</span></div>
-          <p>The mechanics work for everyone: the transfer debits the linked bank account, so <b>no wallet balance is required</b> — which matters, because travellers who fund from a bank account never hold one. And <span class="vn">Số dư sinh lời</span> already exists: 4.7%/year, from 10,000đ, withdrawable to the wallet for free without losing earned interest.<sup class="cit"><a href="#sources">22</a></sup> Unlike a bill, it points at the <b>next trip</b> — the occasion that actually earns — and by departure the fund <em>is</em> the wallet balance, so the traveller lands on the zero-fee source without being lectured about settings.</p>
+          <p>The transfer debits the linked bank account, so <b>no wallet balance is needed</b>. <span class="vn">Số dư sinh lời</span> already exists — 4.7%/yr, from 10,000đ, withdraw free.<sup class="cit"><a href="#sources">22</a></sup> And by departure the fund <em>is</em> the wallet balance.</p>
         </div>
         <div class="xp">
           <div class="xt"><span class="xn">03</span><span class="xh">One ask, or none</span></div>
-          <p>Every stage has exactly one ask, and two stages deliberately ask for nothing. Loops die from over-asking. <b>Guardrails:</b> no push without a genuine return signal, no dark patterns on the pre-fill, and the card comparison stays honest even when the card wins.</p>
+          <p>Two of five stages deliberately ask for nothing. Loops die from over-asking. <b>Guardrails:</b> no push without a real return signal, no dark patterns, honest comparison even when the card wins.</p>
         </div>
-      </div>
       <div class="reveal">
         <div class="phones">
           <div>
@@ -683,39 +704,39 @@ footer h2{max-width:26ch}
   <div class="wrap">
     <div class="eyebrow reveal"><span class="bar"></span>Slide 07 · The media plan</div>
     <h2 class="reveal">Four phases. Most campaigns buy only the third.</h2>
-    <p class="lede reveal">A trip is a funnel with dates on it. The install decision happens weeks <b>before</b> departure, the habit forms in-destination, and the business value lands after the plane home. ZaloPay's April push — and MoMo's always-on promo — both live almost entirely in phase 03.</p>
+    <p class="lede reveal">A trip is a funnel with dates on it: install decided <b>before</b> departure, habit formed in-destination, value landing after the flight home. Both wallets live almost entirely in phase 03.</p>
     <div class="plan reveal">
       <table>
         <tr><th>Phase</th><th>Traveller state</th><th>Channels &amp; content</th><th>Creative job</th><th>Metric</th><th>Weight</th></tr>
         <tr>
           <td>01 Dream<span class="ph">T–8 to T–4 weeks</span></td>
-          <td>"Where should we go?" No dates booked.</td>
-          <td>Creator long-form · TikTok destination edits · Zalo OA hub · SEO on <span class="vn">"chi phí du lịch [nước]"</span></td>
-          <td>Attach the app to the daydream: cost-per-day breakdowns where every price is paid by QR.</td>
+          <td>"Where should we go?" No dates yet.</td>
+          <td>Creator long-form · TikTok edits · SEO on <span class="vn">"chi phí du lịch [nước]"</span></td>
+          <td>Attach the app to the daydream — cost-per-day breakdowns, every price paid by QR.</td>
           <td>Assisted reach → hub visits</td>
           <td><span class="wt">Earned-first</span></td>
         </tr>
         <tr>
           <td>02 Plan<span class="ph">T–3 weeks to T–3 days</span></td>
-          <td>Booking flights, hotels, eSIM. Actively solving money logistics.</td>
-          <td>Search &amp; app-store intent · placements at flight/hotel/eSIM checkout · Zalo OA reminder · airport-route OOH</td>
-          <td>Be the answer to "how do I pay there?" — a 20-second checklist whose <b>first item is setting a zero-fee funding source</b>, because a credit-card default quietly costs 1–2%.</td>
+          <td>Booking flights, hotels, eSIM. Solving money logistics.</td>
+          <td>Search intent · flight/hotel/eSIM checkout · airport-route OOH</td>
+          <td>Answer "how do I pay there?" — a 20-second checklist, <b>first item: set a zero-fee funding source</b>.</td>
           <td><b>Pre-trip activation rate</b></td>
           <td><span class="wt">Heavy</span></td>
         </tr>
         <tr>
           <td>03 In-destination<span class="ph">Trip days 1–7</span></td>
-          <td>At a counter, choosing cash, card or app. High anxiety, low patience.</td>
-          <td>Geo-triggered in-app card on arrival · creator street-level demos · merchant signage via the rail partner</td>
-          <td>Make the first scan happen in the first 24 hours. Nothing else matters this week.</td>
+          <td>At a counter. High anxiety, low patience.</td>
+          <td>Geo-triggered card on arrival · creator street demos · merchant signage</td>
+          <td>Get the first scan inside 24 hours. Nothing else matters this week.</td>
           <td><b>First scan within 24h</b></td>
           <td><span class="wt">Heavy</span></td>
         </tr>
         <tr class="key">
           <td>04 Return<span class="ph">T+0 to T+30 days</span></td>
-          <td>Home, unpacking, back to normal spending — and back to the old default app.</td>
-          <td>Trip recap on landing · one pre-filled domestic habit · UGC prompt built from real savings · lifecycle sequence</td>
-          <td>Convert the trip into a domestic habit. <b>This is the phase that decides whether the other three paid for themselves.</b></td>
+          <td>Home, back to normal spending — and to the old default app.</td>
+          <td>Trip recap on landing · one pre-filled habit · UGC from real savings</td>
+          <td><b>The phase that decides whether the other three paid for themselves.</b></td>
           <td><b>D30 domestic active rate</b></td>
           <td><span class="wt">Where I'd move budget</span></td>
         </tr>
@@ -739,7 +760,7 @@ footer h2{max-width:26ch}
         <div class="panel" style="border-color:rgba(1,207,106,.42)">
           <div class="klabel">North star</div>
           <p style="font-size:17px;font-weight:700;color:#fff;margin-bottom:6px">Trips per traveller retained</p>
-          <p style="font-size:13px;color:var(--sub)">Not installs, not scans, not campaign reach. The number that tracks the margin: of travellers who paid abroad once, how many pay abroad again on their next trip. Measurable per destination and per acquisition cohort, and it rises only if the app survived the year in between.</p>
+          <p style="font-size:13px;color:var(--sub)">Not installs, not scans, not reach. Of travellers who paid abroad once, how many pay abroad again — it only rises if the app survived the year between.</p>
         </div>
         <div class="panel" style="margin-top:14px">
           <div class="klabel">The cost metric that replaces CPA</div>
@@ -775,8 +796,12 @@ footer h2{max-width:26ch}
   <div class="wrap">
     <div class="eyebrow reveal"><span class="bar"></span>Slide 09 · Sources &amp; method</div>
     <h2 class="reveal">Every number, cited.</h2>
-    <p class="lede reveal" style="font-size:13.5px">Compiled July 2026 from official data (SBV, national tourism statistics, NAPAS), company material (zalopay.vn, momo.vn, Ant International, VNG financials) and named press. Company self-reported figures are labelled. Two numbers in this deck are <b>mine, not theirs</b>: the 1–2 vs 120–240 occasion ratio and the break-even table, both built from the inputs cited below with assumptions stated on the slide. The opening story is my own trip.</p>
-    <ol class="srcs reveal">
+    <p class="lede reveal" style="font-size:13.5px">Every figure traces to a named source, and self-reported company numbers are labelled. Two numbers are <b>mine</b>: the occasion ratio and the per-trip model, both with assumptions stated on the slide. The opening story is my own trip.</p>
+    <details class="srcbox reveal">
+      <summary>23 sources, with links &amp; dates — and the correction log</summary>
+      <div class="srcbody">
+        <p class="lede reveal" style="font-size:13.5px">Compiled July 2026 from official data (SBV, national tourism statistics, NAPAS), company material (zalopay.vn, momo.vn, Ant International, VNG financials) and named press. Company self-reported figures are labelled. Two numbers in this deck are <b>mine, not theirs</b>: the 1–2 vs 120–240 occasion ratio and the break-even table, both built from the inputs cited below with assumptions stated on the slide. The opening story is my own trip.</p>
+        <ol class="srcs reveal">
       <li>Vietnamese outbound travel, H1 2025: 4.06M trips, +54% YoY — Vietnam National Authority of Tourism statistics, via <a href="https://thongke.tourism.vn/index.php/news/items/354" target="_blank" rel="noopener">thongke.tourism.vn</a>.</li>
       <li>Active e-wallets 36.2M (end-2023) → 30.3M (Sep 2025): SBV data via <a href="https://tapchinganhang.gov.vn/phat-trien-thi-truong-vi-dien-tu-gop-phan-thuc-day-thanh-toan-so-va-chuyen-doi-so-16719.html" target="_blank" rel="noopener">Tạp chí Ngân hàng (11/2025)</a> and <a href="https://cafef.vn/viet-nam-co-hon-34-trieu-vi-dien-tu-dang-hoat-dong-188240804170124167.chn" target="_blank" rel="noopener">CafeF/SBV (8/2024)</a>.</li>
       <li>Payment volume boom / VietQR ubiquity: <a href="https://fili.vn/2026/01/nam-2025-giao-dich-qua-napas-tang-24-ve-so-luong-8-ve-gia-tri-757-1393244.htm" target="_blank" rel="noopener">NAPAS 2025 results via Vietstock (1/2026)</a>.</li>
@@ -801,7 +826,9 @@ footer h2{max-width:26ch}
       <li>Merchant discount rate 1.6–2.2% by volume tier on Alipay cross-border, and the fee being split among participants with an acquirer service fee plus <em>inter-partner fee</em> per transaction: <a href="https://www.rfp.wiki/payments-fraud/digital-wallets/alipay" target="_blank" rel="noopener">Alipay cost-drivers summary (2026)</a>; <a href="https://docs.antom.com/ac/cashierpay/reconcile_settle" target="_blank" rel="noopener">Antom (Ant International) settlement docs</a>; MDR-sharing mechanics in wallet acquiring: <a href="https://www.cgap.org/research/publication/acquiring-models" target="_blank" rel="noopener">CGAP, Acquiring Models</a>. The wallet's own share is not publicly disclosed.</li>
       <li>Vietnam's zero-fee domestic payment market and why wallets cannot monetise the payment itself: <a href="https://nhandan.vn/ngan-hang-chay-dua-mien-phi-tren-nen-tang-so-post686396.html" target="_blank" rel="noopener">Nhân Dân (2022)</a>; <a href="https://vneconomy.vn/huong-di-moi-cua-vi-dien-tu-sau-cuoc-dua-dot-tien.htm" target="_blank" rel="noopener">VnEconomy — wallets after the cash-burn race</a>.</li>
     </ol>
-    <p class="disc reveal" style="max-width:none">Correction log, kept deliberately: an earlier version of this deck asserted that ZaloPay "earns close to nothing" on a cross-border payment because the route is fee-free to the user. That conflated a zero <em>user</em> fee with zero revenue and it was wrong — the merchant-side discount rate is shared with the issuing wallet. Slides 03, 04, 06 and 08 were rebuilt on the corrected economics, which strengthened the conclusion rather than weakening it. A second pass corrected the wedge: an earlier draft treated a leftover wallet balance as universal, but these payments can be funded four ways including a linked bank account, so many travellers never hold a balance — and an international or credit card as the source costs 1–2%, quietly erasing the saving. Both are now stated on slide 03. A third pass replaced the habit itself: an earlier draft asked returning travellers to put a utility bill on autopay, which pushed them onto the zero-margin domestic flow and appeared to depend on holding a wallet balance. It is now a Next Trip Fund — no balance needed, aimed at the occasion that earns, and it becomes the zero-fee funding source by departure. A fourth pass corrected the parity table: checked against both companies' own pages, the market lists are effectively level (6 vs 5–6), so an earlier claim that MoMo covers more was dropped. The real asymmetry is rails and therefore dependency on one network owner — though a fifth pass qualified even that: rails do not stack into revenue, both wallets ride the same single rail in China and Malaysia, and part of MoMo's eight serves inbound rather than outbound travel.</p>
+        <p class="disc reveal" style="max-width:none">Correction log, kept deliberately: an earlier version of this deck asserted that ZaloPay "earns close to nothing" on a cross-border payment because the route is fee-free to the user. That conflated a zero <em>user</em> fee with zero revenue and it was wrong — the merchant-side discount rate is shared with the issuing wallet. Slides 03, 04, 06 and 08 were rebuilt on the corrected economics, which strengthened the conclusion rather than weakening it. A second pass corrected the wedge: an earlier draft treated a leftover wallet balance as universal, but these payments can be funded four ways including a linked bank account, so many travellers never hold a balance — and an international or credit card as the source costs 1–2%, quietly erasing the saving. Both are now stated on slide 03. A third pass replaced the habit itself: an earlier draft asked returning travellers to put a utility bill on autopay, which pushed them onto the zero-margin domestic flow and appeared to depend on holding a wallet balance. It is now a Next Trip Fund — no balance needed, aimed at the occasion that earns, and it becomes the zero-fee funding source by departure. A fourth pass corrected the parity table: checked against both companies' own pages, the market lists are effectively level (6 vs 5–6), so an earlier claim that MoMo covers more was dropped. The real asymmetry is rails and therefore dependency on one network owner — though a fifth pass qualified even that: rails do not stack into revenue, both wallets ride the same single rail in China and Malaysia, and part of MoMo's eight serves inbound rather than outbound travel.</p>
+      </div>
+    </details>
   </div>
 </section>
 
