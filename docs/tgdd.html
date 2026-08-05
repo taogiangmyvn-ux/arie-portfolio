@@ -252,16 +252,46 @@ footer h2{max-width:29ch}
   body.deck-on .deck > footer{
     flex:0 0 100vw;width:100vw;height:100vh;overflow-y:auto;overflow-x:hidden;
     scroll-snap-align:start;border-top:none;margin:0;
-    padding:72px 0 88px;display:flex;flex-direction:column;justify-content:center}
+    padding:64px 0 76px;display:flex;flex-direction:column;justify-content:center}
   body.deck-on .deck > header{padding-top:82px}
   body.deck-on .deck > * > .wrap{width:100%}
-  body.deck-on h2{font-size:clamp(20px,2.45vw,31px)}
+  body.deck-on h2{font-size:clamp(19px,2.3vw,29px);margin-bottom:2px}
   body.deck-on .bigq{font-size:clamp(17px,2.1vw,26px);margin-top:clamp(13px,1.7vw,20px)}
   body.deck-on .lede{margin-top:9px}
   body.deck-on .metrics{margin:16px 0 6px}
   body.deck-on .argstrip{margin-top:16px}
   body.deck-on .deck > footer{background:none;border-top:none}
   body.deck-on .deckui{display:flex}
+  /* nén nhịp dọc để mỗi slide vừa một khung */
+  body.deck-on .lede{font-size:14px;margin-top:8px}
+  body.deck-on .probs{gap:7px;margin-top:12px}
+  body.deck-on .probs .p{padding:10px 14px}
+  body.deck-on .probs .p .t{font-size:13.5px}
+  body.deck-on .probs .p p{font-size:12px;line-height:1.5}
+  body.deck-on .mv{padding:10px 14px;margin-bottom:6px}
+  body.deck-on .mv p{font-size:11.5px;line-height:1.5}
+  body.deck-on .panel{padding:14px 16px}
+  body.deck-on .concl{padding:14px 18px;margin-top:12px}
+  body.deck-on .concl .tx{font-size:clamp(15px,1.9vw,23px)}
+  body.deck-on .proof{margin-top:10px}
+  body.deck-on .proof .pf{padding:11px 13px}
+  body.deck-on .proof .pf p{font-size:11px}
+  body.deck-on figcaption{font-size:11px;margin-top:6px}
+  body.deck-on .viz{padding:12px 14px}
+  body.deck-on .keep{padding:14px 18px;margin-top:12px}
+  body.deck-on .bigidea{padding:18px 22px;margin-top:10px}
+  body.deck-on .bigidea .bn{font-size:clamp(26px,3.6vw,42px)}
+  body.deck-on .bigidea .bd{font-size:14.5px;margin-top:9px}
+  body.deck-on .bi-vs{margin-top:12px;padding-top:11px}
+  body.deck-on .posbox .pb{padding:14px 16px}
+  body.deck-on .posbox .stmt{font-size:clamp(14.5px,1.7vw,18.5px)}
+  body.deck-on ul.bl li{padding:4px 0 4px 20px;font-size:12px}
+  body.deck-on .tbl table,body.deck-on .bcase table{font-size:11.5px}
+  body.deck-on .tbl td,body.deck-on .bcase td{padding:8px 12px}
+  body.deck-on .disc{font-size:11px;margin-top:7px}
+  body.deck-on .why{margin-top:10px}
+  body.deck-on .why .w{padding:11px 13px}
+  body.deck-on .metrics{margin:14px 0 4px}
   body.deck-on .deck > *::-webkit-scrollbar{width:7px}
   body.deck-on .deck > *::-webkit-scrollbar-thumb{background:rgba(255,205,0,.3);border-radius:9px}
 }
@@ -298,6 +328,7 @@ footer h2{max-width:29ch}
       <a href="#price">Giá</a>
       <a href="#portfolio">Portfolio</a>
       <a href="#growth">Growth driver</a>
+      <a href="#bcase">Business case</a>
       <a href="#contact" class="nav-cta">Liên hệ</a>
     </div>
   </div>
@@ -388,22 +419,11 @@ footer h2{max-width:29ch}
       <div class="w"><div class="n">Hạ tầng sẵn</div><p>thu cũ đổi mới, app tự định giá, trung tâm bảo hành, bán máy qua sử dụng — <b>đã chạy, không cần xây mới</b><sup class="cit"><a href="#sources">8</a></sup></p></div>
       <div class="w"><div class="n">Đã trả được</div><p>đang tặng 24 tháng bảo hành mở rộng trên flagship. <b>P&amp;L chịu được chi phí này</b><sup class="cit"><a href="#sources">12</a></sup></p></div>
     </div>
-    <div class="klabel reveal" style="margin-top:clamp(16px,2.2vw,22px)">Business case — cần tăng bao nhiêu thị phần để hoà vốn</div>
-    <div class="bcase reveal">
-      <table>
-        <tr><th>Ngân sách bảo lãnh cam kết</th><th>Chi phí / năm</th><th>Cần tăng thị phần để hoà</th></tr>
-        <tr><td>0,3 điểm margin</td><td>~317 tỷ</td><td><b style="color:var(--y)">+1,1 pp</b></td></tr>
-        <tr><td>0,5 điểm margin</td><td>~530 tỷ</td><td>+1,9 pp</td></tr>
-        <tr><td>1,0 điểm margin</td><td>~1.057 tỷ</td><td>+3,8 pp</td></tr>
-        <tr class="ref"><td>Chiến tranh giá 2023</td><td>2,9 điểm margin</td><td>thị phần không tăng</td></tr>
-      </table>
-    </div>
-    <p class="disc reveal">Cách tính: doanh thu TGDĐ + ĐMX 2025 ≈ 105.700 tỷ → 1 điểm margin ≈ 1.057 tỷ. 1 pp thị phần ≈ 1.500 tỷ doanh thu, ở biên gộp 18,8% cho khoảng 280 tỷ lợi nhuận gộp.<sup class="cit"><a href="#sources">1,9</a></sup> Mô hình của tôi trên số liệu công khai, không phải dự báo của công ty.</p>
     <div class="concl reveal">
       <span class="ar">→</span>
       <div>
-        <div class="lb">Vì sao đáng đầu tư</div>
-        <div class="tx">Kịch bản rẻ nhất chỉ cần <em>+1,1 pp thị phần</em> để hoà. Năm 2023 TGDĐ đã bỏ ra 2,9 điểm margin và <em>không tăng được thị phần nào</em>.</div>
+        <div class="lb">Quyền chơi của TGDĐ</div>
+        <div class="tx">Đây là lợi thế đối thủ <em>không mua được bằng ngân sách</em>: gánh rủi ro sau bán cần vốn lớn và mạng lưới 63/63 tỉnh.</div>
       </div>
     </div>
   </div>
@@ -414,13 +434,13 @@ footer h2{max-width:29ch}
   <div class="wrap">
     <div class="eyebrow reveal"><span class="bar"></span>Slide 04 · Key problem</div>
     <h2 class="reveal">Mua ở TGDĐ phải trả thêm 5–10%. Khách đã thấy lý do chưa?</h2>
-    <p class="lede reveal">Ba lý do từng giải thích cho phần chênh này đều đã hết hiệu lực.<sup class="cit"><a href="#sources">5</a></sup></p>
+    <p class="lede reveal">Ba lý do từng giải thích cho phần chênh này đều đã hết hiệu lực.</p>
     <div class="viz pgap reveal" style="margin-top:clamp(13px,1.9vw,20px)">
       <div class="klabel">Giá cùng một mã máy, chỉ số hoá — TGDĐ = 100</div>
       <div class="r me"><span class="nm">TGDĐ</span><span class="bar" style="width:100%;background:linear-gradient(90deg,#FFCD00,#E0A800)"></span><span class="vl" style="color:var(--y)">100</span></div>
       <div class="r"><span class="nm">CellphoneS</span><span class="bar" style="width:93%;background:linear-gradient(90deg,#5B8DEF,#3E6BC4)"></span><span class="vl" style="color:var(--blue)">93–95</span></div>
       <div class="r"><span class="nm">Hoàng Hà</span><span class="bar" style="width:91%;background:linear-gradient(90deg,#5B8DEF,#3E6BC4)"></span><span class="vl" style="color:var(--blue)">90–95</span></div>
-      <p class="disc" style="margin-top:4px">Khoảng chênh 5–10% theo phản ánh trên VNReview, Tinh Tế và các group Facebook. Chỉ số minh hoạ, không phải giá niêm yết từng thời điểm.<sup class="cit"><a href="#sources">5</a></sup></p>
+      <p class="disc" style="margin-top:4px">Chỉ số minh hoạ theo phản ánh trên VNReview, Tinh Tế, group Facebook.<sup class="cit"><a href="#sources">5</a></sup></p>
     </div>
     <div class="probs reveal">
       <div class="p">
@@ -477,12 +497,11 @@ footer h2{max-width:29ch}
             <tr class="key"><td>An tâm</td><td><b>Sợ rủi ro hơn sợ đắt</b></td><td><b>Tập trung toàn lực — chưa ai sở hữu</b></td></tr>
           </table>
         </div>
-        <div class="klabel reveal" style="margin-top:14px">Nhóm này mang lại gì cho objective</div>
+        <div class="klabel reveal" style="margin-top:12px">Nhóm này mang lại gì</div>
         <ul class="bl reveal">
-          <li><b>75 triệu</b> người dùng smartphone tại VN — tập máy cần bảo hành, sửa và đổi mới<sup class="cit"><a href="#sources">11</a></sup></li>
-          <li>Khách thu cũ đổi mới ở các chuỗi lớn <b>tăng 20–30%</b> so với cùng kỳ<sup class="cit"><a href="#sources">11</a></sup></li>
+          <li><b>75 triệu</b> người dùng smartphone tại VN; thu cũ đổi mới ở các chuỗi lớn <b>tăng 20–30%</b><sup class="cit"><a href="#sources">11</a></sup></li>
           <li>Sợ rủi ro nên <b>không mặc cả tới đồng cuối</b> — bảo vệ được margin</li>
-          <li>Có lịch quay lại cố định <b>2 năm một lần</b> — nền cho thị phần bền, không phải thị phần mua bằng giảm giá</li>
+          <li><b>Lịch quay lại 2 năm một lần</b> — thị phần bền, không phải thị phần mua bằng giảm giá</li>
         </ul>
         <figure class="viz reveal" style="margin-top:14px">
           <svg viewBox="0 0 520 340" role="img" aria-label="Bản đồ định vị: trục ngang giá cảm nhận, trục dọc mức cam kết sau bán. Vùng white space ở góc cam kết cao chưa thương hiệu nào chiếm trong nhận thức khách hàng.">
@@ -511,7 +530,7 @@ footer h2{max-width:29ch}
             <path d="M 416 208 C 438 184, 428 156, 406 142" fill="none" stroke="#FFCD00" stroke-width="2"/>
             <polygon points="406,138 400,154 414,151" fill="#FFCD00"/>
           </svg>
-          <figcaption><b>Khoảng cách nằm ở nhận thức, không ở sản phẩm.</b> Việc cần làm là kéo nhận thức lên đúng vị trí thực tế.</figcaption>
+          <figcaption><b>Khoảng cách nằm ở nhận thức, không ở sản phẩm.</b></figcaption>
         </figure>
       </div>
     </div>
@@ -560,7 +579,7 @@ footer h2{max-width:29ch}
     <div class="bigidea reveal">
       <div class="bt"><i></i>Big idea</div>
       <div class="bn">Bảo hành giá trị</div>
-      <p class="bd">Mọi chuỗi đều bảo hành <b>chiếc máy</b>. Chưa ai bảo hành <b>giá trị của chiếc máy</b>. Đổi "trợ giá đến 5 triệu cho máy cũ" thành <b>một con số chắc chắn cho máy mới, in trên hoá đơn</b>: sau 24 tháng, TGDĐ thu lại tối thiểu 40%.</p>
+      <p class="bd">Mọi chuỗi bảo hành <b>chiếc máy</b>. Chưa ai bảo hành <b>giá trị của chiếc máy</b>. Sau 24 tháng, TGDĐ thu lại tối thiểu <b>40%</b> — ghi trên hoá đơn ngay khi mua.</p>
       <div class="bi-vs">
         <div class="c">
           <div class="h">Cách làm hiện nay</div>
@@ -578,12 +597,7 @@ footer h2{max-width:29ch}
         <div class="ph">Câu định vị</div>
         <div class="pb">
           <p class="stmt">Với người tiêu dùng Việt chi từ 15 triệu cho thiết bị dùng hằng ngày, <b>thegioididong</b> là nhà bán lẻ duy nhất <b>cam kết giá trị còn lại</b> của thiết bị — nhờ mạng lưới 63/63 tỉnh và năng lực tài chính đủ để bảo lãnh cam kết đó.</p>
-          <div class="pos3" style="grid-template-columns:1fr;padding-top:14px">
-            <div>
-              <div class="k">Thông điệp ra thị trường</div>
-              <p style="font-size:15px;color:#fff;font-weight:600;font-family:var(--serif)">"Mua an tâm, dùng an tâm — và biết trước máy còn giá bao nhiêu."</p>
-            </div>
-          </div>
+          <p style="font-size:14.5px;color:#fff;font-weight:600;font-family:var(--serif);margin-top:12px;padding-top:12px;border-top:1px solid var(--line)">Thông điệp ra thị trường: <span style="color:var(--y)">"Mua an tâm, dùng an tâm — và biết trước máy còn giá bao nhiêu."</span></p>
         </div>
       </div>
       <div class="reveal">
@@ -592,22 +606,16 @@ footer h2{max-width:29ch}
           <ul class="bl">
             <li><b>Hàng chính hãng</b>, có đại lý uỷ quyền</li>
             <li><b>Dịch vụ ở 63/63 tỉnh</b> — hỏng ở đâu cũng sửa được</li>
-            <li><b>Đổi mới trong 30 ngày</b>, không cần lý do</li>
             <li><b>Giá thu lại ≥ 40%</b> sau 24 tháng, ghi trên hoá đơn</li>
           </ul>
-        </div>
-        <div class="panel" style="margin-top:12px">
-          <div class="klabel">Emotional benefit</div>
+          <div class="klabel" style="margin-top:13px">Emotional benefit</div>
           <ul class="bl">
             <li><b>Yên tâm chọn cấu hình cao hơn</b> vì phần rủi ro đã có người nhận</li>
             <li><b>Không còn cảm giác lỗ khi đổi máy</b> — con số đã biết từ ngày mua</li>
           </ul>
-        </div>
-        <div class="panel" style="margin-top:12px">
-          <div class="klabel">Reason to believe</div>
+          <div class="klabel" style="margin-top:13px">Reason to believe</div>
           <ul class="bl">
-            <li>63/63 tỉnh từ 2012, khoảng 2.000 điểm bán<sup class="cit"><a href="#sources">7</a></sup></li>
-            <li>Đã có thu cũ đổi mới và bán máy qua sử dụng<sup class="cit"><a href="#sources">8</a></sup></li>
+            <li>63/63 tỉnh, gần 2.000 điểm bán<sup class="cit"><a href="#sources">7</a></sup> · vốn ~1 tỷ USD<sup class="cit"><a href="#sources">4</a></sup></li>
             <li><b>Phần chênh 5–10% chính là nguồn chi</b> cho các cam kết trên</li>
           </ul>
         </div>
@@ -733,31 +741,31 @@ footer h2{max-width:29ch}
     <div class="eyebrow reveal"><span class="bar"></span>Slide 10 · Growth driver <span class="qtag">Đề · Câu 2</span></div>
     <h2 class="reveal">Đây là lúc TGDĐ đổi từ ĐỘ PHỦ sang TẦN SUẤT.</h2>
     <figure class="viz reveal" style="margin-top:clamp(13px,1.9vw,20px)">
-      <svg viewBox="0 0 1060 290" role="img" aria-label="So sánh số dịp tiếp xúc mỗi năm: chỉ mua điện thoại cho khoảng 0,4 dịp một năm, thêm dịch vụ và thu cũ đưa lên hơn 3 dịp một năm.">
+      <svg viewBox="0 0 1060 248" role="img" aria-label="So sánh số dịp tiếp xúc mỗi năm: chỉ mua điện thoại cho khoảng 0,4 dịp một năm, thêm dịch vụ và thu cũ đưa lên hơn 3 dịp một năm.">
         <g font-family="Be Vietnam Pro,sans-serif">
-          <text x="20" y="28" font-size="11" font-weight="800" letter-spacing="1.1" fill="#837C6E">CHỈ TÍNH LẦN MUA MÁY</text>
-          <circle cx="40" cy="66" r="9" fill="#B7791F"/>
-          <text x="66" y="71" font-size="10.5" fill="#837C6E">một lần mua mỗi 2–3 năm</text>
-          <text x="1020" y="74" text-anchor="end" font-family="Lora,serif" font-size="21" font-weight="700" fill="#B7791F">~0,4 dịp / năm</text>
-          <line x1="20" y1="98" x2="1020" y2="98" stroke="rgba(255,205,0,.14)"/>
+          <text x="20" y="22" font-size="11" font-weight="800" letter-spacing="1.1" fill="#837C6E">CHỈ TÍNH LẦN MUA MÁY</text>
+          <circle cx="40" cy="56" r="9" fill="#B7791F"/>
+          <text x="66" y="61" font-size="10.5" fill="#837C6E">một lần mua mỗi 2–3 năm</text>
+          <text x="1020" y="64" text-anchor="end" font-family="Lora,serif" font-size="21" font-weight="700" fill="#B7791F">~0,4 dịp / năm</text>
+          <line x1="20" y1="84" x2="1020" y2="84" stroke="rgba(255,205,0,.14)"/>
 
-          <text x="20" y="132" font-size="11" font-weight="800" letter-spacing="1.1" fill="#FFCD00">CÓ THÊM DỊCH VỤ, THU CŨ, PHỤ KIỆN</text>
+          <text x="20" y="112" font-size="11" font-weight="800" letter-spacing="1.1" fill="#FFCD00">CÓ THÊM DỊCH VỤ, THU CŨ, PHỤ KIỆN</text>
           <g fill="#FFCD00">
-            <circle cx="40" cy="174" r="9"/><circle cx="70" cy="174" r="9"/><circle cx="100" cy="174" r="9"/>
-            <circle cx="130" cy="174" r="9"/><circle cx="160" cy="174" r="9"/><circle cx="190" cy="174" r="9"/>
-            <circle cx="220" cy="174" r="9"/><circle cx="250" cy="174" r="9"/><circle cx="280" cy="174" r="9"/>
-            <circle cx="310" cy="174" r="9"/><circle cx="340" cy="174" r="9"/><circle cx="370" cy="174" r="9"/>
-            <circle cx="400" cy="174" r="9"/><circle cx="430" cy="174" r="9"/><circle cx="460" cy="174" r="9"/>
+            <circle cx="40" cy="144" r="9"/><circle cx="70" cy="144" r="9"/><circle cx="100" cy="144" r="9"/>
+            <circle cx="130" cy="144" r="9"/><circle cx="160" cy="144" r="9"/><circle cx="190" cy="144" r="9"/>
+            <circle cx="220" cy="144" r="9"/><circle cx="250" cy="144" r="9"/><circle cx="280" cy="144" r="9"/>
+            <circle cx="310" cy="144" r="9"/><circle cx="340" cy="144" r="9"/><circle cx="370" cy="144" r="9"/>
+            <circle cx="400" cy="144" r="9"/><circle cx="430" cy="144" r="9"/><circle cx="460" cy="144" r="9"/>
           </g>
-          <text x="1020" y="182" text-anchor="end" font-family="Lora,serif" font-size="21" font-weight="700" fill="#FFCD00">3+ dịp / năm</text>
-          <text x="66" y="202" font-size="10.5" fill="#B7B0A2">định giá thu lại · phụ kiện · bảo hành, sửa chữa — mỗi hạng mục là một lần quay lại</text>
+          <text x="1020" y="152" text-anchor="end" font-family="Lora,serif" font-size="21" font-weight="700" fill="#FFCD00">3+ dịp / năm</text>
+          <text x="66" y="172" font-size="10.5" fill="#B7B0A2">định giá thu lại · phụ kiện · bảo hành, sửa chữa — mỗi hạng mục là một lần quay lại</text>
 
-          <rect x="20" y="228" width="1000" height="46" rx="11" fill="rgba(255,205,0,.1)" stroke="rgba(255,205,0,.4)"/>
-          <text x="40" y="250" font-size="12" font-weight="800" fill="#FFCD00">Cùng một tập khách, không cần mở thêm điểm bán.</text>
-          <text x="40" y="267" font-size="10.5" fill="#B7B0A2">Khách đã chạm trần (~25% thị phần, 63/63 tỉnh) · giá trị mỗi lần bị chặn bởi ví tiền → tần suất là trục duy nhất còn trống.</text>
+          <rect x="20" y="192" width="1000" height="46" rx="11" fill="rgba(255,205,0,.1)" stroke="rgba(255,205,0,.4)"/>
+          <text x="40" y="214" font-size="12" font-weight="800" fill="#FFCD00">Cùng một tập khách, không cần mở thêm điểm bán.</text>
+          <text x="40" y="231" font-size="10.5" fill="#B7B0A2">Khách đã chạm trần (~25% thị phần, 63/63 tỉnh) · giá trị mỗi lần bị chặn bởi ví tiền → tần suất là trục duy nhất còn trống.</text>
         </g>
       </svg>
-      <figcaption>Số lần tương tác là <b>mô hình của tôi</b>: chu kỳ đổi máy 2–3 năm, cộng một lần định giá thu lại, một lần phụ kiện và một lần dịch vụ mỗi năm. Mang tính định hướng, và là chỉ số nên đo trước tiên.</figcaption>
+      
     </figure>
     <div class="klabel reveal" style="margin-top:clamp(16px,2.2vw,24px)">Demand cho tần suất có thật, và đang lớn</div>
     <div class="proof reveal">
@@ -765,13 +773,7 @@ footer h2{max-width:29ch}
       <div class="pf"><div class="n">+20–30%</div><p>lượng khách tham gia <b>thu cũ đổi mới</b> tại các chuỗi lớn so với cùng kỳ năm trước<sup class="cit"><a href="#sources">11</a></sup></p></div>
       <div class="pf"><div class="n">Máy phức tạp hơn</div><p>Màn gập, AI, cụm camera nhiều lớp làm <b>chi phí và nhu cầu sửa chữa tăng</b> — dịch vụ thành nhu cầu bắt buộc, không phải tuỳ chọn<sup class="cit"><a href="#sources">11</a></sup></p></div>
     </div>
-    <div class="concl reveal">
-      <span class="ar">→</span>
-      <div>
-        <div class="lb">Kết luận</div>
-        <div class="tx">Nhu cầu dịch vụ <em>không cần tạo mới</em>. Nó đã tồn tại và đang tăng — TGDĐ chỉ chưa biến nó thành lý do để được chọn.</div>
-      </div>
-    </div>
+    <p class="disc reveal">Nhu cầu dịch vụ không cần tạo mới — đã tồn tại và đang tăng. Số dịp là mô hình của tôi: chu kỳ đổi máy 2–3 năm cộng một lần định giá thu lại, một lần phụ kiện, một lần dịch vụ mỗi năm.</p>
     <div class="grid-2" style="align-items:start;margin-top:clamp(13px,1.9vw,20px)">
       <div class="panel reveal" style="border-color:rgba(255,205,0,.5)">
         <div class="klabel">Growth driver mới</div>
@@ -780,10 +782,12 @@ footer h2{max-width:29ch}
       </div>
       <div class="reveal">
         <div class="klabel">Thứ tự ưu tiên đầu tư</div>
-        <div class="mv" style="margin-bottom:7px"><div class="mt"><span class="mn">1</span><span class="mh">Năng lực dịch vụ &amp; bảo lãnh thu lại</span></div><p>Lợi thế phòng thủ nằm ở đây: công suất sửa chữa, tân trang, và vốn bảo lãnh giá trị còn lại.</p></div>
-        <div class="mv" style="margin-bottom:7px"><div class="mt"><span class="mn">2</span><span class="mh">Dữ liệu tuổi máy của từng khách</span></div><p>Nắm được thiết bị đã bán bao lâu. <b>Tháng thứ 20 là điểm kích hoạt, không phải ngẫu nhiên.</b></p></div>
-        <div class="mv" style="margin-bottom:7px"><div class="mt"><span class="mn">3</span><span class="mh">App riêng làm kênh tần suất</span></div><p>Online giữ dữ liệu và vòng đời khách, cửa hàng giữ niềm tin và trải nghiệm — cách JD phân vai.<sup class="cit"><a href="#sources">10</a></sup></p></div>
-        <div class="mv" style="border-color:rgba(255,107,107,.4)"><div class="mt"><span class="mn">✕</span><span class="mh">Không: mở thêm cửa hàng, không: giảm giá thêm</span></div><p>Một bên là đòn bẩy đã cạn. Một bên nuôi lời hứa mà thương hiệu không sở hữu.</p></div>
+        <ul class="bl">
+          <li><b>1 · Năng lực dịch vụ và vốn bảo lãnh</b> — công suất sửa chữa, tân trang, bảo lãnh giá trị còn lại</li>
+          <li><b>2 · Dữ liệu tuổi máy</b> — tháng thứ 20 là điểm kích hoạt, không phải ngẫu nhiên</li>
+          <li><b>3 · App làm kênh tần suất</b> — online giữ dữ liệu, cửa hàng giữ niềm tin<sup class="cit"><a href="#sources">10</a></sup></li>
+          <li style="color:var(--red)"><b style="color:var(--red)">Không</b> mở thêm cửa hàng, <b style="color:var(--red)">không</b> giảm giá thêm</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -854,10 +858,37 @@ footer h2{max-width:29ch}
   </div>
 </section>
 
+<!-- BUSINESS CASE -->
+<section id="bcase">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 12 · Business case</div>
+    <h2 class="reveal">Cần tăng bao nhiêu thị phần để hoà vốn?</h2>
+    <p class="lede reveal">Cam kết thu lại là một khoản chi phí thật. Câu hỏi BOD sẽ hỏi: bỏ ra bao nhiêu, và cần bao nhiêu thị phần để lấy lại.</p>
+    <div class="bcase reveal">
+      <table>
+        <tr><th>Ngân sách bảo lãnh cam kết</th><th>Chi phí / năm</th><th>Cần tăng thị phần để hoà</th></tr>
+        <tr><td>0,3 điểm margin</td><td>~317 tỷ</td><td><b style="color:var(--y)">+1,1 pp</b></td></tr>
+        <tr><td>0,5 điểm margin</td><td>~530 tỷ</td><td>+1,9 pp</td></tr>
+        <tr><td>1,0 điểm margin</td><td>~1.057 tỷ</td><td>+3,8 pp</td></tr>
+        <tr class="ref"><td>Chiến tranh giá 2023</td><td>2,9 điểm margin</td><td>thị phần không tăng</td></tr>
+      </table>
+    </div>
+    <p class="disc reveal">Cách tính: doanh thu TGDĐ + ĐMX 2025 ≈ 105.700 tỷ → 1 điểm margin ≈ 1.057 tỷ. 1 pp thị phần ≈ 1.500 tỷ doanh thu, ở biên gộp 18,8% cho khoảng 280 tỷ lợi nhuận gộp.<sup class="cit"><a href="#sources">1,9</a></sup> Mô hình của tôi trên số liệu công khai, không phải dự báo của công ty.</p>
+    <div class="concl reveal">
+      <span class="ar">→</span>
+      <div>
+        <div class="lb">Vì sao đáng đầu tư</div>
+        <div class="tx">Kịch bản rẻ nhất chỉ cần <em>+1,1 pp thị phần</em> để hoà. Năm 2023 TGDĐ đã bỏ ra 2,9 điểm margin cho chiến tranh giá và <em>không tăng được thị phần nào</em>.</div>
+      </div>
+    </div>
+    <p class="disc reveal">Khác biệt giữa hai khoản chi: giảm giá hết tác dụng khi ngừng chi. Cam kết thu lại để lại một tập khách có lịch quay lại và một lợi thế đối thủ khó theo.</p>
+  </div>
+</section>
+
 <!-- 10 MEASURE -->
 <section id="measure">
   <div class="wrap">
-    <div class="eyebrow reveal"><span class="bar"></span>Slide 12 · Đo lường &amp; rủi ro</div>
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 13 · Đo lường &amp; rủi ro</div>
     <h2 class="reveal">Một chỉ số duy nhất để theo.</h2>
     <div class="grid-2" style="align-items:start;margin-top:clamp(13px,1.9vw,20px)">
       <div class="reveal">
@@ -893,7 +924,7 @@ footer h2{max-width:29ch}
 <!-- 11 SOURCES -->
 <section id="sources">
   <div class="wrap">
-    <div class="eyebrow reveal"><span class="bar"></span>Slide 13 · References</div>
+    <div class="eyebrow reveal"><span class="bar"></span>Slide 14 · References</div>
     <h2 class="reveal">References</h2>
     <p class="lede reveal" style="font-size:12.5px">Chỉ dùng nguồn công khai, số nào do công ty tự báo thì ghi rõ. Phần nào là mô hình đều được đánh dấu ngay tại slide: tỷ lệ số dịp, phép tính điểm biên lãi gộp. Còn chiến lược — định vị, kiến trúc giá, vai trò portfolio, growth driver — là của tôi.</p>
     <details class="srcbox reveal">
@@ -952,7 +983,7 @@ footer h2{max-width:29ch}
 <div class="deckdots" id="deckdots" aria-hidden="true"></div>
 <div class="deckui" role="group" aria-label="Điều hướng slide">
   <button id="dprev" aria-label="Slide trước">&#8592;</button>
-  <span class="count" id="dcount"><b>01</b> / 14</span>
+  <span class="count" id="dcount"><b>01</b> / 15</span>
   <button id="dnext" aria-label="Slide sau">&#8594;</button>
   <span class="hint">← → để chuyển</span>
 </div>
