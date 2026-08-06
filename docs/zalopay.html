@@ -535,7 +535,7 @@ footer h2{max-width:26ch}
         <tr>
           <td>Who is in the account</td>
           <td>One person, holding their own money, alone.</td>
-          <td>Four to six friends, holding the trip's money together in ZaloPay.</td>
+          <td>Four to six friends, each holding part of the trip's money in their own ZaloPay wallet.</td>
         </tr>
         <tr>
           <td>What we report</td>
@@ -578,6 +578,19 @@ footer h2{max-width:26ch}
         </div>
         <p class="disc" style="margin-top:9px">My model, from the cited fee band and spend survey. No wallet publishes its share of the merchant fee, so treat the direction as the finding, not the exact figures. Media and creator costs sit on top and are not public.</p>
       </div>
+        <div class="panel reveal" style="border-color:rgba(1,207,106,.42);margin-top:13px">
+          <div class="klabel">The one internal number that decides this</div>
+          <p style="font-size:13px;color:var(--sub)">Rather than invent a CAC, invert the model. The incentive is 50,000đ once. So: <b style="color:#fff">how many trips does one traveller have to make before the incentive is paid back?</b></p>
+          <div class="be" style="margin-top:11px">
+            <table>
+              <tr><th>If ZaloPay keeps…</th><th>Trips to break even</th><th>Which means</th></tr>
+              <tr class="base"><td>~30,000đ / trip</td><td>1.7</td><td>Two in three travellers must take a second trip just to cover the incentive</td></tr>
+              <tr><td>~50,000đ / trip</td><td>1.0</td><td>The first trip pays for itself; everything after is profit</td></tr>
+              <tr><td>~100,000đ / trip</td><td>0.5</td><td>Profitable on trip one, and retention is pure upside</td></tr>
+            </table>
+          </div>
+          <p style="font-size:13.5px;color:#fff;font-weight:600;margin-top:11px">This is the first question I would ask on day one: what share of the merchant fee does ZaloPay actually keep? <b style="color:var(--green)">Below roughly 50,000đ a trip, retention is not an optimisation — it is the break-even condition.</b></p>
+        </div>
       <div class="panel reveal" style="border-color:rgba(255,193,46,.42)">
         <div class="klabel" style="color:var(--amber)">One thing to fix before departure</div>
         <p style="font-size:13.5px;color:var(--sub)">Currency conversion really is free — <span class="vn">"không phí chuyển đổi ngoại tệ cho tất cả giao dịch"</span>, at bank rates.<sup class="cit"><a href="#sources">20</a></sup> But the <b style="color:#fff">source of the money</b> has its own fee. Paying from the ZaloPay balance or a domestic card is free. Paying from an <b style="color:#fff">international or credit card costs 1–2%</b>.<sup class="cit"><a href="#sources">21</a></sup></p>
@@ -597,7 +610,8 @@ footer h2{max-width:26ch}
     <div class="bigidea reveal">
       <div class="bi-tag"><i></i>The big idea</div>
       <div class="bi-name">The Trip Wallet</div>
-      <p class="bi-def">A trip is not one person's purchase. Four to six people plan it in a Zalo group chat for weeks. Give that chat <b>one shared wallet</b>: everyone pays in before the flight, <b>anyone in the group can spend it abroad</b>, and when they land it splits itself. Whatever is left stays in the wallet and earns interest until the next trip.</p>
+      <p style="font-size:12px;color:var(--dim);letter-spacing:.02em;margin-top:8px">One name for the whole thing. Mechanically it is a <b style="color:var(--sub)">trip fund</b> that collects before the flight and <b style="color:var(--sub)">pays out into each member's own wallet</b> on departure day — for reasons set out in the legal check below.</p>
+      <p class="bi-def">A trip is not one person's purchase. Four to six people plan it in a Zalo group chat for weeks. Give that chat <b>one trip fund</b>: everyone pays in before the flight, and on departure day the fund <b>pays each person's share into their own ZaloPay balance.</b> Abroad, everyone spends their own funded balance and every payment lands in one shared trip ledger. Back home the ledger settles itself, and each person keeps what is left — earning interest, in their own wallet.</p>
       <div class="bi-split">
         <div class="s">
           <div class="h">What is being sold today</div>
@@ -606,7 +620,7 @@ footer h2{max-width:26ch}
         <div class="vs">vs</div>
         <div class="s now">
           <div class="h">What I would sell instead</div>
-          A place to keep <b>the group's trip money</b> — used before, during and after the trip, by five people, and still holding a balance when they get home.
+          A place to hold <b>the group's trip money</b> — used before, during and after the trip, and leaving <b>five funded wallets</b> behind instead of one deleted app.
         </div>
       </div>
     </div>
@@ -621,17 +635,17 @@ footer h2{max-width:26ch}
             <div class="bub o">Gửi số tk đi, t chuyển</div>
             <div class="bub i pain"><span class="who">Trang</span>Xong t chia tiền, ai nhớ trả nha 🥲</div>
             <div class="tcard">
-              <div class="tt"><i></i>Zalopay · ví chuyến đi</div>
+              <div class="tt"><i></i>Zalopay · quỹ chuyến đi</div>
               <div class="tn">Bangkok T10</div>
               <div class="tm">Mục tiêu <b>15.000.000đ</b> · mỗi người <b>3.000.000đ</b></div>
               <div class="tbar"><span style="width:60%"></span></div>
               <div class="tm" style="font-size:10.5px">Đã góp 9.000.000đ / 15.000.000đ</div>
               <div class="tppl"><span class="paid">Trang ✓</span><span class="paid">Duy ✓</span><span class="paid">Minh ✓</span><span>Hà</span><span>Bảo</span></div>
-              <div class="tbtn">Góp vào ví chuyến đi</div>
+              <div class="tbtn">Góp vào quỹ chuyến đi</div>
             </div>
             <div class="bub i"><span class="who">Hà</span>Góp rồi nha</div>
             <div class="day">16/10 · về tới nhà</div>
-            <div class="bub i"><span class="who">Zalopay</span>Chuyến Bangkok đã kết toán xong. Còn <b>1.180.000đ</b> trong ví chuyến đi. Giữ lại cho chuyến sau?</div>
+            <div class="bub i"><span class="who">Zalopay</span>Sổ chung chuyến Bangkok đã kết toán. Bạn được nhận lại <b>236.000đ</b>, đã vào ví của bạn và đang sinh lời.</div>
           </div>
         </div>
         <div class="mocklab"><b>Concept mock</b> — not a real screen</div>
@@ -640,12 +654,12 @@ footer h2{max-width:26ch}
         <div class="phones" style="justify-content:flex-start">
           <div>
             <div class="phone"><div class="scr">
-              <div class="abar"><span>Ví chuyến đi</span><span>Trước khi bay</span></div>
+              <div class="abar"><span>Quỹ chuyến đi</span><span>Trước khi bay</span></div>
               <div class="body">
                 <span class="uiq">Bangkok · 12–16/10</span>
                 <div class="uicard"><span class="t">Đã góp · 3 / 5 người</span><span class="n">9.000.000đ</span><span class="d">mục tiêu 15.000.000đ</span></div>
                 <div class="uichips"><span class="on">3.000.000đ / người</span><span>tự chia</span></div>
-                <div class="uicard"><span class="t">Nguồn tiền khi ra nước ngoài</span><span class="n">Ví chuyến đi</span><span class="d">0đ phí chuyển đổi · không dùng thẻ quốc tế</span></div>
+                <div class="uicard"><span class="t">Ngày bay, quỹ chia về ví từng người</span><span class="n">3.000.000đ / người</span><span class="d">0đ phí chuyển đổi · không dùng thẻ quốc tế</span></div>
                 <div class="uibtn">Mời từ nhóm Zalo</div>
               </div>
             </div></div>
@@ -655,11 +669,11 @@ footer h2{max-width:26ch}
             <div class="phone"><div class="scr">
               <div class="abar"><span>Bangkok</span><span>Ngày 2</span></div>
               <div class="body">
-                <span class="uiq">Ai cũng quét được</span>
-                <div class="uibig">11.240.000đ</div>
-                <div style="text-align:center;font-size:9px;color:#7180B4;margin-top:-2px">còn lại trong ví chuyến đi</div>
-                <div class="uicard"><span class="t">Duy · Chatuchak</span><span class="n">420.000đ</span><span class="d">1 THB = 742đ</span></div>
-                <div class="uicard"><span class="t">Hà · Grab</span><span class="n">96.000đ</span><span class="d">tự vào sổ chung</span></div>
+                <span class="uiq">Ví của bạn · đã nhận 3.000.000đ</span>
+                <div class="uibig">2.484.000đ</div>
+                <div style="text-align:center;font-size:9px;color:#7180B4;margin-top:-2px">số dư của bạn · 0đ phí chuyển đổi</div>
+                <div class="uicard"><span class="t">Sổ chung của chuyến · Duy trả</span><span class="n">420.000đ</span><span class="d">Chatuchak · 1 THB = 742đ</span></div>
+                <div class="uicard"><span class="t">Bạn trả</span><span class="n">516.000đ</span><span class="d">tự vào sổ chung, không cần chụp bill</span></div>
                 <div class="uibtn">Quét QR trả tiền</div>
               </div>
             </div></div>
@@ -670,8 +684,8 @@ footer h2{max-width:26ch}
               <div class="abar"><span>Về nhà</span><span>16/10</span></div>
               <div class="body">
                 <span class="uiq">Đã kết toán · 5/5</span>
-                <div class="uibig">1.180.000đ</div>
-                <div style="text-align:center;font-size:9px;color:#7180B4;margin-top:-2px">còn lại — tiền của cả nhóm</div>
+                <div class="uibig">236.000đ</div>
+                <div style="text-align:center;font-size:9px;color:#7180B4;margin-top:-2px">còn lại trong ví của bạn</div>
                 <div class="uicard"><span class="t">Đang sinh lời</span><span class="n">4,7% / năm</span><span class="d">Số dư sinh lời · rút miễn phí</span></div>
                 <div class="uicard"><span class="t">Không ai phải nhắc ai</span><span class="n">0 lời nhắc nợ</span><span class="d">sổ chung đã tự chia</span></div>
                 <div class="uibtn">Giữ cho chuyến sau</div>
@@ -684,8 +698,8 @@ footer h2{max-width:26ch}
           <div class="klabel">How to read the scenario</div>
           <div class="stepl" style="margin-top:4px">
             <div class="st good"><i>1</i><div><b>Before:</b> the 4tr deposit stops being one person's problem. Five people pay 3tr each into one wallet, and the wallet shows who has and who has not.</div></div>
-            <div class="st good"><i>2</i><div><b>During:</b> whoever is standing at the counter pays from the shared balance. Nobody photographs receipts, and nobody uses a credit card at 1–2%.</div></div>
-            <div class="st good"><i>3</i><div><b>After:</b> 1,180,000đ is still sitting in ZaloPay, and it belongs to five people at once. That balance is the retention mechanism — not a notification.</div></div>
+            <div class="st good"><i>2</i><div><b>During:</b> each person pays from the 3tr that landed in their own wallet. Nobody photographs receipts, and nobody pays 1–2% on a credit card.</div></div>
+            <div class="st good"><i>3</i><div><b>After:</b> the ledger nets out and settles. Five people end the trip holding a ZaloPay balance they did not have before. <b>Five funded wallets, from one trip.</b></div></div>
           </div>
         </div>
       </div>
@@ -702,13 +716,13 @@ footer h2{max-width:26ch}
           <div class="st bad"><i>5</i><div>Abroad, each person pays with their own money and re-splits later.</div></div>
         </div></div>
         <div><div class="stepl">
-          <div class="st good"><i>1</i><div>Someone opens a <b>Trip Wallet</b> from the same chat.</div></div>
-          <div class="st good"><i>2</i><div>The money sits in <b>one shared ZaloPay wallet</b>.</div></div>
-          <div class="st good"><i>3</i><div>Each member pays in <b>from ZaloPay</b>, in one tap.</div></div>
-          <div class="st good"><i>4</i><div>The wallet shows who has paid. Nothing to claim, nobody to chase.</div></div>
-          <div class="st good"><i>5</i><div>Abroad, <b>anyone</b> spends the shared wallet and the ledger updates itself.</div></div>
+          <div class="st good"><i>1</i><div>Someone opens a <b>trip fund</b> from the same chat and everyone pays in from ZaloPay.</div></div>
+          <div class="st good"><i>2</i><div>The fund shows who has paid. <b>Nothing to claim, nobody to chase.</b></div></div>
+          <div class="st good"><i>3</i><div>On departure day the fund <b>pays each share into that person's own wallet.</b></div></div>
+          <div class="st good"><i>4</i><div>Abroad each person spends <b>their own funded balance</b> — which is also the 0% way to pay.</div></div>
+          <div class="st good"><i>5</i><div>Every payment posts to <b>one shared ledger</b>; back home it nets out and settles wallet to wallet.</div></div>
         </div></div>
-        <div class="fout">Today ZaloPay is in none of those five steps. With a Trip Wallet it holds the group's money for the whole trip — and still holds some of it after the trip ends.</div>
+        <div class="fout">Today ZaloPay is in none of those five steps. In the version on the right it is in all five — and the trip ends with <b>five funded ZaloPay balances</b> instead of one app about to be deleted.</div>
       </div>
     </div>
 
@@ -723,8 +737,27 @@ footer h2{max-width:26ch}
       </div>
       <div class="panel" style="border-color:rgba(1,207,106,.42)">
         <div class="klabel">What is actually new</div>
-        <p style="font-size:13px;color:var(--sub)"><b style="color:#fff">A wallet that belongs to five people and to one trip.</b> Not a savings pot, and not a record of who owes whom — an account that holds the money, spends it abroad, and settles itself.</p>
-        <p style="font-size:13px;color:var(--sub);margin-top:9px">MoMo's <b style="color:#fff">Quỹ Nhóm</b> is a group savings pot with interest, and it is good.<sup class="cit"><a href="#sources">30</a></sup> It cannot be spent at a counter in Bangkok. That is the gap.</p>
+        <p style="font-size:13px;color:var(--sub)"><b style="color:#fff">A trip fund that pays itself out into five wallets, then reconciles what they spend abroad.</b> Not a savings pot, and not a record of who claims to have paid — a fund that funds the payers, then closes its own books.</p>
+        <p style="font-size:13px;color:var(--sub);margin-top:9px">MoMo's <b style="color:#fff">Quỹ Nhóm</b> is a good group savings pot with interest, but only the fund owner can spend or withdraw it, and members must ask permission.<sup class="cit"><a href="#sources">30</a></sup> It never becomes spending money in five hands at a counter in Bangkok. That is the gap.</p>
+      </div>
+    </div>
+
+    <div class="panel reveal" style="border-color:rgba(255,193,46,.45);margin-top:clamp(16px,2.2vw,24px)">
+      <div class="klabel" style="color:var(--amber)">The legal check — and why this design changed</div>
+      <p style="font-size:13px;color:var(--sub)">My first version had the group spending one shared balance at the counter. <b style="color:#fff">That is not a permissible product in Vietnam,</b> and it is worth saying so plainly rather than pitching something the payments team would have to reject.</p>
+      <div class="grid-2" style="margin-top:12px;align-items:start">
+        <div class="stepl">
+          <div class="st bad"><i>1</i><div>A wallet must be linked to an account or card <b>in the wallet holder's own name</b>.<sup class="cit"><a href="#sources">31</a></sup> A wallet with five co-owners is not a licensed product.</div></div>
+          <div class="st bad"><i>2</i><div>Letting another person use, rent or buy a wallet is prohibited, and from <b>9/2/2026</b> carries fines up to <b>120 triệu đồng</b>.<sup class="cit"><a href="#sources">32</a></sup></div></div>
+          <div class="st bad"><i>3</i><div>One person's wallets at one provider are capped at <b>100 triệu đồng a month</b>.<sup class="cit"><a href="#sources">31</a></sup> A 15M trip fund fits comfortably; a very large one would not.</div></div>
+          <div class="st bad"><i>4</i><div>From <b>1/1/2026</b> opening a wallet needs biometric verification.<sup class="cit"><a href="#sources">33</a></sup> Nobody is onboarded in 30 seconds at a foreign counter.</div></div>
+        </div>
+        <div>
+          <p style="font-size:13px;color:#fff;font-weight:600">So the fund pays out to each member's own wallet, and each person spends only their own money. Every step uses a structure that already exists and is already licensed:</p>
+          <div class="chips" style="margin-top:9px"><span>group fund <b>(MoMo runs one)</b></span><span>wallet top-up</span><span>QR payment</span><span>P2P transfer</span><span>Số dư sinh lời</span></div>
+          <p style="font-size:13px;color:var(--sub);margin-top:11px">Rule 4 also changes the plan, not just the product: a friend who does not have ZaloPay has to be onboarded in the <b style="color:#fff">Deciding</b> phase, weeks before departure — never in-destination. That is why phase 01 exists at all.</p>
+          <p style="font-size:13.5px;color:#fff;font-weight:700;margin-top:11px">And the compliant version is the better one. One pooled balance retains one person. <span style="color:var(--green)">Five funded balances retain five.</span></p>
+        </div>
       </div>
     </div>
   </div>
@@ -738,7 +771,7 @@ footer h2{max-width:26ch}
     <p class="lede reveal">This is the question the cross-border campaign never answers: the trip ends, so what keeps the app? Four mechanisms, not four hopes.</p>
 
     <div class="diag" style="grid-template-columns:1fr 1fr">
-      <div class="dcard ok reveal"><h4>1. There is money left in the wallet</h4><p>Groups always collect more than they spend — deposits get refunded, plans get cut, someone pays in cash. That leftover is <b>shared money</b>, so no single member can quietly withdraw it. It stays in ZaloPay because taking it out requires a conversation.</p></div>
+      <div class="dcard ok reveal"><h4>1. Everyone lands holding a balance</h4><p>Groups always collect more than they spend — deposits come back, plans get cut, someone pays cash. At settlement each person's share lands <b>in their own wallet</b>. It is their money and they can withdraw it; the point is that it arrives as a small credit rather than a bill, and it is already sitting somewhere that pays interest.</p></div>
       <div class="dcard ok reveal"><h4>2. The leftover earns something</h4><p><span class="vn">Số dư sinh lời</span> already pays <b>4.7% a year</b> from 10,000đ, settled daily, withdrawable free.<sup class="cit"><a href="#sources">22</a></sup> A balance that grows is a monthly reason to look, and it is a product ZaloPay already ships.</p></div>
       <div class="dcard ok reveal"><h4>3. The wallet becomes the next trip</h4><p>It is not closed at the end; it is renamed. Vietnamese made <b>6.7M trips abroad in 2025, up 26.4%</b>,<sup class="cit"><a href="#sources">1</a></sup> and the same group travels again. The next trip starts with a balance instead of a deposit nobody wants to front.</p></div>
       <div class="dcard ok reveal"><h4>4. One trip creates five users, not one</h4><p>Every member has to open ZaloPay to pay in, and again to see the ledger. A split request inside a Zalo group also reaches people who <b>do not have ZaloPay yet</b>.<sup class="cit"><a href="#sources">28</a></sup> Acquisition happens when someone owes money — the one moment a payment app is welcome.</p></div>
@@ -766,8 +799,8 @@ footer h2{max-width:26ch}
           <td>01 Deciding<span class="ph">T–8 to T–3 weeks</span></td>
           <td>Arguing about dates and budget. No bookings yet.</td>
           <td>Creator cost-per-day content · SEO on <span class="vn">"chi phí du lịch [nước]"</span> · in-chat entry point</td>
-          <td><b>Open a Trip Wallet.</b> Nothing to pay yet.</td>
-          <td>Trip Wallets opened per 100 travellers</td>
+          <td><b>Open a trip fund.</b> Nothing to pay yet.</td>
+          <td>Trip funds opened per 100 travellers</td>
         </tr>
         <tr class="key">
           <td>02 Committing<span class="ph">T–3 weeks to T–3 days</span></td>
@@ -788,14 +821,47 @@ footer h2{max-width:26ch}
           <td>Back to normal spending, and the old default app.</td>
           <td>Settle prompt in the chat · a shared recap the group can post</td>
           <td>Settle up. Then <b>keep the leftover for the next trip.</b></td>
-          <td>Wallets still funded after 30 days</td>
+          <td>Members still holding a balance after 30 days</td>
         </tr>
       </table>
     </div>
-    <div class="grid-2 ctx reveal" style="margin-top:clamp(18px,2.4vw,26px)">
+    <div class="grid-2 ctx reveal" style="margin-top:clamp(18px,2.4vw,26px);grid-template-columns:1fr 1fr">
       <div class="p"><div class="k">Always-on beats bursts</div><p>Travel has a calendar — Tết, 30/4, summer, year-end. A burst wins one holiday. MoMo runs to <b>31 December 2026</b>; ZaloPay expired in April.<sup class="cit"><a href="#sources">11,12</a></sup></p></div>
+      <div class="p"><div class="k">Prove it in one market first</div><p><b>China.</b> Vietnam is the <b>4th largest source market</b> of visitors to China,<sup class="cit"><a href="#sources">29</a></sup> about <b>4.5M Vietnamese trips</b> went there in 2024,<sup class="cit"><a href="#sources">17</a></sup> and ZaloPay already covers it. Group travel, high spend, and the market where a wallet is genuinely the easiest option.</p></div>
+      <div class="p"><div class="k">And close the coverage gap</div><p><b>Thailand.</b> The closest mass-market destination, live in bank apps since 2021 through NAPAS,<sup class="cit"><a href="#sources">26</a></sup> and ZaloPay is not there. A trip product is worth far more when the most-booked destination is covered.</p></div>
       <div class="p"><div class="k">Brief the ambassador differently</div><p>Paying abroad is a fear purchase, so an ambassador of Khoai Lang Thang's calibre earns his fee.<sup class="cit"><a href="#sources">14</a></sup> But brief him at <b>the planner</b> — the one in the group who organises everyone.</p></div>
     </div>
+
+    <div class="plan reveal" style="margin-top:clamp(18px,2.4vw,26px)">
+      <table>
+        <tr><th>Quarter</th><th>What ships</th><th>Owner</th><th>Gate before the next quarter is funded</th></tr>
+        <tr>
+          <td>Q1<span class="ph">measure, do not build</span></td>
+          <td>Baseline the two unknowns: today's second-trip rate, and ZaloPay's actual share of the merchant fee.</td>
+          <td>Growth analytics · Finance</td>
+          <td>A real baseline exists, and the fee share is known</td>
+        </tr>
+        <tr class="key">
+          <td>Q2<span class="ph">one corridor</span></td>
+          <td>Trip fund plus payout into member wallets. China only. In-chat entry point from Zalo.</td>
+          <td>Product · Payments</td>
+          <td><b>Trip funds opened per 100 travellers</b> clears the target</td>
+        </tr>
+        <tr class="key">
+          <td>Q3<span class="ph">the part that retains</span></td>
+          <td>Shared trip ledger and automatic settlement. Creator content aimed at planning, not scanning.</td>
+          <td>Product · Brand</td>
+          <td><b>Members still holding a balance 30 days after landing</b> clears the target</td>
+        </tr>
+        <tr>
+          <td>Q4<span class="ph">widen</span></td>
+          <td>Second corridor (Korea or Japan). Thailand added if the rail is ready.</td>
+          <td>Partnerships · Growth</td>
+          <td>Second-trip rate up against the Q1 baseline</td>
+        </tr>
+      </table>
+    </div>
+    <p class="disc reveal">Q1 deliberately ships nothing. Both numbers this plan depends on are internal to ZaloPay and not public, and the Q2 build is only worth funding if the fee share clears the break-even on slide 02.</p>
   </div>
 </section>
 
@@ -813,7 +879,7 @@ footer h2{max-width:26ch}
         </div>
         <div class="panel" style="margin-top:13px">
           <div class="klabel">The two leading indicators</div>
-          <p style="font-size:13px;color:var(--sub)"><b style="color:#fff">Trip Wallets opened per 100 travellers</b> — will a group accept the idea at all. <b style="color:#fff">Balance still in the wallet 30 days after landing</b> — did the leftover actually stay, which is the whole retention mechanism.</p>
+          <p style="font-size:13px;color:var(--sub)"><b style="color:#fff">Trip funds opened per 100 travellers</b> — will a group accept the idea at all. <b style="color:#fff">Members still holding a ZaloPay balance 30 days after landing</b> — did the money stay, which is the whole retention mechanism.</p>
         </div>
         <div class="panel" style="margin-top:13px">
           <div class="klabel">Guardrails, always on</div>
@@ -825,7 +891,7 @@ footer h2{max-width:26ch}
       <div class="reveal">
         <div class="learn" style="grid-template-columns:1fr;margin-top:0">
           <div class="l"><h4>Group money is a trust boundary</h4><p>A shared ledger shows what each person spent, and a payment reminder can feel like nagging. <b>Mitigation:</b> whoever paid controls what is visible, one reminder rather than a sequence, and anyone can leave a wallet without leaving the group chat.</p></div>
-          <div class="l"><h4>Parity becomes a price war</h4><p>Two wallets on the same network with identical caps ends in bigger caps. <b>Mitigation:</b> a shared balance is a product, not a discount. It does not have to be re-bought every holiday.</p></div>
+          <div class="l"><h4>Parity becomes a price war</h4><p>Two wallets on the same network with identical caps ends in bigger caps. <b>Mitigation:</b> a funded balance sitting in five wallets is a product, not a discount. It does not have to be re-bought every holiday.</p></div>
           <div class="l"><h4>The channel is not ours to guarantee</h4><p>The invite depends on Zalo keeping that surface open to ZaloPay, and Zalo is under a consumer-protection review.<sup class="cit"><a href="#sources">27</a></sup> <b>Mitigation:</b> name it as a dependency in the plan, and make the wallet work from a shared link too, so it is not the only way in.</p></div>
         </div>
       </div>
@@ -841,7 +907,7 @@ footer h2{max-width:26ch}
     <h2 class="reveal">Every number, cited.</h2>
     <p class="lede reveal" style="font-size:13.5px">Independent analysis, not commissioned by ZaloPay; imagery is theirs. Every figure traces to a named source; company self-reported numbers are labelled. Two are <b>mine</b>: the occasion ratio and the per-trip model, assumptions stated on the slide. The opening story is my own trip.</p>
     <details class="srcbox reveal">
-      <summary>30 sources, with links &amp; dates — and the correction log</summary>
+      <summary>33 sources, with links &amp; dates — and the correction log</summary>
       <div class="srcbody">
         <p class="lede reveal" style="font-size:13.5px">Compiled July 2026 from official data (SBV, national tourism statistics, NAPAS), company material (zalopay.vn, momo.vn, Ant International, VNG financials) and named press. Company self-reported figures are labelled. Two numbers in this deck are <b>mine, not theirs</b>: the 1–2 vs 120–240 occasion ratio and the break-even table, both built from the inputs cited below with assumptions stated on the slide. The opening story is my own trip.</p>
         <ol class="srcs reveal">
@@ -874,9 +940,12 @@ footer h2{max-width:26ch}
       <li>On <b>29 December 2025</b> the National Competition Committee (Ministry of Industry and Trade) invited VNG to a working session on the collection and use of user data and the services provided on the Zalo platform, for consumer-protection oversight: <a href="https://vnexpress.net/uy-ban-canh-tranh-quoc-gia-yeu-cau-vng-giai-trinh-ve-zalo-4999711.html" target="_blank" rel="noopener">VnExpress</a>, <a href="https://dantri.com.vn/cong-nghe/uy-ban-canh-tranh-quoc-gia-moi-vng-lam-viec-bao-cao-ve-zalo-20251229180835601.htm" target="_blank" rel="noopener">Dân trí</a>. This is a review of <b>Zalo</b>; no finding against ZaloPay has been reported, and it is cited here only as a channel dependency.</li>
       <li><b>Zalo <span class="vn">Chia tiền nhóm</span></b>, added in the <b>February 2026</b> update. Mechanics per published step-by-step guides: create the request in the group chat, then <span class="vn">"Bấm Chuyển khoản và vào trang chuyển khoản"</span>, <span class="vn">"xác nhận chuyển khoản trên ứng dụng ngân hàng"</span>, then <span class="vn">"Quay lại nhóm chat, nhấn Xác nhận đã trả"</span> — i.e. the money moves as a bank transfer and the chat records a manual confirmation: <a href="https://www.24h.com.vn/cong-nghe-thong-tin/cach-su-dung-tinh-nang-chia-tien-trong-nhom-chat-zalo-c55a1735399.html" target="_blank" rel="noopener">24h (2/2026)</a>, <a href="https://arttimes.vn/cong-nghe/cach-su-dung-tinh-nang-chia-tien-trong-nhom-chat-zalo-c61a74993.html" target="_blank" rel="noopener">Art Times</a>. Zalo's own instructional graphic for the feature shows the receiving account as a <b>Techcombank</b> account and carries the line <span class="vn">"chỉ ghi lại thao tác xác nhận của các thành viên trên Zalo và không đảm bảo trạng thái của giao dịch"</span>; that graphic is Zalo's material and is described here rather than reproduced. Related ZaloPay product page: <a href="https://zalopay.vn/chia-tien-nhom-hoan-tien-den-8888888d-810" target="_blank" rel="noopener">Chia tiền nhóm</a> — company material. A ZaloPay account may be selectable as a receiving account; the documented flow is nonetheless a bank transfer with manual confirmation.</li>
       <li>Vietnam ranked the <b>4th largest source market</b> of visitors to China, ahead of Thailand, Singapore, the US and Japan: <a href="https://dantri.com.vn/du-lich/khach-viet-sang-trung-quoc-nhieu-thu-4-the-gioi-20260721122130980.htm" target="_blank" rel="noopener">Dân trí (21/7/2026)</a>, on Chinese immigration data.</li>
-      <li>MoMo <span class="vn">Quỹ Nhóm</span>: up to <b>10 funds</b> as owner, <b>25,000,000đ</b> cap per fund, balance auto-placed in Túi Thần Tài earning <b>up to 4%/year</b>, contribution reminders, shared transaction history: <a href="https://www.momo.vn/quy-nhom" target="_blank" rel="noopener">MoMo official page</a> and <a href="https://www.momo.vn/tin-tuc/khuyen-mai/sinh-loi-cung-quy-nhom-momo-6785" target="_blank" rel="noopener">yield-on-group-fund announcement</a>. Company material.</li>
+      <li>MoMo <span class="vn">Quỹ Nhóm</span>: up to <b>10 funds</b> as owner, <b>25,000,000đ</b> cap per fund, balance auto-placed in Túi Thần Tài earning <b>up to 4%/year</b>, contribution reminders, shared transaction history: <a href="https://www.momo.vn/quy-nhom" target="_blank" rel="noopener">MoMo official page</a> and <a href="https://www.momo.vn/tin-tuc/khuyen-mai/sinh-loi-cung-quy-nhom-momo-6785" target="_blank" rel="noopener">yield-on-group-fund announcement</a>. Company material. On rights: MoMo's own help page states the Chủ Quỹ has <span class="vn">"quyền tạo lập và quản lý Quỹ Nhóm, bao gồm việc phê duyệt các yêu cầu rút tiền từ thành viên"</span>, while a member has <span class="vn">"quyền đóng góp tiền vào Quỹ Nhóm và yêu cầu rút tiền"</span> with that request needing the owner's approval — i.e. <b>members cannot spend or withdraw the fund themselves</b>: <a href="https://www.momo.vn/hoi-dap/quyen-loi-cua-chu-quy-va-thanh-vien-trong-quy-nhom-la-gi" target="_blank" rel="noopener">MoMo help centre</a>.</li>
+      <li><b>Thông tư 40/2024/TT-NHNN</b> (State Bank of Vietnam, issued 17/7/2024), on payment intermediary services. <b>Điều 24</b>: the VND account or debit card linked to an e-wallet must be <span class="vn">"tài khoản/thẻ ghi nợ của chính khách hàng"</span> — the customer's own account at the linked bank, and the link must be maintained throughout use. <b>Điều 26</b>: total transactions across one customer's personal e-wallets at one provider are capped at <b>100 million VND per month</b>. Summaries and article text via <a href="https://vnba.org.vn/vi/nhung-quy-dinh-moi-ve-vi-dien-tu-tu-ngay-01-7-2025-theo-thong-tu-40-2024-tt-nhnn-18054.htm" target="_blank" rel="noopener">Vietnam Banks Association</a>, <a href="https://lsvn.vn/quy-dinh-moi-ve-su-dung-dich-vu-vi-dien-tu-1721535376-a145557.html" target="_blank" rel="noopener">Luật sư Việt Nam</a> and <a href="https://hethongphapluat.com/thong-tu-40-2024-tt-nhnn-huong-dan-hoat-dong-cung-ung-dich-vu-trung-gian-thanh-toan-do-thong-doc-ngan-hang-nha-nuoc-viet-nam-ban-hanh/diem-h-khoan-1-dieu-19" target="_blank" rel="noopener">Hệ thống pháp luật</a>. I am reading the regulation as a marketer, not a lawyer; the product structure proposed here would need payments-and-legal sign-off inside ZaloPay.</li>
+      <li>Buying, selling or renting out an e-wallet: prohibited, and from <b>9/2/2026</b> subject to administrative fines reported at up to <b>120 million VND</b> — <a href="https://luatvietnam.vn/hanh-chinh/tu-09-02-2026-hanh-vi-mua-ban-cho-thue-vi-dien-tu-co-the-bi-phat-den-570-106262-article.html" target="_blank" rel="noopener">LuatVietnam (2026)</a>. Cited here as the reason a genuinely shared spending balance was dropped from the proposal.</li>
+      <li>From <b>1/1/2026</b>, opening an e-wallet requires biometric verification of the customer's information: <a href="https://plo.vn/tu-1-1-2026-muon-mo-vi-dien-tu-phai-xac-minh-thong-tin-sinh-trac-hoc-post880385.html" target="_blank" rel="noopener">Pháp Luật TP.HCM</a>; see also <a href="https://vnba.org.vn/vi/quy-dinh-moi-ve-vi-dien-tu--tang-an-toan--mo-rong-han-muc--siet-dinh-danh-19550.htm" target="_blank" rel="noopener">VNBA on the tightened identification rules</a>. Used in the plan as the reason onboarding must happen before departure.</li>
     </ol>
-        <p class="disc reveal" style="max-width:none">Correction log, kept deliberately: an earlier version of this deck asserted that ZaloPay "earns close to nothing" on a cross-border payment because the route is fee-free to the user. That conflated a zero <em>user</em> fee with zero revenue and it was wrong — the merchant-side discount rate is shared with the issuing wallet. Several slides were rebuilt on the corrected economics, which strengthened the conclusion rather than weakening it. A second pass corrected the wedge: an earlier draft treated a leftover wallet balance as universal, but these payments can be funded four ways including a linked bank account, so many travellers never hold a balance — and an international or credit card as the source costs 1–2%, quietly erasing the saving. Both are now stated on the objective slide. A third pass replaced the habit itself: an earlier draft asked returning travellers to put a utility bill on autopay, which pushed them onto the zero-margin domestic flow and appeared to depend on holding a wallet balance. It is now a Next Trip Fund — no balance needed, aimed at the occasion that earns, and it becomes the zero-fee funding source by departure. A fourth pass corrected the parity table: checked against both companies' own pages, the market lists are effectively level (6 vs 5–6), so an earlier claim that MoMo covers more was dropped. The real asymmetry is rails and therefore dependency on one network owner — though a fifth pass qualified even that: rails do not stack into revenue, both wallets ride the same single rail in China and Malaysia, and part of MoMo's eight serves inbound rather than outbound travel. A sixth pass rebuilt the deck outright. Two things had changed: Vietcombank put the same Alipay+ rail inside VCB Digibank across 50+ markets in April 2026, so "ZaloPay is 18 months ahead" was no longer true in any useful sense; and a parity check found that the Next Trip Fund I had proposed was, in substance, MoMo's Quỹ Nhóm — which already carries yield. Proposing it would have been proposing a competitor's shipped feature. The differentiation therefore had to move off the feature and onto the channel, which is how the Trip Thread replaced the Homecoming Loop. The deck was also cut by roughly 45% in the same pass. A seventh pass corrected the biggest error in the whole case. The Trip Thread assumed ZaloPay inherits Zalo's group chat as a distribution channel. Checking how Zalo's own <span class="vn">Chia tiền nhóm</span> actually works showed the opposite: the receiving account is a bank account, each member completes the transfer in their bank app, and Zalo only records a manual "đã trả" confirmation, stating it does not guarantee the transaction.<sup class="cit"><a href="#sources">28</a></sup> ZaloPay is not in that flow. So proximity to Zalo is not the advantage — it has to earn a specific job. The proposal changed from a thread that lives in the chat to a <b>wallet that holds the group's trip money</b>, which is a thing a chat feature and a personal bank account both cannot do, and which leaves a balance behind after the trip. That balance is the answer to the question the original deck never answered: what keeps the app after the traveller lands.</p>
+        <p class="disc reveal" style="max-width:none">Correction log, kept deliberately: an earlier version of this deck asserted that ZaloPay "earns close to nothing" on a cross-border payment because the route is fee-free to the user. That conflated a zero <em>user</em> fee with zero revenue and it was wrong — the merchant-side discount rate is shared with the issuing wallet. Several slides were rebuilt on the corrected economics, which strengthened the conclusion rather than weakening it. A second pass corrected the wedge: an earlier draft treated a leftover wallet balance as universal, but these payments can be funded four ways including a linked bank account, so many travellers never hold a balance — and an international or credit card as the source costs 1–2%, quietly erasing the saving. Both are now stated on the objective slide. A third pass replaced the habit itself: an earlier draft asked returning travellers to put a utility bill on autopay, which pushed them onto the zero-margin domestic flow and appeared to depend on holding a wallet balance. It is now a Next Trip Fund — no balance needed, aimed at the occasion that earns, and it becomes the zero-fee funding source by departure. A fourth pass corrected the parity table: checked against both companies' own pages, the market lists are effectively level (6 vs 5–6), so an earlier claim that MoMo covers more was dropped. The real asymmetry is rails and therefore dependency on one network owner — though a fifth pass qualified even that: rails do not stack into revenue, both wallets ride the same single rail in China and Malaysia, and part of MoMo's eight serves inbound rather than outbound travel. A sixth pass rebuilt the deck outright. Two things had changed: Vietcombank put the same Alipay+ rail inside VCB Digibank across 50+ markets in April 2026, so "ZaloPay is 18 months ahead" was no longer true in any useful sense; and a parity check found that the Next Trip Fund I had proposed was, in substance, MoMo's Quỹ Nhóm — which already carries yield. Proposing it would have been proposing a competitor's shipped feature. The differentiation therefore had to move off the feature and onto the channel, which is how the Trip Thread replaced the Homecoming Loop. The deck was also cut by roughly 45% in the same pass. A seventh pass corrected the biggest error in the whole case. The Trip Thread assumed ZaloPay inherits Zalo's group chat as a distribution channel. Checking how Zalo's own <span class="vn">Chia tiền nhóm</span> actually works showed the opposite: the receiving account is a bank account, each member completes the transfer in their bank app, and Zalo only records a manual "đã trả" confirmation, stating it does not guarantee the transaction.<sup class="cit"><a href="#sources">28</a></sup> ZaloPay is not in that flow. So proximity to Zalo is not the advantage — it has to earn a specific job. The proposal changed from a thread that lives in the chat to a <b>wallet that holds the group's trip money</b>, which is a thing a chat feature and a personal bank account both cannot do, and which leaves a balance behind after the trip. That balance is the answer to the question the original deck never answered: what keeps the app after the traveller lands. An eighth pass then checked whether the thing I was proposing is even legal, and it was not. Thông tư 40/2024/TT-NHNN requires an e-wallet to be linked to an account in the holder's own name, and renting or lending a wallet to someone else is prohibited and now fined.<sup class="cit"><a href="#sources">31,32</a></sup> A single balance that five friends all spend from is therefore not a permissible product — and MoMo's own group fund confirms the constraint, since only the fund owner can spend or withdraw it.<sup class="cit"><a href="#sources">30</a></sup> The design was rebuilt so the fund <em>pays out</em> into each member's own wallet and each person spends only their own money, which uses only structures that already exist. The compliant version retains five funded wallets per trip instead of one pooled balance, so the constraint improved the idea. I have also stopped claiming that leftover money is socially locked in — at settlement it is each person's own money and they can withdraw it freely.</p>
       </div>
     </details>
   </div>
