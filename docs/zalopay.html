@@ -369,6 +369,10 @@ footer h2{max-width:26ch}
 @media (prefers-reduced-motion: reduce){.reveal{opacity:1 !important;transform:none !important;transition:none !important}html{scroll-behavior:auto}}
 :focus-visible{outline:2.5px solid var(--green);outline-offset:3px;border-radius:3px}
 @media(max-width:900px){.grid-2,.grid-3{grid-template-columns:1fr}}
+/* grid items default to min-width:auto, so a scrollable table inside one can
+   widen the whole column and push the page past the viewport. */
+.grid-2>*,.grid-3>*,.mockrow>*,.flow .fbod>div,.freq>*{min-width:0}
+@media(max-width:700px){.flow .fh,.flow .fbod{grid-template-columns:1fr}.flow .fh>div:last-child,.flow .fbod>div:last-child{border-left:none;border-top:1px solid var(--line)}}
 </style>
 </head>
 <body>
