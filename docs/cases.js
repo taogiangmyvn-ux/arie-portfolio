@@ -135,6 +135,13 @@ window.PORTFOLIO = {
         myrole:"Reframed the brief against 2025 results, then built the growth model: penetration capped, frequency the only opening — funded by a guaranteed trade-in instead of discounts.",
         metrics:["Growth model","Frequency > footprint","Guarantee > discount"] } },
 
+    { id:'decktools', href:'deck-tools.html', badge:'AI tools · Live demo',
+      title:"Deck & Dataviz Tools: doc in, board-ready deck out",
+      thumb:'<div class="wthumb"><span class="wtag"><i style="--c:#E0703F"></i>AI Tools · Claude Skills</span><img src="deck-tools/img/thumb.jpg" alt="Slides made with the deck and dataviz skills" loading="lazy"></div>',
+      base:{ desc:"Three Claude skills that turn a report doc or dataset into an editable deck: action titles, consulting-grade charts, morph transitions. Live demos + film.",
+        ctx:"Monthly reporting took too long, and AI slide tools gave topic titles with no findings.",
+        myrole:"Built three Claude skills on one HTML engine: 47 layouts, 13 brand themes, 16+ chart types, in-place editing and PDF/PPTX export — so every slide answers “so what?”.",
+        metrics:["3 Claude skills","16+ chart types","Live demos"] } },
     { id:'creatoros', href:'creatoros.html', badge:'AI project · Live demo',
       title:"CreatorOS: An AI sourcing & outreach engine",
       thumb:'<div class="wthumb tile-os"><span class="wtag"><i style="--c:#10B981"></i>AI Project · Live Demo</span><div class="ost"><span class="k">CreatorOS</span><span class="s">source → vet → outreach</span></div></div>',
@@ -145,6 +152,8 @@ window.PORTFOLIO = {
         myrole:"Built with LLM workflows: creator sourcing, brand-fit scoring and bulk outreach with caps & dry-runs — the ops layer behind the CoBa pipeline.",
         metrics:["Live demo","LLM vetting","Scalable ops"] } },
   ],
+
+  aiTools: ['decktools','creatoros'],
 
   landings: {
     growth: {

@@ -41,8 +41,14 @@
   }).filter(Boolean);
 
   if(featEl) featEl.innerHTML = featured.map(bigCard).join('');
+  var aiEl = document.getElementById('ai-tools');
+  var aiIds = (aiEl && P.aiTools) ? P.aiTools.filter(function(id){ return L.featured.indexOf(id)===-1; }) : [];
+  if(aiEl && aiIds.length){
+    aiEl.innerHTML = '<div class="wgroup reveal"><span class="wg-k">AI Tools I Built</span><span class="rule"></span><span class="wg-note">Working tools with live demos, built with Claude and LLM workflows</span></div>'+
+      '<div class="flist">'+aiIds.map(function(id){ return P.cases.find(function(c){ return c.id===id; }); }).filter(Boolean).map(bigCard).join('')+'</div>';
+  }
   if(moreEl){
-    var rest = P.cases.filter(function(c){ return L.featured.indexOf(c.id)===-1; });
+    var rest = P.cases.filter(function(c){ return L.featured.indexOf(c.id)===-1 && aiIds.indexOf(c.id)===-1; });
     moreEl.innerHTML = rest.map(smallCard).join('');
   }
   if(resEl) resEl.innerHTML = P.researchHTML;
