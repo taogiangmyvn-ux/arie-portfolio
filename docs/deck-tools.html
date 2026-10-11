@@ -3,132 +3,237 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Presentation &amp; Data Visualization Tools — Team Workflows · Tao Giang My (Arie)</title>
+<title>Presentation &amp; Data Visualization Tools — Team Workflows · Arie</title>
 <meta name="description" content="Three Claude skills that turn a doc or a dataset into an editable, board-ready deck: action titles, consulting-grade charts, morph transitions and in-place editing.">
-<meta property="og:title" content="Presentation & Data Visualization Tools — Team Workflows">
-<meta property="og:description" content="Doc in. Board-ready deck out. Built by Tao Giang My (Arie).">
+<meta property="og:title" content="Doc in. Board-ready deck out.">
+<meta property="og:description" content="Presentation & Data Visualization Tools — Team Workflows, by Arie.">
 <meta property="og:image" content="assets/deck-tools-poster.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="case.css">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
-.vid16{width:100%;border-radius:14px;display:block;background:#111;box-shadow:0 24px 60px rgba(0,0,0,.18)}
-.vidrow{display:grid;grid-template-columns:2.4fr 1fr;gap:clamp(14px,2vw,24px);align-items:start;margin-top:clamp(18px,2.5vw,28px)}
-.vidrow video.v9{width:100%;border-radius:14px;background:#111}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.6vw,18px);margin-top:clamp(16px,2vw,24px)}
-.card3{border:1px solid var(--line,#ddd);border-radius:12px;padding:20px 22px;display:flex;flex-direction:column;gap:8px}
-.card3 .k{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--maroon,#7a2b2b);font-weight:700}
-.card3 b{font-family:"DM Serif Display",serif;font-weight:400;font-size:21px;line-height:1.2}
-.card3 p{font-size:14.5px;line-height:1.55;margin:0;color:var(--ink-soft,#555)}
-.cmp{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.6vw,18px);margin-top:clamp(16px,2vw,24px)}
-.cmp>div{border-radius:12px;padding:20px 22px;font-size:15px;line-height:1.6}
-.cmp .bad{background:#F6ECEC}.cmp .good{background:#EEF3EC}
-.cmp h4{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 8px}
-.demo{display:flex;flex-direction:column;gap:6px;border:1px solid var(--line,#ddd);border-radius:12px;padding:18px 20px;text-decoration:none;color:inherit;transition:border-color .2s}
-.demo:hover{border-color:var(--maroon,#7a2b2b)}
-.demo span{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--maroon,#7a2b2b);font-weight:700}
-.steps{counter-reset:s;list-style:none;padding:0;margin:clamp(16px,2vw,24px) 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.6vw,18px)}
-.steps li{border-top:3px solid var(--maroon,#7a2b2b);padding-top:14px;font-size:15px;line-height:1.55}
-.steps li::before{counter-increment:s;content:"0" counter(s);display:block;font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:700;color:var(--maroon,#7a2b2b);margin-bottom:6px}
-@media (max-width:820px){.vidrow,.grid3,.cmp,.steps{grid-template-columns:1fr}}
+:root{--ink:#1A1816;--ink2:#26231F;--cream:#F4F0E8;--paper:#FBF9F5;--line:#E4DDD1;--muted:#8A8376;--or:#E0703F;--or2:#BF5B2E;--sage:#6E9478;--f:"Plus Jakarta Sans",system-ui,sans-serif;--m:"JetBrains Mono",monospace}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--f);color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+.wrap{width:min(1200px,100% - 48px);margin:0 auto}
+.k{font:700 12px var(--m);letter-spacing:.14em;text-transform:uppercase;color:var(--or)}
+em{font-style:italic;color:var(--or)}
+nav{position:fixed;inset:0 0 auto;z-index:20;backdrop-filter:blur(14px);background:rgba(26,24,22,.72);border-bottom:1px solid rgba(255,255,255,.06)}
+nav .wrap{display:flex;align-items:center;height:64px;gap:28px}
+nav .logo{font:800 20px var(--f);color:#fff;text-decoration:none;letter-spacing:-.02em}nav .logo i{color:var(--or);font-style:normal}
+nav .sp{flex:1}
+nav a.l{color:rgba(255,255,255,.7);text-decoration:none;font:600 14px var(--f)}nav a.l:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;font:700 15px var(--f);text-decoration:none;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.p{background:var(--or);color:#fff}.btn.p:hover{background:#ea7d4c}
+.btn.g{border:1.5px solid rgba(255,255,255,.25);color:#fff}.btn.g:hover{border-color:#fff}
+.btn.d{border:1.5px solid var(--ink);color:var(--ink)}
+nav .btn{padding:9px 16px;font-size:13px}
+.hero{background:radial-gradient(900px 500px at 85% 20%,rgba(224,112,63,.22),transparent 60%),radial-gradient(700px 500px at 0% 100%,rgba(110,148,120,.18),transparent 60%),var(--ink);color:#fff;padding:140px 0 90px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:center}
+.hero h1{font:800 clamp(52px,7vw,104px)/.95 var(--f);letter-spacing:-.045em;margin:18px 0 26px}
+.hero p.sub{font:400 clamp(17px,1.5vw,20px)/1.55 var(--f);color:rgba(255,255,255,.72);max-width:52ch}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.hero .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:34px}
+.hero .tags span{font:600 12.5px var(--f);color:rgba(255,255,255,.75);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:7px 13px}
+.phone{position:relative;border-radius:34px;padding:10px;background:#0d0c0b;box-shadow:0 40px 90px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.08);transform:rotate(2.5deg)}
+.phone video{display:block;width:100%;border-radius:26px;aspect-ratio:9/16;object-fit:cover;background:#111}
+.badge{position:absolute;left:-40px;bottom:70px;background:#fff;color:var(--ink);border-radius:14px;padding:14px 16px;box-shadow:0 20px 40px rgba(0,0,0,.3);transform:rotate(-3deg)}
+.badge b{display:block;font:800 30px var(--f);letter-spacing:-.03em;color:var(--or2)}.badge span{font:600 12px var(--f);color:var(--muted)}
+.marq{background:var(--ink2);padding:26px 0;overflow:hidden;border-top:1px solid rgba(255,255,255,.06)}
+.track{display:flex;gap:18px;width:max-content;animation:mq 60s linear infinite}
+.track img{height:170px;border-radius:10px;box-shadow:0 10px 24px rgba(0,0,0,.35)}
+@keyframes mq{to{transform:translateX(-50%)}}
+.marq:hover .track{animation-play-state:paused}
+section.s{padding:110px 0}
+h2{font:800 clamp(36px,4.4vw,62px)/1.02 var(--f);letter-spacing:-.04em;margin:16px 0 0;max-width:18ch}
+.lede{font:400 19px/1.6 var(--f);color:#5b554b;max-width:60ch;margin-top:20px}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:56px}
+.vs figure{margin:0}
+.vs .frame{position:relative;border-radius:16px;overflow:hidden;box-shadow:0 24px 60px rgba(26,24,22,.16)}
+.vs img{display:block;width:100%}
+.vs .stamp{position:absolute;bottom:16px;right:16px;font:800 13px var(--m);letter-spacing:.1em;padding:8px 12px;border-radius:8px}
+.vs .bad .stamp{background:#C0504D;color:#fff}.vs .good .stamp{background:var(--sage);color:#fff}
+.vs figcaption{display:grid;gap:10px;margin-top:22px}
+.vs figcaption div{display:flex;gap:12px;font:500 16px/1.45 var(--f)}
+.vs figcaption i{font-style:normal;font-weight:800;flex:none;width:24px}
+.vs .bad i{color:#C0504D}.vs .good i{color:var(--sage)}
+.stats{background:var(--ink);color:#fff;padding:70px 0}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.stats b{display:block;font:800 clamp(56px,6vw,88px)/1 var(--f);letter-spacing:-.05em}
+.stats b em{font-style:normal}
+.stats span{display:block;font:500 15px var(--f);color:rgba(255,255,255,.6);margin-top:10px}
+.skills{display:grid;gap:28px;margin-top:56px}
+.skill{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:34px}
+.skill:nth-child(even){grid-template-columns:1.1fr 1fr}.skill:nth-child(even) .pic{order:2}
+.skill .pic{position:relative;height:330px}
+.skill .pic img{position:absolute;width:78%;border-radius:12px;box-shadow:0 18px 40px rgba(26,24,22,.2);transition:transform .4s}
+.skill .pic img:nth-child(1){left:0;top:0}.skill .pic img:nth-child(2){right:0;bottom:0}
+.skill:hover .pic img:nth-child(1){transform:translate(-6px,-6px) rotate(-1deg)}.skill:hover .pic img:nth-child(2){transform:translate(6px,6px) rotate(1deg)}
+.skill .n{font:800 15px var(--m);color:var(--or)}
+.skill h3{font:800 34px/1.05 var(--f);letter-spacing:-.03em;margin:10px 0 6px}
+.skill code{font:600 14px var(--m);color:var(--muted)}
+.skill ul{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:12px}
+.skill li{display:flex;gap:12px;font:500 16px/1.5 var(--f)}
+.skill li::before{content:"";flex:none;width:8px;height:8px;border-radius:2px;background:var(--or);margin-top:9px}
+.themes{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+.themes figure{margin:0;border-radius:12px;overflow:hidden;box-shadow:0 12px 30px rgba(26,24,22,.14);transition:transform .25s}
+.themes figure:hover{transform:translateY(-6px)}
+.themes img{display:block;width:100%}
+.themes figcaption{font:700 12px var(--m);letter-spacing:.1em;text-transform:uppercase;padding:10px 12px;background:var(--paper)}
+.film{background:var(--ink);padding:110px 0}
+.film h2{color:#fff}
+.film video{display:block;width:100%;border-radius:18px;margin-top:44px;box-shadow:0 40px 90px rgba(0,0,0,.5);background:#000}
+.demos{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.demo{display:block;text-decoration:none;background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.demo:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(26,24,22,.16)}
+.demo img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-bottom:1px solid var(--line)}
+.demo div{padding:20px 22px 24px}
+.demo .k{display:block}
+.demo b{display:block;font:800 22px/1.2 var(--f);letter-spacing:-.02em;margin-top:8px}
+.demo small{display:block;font:500 14px var(--f);color:var(--muted);margin-top:6px}
+.keys{display:flex;gap:18px;flex-wrap:wrap;margin-top:22px;font:500 14px var(--f);color:#5b554b}
+kbd{font:700 13px var(--m);background:#fff;border:1px solid var(--line);border-bottom-width:3px;border-radius:6px;padding:3px 8px;margin-right:4px}
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.flow div{border-top:3px solid var(--ink);padding-top:20px}
+.flow .n{font:800 46px var(--f);letter-spacing:-.04em;color:var(--or)}
+.flow b{display:block;font:800 22px var(--f);margin:8px 0}
+.flow p{font:400 16px/1.55 var(--f);color:#5b554b}
+footer{background:var(--ink);color:#fff;padding:100px 0 60px}
+footer h2{color:#fff;max-width:20ch}
+footer .row{display:flex;gap:28px;flex-wrap:wrap;margin-top:34px;font:600 16px var(--f)}
+footer .row a{color:var(--or);text-decoration:none}
+footer .fine{margin-top:60px;font:500 13px var(--f);color:rgba(255,255,255,.45)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+@media (max-width:900px){.hero .wrap,.vs,.skill,.skill:nth-child(even),.demos,.flow{grid-template-columns:1fr}.skill:nth-child(even) .pic{order:0}.stats .wrap,.themes{grid-template-columns:repeat(2,1fr)}.phone{max-width:300px;margin:0 auto}.badge{left:0}nav a.l{display:none}.skill .pic{height:240px}}
 </style>
 </head>
 <body>
-<div id="progress-top"></div>
-<nav aria-label="Project navigation">
-  <div class="wrap nav-in">
-    <a href="index.html" class="brand">Arie<em>.</em></a>
-    <div class="nav-right">
-      <a href="index.html#cases">Case studies</a>
-      <a href="deck-tools/presentation-dataviz-skills.zip" download>Download skills</a>
-      <a href="#contact" class="nav-cta">Contact</a>
-    </div>
-  </div>
-</nav>
+<nav><div class="wrap"><a class="logo" href="index.html">Arie<i>.</i></a><span class="sp"></span><a class="l" href="#compare">Why</a><a class="l" href="#skills">Skills</a><a class="l" href="#demos">Demos</a><a class="l" href="index.html#cases">All cases</a><a class="btn p" href="deck-tools/presentation-dataviz-skills.zip" download>Download skills</a></div></nav>
 
-<header class="hero" id="top" style="padding-top:110px;padding-bottom:clamp(10px,2vw,24px)">
+<header class="hero">
   <div class="wrap">
-    <div class="slabel reveal">Internal tooling · AI workflows</div>
-    <h1 class="reveal" style="max-width:20ch">Presentation &amp; Data Visualization Tools — Team Workflows</h1>
-    <p class="sub reveal" style="max-width:62ch;font-size:clamp(15px,1.6vw,18px);margin-top:16px">
-      Three Claude skills I built so our brand team spends its time on the findings, not on the slides. Drop in a report doc or a dataset;
-      get back an <b>editable, board-ready deck</b> with action titles, consulting-grade charts and a clear “so what” on every slide.
-    </p>
-    <div class="chips reveal" style="margin-top:18px">
-      <span>Claude Skills</span><span>HTML / SVG</span><span>47 layouts · 13 themes</span><span>16+ chart types</span><span>Morph transitions</span><span>PDF · PPTX export</span>
+    <div>
+      <div class="k">Presentation &amp; Data Visualization Tools — Team Workflows</div>
+      <h1>Doc in.<br><em>Board-ready</em><br>deck out.</h1>
+      <p class="sub">Three Claude skills I built for our brand team. Drop in a report or a dataset and get an editable deck with action titles, consulting-grade charts and a clear “so what” on every slide.</p>
+      <div class="cta"><a class="btn p" href="#demos">Try the live demos →</a><a class="btn g" href="#film">▶ Watch the film</a></div>
+      <div class="tags"><span>Claude Skills</span><span>Morph transitions</span><span>16+ chart types</span><span>47 layouts · 13 themes</span><span>Edit in place</span><span>PDF · PPTX</span></div>
     </div>
-    <div class="vidrow reveal">
-      <video class="vid16" src="assets/deck-tools-16x9.mp4" poster="assets/deck-tools-poster.jpg" controls playsinline preload="metadata"></video>
-      <video class="v9" src="assets/deck-tools-9x16.mp4" controls playsinline preload="metadata" muted></video>
+    <div style="position:relative">
+      <div class="phone"><video src="assets/deck-tools-9x16.mp4" autoplay muted loop playsinline></video></div>
+      <div class="badge"><b>3 skills</b><span>one engine, every deck editable</span></div>
     </div>
   </div>
 </header>
 
-<section class="wrap" style="padding-top:clamp(40px,5vw,70px)">
-  <div class="slabel reveal">The problem</div>
-  <h2 class="reveal" style="max-width:22ch">Monthly reports took too long — and AI decks made them worse.</h2>
-  <p class="lede reveal" style="max-width:64ch">Generic AI slide tools produce topic titles, buzzword bullets and stock icons. Leadership reads the title, finds no finding, and asks for a rewrite. The work was never the design; it was turning numbers into a decision.</p>
-  <div class="cmp reveal">
-    <div class="bad"><h4>Typical AI deck</h4>“Q3 Report Overview 🚀” · five bullets about synergies · no numbers · no next step.</div>
-    <div class="good"><h4>These skills</h4>“NMV up 93% — one marketplace carries 85% of it.” · KPI row with deltas · one chart that proves it · implication and action in bold.</div>
+<div class="marq" aria-hidden="true"><div class="track" id="track"></div></div>
+
+<section class="s" id="compare">
+  <div class="wrap">
+    <div class="k rv">The problem</div>
+    <h2 class="rv">Most AI decks say nothing.</h2>
+    <p class="lede rv">Topic titles, buzzword bullets, stock icons. Leadership reads the headline, finds no finding, and sends it back. These skills are built around the opposite rule: every slide answers “so what?”.</p>
+    <div class="vs">
+      <figure class="bad rv"><div class="frame"><img src="deck-tools/img/slop.jpg" alt="A generic AI-generated slide with emoji and buzzwords"><span class="stamp">TYPICAL AI DECK</span></div>
+        <figcaption><div><i>✕</i>Topic title: “Q3 Report Overview”</div><div><i>✕</i>Buzzwords, emoji, zero numbers</div><div><i>✕</i>No chart, no decision, no next step</div></figcaption></figure>
+      <figure class="good rv"><div class="frame"><img src="deck-tools/img/s04.jpg" alt="A report slide with an action title, chart and implication box"><span class="stamp">WITH THESE SKILLS</span></div>
+        <figcaption><div><i>✓</i>Action title that states the finding</div><div><i>✓</i>One chart that proves it, values on the bars</div><div><i>✓</i>Implication and next action, in bold</div></figcaption></figure>
+    </div>
   </div>
 </section>
 
-<section class="wrap" style="padding-top:clamp(40px,5vw,70px)">
-  <div class="slabel reveal">What I built</div>
-  <h2 class="reveal">Three skills, one engine.</h2>
-  <div class="grid3 reveal">
-    <div class="card3"><span class="k">arie-deck-builder</span><b>Interactive decks</b><p>47 layouts and 13 themes built from brand books. Morph transitions between slides, in-place text and photo editing, pen and shapes, comments, PDF and PPTX export.</p></div>
-    <div class="card3"><span class="k">arie-dataviz</span><b>Consulting-style data slides</b><p>Learned from BCG insight decks: action titles, exact survey questions, delta callouts, takeaway bands, source lines. 12 chart types incl. waterfall, slope, marimekko, 2×2.</p></div>
-    <div class="card3"><span class="k">arie-report-charts</span><b>Business reports</b><p>KPI rows, event-marked timelines, a “how to read” line under every chart, IMPLICATION boxes and an A/B/C/D executive summary. Heatmap, radar, funnel, dual axis and more.</p></div>
+<div class="stats"><div class="wrap">
+  <div class="rv"><b>3</b><span>Claude skills on one engine</span></div>
+  <div class="rv"><b>47</b><span>layouts, editorial to infographic</span></div>
+  <div class="rv"><b>13</b><span>themes from real brand books</span></div>
+  <div class="rv"><b><em>16+</em></b><span>chart types, heatmap to marimekko</span></div>
+</div></div>
+
+<section class="s" id="skills">
+  <div class="wrap">
+    <div class="k rv">What I built</div>
+    <h2 class="rv">Three skills. One engine. Every deck editable.</h2>
+    <div class="skills">
+      <article class="skill rv">
+        <div class="pic"><img src="deck-tools/img/G_azure_01.jpg" alt=""><img src="deck-tools/img/G_sage_14.jpg" alt=""></div>
+        <div><div class="n">01</div><h3>Deck Builder</h3><code>/arie-deck-builder</code>
+          <ul><li>47 layouts and 13 themes, built from brand books</li><li>Morph transitions: charts and photos move between slides instead of jumping</li><li>Edit in place: text style bar, photo crop and replace, Ctrl+Z, comments</li><li>Export to PDF and editable PPTX</li></ul></div>
+      </article>
+      <article class="skill rv">
+        <div class="pic"><img src="deck-tools/img/vz02.jpg" alt=""><img src="deck-tools/img/vz04.jpg" alt=""></div>
+        <div><div class="n">02</div><h3>Dataviz</h3><code>/arie-dataviz</code>
+          <ul><li>Learned from BCG insight decks: action titles, exact survey questions, source lines</li><li>12 consulting charts: 100% stacked, waterfall, slope, dumbbell, marimekko, 2×2</li><li>Delta callouts and takeaway bands that make the number land</li></ul></div>
+      </article>
+      <article class="skill rv">
+        <div class="pic"><img src="deck-tools/img/s09.jpg" alt=""><img src="deck-tools/img/s10.jpg" alt=""></div>
+        <div><div class="n">03</div><h3>Report Charts</h3><code>/arie-report-charts</code>
+          <ul><li>Quarterly and monthly reports: KPI rows with deltas vs last period</li><li>Heatmap, radar, funnel, dual axis, small multiples, event-marked timelines</li><li>A “how to read” line under every chart and an IMPLICATION box on every slide</li><li>One command turns the report into an editable deck</li></ul></div>
+      </article>
+    </div>
   </div>
 </section>
 
-<section class="wrap" style="padding-top:clamp(40px,5vw,70px)">
-  <div class="slabel reveal">Try the demos</div>
-  <h2 class="reveal">Open them. Press <span style="font-family:'JetBrains Mono',monospace">W</span> to edit.</h2>
-  <p class="muted reveal" style="max-width:60ch">Fictional data. Arrow keys move slides, W edits text, S switches to scroll view, the theme menu swaps the brand.</p>
-  <div class="grid3 reveal">
-    <a class="demo" href="deck-tools/report-charts-deck.html" target="_blank" rel="noopener"><span>Report deck ↗</span><b style="font-family:'DM Serif Display',serif;font-weight:400;font-size:20px">Quarterly brand report</b><small>11 slides · 16 chart types</small></a>
-    <a class="demo" href="deck-tools/dataviz-deck.html" target="_blank" rel="noopener"><span>Data slides ↗</span><b style="font-family:'DM Serif Display',serif;font-weight:400;font-size:20px">Consumer insight deck</b><small>BCG-style survey slides</small></a>
-    <a class="demo" href="deck-tools/layout-library.html" target="_blank" rel="noopener"><span>Layout library ↗</span><b style="font-family:'DM Serif Display',serif;font-weight:400;font-size:20px">47 layouts, 13 themes</b><small>switch brands live</small></a>
+<section class="s" style="padding-top:0">
+  <div class="wrap">
+    <div class="k rv">Templates</div>
+    <h2 class="rv">Same content. Any brand.</h2>
+    <p class="lede rv">Themes only swap colours, fonts and shapes. Layouts and text stay put, so one deck can be re-skinned for another brand in a click.</p>
+    <div class="themes" id="themes"></div>
   </div>
 </section>
 
-<section class="wrap" style="padding-top:clamp(40px,5vw,70px);padding-bottom:clamp(50px,6vw,90px)">
-  <div class="slabel reveal">Team workflow</div>
-  <h2 class="reveal">From brief to boardroom, without the slide grind.</h2>
-  <ol class="steps reveal">
-    <li><b>Brief in, draft out.</b> The skill classifies each piece of content (numbers, lists, plans, proof) and picks the layout. Long content is split, never shrunk.</li>
-    <li><b>Review in place.</b> The deck is published as a private page; teammates fix text, swap photos and leave comments on the slide itself.</li>
-    <li><b>Ship.</b> PDF for email, PPTX for PowerPoint or Google Slides, or the live link. Brand colours, fonts and logo rules come from the brand book.</li>
-  </ol>
-  <p class="muted reveal" style="margin-top:28px">Built with Claude Code · vanilla HTML, CSS, SVG and a little Python. <a href="deck-tools/presentation-dataviz-skills.zip" download>Download the three skills (.zip)</a>.</p>
+<section class="film" id="film">
+  <div class="wrap">
+    <div class="k rv">The film</div>
+    <h2 class="rv">Thirty-three seconds, start to finish.</h2>
+    <video class="rv" src="assets/deck-tools-16x9.mp4" poster="assets/deck-tools-poster.jpg" controls playsinline preload="metadata"></video>
+  </div>
+</section>
+
+<section class="s" id="demos">
+  <div class="wrap">
+    <div class="k rv">Live demos</div>
+    <h2 class="rv">Open one. Change anything.</h2>
+    <div class="keys rv"><span><kbd>←</kbd><kbd>→</kbd> slides</span><span><kbd>W</kbd> edit text</span><span><kbd>S</kbd> scroll view</span><span>Fictional data</span></div>
+    <div class="demos">
+      <a class="demo rv" href="deck-tools/report-charts-deck.html" target="_blank" rel="noopener"><img src="deck-tools/img/s01.jpg" alt=""><div><span class="k">Report deck ↗</span><b>Quarterly brand report</b><small>11 slides · 16 chart types</small></div></a>
+      <a class="demo rv" href="deck-tools/dataviz-deck.html" target="_blank" rel="noopener"><img src="deck-tools/img/vz01.jpg" alt=""><div><span class="k">Data slides ↗</span><b>Consumer insight deck</b><small>BCG-style survey slides</small></div></a>
+      <a class="demo rv" href="deck-tools/layout-library.html" target="_blank" rel="noopener"><img src="deck-tools/img/G_coba_01.jpg" alt=""><div><span class="k">Layout library ↗</span><b>47 layouts, 13 themes</b><small>switch brands live</small></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="s" style="padding-top:0">
+  <div class="wrap">
+    <div class="k rv">Team workflow</div>
+    <h2 class="rv">From brief to boardroom, without the slide grind.</h2>
+    <div class="flow">
+      <div class="rv"><span class="n">01</span><b>Brief in, draft out</b><p>The skill sorts the content into numbers, lists, plans and proof, then picks the layout. Long content is split, never shrunk.</p></div>
+      <div class="rv"><span class="n">02</span><b>Review in place</b><p>Publish as a private page. Teammates fix text, swap photos and comment on the slide itself.</p></div>
+      <div class="rv"><span class="n">03</span><b>Ship</b><p>PDF for email, PPTX for PowerPoint or Google Slides, or share the live link.</p></div>
+    </div>
+    <div style="display:flex;gap:12px;margin-top:48px"><a class="btn d" href="deck-tools/presentation-dataviz-skills.zip" download>Download the three skills (.zip)</a></div>
+  </div>
 </section>
 
 <footer id="contact">
   <div class="wrap">
-    <div class="slabel reveal" style="color:var(--accent-2)"><span style="color:var(--accent-2)">Let's talk</span></div>
-    <h2 class="reveal">Growth systems, not one-off posts.</h2>
-    <p class="ft-lede reveal">I build the tools and workflows that let a small brand team ship like a big one.</p>
-    <div class="contact reveal">
-      <span class="who">Tào Giáng My — Arie</span>
-      <span style="color:rgba(245,242,236,.7)">Ho Chi Minh City, Vietnam</span>
-      <a href="mailto:taogiangmy.vn@gmail.com">taogiangmy.vn@gmail.com</a>
-      <a href="https://linkedin.com/in/giangmytao" target="_blank" rel="noopener">linkedin.com/in/giangmytao</a>
-    </div>
-    <div class="switcher reveal">
-      <div class="sl">Jump to a case</div>
-      <div class="cases">
-        <a href="deck-tools.html" aria-current="page">Deck &amp; Dataviz Tools</a>
-        <a href="creatoros.html">CreatorOS Demo</a>
-        <a href="coba.html">CoBa's Daughter</a>
-        <a class="home" href="index.html">Portfolio home →</a>
-      </div>
-    </div>
+    <div class="k">Let’s talk</div>
+    <h2>Tools that let a small brand team ship like a big one.</h2>
+    <div class="row"><span>Tào Giáng My — Arie · Ho Chi Minh City</span><a href="mailto:taogiangmy.vn@gmail.com">taogiangmy.vn@gmail.com</a><a href="https://linkedin.com/in/giangmytao" target="_blank" rel="noopener">LinkedIn</a><a href="index.html">← Portfolio home</a></div>
+    <p class="fine">Built with Claude Code · HTML, CSS, SVG and a little Python. Demo numbers are fictional.</p>
   </div>
 </footer>
-<script src="case.js"></script>
+
+<script>
+const S = ["s01","s03","s05","s08","s09","s10","s11","vz01","vz02","vz03","vz04","vz05","G_azure_01","G_coba_01","G_crimson_01","G_sage_14"];
+const tr = document.getElementById("track"); tr.innerHTML = [...S, ...S].map(s => `<img src="deck-tools/img/${s}.jpg" alt="" loading="lazy">`).join("");
+document.getElementById("themes").innerHTML = ["azure","coba","crimson","duo","editorial","forest","sage","violet"].map(t => `<figure class="rv"><img src="deck-tools/img/G_${t}_01.jpg" alt="${t} theme" loading="lazy"><figcaption>${t}</figcaption></figure>`).join("");
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .12 });
+document.querySelectorAll(".rv").forEach(el => io.observe(el));
+</script>
 </body>
 </html>
