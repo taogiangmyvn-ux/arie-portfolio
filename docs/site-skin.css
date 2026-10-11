@@ -1,0 +1,37 @@
+/* Arie portfolio · 2026 skin, loaded LAST on every page that keeps its own layout CSS.
+   One type family (Plus Jakarta Sans + JetBrains Mono labels), warm cream paper, dark ink, dark glass nav.
+   Case pages keep their own brand accent (--accent) so each case still feels like its brand. */
+:root{
+  --serif:"Plus Jakarta Sans",system-ui,sans-serif;--sans:"Plus Jakarta Sans",system-ui,sans-serif;
+  --disp:"Plus Jakarta Sans",system-ui,sans-serif;--body:"Plus Jakarta Sans",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+body{font-family:"Plus Jakarta Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Plus Jakarta Sans",system-ui,sans-serif!important;font-weight:800!important;letter-spacing:-.035em!important}
+h1 em,h2 em,h3 em{font-style:italic}
+
+/* case.css family: cream paper, dark ink, dark glass nav */
+html:has(link[href="case.css"]){--paper:#F4F0E8;--ink:#1A1816;--charcoal:#3A352E;--grey:#8A8376;--mist:#ECE6DC;--line:rgba(26,24,22,.14);--line-soft:rgba(26,24,22,.08)}
+html:has(link[href="case.css"]) nav{background:rgba(26,24,22,.78)!important;border-bottom:1px solid rgba(255,255,255,.08)!important}
+html:has(link[href="case.css"]) nav .brand{color:#fff;font-weight:800;letter-spacing:-.02em}
+html:has(link[href="case.css"]) nav .brand em{color:#E0703F}
+html:has(link[href="case.css"]) .nav-right a{color:rgba(255,255,255,.7)!important}
+html:has(link[href="case.css"]) .nav-right a:hover{color:#fff!important}
+html:has(link[href="case.css"]) .nav-cta{border-color:#E0703F!important;background:#E0703F;color:#fff!important}
+html:has(link[href="case.css"]) .slabel{font-family:"JetBrains Mono",monospace;letter-spacing:.14em}
+html:has(link[href="case.css"]) .hero h1{font-size:clamp(42px,6.4vw,88px);line-height:.98}
+html:has(link[href="case.css"]) h2{line-height:1.05}
+html:has(link[href="case.css"]) footer#contact h2{font-size:clamp(36px,5vw,72px)}
+html:has(link[href="case.css"]) body{background:var(--paper)}
+/* dark hero on case pages, like the home page */
+html:has(link[href="case.css"]) header.hero{background:radial-gradient(900px 500px at 88% 10%,color-mix(in srgb,var(--accent) 30%,transparent),transparent 60%),#1A1816;color:#fff;padding-bottom:clamp(40px,5vw,70px)!important}
+html:has(link[href="case.css"]) header.hero :is(p,.lede,.sub,.muted,.cap,small,span,li){color:rgba(255,255,255,.72)}
+html:has(link[href="case.css"]) header.hero :is(h1,b,strong,.num){color:#fff}
+html:has(link[href="case.css"]) header.hero h1 em{color:var(--accent)}
+html:has(link[href="case.css"]) header.hero .chips span{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.16);color:rgba(255,255,255,.8)}
+html:has(link[href="case.css"]) header.hero .metric{border-color:rgba(255,255,255,.16)}
+html:has(link[href="case.css"]) header.hero .notice{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14)}
+html:has(link[href="case.css"]) header.hero a:not(.btn){color:var(--accent)}
+html:has(link[href="case.css"]) header.hero h1 span{color:inherit}
+html:has(link[href="case.css"]) header.hero h1 .acc,html:has(link[href="case.css"]) header.hero h1 em span{color:var(--accent)}
+html:has(link[href="case.css"]) header.hero .hl{color:#fff}

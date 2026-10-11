@@ -1,0 +1,51 @@
+/* Arie portfolio · design system 2026
+   Dark ink + warm cream, one orange accent, Plus Jakarta Sans everywhere, JetBrains Mono for labels.
+   Used by index.html and the deck-tools page; other pages load site-skin.css to share the nav, footer and type. */
+:root{
+  --ink:#1A1816;--ink-2:#26231F;--ink-3:#34302A;
+  --cream:#F4F0E8;--paper:#FBF9F5;--line:#E4DDD1;--line-d:rgba(255,255,255,.1);
+  --muted:#8A8376;--muted-d:rgba(255,255,255,.62);
+  --or:#E0703F;--or-2:#BF5B2E;--or-soft:#F6E2D6;--sage:#6E9478;
+  --f:"Plus Jakarta Sans",system-ui,-apple-system,sans-serif;--m:"JetBrains Mono",ui-monospace,monospace;
+  --r:18px;--wrap:1240px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--f);color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.5}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+.wrap{width:min(var(--wrap),100% - 48px);margin:0 auto}
+.k{font:700 12px var(--m);letter-spacing:.14em;text-transform:uppercase;color:var(--or)}
+.dark{background:var(--ink);color:#fff}.dark .lede,.dark p{color:var(--muted-d)}
+em.o,.o{color:var(--or);font-style:italic}
+h1,h2,h3{font-family:var(--f);letter-spacing:-.04em;line-height:1.02}
+h2.t{font:800 clamp(38px,4.8vw,68px)/1.02 var(--f);letter-spacing:-.045em;margin-top:14px;max-width:20ch}
+.lede{font:400 clamp(17px,1.4vw,19px)/1.6 var(--f);color:#5b554b;max-width:62ch;margin-top:18px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;font:700 15px var(--f);text-decoration:none;transition:transform .2s,background .2s,border-color .2s;cursor:pointer;border:0}
+.btn:hover{transform:translateY(-2px)}
+.btn.p{background:var(--or);color:#fff}.btn.p:hover{background:#ea7d4c}
+.btn.g{border:1.5px solid rgba(255,255,255,.28);color:#fff;background:none}.btn.g:hover{border-color:#fff}
+.btn.d{border:1.5px solid var(--ink);color:var(--ink);background:none}
+/* nav */
+.snav{position:fixed;inset:0 0 auto;z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(26,24,22,.74);border-bottom:1px solid var(--line-d)}
+.snav .wrap{display:flex;align-items:center;height:64px;gap:26px}
+.snav .logo{font:800 20px var(--f);color:#fff;text-decoration:none;letter-spacing:-.02em}.snav .logo i{color:var(--or);font-style:normal}
+.snav .sp{flex:1}
+.snav a.l{color:rgba(255,255,255,.72);text-decoration:none;font:600 14px var(--f)}.snav a.l:hover{color:#fff}
+.snav .btn{padding:9px 16px;font-size:13px}
+/* marquee */
+.marq{overflow:hidden;white-space:nowrap}
+.marq .track{display:inline-flex;gap:46px;animation:mq 40s linear infinite;padding-right:46px}
+.marq:hover .track{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* footer */
+.sfoot{background:var(--ink);color:#fff;padding:110px 0 50px}
+.sfoot h2{font:800 clamp(44px,7vw,110px)/.95 var(--f);letter-spacing:-.05em}
+.sfoot .row{display:flex;gap:28px;flex-wrap:wrap;margin-top:40px;font:600 16px var(--f)}
+.sfoot .row a{color:var(--or);text-decoration:none}
+.sfoot .fine{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:80px;padding-top:24px;border-top:1px solid var(--line-d);font:500 13px var(--f);color:rgba(255,255,255,.45)}
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media print{.rv{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.marq .track{animation:none}}
+@media (max-width:900px){.snav a.l{display:none}}
